@@ -56,6 +56,7 @@ ciktilar:
         basamak: KB2.10.SB3
         birebir: Elde ettiği genellemelerin varsayımını karşılayıp karşılamadığını çeşitli modellerle gösterir.
       ç:
+        birebir: Varsayımı ile ilgili ulaştığı sonuca yönelik doğrulayabileceği matematiksel bir önermeyi sözel ya da sembolik temsil ile sunar.
         ad: Önermeyi sözel ya da sembolik sunma
         basamak: KB2.10.SB4
       d:
@@ -114,28 +115,40 @@ ciktilar:
         basamak: KB2.14.SB3
   MAT.6.1.5:
     metin: Gerçek yaşam durumlarında ondalık gösterimlerin basamak değerlerini kesirlerden yararlanarak yorumlayabilme
+    uygulama_islemleri:
+    - islem: ondalıkları belirlenen basamağa kadar yuvarlama
+      birebir: Öğrencilerden boş sayı doğrusundan yararlanarak ondalıkları belirlenen basamağa kadar yuvarlama çalışmaları yapmaları istenir.
+      kaynak: https://tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/457 (12.11.2026)
     beceri: MAB2, KB2.14
     bilesenler:
       a:
+        birebir: Ondalık gösterimlerin basamak değerlerini inceler.
         ad: Basamak değerlerini inceleme
         basamak: KB2.14.SB2
       b:
+        birebir: Ondalık gösterimlerin basamak değerlerini paydası 10, 100 ve 1000 olan kesirlerin toplamlarını kullanarak yeniden ifade eder.
         ad: Kesirlerin toplamıyla yeniden ifade etme
         basamak: KB2.14.SB2
       c:
+        birebir: Ondalık gösterimlerin basamak değerlerini kendi cümleleriyle açıklar.
         ad: Basamak değerlerini kendi cümleleriyle açıklama
         basamak: KB2.14.SB3
   MAT.6.6.1:
     metin: Bir olayın olasılığını gözleme dayalı tahmin edebilme
+    icerik_terimleri: [Deneysel Olasılık]
+    genelleme: Deneysel olasılık deneyden elde edilen veriye dayanır.
     beceri: KB2.11
     bilesenler:
       a:
+        birebir: Bir olayın olasılığı ile deneylerden elde ettiği veriyi ilişkilendirir.
         ad: Olasılığı deney verisiyle ilişkilendirme
         basamak: KB2.11
       b:
+        birebir: Deneye ait tekrar sayısı ile deneyin çıktılarının göreli sıklıklarının ilişkisine yönelik çıkarım yapar.
         ad: Tekrar sayısı ile göreli sıklık ilişkisine yönelik çıkarım
         basamak: KB2.11
       c:
+        birebir: Çıkarımlardan hareketle olasılık değerini belirleme için göreli sıklığın kullanımına yönelik yargıda bulunur.
         ad: Göreli sıklığın kullanımına yönelik yargıda bulunma
         basamak: KB2.11
   MAT.6.1.6:

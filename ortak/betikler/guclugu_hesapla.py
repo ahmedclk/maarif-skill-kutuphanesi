@@ -5,6 +5,8 @@ Girdi: JSON listesi. Her öğe bir alt maddedir:
   {"kagit": "K1", "soru": 1, "madde": "1.1", "Z": 2, "Y": "acik", "C": "H", "puan": 6}
   Y: "yonlendirilmis" | "acik"   C: "H" | "A" | "G"
   İsteğe bağlı: "tur": "acik" | "kisa" | "coktan" | "dy" | "eslestirme"   "sure_dk": tahmini çözüm süresi
+  "kagit_tipi": "meb" | "zengin" (varsayılan "zengin"). MEB tipi kâğıtta (gerceklesen-sinavlar.md): her soru tek
+  maddeli, bütün maddeler C = H, Z ≤ 2, soru puanı 10 ya da 15, güçlük payı kolay %30–50, orta %50–70, zor %0.
 Kullanım: python3 guclugu_hesapla.py maddeler.json [--kademe ortaokul|lise] [--yazili]
 --yazili: MEB okul yazılısı kuralları da denetlenir (ortak/maarif/meb-olcme-mevzuati.md):
   MEV-10/11 yalnız kısa cevaplı kâğıt olamaz · MEV-12 çoktan seçmeli, gerekçesiz doğru-yanlış ve eşleştirme yok ·
@@ -24,6 +26,7 @@ def guclugu(z, y, c):
 
 
 PAY = {"kolay": (15, 25), "orta": (45, 55), "zor": (25, 35)}
+PAY_MEB = {"kolay": (30, 50), "orta": (50, 70), "zor": (0, 0)}
 
 
 def main():
@@ -44,8 +47,18 @@ def main():
         kagit[m["kagit"]][g] += m["puan"]
         soru[(m["kagit"], m["soru"])] += m["puan"]
         print(f"{m['kagit']:>3} {m['madde']:>5}  Z={m['Z']} Y={m['Y'][:5]:5} C={m['C']}  {g:5} {m['puan']:>3} puan")
+    tip = {m["kagit"]: m.get("kagit_tipi", "zengin") for m in maddeler}
     for (k, s), p in soru.items():
-        if not 10 <= p <= 20:
+        if tip[k] == "meb":
+            sm = [m for m in maddeler if m["kagit"] == k and m["soru"] == s]
+            if p not in (10, 15):
+                ihlal.append(f"{k} soru {s}: MEB tipi kâğıtta soru puanı 10 ya da 15 olur ({p})")
+            if len(sm) != 1:
+                ihlal.append(f"{k} soru {s}: MEB tipi kâğıtta soru tek maddeli olur ({len(sm)} madde)")
+            for m in sm:
+                if m["C"] != "H" or int(m["Z"]) > 2:
+                    ihlal.append(f"{k} {m['madde']}: MEB tipi kâğıtta madde C = H ve Z ≤ 2 olur (açıklama, genelleme ya da yargı istenmez)")
+        elif not 10 <= p <= 20:
             ihlal.append(f"{k} soru {s}: toplam {p} puan (10–20 olmalı)")
     paylar = {}
     for k, d in kagit.items():
@@ -53,15 +66,17 @@ def main():
         if top != 100:
             ihlal.append(f"{k}: toplam {top} puan (100 olmalı)")
         paylar[k] = {g: round(100 * d[g] / top) for g in PAY}
-        for g, (lo, hi) in PAY.items():
+        for g, (lo, hi) in (PAY_MEB if tip[k] == "meb" else PAY).items():
             if not lo <= paylar[k][g] <= hi:
                 ihlal.append(f"{k}: {g} payı %{paylar[k][g]} (%{lo}–{hi} olmalı)")
-        print(f"{k}: " + ", ".join(f"{g} %{v}" for g, v in paylar[k].items()))
-    if len(paylar) > 1:
-        for g in PAY:
-            v = [p[g] for p in paylar.values()]
-            if max(v) - min(v) > 10:
-                ihlal.append(f"{g} payı kâğıtlar arasında {max(v) - min(v)} puan farklı (≤ 10 olmalı)")
+        print(f"{k} ({'MEB tipi' if tip[k] == 'meb' else 'zenginleştirilmiş'}): " + ", ".join(f"{g} %{v}" for g, v in paylar[k].items()))
+    for tur in ("meb", "zengin"):
+        grup = [p for k, p in paylar.items() if tip[k] == tur]
+        if len(grup) > 1:
+            for g in PAY:
+                v = [p[g] for p in grup]
+                if max(v) - min(v) > 10:
+                    ihlal.append(f"{g} payı aynı türdeki kâğıtlar arasında {max(v) - min(v)} puan farklı (≤ 10 olmalı)")
     if a.yazili:
         kagitlar = sorted({m["kagit"] for m in maddeler})
         for k in kagitlar:

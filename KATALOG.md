@@ -10,7 +10,7 @@ Bu dosya `araclar/katalog.py` ile üretilir; elle düzenlenmez.
 | `maarif-anlatim-videosu` | Bir öğrenme çıktısına bağlı konu ya da soru için Remotion ile kısa anlatım videosu hazırlar | maarif-icerik-uretimi, maarif-tam | Apache-2.0 (uyarlama) | 321 |
 | `maarif-beceri-temelli-test` | Maarif Modeli çıktılarına bağlı, LGS ve beceri temelli sınav tarzında çoktan seçmeli test hazırlar | dnamathos, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 528 |
 | `maarif-benzer-soru` | Öğretmenin verdiği sınavın, testin, yazılının ya da tek bir sorunun kurgusunu, ölçtüğü Maarif çıktısını ve süreç bileşenini, becerisini ve güçlüğünü koruyarak bağlamı ve sayıları değişmiş özgün ikiz sorular, cevap anahtarı ve öğrenciye hitap eden adım adım çözümler üretir | maarif-icerik-uretimi, maarif-olcme-degerlendirme, maarif-tam | Apache-2.0 (uyarlama) | 574 |
-| `maarif-cikti-cozumleme` | Bir dersin, sınıfın, temanın ya da tek bir öğrenme çıktısının Maarif Modeli programını TYMM sayfasından okuyup çözümler | dnamathos, maarif-icerik-uretimi, maarif-ogretmen-temel, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 621 |
+| `maarif-cikti-cozumleme` | Bir dersin, sınıfın, temanın ya da tek bir öğrenme çıktısının Maarif Modeli programını TYMM sayfasından okuyup çözümler | dnamathos, maarif-icerik-uretimi, maarif-ogretmen-temel, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 660 |
 | `maarif-ders-plani` | Bir öğrenme çıktısı için sıfırdan Maarif Modeli'ne uygun ders planı hazırlar | maarif-ogretmen-temel, maarif-tam | Apache-2.0 (uyarlama) | 894 |
 | `maarif-ders-takvimi` | Sınava ya da dönem sonuna kalan haftalara göre Maarif Modeli çıktılarını derslere dağıtan haftalık ders takvimini hazırlar | maarif-ogretmen-temel, maarif-tam | karar bekliyor | 676 |
 | `maarif-derse-hazirlik` | Öğretmenin var olan bir dersi anlatmaya hazırlanmasına eşlik eder | maarif-ogretmen-temel, maarif-tam | Apache-2.0 (uyarlama) | 252 |
@@ -19,7 +19,7 @@ Bu dosya `araclar/katalog.py` ile üretilir; elle düzenlenmez.
 | `maarif-hizli-tekrar` | Ders başında 5 dakikalık hızlı soru-cevap turu ve haftanın akılda kalıcı sloganını hazırlar | dnamathos, maarif-ogretmen-temel, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 582 |
 | `maarif-kavrama-testi` | Haftalık konu bittikten sonra öğrencinin konuyu kavrayıp kavramadığını en az soruyla ölçen 4–5 soruluk, 10–15 dakikalık, notsuz kavrama testi hazırlar | dnamathos, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 744 |
 | `maarif-konu-ozeti` | MEB ders kitabına ve TYMM programına dayanan, haftalık ders için kısa konu anlatımı özet slaytları hazırlar | dnamathos, maarif-icerik-uretimi, maarif-tam | karar bekliyor | 1065 |
-| `maarif-ortak-yazili` | MEB ortak yazılı (ortak sınav) senaryosuna birebir uyan, açık uçlu yazılı sınav kâğıtları ve cevap anahtarları hazırlar | dnamathos, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 839 |
+| `maarif-ortak-yazili` | MEB ortak yazılı (ortak sınav) senaryosuna birebir uyan, açık uçlu yazılı sınav kâğıtları ve cevap anahtarları hazırlar | dnamathos, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 989 |
 | `maarif-performans-gorevi` | Maarif Modeli çıktılarına bağlı performans görevi ya da proje görevi hazırlar | maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 532 |
 
 ## Tam açıklamalar

@@ -27,6 +27,8 @@ Kart tek kaynaktır: öğretmen tablosu ve `cikti.json` aynı alanlardan üretil
       "sinirlar": ["… ile sınırlandırılır (birebir)"],
       "genellemeler": ["…"], "anahtar_kavramlar": ["…"], "sembol_gosterim": ["…"],
       "ogrenme_kanitlari": ["…"],
+      "uygulama_islemleri": [{"islem": "ondalıkları belirlenen basamağa kadar yuvarlama", "birebir": "…", "sinavda_cikabilir": true}],
+      "icerik_terimleri": ["Deneysel Olasılık"],
       "uygulamalar": {"ozet": "…", "programlar_arasi": [{"kod": "SDB2.1", "davranis": "birbirlerini dinlemeleri"}]},
       "farklilastirma": {"zenginlestirme": "…", "destekleme": "…"},
       "kitap": [{"bolum": "Etkinlik 2", "sayfa": 91, "bilesenler": ["a", "b"]}]
@@ -37,7 +39,7 @@ Kart tek kaynaktır: öğretmen tablosu ve `cikti.json` aynı alanlardan üretil
 }
 ```
 
-Kurallar: `birebir` alanları sayfadan kelimesi kelimesine; `kisa_ad` öğretmen tablosu ve soru etiketi için programın fiil öbeğinden kısaltılır. Bilinmeyen alan boş bırakılır, doldurulmaz.
+Kurallar: `birebir` alanları sayfadan kelimesi kelimesine; `uygulama_islemleri`, Öğrenme-Öğretme Uygulamalarında öğrenciden yapılması istenen ama bileşen listesinde adı geçmeyen işlemlerdir (ortak sınavda sorulabilir; `gerceklesen-sinavlar.md`); `icerik_terimleri`, İçerik Çerçevesi başlıklarındaki ve genellemelerindeki terimlerdir (soru kökünde bu terimler kullanılır); `kisa_ad` öğretmen tablosu ve soru etiketi için programın fiil öbeğinden kısaltılır. Bilinmeyen alan boş bırakılır, doldurulmaz.
 
 ## Öğretmen tablosu (sohbet ya da belge)
 
@@ -45,6 +47,7 @@ Kurallar: `birebir` alanları sayfadan kelimesi kelimesine; `kisa_ad` öğretmen
 2. Tema kod listeleri tek satırda.
 3. Her çıktı için tablo: harf · bileşen (birebir) · basamak · ölçme · not.
 4. "Sınırlar" kutusu (birebir alıntılar).
+4a. "Uygulamadaki işlemler (sınavda çıkabilir)" kutusu: bileşen listesinde olmayan ama uygulamalarda istenen işlemler, birebir alıntıyla.
 5. "Programlar arası bileşenler derste nerede?" tablosu: kod · uygulamadaki davranış.
 6. Varsa kitap eşlemesi.
 7. En altta tek satır doğrulama notu (tarih ve kaynak).

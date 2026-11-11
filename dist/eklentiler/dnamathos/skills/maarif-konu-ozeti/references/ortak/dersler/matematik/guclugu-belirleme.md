@@ -1,6 +1,6 @@
 # Matematik: güçlük düzeyi (Z · Y · C) ve puan
 
-Kaynak: MEB "Yazılıya Hazırlanıyorum" 9. ve 10. sınıf 1. dönem 1. yazılı örnekleri ve çözüm anahtarları (26 alt madde). MEB güçlük etiketi vermez; çözüm anahtarlarında her adım 1–3 puan alır, yani puan iş yükünü gösterir. Bu yüzden güçlük sezgiyle ya da puana bakarak değil, aşağıdaki kuralla belirlenir. MEB 6. sınıf örneği puansızdır; kural ortaokulda da aynen uygulanır.
+Kaynak: MEB "Yazılıya Hazırlanıyorum" 9. ve 10. sınıf 1. dönem 1. yazılı örnekleri ve çözüm anahtarları (26 alt madde); gerçekleşen sınavlar için `gerceklesen-sinavlar.md`. MEB güçlük etiketi vermez; çözüm anahtarlarında her adım 1–3 puan alır, yani puan iş yükünü gösterir. Bu yüzden güçlük sezgiyle ya da puana bakarak değil, aşağıdaki kuralla belirlenir. MEB 6. sınıf örneği puansızdır; kural ortaokulda da aynen uygulanır.
 
 **Sıra:** önce MEB tarzında puanlı adımlarla cevap anahtarını yaz, sonra güçlüğü anahtardan oku, en son puanı ver.
 
@@ -25,7 +25,10 @@ MEB örneklerinden sınama: 9. sınıf kolay 3.2–3.4 (kesişim, fark, birleşi
 ## Dağılım ve puan kuralları
 
 - Güçlük her alt maddeye ayrı verilir. Sorunun güçlüğü, en yüksek puanlı maddesinin güçlüğüdür (eşitlikte daha zor olan).
-- Hedef puan payı (her kâğıt için): **kolay %15–25, orta %45–55, zor %25–35.** Setteki kâğıtların payları birbirine yakın olur (eşdeğer sınav).
+- Hedef puan payı kâğıt türüne göre değişir (`kapsama-plani.md` 0. adım):
+  - **MEB tipi kâğıt:** kolay %30–50, orta %50–70, zor %0; her soru tek maddeli ve C = H. Dayanak: gerçekleşen 6. sınıf ortak sınavı (`gerceklesen-sinavlar.md`).
+  - **Zenginleştirilmiş kâğıt:** kolay %15–25, orta %45–55, zor %25–35. Dayanak: MEB örnek yazılıları; gerçek sınavdan zordur ve kapakta bu yazılır.
+  - Aynı türdeki kâğıtların payları birbirine yakın olur (eşdeğer sınav).
 - Merdiven yapısı: çok parçalı sorularda ilk madde kolay ya da orta, son madde orta ya da zor olur; zor madde sorunun son maddesidir. Lisede kolay madde tek başına soru olmaz, çok parçalı bir sorunun giriş basamağıdır; ortaokulda tek yönergeli kısa sorular kolay olabilir (MEB 6. sınıf örneğinde olduğu gibi), ama tek parçalı soru puanı yine en az 10'dur.
 - Puan aralıkları:
   - Kolay alt madde 4–6 puan; orta alt madde 5–8 puan; iki aşamalı madde ("tablo + yorum" gibi) 14 puan (8 + 6).

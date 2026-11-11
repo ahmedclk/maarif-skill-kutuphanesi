@@ -29,6 +29,8 @@ Derste kullanılmayan, programın uygulama önerileriyle uyumlu bağlamlar: fida
 
 Hedefli ödev soruları testteki sorunun ikizidir: aynı bileşen, aynı yapısal durum, farklı sayı ve bağlam. Soru dili `references/ortak/dersler/matematik/meb-soru-dili.md`; güçlük testtekiyle aynı ya da bir basamak aşağı (yeniden ele al kararında ilk soru yönlendirilmiş biçimde).
 
+Terimler: soru kökünde İçerik Çerçevesindeki terim kullanılır (6.6.1'de "deneysel olasılık"; `references/ortak/dersler/matematik/meb-soru-dili.md` son bölüm).
+
 ## Hızlı tekrar
 
 - **Sayılar zihinden işlenir:** iki basamaklı sayılar, basit kesirler (yarım, çeyrek, onda bir), tek adımlı işlemler.

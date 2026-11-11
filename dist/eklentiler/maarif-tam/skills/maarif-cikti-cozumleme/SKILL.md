@@ -40,6 +40,7 @@ Her çıktı için:
 1. **Bileşen → basamak eşlemesi:** Her bileşenin fiiline bakarak becerinin süreç basamağını yaz (matematikte `references/ortak/dersler/matematik/beceri-eslemesi.md`). Eşleme senin yorumundur; kartta "eşleme: yorum" diye işaretlenir.
 2. **Ölçülebilirlik:** Her bileşeni "yazılıda ölçülür", "süreç içinde gözlenir" ya da "performans görevine bırakılır" diye sınıfla ve bir gerekçe yaz (ders dosyasındaki kural).
 3. **Sınırlar:** İçerik Çerçevesi ve uygulamalardaki "…'e girilmez", "… ile sınırlandırılır" ifadelerini ayrı bir "Sınırlar" listesine birebir aktar.
+3a. **Uygulamadaki işlemler ve terimler:** Öğrenme-Öğretme Uygulamalarında öğrenciden istenen ama bileşen listesinde adı geçmeyen işlemleri (ör. 6.1.5'te yuvarlama) "uygulama_islemleri" alanına, İçerik Çerçevesi terimlerini (ör. 6.6.1'de "Deneysel Olasılık") "icerik_terimleri" alanına birebir yaz. Gerçek ortak sınav bu işlemlerden de soru sordu.
 4. **Programlar arası bileşenler:** Tema başlığındaki E, SDB, D, OB kodlarından her birinin uygulamalarda hangi davranışın arkasında geçtiğini yaz ("birbirlerini dinlemeleri (SDB2.1)"). Uygulamada geçmeyen kodu "yalnız listede" diye işaretle. Bunlar puanlanmaz (`cerceve.md` 8. bölüm).
 5. **Kitap eşlemesi (varsa):** Ders kitabı ya da kaynak kitap verildiyse kitap bölümü → çıktı ve bileşen eşlemesi; basılı sayfa numarasıyla.
 

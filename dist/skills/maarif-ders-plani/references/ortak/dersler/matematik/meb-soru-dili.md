@@ -68,3 +68,10 @@ Kaynak: `maarif-matematik-icerik` 4. bölüm. Görsel ölçütü `soru-gorseli.m
 - Her alt maddenin sonunda küçük gri etiket: `[6.1.1-b]`; tek yönergeli soruda etiket yönergenin sonundadır.
 - Değerlendirme slaytındaki tablo: soru · çıktı · bileşen(ler) · beceri · güçlük · puan.
 - Soru slaytındaki üç noktalı zorluk göstergesi sorunun güçlüğünü gösterir (`guclugu-belirleme.md`).
+
+## Gerçek sınavdan gelen kalıp ve terimler
+
+- **Kök kalıbı (okul yazılısı):** "Buna göre, … işlemlerinizi göstererek bulunuz. (15 puan)" ve altında ayrı satırda "(Cevabınızı ve çözümünüzü cevap kâğıdındaki ilgili alana yazınız.)". MEB tipi kâğıtta bu kalıp kullanılır (`gerceklesen-sinavlar.md`).
+- **Cevabın biçimi kökte söylenir:** "kesir olarak", "yüzde olarak", "onda birler basamağına göre yuvarlanarak".
+- **Terim, programın İçerik Çerçevesinden:** 6.6.1'de soru dilinde "deneysel olasılık" kullanılır (İçerik Çerçevesi başlığı ve genellemesi: "Deneysel olasılık deneyden elde edilen veriye dayanır."); "göreli sıklık" çözümde ve açıklamada kalır. Genel kural: bileşen metnindeki terim ile İçerik Çerçevesindeki terim farklıysa soru kökünde İçerik Çerçevesindeki terim, çözümde ikisi birlikte kullanılır.
+- **Uygulamalardaki işlemler de sınav konusudur:** Bir çıktının Öğrenme-Öğretme Uygulamalarında adı geçen işlem (6.1.5'te "ondalıkları belirlenen basamağa kadar yuvarlama") bileşen listesinde olmasa da ortak sınavda sorulabilir; çıktı kartında "uygulamadaki işlemler" alanına yazılır.

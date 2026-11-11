@@ -14,7 +14,7 @@ metadata:
 
 # Maarif ortak yazılı
 
-Amaç: Öğretmenin verdiği senaryoya birebir uyan, deneyimli bir öğretmenin elinden çıkmış gibi duran ve MEB örnek yazılılarına benzeyen sınav kâğıtları. Kapsama tek kâğıtta değil **kâğıt setinin bütününde** sağlanır; her kâğıt yine tek başına tam ve dengeli bir sınavdır. Senaryo, çıktı listesi, soru sayısı ve puan dağılımı her çalışmada öğretmenden alınır; bu dosyada tutulmaz.
+Amaç: Öğretmenin verdiği senaryoya birebir uyan, deneyimli bir öğretmenin elinden çıkmış gibi duran sınav kâğıtları. Set iki katmanlıdır: ilk iki kâğıt gerçek ortak sınava benzeyen **MEB tipi** kâğıttır; kalanlar üst bileşenleri ölçen ve sınavdan zor olan **zenginleştirilmiş** kâğıtlardır. Kapsama tek kâğıtta değil **kâğıt setinin bütününde** sağlanır; her kâğıt yine tek başına tam ve dengeli bir sınavdır. Senaryo, çıktı listesi, soru sayısı ve puan dağılımı her çalışmada öğretmenden alınır; bu dosyada tutulmaz.
 
 Bütün içerikte öğretmen notları ve "Sık yapılan hata" kutuları `references/ortak/uslup/ogretmen-uslubu.md` üslubundadır; sınav kâğıdının soru dili ise MEB üslubundadır (ders dosyası). Dil: `references/ortak/uslup/turkce-yazim.md`.
 
@@ -30,11 +30,11 @@ Senaryo tablosu (çıktı başına soru sayısı) yoksa yalnız onu iste; çıkt
 
 ## Adım 2 — Programa dayandır ve bileşenleri eşle
 
-Her çıktı için tema sayfasından birebir: çıktı, bileşenler, İçerik Çerçevesi sınırları, gösterimler, Öğrenme-Öğretme Uygulamalarındaki sınırlamalar, temanın kod listeleri. Öğretmenin verdiği metinle fark varsa bildir ve sitedeki güncel metni esas al. Her bileşeni beceri basamağına bağla ve "yazılıda ölçülür" ya da "performansa bırakılır" diye işaretle (ders dosyasındaki eşleme).
+Her çıktı için tema sayfasından birebir: çıktı, bileşenler, İçerik Çerçevesi sınırları ve terimleri, gösterimler, Öğrenme-Öğretme Uygulamalarındaki sınırlamalar ve öğrenciden istenen işlemler (bileşen listesinde olmasa da ortak sınavda sorulabilir; 6.1.5'te yuvarlama gibi), temanın kod listeleri. Ders kitabı ekliyse ilgili bölümün etkinlik ve alıştırma türlerini de tara; programda adı geçen işlemlerin kitapta nasıl çalışıldığı MEB tipi kâğıdın bağlamını verir. Öğretmenin verdiği metinle fark varsa bildir ve sitedeki güncel metni esas al. Her bileşeni beceri basamağına bağla ve "yazılıda ölçülür" ya da "performansa bırakılır" diye işaretle (ders dosyasındaki eşleme).
 
 ## Adım 3 — Kâğıt seti ve kapsama planı (soru yazmadan önce)
 
-Kâğıt sayısı kuralı ders dosyasındadır (matematikte k değerleri ve ⌈bileşen ÷ k⌉ formülü). Planı öğretmene tablo olarak göster: çıktı · ölçülen bileşen sayısı · k · gereken soru · senaryodaki soru · kâğıt; sınırlayan çıktıyı belirt. Öğretmen ortamdaysa ve set 3 kâğıttan büyükse planı onaylat; değilse plana göre devam et ve teslimde yaz.
+Set yapısı ve kâğıt sayısı kuralı ders dosyasındadır: önce 2 MEB tipi kâğıt (gerçekleşen sınav profili: tek maddeli sorular, çıktının ilk bileşeni ya da uygulamadaki bir işlem), sonra zenginleştirilmiş kâğıtlar (matematikte k değerleri ve ⌈bileşen ÷ k⌉ formülü). Öğretmen yalnız bir türü isterse o tür yazılır. Planı öğretmene tablo olarak göster: çıktı · ölçülen bileşen sayısı · k · gereken soru · senaryodaki soru · kâğıt; sınırlayan çıktıyı belirt. Öğretmen ortamdaysa ve set 3 kâğıttan büyükse planı onaylat; değilse plana göre devam et ve teslimde yaz.
 
 ## Adım 4 — Soruları yaz
 
@@ -48,7 +48,7 @@ Sıra değişmez: önce MEB tarzında adım puanlı cevap anahtarı, sonra güç
 
 `python3 scripts/guclugu_hesapla.py maddeler.json --kademe ortaokul|lise --yazili`
 
-`--yazili` ayrıca mevzuatı denetler: her maddenin `tur` alanı (`acik`, `kisa`) ve tahmini `sure_dk` değeri; çoktan seçmeli ya da eşleştirme maddesi, yalnız kısa cevaplı kâğıt ve 40 dakikayı aşan kâğıt ihlaldir. Puan 100 üzerindendir ve yanlış cevap doğruyu götürmez (MEV-19).
+Her maddeye `kagit_tipi` (`meb` ya da `zengin`) yazılır; MEB tipi kâğıtta betik tek madde, C = H, Z ≤ 2, 10 ya da 15 puan ve ayrı güçlük payı (kolay %30–50, orta %50–70, zor %0) denetler. `--yazili` ayrıca mevzuatı denetler: her maddenin `tur` alanı (`acik`, `kisa`) ve tahmini `sure_dk` değeri; çoktan seçmeli ya da eşleştirme maddesi, yalnız kısa cevaplı kâğıt ve 40 dakikayı aşan kâğıt ihlaldir. Puan 100 üzerindendir ve yanlış cevap doğruyu götürmez (MEV-19).
 
 İhlal 0 olana kadar puanı ya da soruyu düzelt. Adım puanlarının toplamı madde puanına eşit olmalı (içerik dosyasında assert).
 
@@ -65,12 +65,12 @@ Sınav kâğıtları ve cevap anahtarları ayrı dosyalardır. Marka skill'i yü
 1. `references/ortak/guvence/dogrulama-kapisi.md` dosyasını şimdi oku; Kapı A'yı (açık uçlu biçimi) ve Kapı C'yi her maddeye uygula. Alt ajan varsa yalnız sınav kâğıdını ona çözdür; bulduğu her alternatif doğru cevap cevap anahtarına eklenir ya da kök düzeltilir.
 2. `python3 scripts/tymm_kod_denetle.py <kâğıt PDF'leri> --veri references/veri` 0 hata.
 3. `python3 scripts/sizinti_ara.py <kâğıt PDF> cevaplar.json` 0.
-4. Kapsama: yazılıda ölçülen her bileşen setin toplamında en az bir kez (kodla say). Senaryo uyumu: her kâğıtta çıktı başına soru sayısı senaryoyla aynı (assert).
+4. Kapsama: yazılıda ölçülen her bileşen setin toplamında en az bir kez (kodla say); uygulamadaki her işlem MEB tipi kâğıtlardan birinde en az bir kez. Zenginleştirilmiş kâğıdın kapağında "sınavdan zordur" yazar. Senaryo uyumu: her kâğıtta çıktı başına soru sayısı senaryoyla aynı (assert).
 5. PDF denetimi: `references/ortak/guvence/pdf-ile-calisma.md` "Çıktı PDF'ini denetleme".
 
 ## Adım 9 — Kapanış
 
-Teslimde: kâğıt sayısı ve gerekçesi (sınırlayan çıktı), setin güçlük payları, TYMM ile öğretmen metni arasındaki farklar, yazılı dışı bırakılan bileşenler. En fazla iki somut seçenek: "Yazılı dışı kalan bileşenler için bir performans görevi hazırlayayım mı?" (maarif-performans-gorevi) ya da "Kâğıt 1'in her sorusu için bir ikiz soru seti çıkarayım mı?" (maarif-benzer-soru).
+Teslimde: kâğıt sayısı ve gerekçesi (sınırlayan çıktı), hangi kâğıtların MEB tipi, hangilerinin zenginleştirilmiş olduğu, setin güçlük payları, TYMM ile öğretmen metni arasındaki farklar, yazılı dışı bırakılan bileşenler. En fazla iki somut seçenek: "Yazılı dışı kalan bileşenler için bir performans görevi hazırlayayım mı?" (maarif-performans-gorevi) ya da "Kâğıt 1'in her sorusu için bir ikiz soru seti çıkarayım mı?" (maarif-benzer-soru).
 
 ## Denetim listesi
 

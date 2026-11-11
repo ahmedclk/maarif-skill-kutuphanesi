@@ -72,7 +72,7 @@ a{color:inherit;text-decoration:none}
 .kural{font-size:23px;font-weight:700}
 .not{font-size:17px;border-top:1.5px dashed #c9bfa8;padding-top:8px}.not .etk{margin-right:8px}
 .kitapta{font-size:17px;color:var(--yesil)}
-.hata{background:var(--kiremit-z);border-left:5px solid var(--kiremit);border-radius:0 12px 12px 0;padding:10px 14px;font-size:18px}.hata .etk{color:var(--kiremit);display:block}
+.hata{background:#fff;border-left:5px solid var(--lacivert);border-radius:0 12px 12px 0;padding:10px 14px;font-size:18px}.hata .etk{color:var(--hardal);display:block}
 .yazi-alani{flex:1;min-height:90px;background-image:radial-gradient(circle,rgba(20,33,61,.16) 1.2px,transparent 1.4px);background-size:24px 24px;border-radius:10px}
 .slogan{margin-top:auto;display:flex;align-items:baseline;gap:12px}.slogan .mono{color:var(--ikincil)}.slogan .el{font-size:34px;color:var(--lacivert)}
 .sekil svg{max-width:100%;height:auto}

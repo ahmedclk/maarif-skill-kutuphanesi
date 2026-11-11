@@ -16,7 +16,8 @@
 | Hardal | #8a4f00 | Açık zeminde turuncu tonlu etiket yazısı |
 | İkincil | #4a5570 | Açıklama ve küçük yazılar |
 | Mürekkep | #1f4fa0 | Açık zeminde el yazısı notlar |
-| Doğru / yanlış | #0b6157 on #e1f3f0 · #b3401a on #fdece6 | Yalnız işaretle (✓ ✗) birlikte |
+| Doğru / yanlış | #0b6157 on #e1f3f0 · #b3401a on #fdece6 | Yalnız doğru ve yanlış kartlarında, işaretle (✓ ✗) birlikte; başka kutuda kullanılmaz |
+| Sık yapılan hata kutusu | Beyaz zemin, lacivert sol kenar, hardal etiket | Paletin dışına çıkmaz; pembe ya da kiremit zemin kullanılmaz |
 
 **Karşıtlık kuralları (ölçüldü):** lacivert yazı krem zeminde 14,9:1, beyaz zeminde 16:1; safran yazı lacivert zeminde ve lacivert yazı safran zeminde 7,9:1; hardal krem zeminde 6,1:1. **Safran, açık zeminde yazı rengi olmaz** (beyazda 2:1); açık zeminde yalnız dolgu, vurgu ve çizgidir.
 

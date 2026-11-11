@@ -58,7 +58,7 @@ ozet = []
 for k in skill_klasorleri():
     ad = os.path.basename(k)
     hedef = os.path.join(DIST, "skills", ad)
-    shutil.copytree(k, hedef)
+    shutil.copytree(k, hedef, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     metin = "".join(open(p, encoding="utf-8").read() for p in glob.glob(os.path.join(hedef, "**", "*.md"), recursive=True))
     refs, betikler = atiflar(metin)
     gorulen = set()

@@ -6,6 +6,7 @@
 
 | Dosya | Ne |
 | --- | --- |
+| `DNAMATHOS_6_Ders8_OrtakKat.pdf` | **Tam ders (DNAMATHOS 2.0 tasarımı), 25 slayt:** kapak, ısınma turu (6 soru ve cevapları), konu 1 ve soru 1, konu 2 ve soru 2, Kaydet kartı, kavrama testi (4 soru), ödev kartı. Üreten betik: `ders_uret.py` |
 | `kavrama_testi_ogrenci.pdf` | 8. hafta sonu, 4 soru, 12 dakika, notsuz. 2 küme sorusu, 1 aktarım sorusu, 1 tekrar sorusu; her soruda cevap, gerekçe ve güven kutusu |
 | `kavrama_testi_ogretmen.pdf` | Doğru cevaplar, kabul edilen ve edilmeyen gerekçeler, sık hatalı cevaplar, hedefli soru bankası, karar kuralı |
 | `kavrama_sonuc.json` | Üç örnek öğrencinin (takma ad) sonuçları |
@@ -15,4 +16,4 @@
 | `hizli_tekrar_kartlari.pdf` | 9. hafta ders başı: 8 soru (geçen hafta 4, 2–4 hafta önce 3, 8 hafta önce 1), cevap ekranları ve haftanın sloganı |
 | `hizli_tekrar_ogretmen.pdf` | Soru, cevap, bileşen, yanlış cevaba tek cümle; slogan denetimi ve reddedilen slogan önerileri |
 
-Yeniden üretmek: `python3 ornekler/6-sinif-ortak-kat/uret.py`
+Yeniden üretmek: `python3 ornekler/6-sinif-ortak-kat/ders_uret.py` (ders PDF'i) ve `python3 ornekler/6-sinif-ortak-kat/uret.py` (A4 kâğıtlar, ayrı tur kartları)

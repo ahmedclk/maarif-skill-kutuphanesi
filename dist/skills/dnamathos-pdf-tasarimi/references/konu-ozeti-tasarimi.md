@@ -1,21 +1,13 @@
-# Konu özeti tasarımı (DNAMATHOS)
+# Konu özeti tasarımı (DNAMATHOS 2.0)
 
-Kaynak: `maarif-konu-ozeti` 8. bölüm. Genel tasarım dili `tasarim-dili.md` dosyasındadır; bu dosya konu özetine özgü eklerdir.
+Genel dil `tasarim-dili.md`; bileşenler `scripts/dna.py`. Konu özetine özgü kurallar:
 
-**Tasarım:** `tasarim-dili.md` dosyasındaki DNAMATHOS tasarım dili (297 × 167 mm 16:9, renkler, yazı tipleri, üst şerit, menü ve iki panelli slayt, şekil ve tablo kuralları). Ders özetine özgü olarak:
+- **Akış ve renk ritmi:** kapak (safran + lacivert) → ısınma kapağı ve soruları (lacivert), cevapları (krem) → konu kartı (safran panel) ve sorusu (krem) → … → Kaydet (safran) → kavrama testi kapağı (lacivert) ve soruları (krem) → ödev (krem).
+- **Üst şerit düğmeleri:** Isınma · Konu · Test · Ödev; bulunulan bölüm safran. Birden çok ders tek PDF'teyse şeride ders düğmeleri (D1, D2, …) eklenir. Öğretmen PDF'inde: Plan · Notlar · Çözümler · Test anahtarı.
+- **Kapak:** başlığın iki kısmı iki blokta (ör. "Ortak kat" / "ortak bölen"); hap satırları: sınıf ve ders, çıktı kodu ve dersin akışı ("Isınma · 2 konu · kavrama testi"); el yazısıyla tek satırlık "bugün:" notu.
+- **Konu kartı:** sol panelde konu hapı, başlık ve "Önce sen" sorusu; sağda kural (boşluklu önerme `<span class="bos"></span>`), şekil, gerekirse "Sık yapılan hata", "Yazılıda böyle sorulur", "Kitapta". Kalan alan tablet kalemiyle yazılacak noktalı yazı alanıdır. Son konu kartında yazı alanının yerine haftanın sloganı gelir.
+- **Soru slaytı:** çözüm alanı sorunun altında; tüyo aynı sayfada sağ altta (`tasarim-dili.md` 6. bölüm). Çipler: bileşen harfleri ve Z · Y · C güçlüğü.
+- **Ödev kartı boş satırları** kalemle yazılacak genişlikte (en az 12 mm).
+- **Dosyalar:** `DNAMATHOS_<sınıf>_<kapsam>.pdf` (öğrenci, ekranda), `…_Ogretmen.pdf`, `…_Kavrama.pdf` (A4, yazdırılabilir).
 
-- Birden çok ders tek PDF'te verilir; üst şeritte "KONU ÖZETİ · TEMA N · DERS M · N. SINIF MATEMATİK", düğmeler: Ana, Konu, Sorular, Ödev ve ders düğmeleri (D1, D2, …). Öğretmen PDF'inde: Ana, Plan, Notlar, Çözümler ve ders düğmeleri.
-- Kapak, dersin akışını gösterir: konu başlıkları ve her birinin altında kiremit renkli "↳ Soru N" satırı; ikinci sütunda Kaydet, yazılı provası ve ödev.
-- Konu kartlarında sağ panelin üstü boş yazı alanıdır; ekranda paylaşılıp tablet kalemiyle (Notability) üzerine yazılır. Yazı alanı en az panelin yarısıdır.
-- "Yazılıda böyle sorulur" kutusu gri-lacivert zeminde (#e6e9f0 / #2e3a55), "Kitapta" atıfı yeşil (#0b6157), "Sık yapılan hata" ve "Yazılı tüyosu" sarı (#ffd166 kenarlı, #fffbea zemin).
-- Şekillerde boyalı bölgeler ekranda seçilecek kadar doygun pastel renklerde olur (ör. #bcd0f3, #f8c9b8, #bfe5dc, #ffe29a).
-- Ödev kartındaki boş satırlar kalemle yazılacak kadar geniş (en az 12 mm yüksekliğinde, altı çizgili).
-- Dosyalar: `DNAMATHOS_<sınıf>_Tema<N>_Ders<ilk>-<son>.pdf` (öğrenci, ekranda) ve `…_Ogretmen.pdf`.
-
-**Üretim hattı:** Python ile HTML, KaTeX, Playwright ile PDF; slayt sırası dersin akış listesinden üretilir ve her slaytın önceki ve sonraki düğmesi bu listeden hesaplanır (tüyolu kopya akışa girmez, yalnız "Tüyo →" ile açılır). İç bağlantılar pypdf ile denetlenir (her bağlantının hedefi ve her slayta ulaşılabilirlik); JS ile taşma denetimi, her slaytın ekran görüntüsü ve temas tablosu (`uretim-hatti.md`). Teslimden önce iki PDF de "Çıktı PDF'ini denetleme" adımlarından geçer (`references/ortak/guvence/pdf-ile-calisma.md`): sayfa sayısı akış listesine eşit, hatalı bağlantı 0, öğretmen PDF'inde her ders sorusunun çözümü var, birkaç sayfa PyMuPDF ile görüntülenip gözle bakıldı.
-
-**Haftalık paket slaytları:**
-- **Isınma turu:** kapak koyu zeminde "Isınalım" ve soru sayısı; her soru açık zeminde tek ekran, sol üstte biçim hapı (Hızlı hesap, Hatayı bul…), altta ilerleme noktaları; cevap ekranı ayrı slayt. Soru metni en az 30 pt.
-- **Slogan:** Kaydet kartının altında sarı vurgu çizgili tek satır; Lora italik.
-- **Kavrama testi:** kapak "Bu dersi kontrol edelim" ve dört sorunun türleri; her soru bir slayt: soru, "a) Cevap" ve "b) Nasıl karar verdin?" yazma alanları, sağ üstte "Eminim / Emin değilim" kutuları. Puan, düzey ve kod yazılmaz.
-- **Yazdırılabilir kâğıt:** A4 dikey, tek yaprak (ön ve arka), her ders yeni sayfa; `ornekler/6-sinif-ortak-kat` kâğıdı örnek düzendir.
+**Üretim:** `dna.py` ile gövde, `slayt_uret.py` ile PDF ve slayt görüntüleri (denetim çıktısı 0 sorun olmalı), `pdf_denetle.py --sira` ile sayfa ve bağlantı denetimi, temas tablosu ve gözle kontrol. Örnek: `ornekler/6-sinif-ortak-kat/ders_uret.py`.

@@ -16,8 +16,8 @@
   {
     "ad": "dnamathos-pdf-tasarimi",
     "yol": "markalar/dnamathos/dnamathos-pdf-tasarimi",
-    "aciklama": "DNAMATHOS markasının 16:9 ekran PDF tasarım dili ve üretim hattıdır; konu özeti slaytlarını, yazılı kâğıtlarını, cevap anahtarlarını ve çalışma PDF'lerini lacivert üst şerit, menü ve iki panelli slayt düzeniyle HTML, KaTeX ve Playwright üzerinden üretir; taşma, bağlantı ve sayfa denetimini betikle yapar. Bir Maarif skill'i (maarif-konu-ozeti, maarif-ortak-yazili, maarif-beceri-temelli-test, maarif-benzer-soru) DNAMATHOS çıktısı ürettiğinde ya da kullanıcı DNAMATHOS tasarımı, DNAMATHOS PDF'i, bu PDF'in düğmeleri, slayt düzeni veya taşma sorunu dediğinde kullan. İçeriğin pedagojisi için değil (o ilgili Maarif skill'indedir), Instagram görseli için değil (dnamathos-instagram-karusel), Word ya da PowerPoint dosyası için değil (docx, pptx).",
-    "surum": "1.0.0",
+    "aciklama": "DNAMATHOS markasının 16:9 ekran PDF tasarım dili ve üretim hattıdır; konu özeti slaytlarını, yazılı kâğıtlarını, cevap anahtarlarını ve çalışma PDF'lerini safran ve lacivert renk blokları, DNA sarmalı imzası, Fraunces, Atkinson Hyperlegible Next, Caveat ve IBM Plex Mono yazı tipleriyle HTML, KaTeX ve Playwright üzerinden üretir; taşma, bağlantı ve sayfa denetimini betikle yapar. Bir Maarif skill'i (maarif-konu-ozeti, maarif-ortak-yazili, maarif-beceri-temelli-test, maarif-benzer-soru) DNAMATHOS çıktısı ürettiğinde ya da kullanıcı DNAMATHOS tasarımı, DNAMATHOS PDF'i, bu PDF'in düğmeleri, slayt düzeni veya taşma sorunu dediğinde kullan. İçeriğin pedagojisi için değil (o ilgili Maarif skill'indedir), Instagram görseli için değil (dnamathos-instagram-karusel), Word ya da PowerPoint dosyası için değil (docx, pptx).",
+    "surum": "2.0.0",
     "dersler": "",
     "onceki_ad": "maarif-matematik-icerik 7. bölüm ve maarif-konu-ozeti 8. bölüm",
     "lisans": "karar bekliyor",
@@ -25,7 +25,7 @@
       "dnamathos",
       "maarif-tam"
     ],
-    "sozcuk": 341
+    "sozcuk": 332
   },
   {
     "ad": "maarif-anlama-kontrolu",
@@ -217,7 +217,7 @@
       "maarif-icerik-uretimi",
       "maarif-tam"
     ],
-    "sozcuk": 1057
+    "sozcuk": 1065
   },
   {
     "ad": "maarif-ortak-yazili",

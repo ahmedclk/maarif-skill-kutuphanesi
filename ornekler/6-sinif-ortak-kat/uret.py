@@ -7,6 +7,9 @@ hesaplanır ve assert ile denetlenir.
 """
 import html, math, os
 from playwright.sync_api import sync_playwright
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "markalar", "dnamathos", "dnamathos-pdf-tasarimi", "scripts"))
+from slayt_uret import font_css
 
 KL = os.path.dirname(os.path.abspath(__file__))
 E = html.escape
@@ -70,26 +73,26 @@ def sayi_dogrusu():
     return "".join(s)
 
 
-CSS_A4 = """
+CSS_A4 = font_css() + """
 @page{size:A4;margin:16mm 16mm 14mm}
-*{box-sizing:border-box}body{font:11pt/1.45 Inter,sans-serif;color:#14213d;margin:0}
-h1{font:700 20pt Lora,serif;margin:0}
+*{box-sizing:border-box}body{font:11pt/1.45 Govde,sans-serif;color:#14213d;margin:0}
+h1{font:800 20pt Fraunces,serif;margin:0}
 .ust{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5pt solid #14213d;padding-bottom:6pt;margin-bottom:8pt}
 .ust small{color:#4a5570;font-size:9pt;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
 .ad{display:flex;gap:24pt;margin:6pt 0 10pt;font-size:10.5pt}.ad span{flex:1;border-bottom:1pt solid #9aa3b5;padding-bottom:2pt}
-.yon{background:#f2f4f7;border-left:3pt solid #ffd166;padding:6pt 9pt;font-size:10pt;margin-bottom:10pt}
+.yon{background:#f2f4f7;border-left:3pt solid #fca311;padding:6pt 9pt;font-size:10pt;margin-bottom:10pt}
 .soru{break-inside:avoid;border:1pt solid #d9dde6;border-radius:6pt;padding:8pt 11pt;margin-bottom:7pt;position:relative}
-.soru h2{font:700 11.5pt Inter;margin:0 0 4pt;padding-right:118pt}
+.soru h2{font:700 11.5pt Govde;margin:0 0 4pt;padding-right:118pt}
 .guven{position:absolute;right:10pt;top:9pt;font-size:9pt;color:#4a5570;display:flex;gap:8pt}
 .guven span::before{content:"";display:inline-block;width:9pt;height:9pt;border:1pt solid #4a5570;border-radius:2pt;margin-right:3pt;vertical-align:-1pt}
 .alan{margin-top:6pt;font-size:10pt;font-weight:600}
 .satir{border-bottom:1pt dotted #9aa3b5;height:16pt}
 svg{width:100%;height:auto;margin-top:2pt}
-.dna{margin-top:8pt;font:800 8pt Inter;letter-spacing:.18em;color:#4a5570}
+.dna{margin-top:8pt;font:800 8pt 'IBM Plex Mono';letter-spacing:.18em;color:#4a5570}
 table{border-collapse:collapse;width:100%;font-size:9.5pt;margin:4pt 0 8pt}th,td{border:1pt solid #d9dde6;padding:4pt 6pt;text-align:left;vertical-align:top}th{background:#f2f4f7}
-.k{break-inside:avoid;margin-bottom:10pt}.k h2{font:700 12pt Lora,serif;margin:0 0 3pt}.etk{font-size:9pt;color:#4a5570}
+.k{break-inside:avoid;margin-bottom:10pt}.k h2{font:700 12pt Fraunces,serif;margin:0 0 3pt}.etk{font-size:9pt;color:#4a5570}
 ul{margin:2pt 0 4pt;padding-left:14pt}
-h3{font:700 10pt Inter;margin:6pt 0 2pt;text-transform:uppercase;letter-spacing:.08em;color:#4a5570}
+h3{font:600 9pt 'IBM Plex Mono';margin:6pt 0 2pt;text-transform:uppercase;letter-spacing:.08em;color:#4a5570}
 """
 
 
@@ -160,20 +163,20 @@ REDDEDILEN = [("“Ortak kat büyükten büyük, ortak bölen küçükten küç�
               ("“Çarp, ortak katı bul.”", "Çarpım ortak kattır ama ilk ortak kat değildir (6 · 8 = 48, oysa 24 de ortak kat); öğrenciyi tek cevaba iter.")]
 assert ortak_kat(4, 8, 8) == [8] and 24 < 48
 
-CSS_K = """
-@page{size:297mm 167mm;margin:0}*{box-sizing:border-box}body{margin:0;font-family:Inter,sans-serif}
+CSS_K = font_css() + """
+@page{size:297mm 167mm;margin:0}*{box-sizing:border-box}body{margin:0;font-family:Govde,sans-serif}
 .k{width:297mm;height:167mm;padding:16mm 20mm;position:relative;break-after:page;background:#f2f4f7;color:#14213d;display:flex;flex-direction:column;justify-content:center}
 .k.koyu{background:#14213d;color:#fff}
-.etk{position:absolute;left:20mm;top:12mm;font:700 12pt Inter;letter-spacing:.08em;background:#d9dde6;color:#14213d;padding:2mm 4mm;border-radius:20mm}
-.koyu .etk{background:rgba(255,255,255,.12);color:#ffd166}
-.no{position:absolute;right:20mm;top:13mm;font:600 12pt Inter;color:#4a5570}.koyu .no{color:#b9c2d6}
-.dots{position:absolute;left:20mm;bottom:12mm;display:flex;gap:2.5mm}.dots i{width:3.2mm;height:3.2mm;border-radius:50%;background:#d9dde6}.dots i.on{background:#ffd166}
-.dna{position:absolute;right:20mm;bottom:11mm;font:800 9pt Inter;letter-spacing:.18em;color:#4a5570}
-h1{font:700 44pt/1.1 Lora,serif;margin:0}h1 em{color:#ffd166}
-.soru{font:600 34pt/1.25 Inter;max-width:240mm}
-.cevap{font:700 38pt/1.2 Lora,serif}.acik{font-size:20pt;color:#4a5570;margin-top:5mm}
+.etk{position:absolute;left:20mm;top:12mm;font:700 12pt 'IBM Plex Mono';letter-spacing:.08em;background:#d9dde6;color:#14213d;padding:2mm 4mm;border-radius:20mm}
+.koyu .etk{background:rgba(255,255,255,.12);color:#fca311}
+.no{position:absolute;right:20mm;top:13mm;font:600 12pt 'IBM Plex Mono';color:#4a5570}.koyu .no{color:#b9c2d6}
+.dots{position:absolute;left:20mm;bottom:12mm;display:flex;gap:2.5mm}.dots i{width:3.2mm;height:3.2mm;border-radius:50%;background:#d9dde6}.dots i.on{background:#fca311}
+.dna{position:absolute;right:20mm;bottom:11mm;font:800 9pt 'IBM Plex Mono';letter-spacing:.18em;color:#4a5570}
+h1{font:700 44pt/1.1 Fraunces,serif;margin:0}h1 em{color:#fca311}
+.soru{font:800 32pt/1.2 Fraunces;max-width:240mm}
+.cevap{font:700 38pt/1.2 Fraunces,serif}.acik{font-size:20pt;color:#4a5570;margin-top:5mm}
 .koyu .acik{color:#d5dbe8}
-.slogan{font:700 48pt/1.1 Lora,serif;color:#ffd166}.neden{font-size:20pt;margin-top:8mm;color:#d5dbe8;max-width:230mm}
+.slogan{font:700 48pt/1.1 Fraunces,serif;color:#fca311}.neden{font-size:20pt;margin-top:8mm;color:#d5dbe8;max-width:230mm}
 """
 
 

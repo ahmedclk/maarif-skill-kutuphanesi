@@ -1,8 +1,8 @@
-# DNAMATHOS üretim hattı
+# DNAMATHOS üretim hattı (2.0)
 
-- Python ile HTML üret, KaTeX auto-render (yerel node_modules/katex), Playwright Chromium ile `page.pdf(width="297mm", height="167mm", print_background=True, prefer_css_page_size=True)`.
-- İç bağlantılar `href="#id"`; dosyalar arası bağlantılar `https://dnamathos.invalid/goto/<dosya>` ile yazılıp pypdf ile `/GoToR` (`/F dosya`, `/D [0 /Fit]`) yapılır. Her bağlantının hedefini ve her slayta ulaşılabildiğini denetle. Dosyalar arası butonlar için PDF'lerin aynı klasörde olması gerekir; bunu kullanıcıya söyle.
-- JS ile taşma denetimi: son öğenin alt sınırı kabın alt sınırını geçmesin; `.katex` içini sınır denetiminden çıkar; yatay taşmayı ayrıca denetle. Şekil yüksekliği en az 34 mm; sığmıyorsa metni kısalt.
-- Matematikte `<` yerine `\lt` yaz. `.fbox` adlı CSS sınıfı kullanma (KaTeX `\boxed` ile çakışır). `.katex{white-space:nowrap}` ile formül bölünmesini engelle. Kesirli çok satırlı ifadeler `\begin{aligned}…\\[5pt]…\end{aligned}` ile; kesirsiz uzun eşitlikleri ayrı `$…$` satırlarına böl.
-- Her slaytın ekran görüntüsünü al, temas tablosu (contact sheet) yap ve gözle kontrol et.
-- Sınavlar ve cevap anahtarları ayrı PDF'ler olarak teslim edilir.
+1. **Gövde:** `scripts/dna.py` fonksiyonlarıyla slaytları kur (her slayt `<section class="s …" id="…">`). Sayılar ve cevaplar içerik betiğinde kodla hesaplanıp assert ile denetlenir.
+2. **PDF:** `python3 scripts/slayt_uret.py govde.html cikti.pdf --katex <katex/dist> --goruntu <klasör> --baslik "<başlık>"`. Betik yazı tiplerini `assets/fontlar/` klasöründen yükler, KaTeX'i işler, `assets/tasma-denetimi.js` ile denetler (slayt dışına taşma, gövde < 17 px, etiket < 11 px, soru metninin çözüm alanına binmesi, çözüm alanı < 150 px), 297 × 167 mm PDF ve slayt görüntüleri üretir. Sorun varsa 1 ile çıkar.
+3. **Bağlantı ve sayfa:** `python3 scripts/pdf_denetle.py cikti.pdf --sayfa <N> --sira cikti_sira.json --baslik "<başlık>"` (önceki/sonraki düğmeli eski düzende `--gezinme` de ver). Dosyalar arası bağlantılar `https://dnamathos.invalid/goto/<dosya>` ile yazılıp pypdf ile `/GoToR` yapılır; PDF'ler aynı klasörde durmalıdır.
+4. **Gözle kontrol:** slayt görüntülerinden temas tablosu; kapak, bir konu kartı, bir soru ve bir kavrama testi slaytı tam boyutta görüntülenir.
+
+KaTeX notları: matematikte `<` yerine `\lt`; `.katex{white-space:nowrap}`; kesirli çok satırlı ifadeler `aligned` ile; `.fbox` adlı sınıf kullanılmaz.

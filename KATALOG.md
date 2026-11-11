@@ -5,7 +5,7 @@ Bu dosya `araclar/katalog.py` ile üretilir; elle düzenlenmez.
 | Skill | Ne yapar (kısaca) | Paketler | Lisans | Sözcük |
 | --- | --- | --- | --- | --- |
 | `dnamathos-instagram-karusel` | DNAMATHOS Instagram sayfası için Maarif Modeli çıktısına bağlı matematik içeriği üretir | dnamathos, maarif-tam | karar bekliyor | 493 |
-| `dnamathos-pdf-tasarimi` | DNAMATHOS markasının 16:9 ekran PDF tasarım dili ve üretim hattıdır | dnamathos, maarif-tam | karar bekliyor | 341 |
+| `dnamathos-pdf-tasarimi` | DNAMATHOS markasının 16:9 ekran PDF tasarım dili ve üretim hattıdır | dnamathos, maarif-tam | karar bekliyor | 332 |
 | `maarif-anlama-kontrolu` | Bir öğrenme çıktısının tek bir süreç bileşeni için 1–3 maddelik anlama kontrolü ya da çıkış kartı hazırlar | maarif-ogretmen-temel, maarif-olcme-degerlendirme, maarif-tam | Apache-2.0 (uyarlama) | 785 |
 | `maarif-anlatim-videosu` | Bir öğrenme çıktısına bağlı konu ya da soru için Remotion ile kısa anlatım videosu hazırlar | maarif-icerik-uretimi, maarif-tam | Apache-2.0 (uyarlama) | 321 |
 | `maarif-beceri-temelli-test` | Maarif Modeli çıktılarına bağlı, LGS ve beceri temelli sınav tarzında çoktan seçmeli test hazırlar | dnamathos, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 528 |
@@ -18,7 +18,7 @@ Bu dosya `araclar/katalog.py` ile üretilir; elle düzenlenmez.
 | `maarif-hata-analizi` | Bir öğrencinin ya da sınıfın yanlış yaptığı soruları, deneme veya yazılı sonucunu, ödevini ya da çözüm kâğıdı fotoğrafını inceleyip hataları türlerine ve Maarif çıktı ile süreç bileşenine göre sınıflandırır | maarif-olcme-degerlendirme, maarif-tam | Apache-2.0 (uyarlama) | 713 |
 | `maarif-hizli-tekrar` | Ders başında 5 dakikalık hızlı soru-cevap turu ve haftanın akılda kalıcı sloganını hazırlar | dnamathos, maarif-ogretmen-temel, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 582 |
 | `maarif-kavrama-testi` | Haftalık konu bittikten sonra öğrencinin konuyu kavrayıp kavramadığını en az soruyla ölçen 4–5 soruluk, 10–15 dakikalık, notsuz kavrama testi hazırlar | dnamathos, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 744 |
-| `maarif-konu-ozeti` | MEB ders kitabına ve TYMM programına dayanan, haftalık ders için kısa konu anlatımı özet slaytları hazırlar | dnamathos, maarif-icerik-uretimi, maarif-tam | karar bekliyor | 1057 |
+| `maarif-konu-ozeti` | MEB ders kitabına ve TYMM programına dayanan, haftalık ders için kısa konu anlatımı özet slaytları hazırlar | dnamathos, maarif-icerik-uretimi, maarif-tam | karar bekliyor | 1065 |
 | `maarif-ortak-yazili` | MEB ortak yazılı (ortak sınav) senaryosuna birebir uyan, açık uçlu yazılı sınav kâğıtları ve cevap anahtarları hazırlar | dnamathos, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 839 |
 | `maarif-performans-gorevi` | Maarif Modeli çıktılarına bağlı performans görevi ya da proje görevi hazırlar | maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 532 |
 
@@ -32,9 +32,9 @@ Yol: `markalar/dnamathos/dnamathos-instagram-karusel` · Sürüm: 2.0.0
 
 ### dnamathos-pdf-tasarimi
 
-DNAMATHOS markasının 16:9 ekran PDF tasarım dili ve üretim hattıdır; konu özeti slaytlarını, yazılı kâğıtlarını, cevap anahtarlarını ve çalışma PDF'lerini lacivert üst şerit, menü ve iki panelli slayt düzeniyle HTML, KaTeX ve Playwright üzerinden üretir; taşma, bağlantı ve sayfa denetimini betikle yapar. Bir Maarif skill'i (maarif-konu-ozeti, maarif-ortak-yazili, maarif-beceri-temelli-test, maarif-benzer-soru) DNAMATHOS çıktısı ürettiğinde ya da kullanıcı DNAMATHOS tasarımı, DNAMATHOS PDF'i, bu PDF'in düğmeleri, slayt düzeni veya taşma sorunu dediğinde kullan. İçeriğin pedagojisi için değil (o ilgili Maarif skill'indedir), Instagram görseli için değil (dnamathos-instagram-karusel), Word ya da PowerPoint dosyası için değil (docx, pptx).
+DNAMATHOS markasının 16:9 ekran PDF tasarım dili ve üretim hattıdır; konu özeti slaytlarını, yazılı kâğıtlarını, cevap anahtarlarını ve çalışma PDF'lerini safran ve lacivert renk blokları, DNA sarmalı imzası, Fraunces, Atkinson Hyperlegible Next, Caveat ve IBM Plex Mono yazı tipleriyle HTML, KaTeX ve Playwright üzerinden üretir; taşma, bağlantı ve sayfa denetimini betikle yapar. Bir Maarif skill'i (maarif-konu-ozeti, maarif-ortak-yazili, maarif-beceri-temelli-test, maarif-benzer-soru) DNAMATHOS çıktısı ürettiğinde ya da kullanıcı DNAMATHOS tasarımı, DNAMATHOS PDF'i, bu PDF'in düğmeleri, slayt düzeni veya taşma sorunu dediğinde kullan. İçeriğin pedagojisi için değil (o ilgili Maarif skill'indedir), Instagram görseli için değil (dnamathos-instagram-karusel), Word ya da PowerPoint dosyası için değil (docx, pptx).
 
-Yol: `markalar/dnamathos/dnamathos-pdf-tasarimi` · Sürüm: 1.0.0 · Önceki ad: maarif-matematik-icerik 7. bölüm ve maarif-konu-ozeti 8. bölüm
+Yol: `markalar/dnamathos/dnamathos-pdf-tasarimi` · Sürüm: 2.0.0 · Önceki ad: maarif-matematik-icerik 7. bölüm ve maarif-konu-ozeti 8. bölüm
 
 ### maarif-anlama-kontrolu
 

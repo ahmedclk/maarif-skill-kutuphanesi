@@ -1,18 +1,79 @@
-# DNAMATHOS tasarım dili (16:9 PDF)
+# DNAMATHOS tasarım dili 2.0 (16:9 ekran PDF'i)
 
-- **Sayfa:** 297 × 167 mm (16:9 yatay), kenar boşluğu 0, iç boşluklar 7 mm, beyaz zemin. Her slayt tek sayfa; taşma, kesilme, kayma yok. Marka yalnızca sağ üstte "DNAMATHOS".
-- **Renkler:** lacivert #14213d (metin, üst şerit), ikincil #4a5570, çizgi #d9dee8, açık zemin #f4f6fa, sarı #ffd166. Etiket çiftleri (yazı / zemin): kiremit #b3401a / #fdece6, mavi #1f4fb5 / #e8effc, hardal #7a4f00 / #fff1cf, mor #6b2f91 / #f2e9f9, yeşil #0b6157 / #e1f3f0, pembe #8a1c4f / #fbe7f0, gri-lacivert #2e3a55 / #e6e9f0. Her çıktının rengi sınav boyunca aynı kalır.
-- **Yazı:** Inter (yedek DejaVu Sans); soru metni 14 pt → 13 pt → 11,5 pt otomatik küçülme, satır aralığı 1,5. Başlıklar Lora 700, 24 pt; ikinci kısım italik ve kiremit. Formüller KaTeX ile; ℕ ℤ ℚ ℝ için DejaVu Sans.
-- **Üst şerit (her slayt):** 12 mm lacivert; solda "TEST ADI · N. SINIF MATEMATİK" (Inter 800, 9,5 pt, sınıf kısmı sarı); "Ana" ve "Menü" hap butonları; 7,4 mm yuvarlak soru butonları, bulunulan soru sarı; en sağda gri DNAMATHOS.
-- **Soru slaytı:** Sol panel 126 mm: 30 pt numara ("01"), renkli hap etiket (çıktının renginde; içinde ölçülen bileşen harfleri ve programdaki kısa adı), gri "MAT.x.x.x · bileşen harfleri · beceri kodu · Soru başlığı", üç noktalı zorluk ve lacivert puan hapı, soru metni (a), b), c) ya da 1.1, 1.2 ve I., II., III. her biri ayrı satırda; alt madde sonunda gri bileşen etiketi), kalan boşluğa sığan şekil (en az 34 mm yükseklik), altta "← Önceki soru" / "Sonraki soru →" (sonda "Değerlendirme →"). Sağ panel: 4 mm yuvarlatılmış kutu, 5 mm noktalı zemin, "ÇÖZÜM ALANI", kesikli "VERİLENLER" ve "İSTENEN" kutuları.
-- **Diğer slaytlar:** Ana sayfa (başlık, açıklama, kartlar); 2 sayfalık konu özeti (iki sütunlu kartlar: 3 pt kiremit üst şerit, numaralı rozet, kiremit kenarlı formül kutusu, tablo, liste, sol kenarı yeşil "Örnek." kutusu; "Özet 2/2 →", "Sorulara geç →"; cevapları vermez; sığmazsa 3. sayfa); soru menüsü karoları; değerlendirme ("PUANIM __ / 100", "80+ Sonraki teste geç", "80 altı Konu özetine dön", soru–çıktı–bileşen–beceri tablosu).
-- Sınav PDF'inde cevap ya da ipucu sayfası yoktur. Cevap anahtarı ayrı PDF: aynı ana sayfa ve menü, sol panelde soru, sağ panelde çözüm, puan hapları, sarı "Sık yapılan hata" kutusu, gri-lacivert puanlama ölçütü kutusu, sonda puanlama anahtarı ve kapsama tablosu.
-- **Şekiller:** matplotlib 300 dpi, açık gri ızgara, lacivert eksen, belirgin ok; renkler #c0392b, #1f6fb5, #0b7a5c, #d9822b, #6b2f91. Dolu nokta ● dâhil, boş nokta ○ hariç. Etiketler baskıda okunur büyüklükte (14–15 pt); dar ve uzun şekli yatay yerleşime çevir; şeklin cevabı vermemesine dikkat et.
-- **Soru görselleri (`references/ortak/dersler/matematik/soru-gorseli.md`):**
-  - Bölgeler pastel dolgulu (#fdece6, #e8effc, #e1f3f0, #f2e9f9, #fff1cf), kenarlar lacivert #14213d ve 1,5–2 pt; bölge adları kalın (I, II, A, B).
-  - Değerler beyaz zeminli, ince lacivert kenarlı, köşeleri yuvarlatılmış etiket kutularında; kenarın ortasına, şeklin dışına yerleşir. Ölçü çizgileri iki ucu dik çentikli ince çizgidir.
-  - Aralık çizelgesinde her küme ayrı satır ve ayrı renk; satır adı solda; uç değerler eksenin altında; altta "● dâhil ○ hariç" açıklaması.
-  - Ekran ve gösterge görselinde değer iri ve birimi açık (%, km/sa, °C, dk); cihaz sade çizilir, süs öğesi en fazla iki tanedir; birden çok an gösteriliyorsa her ekranın altında zaman etiketi bulunur.
-  - İşlem tablosu, veri tablosu ve iki yönlü tablo görüntü değil HTML tablo olarak yazılır; başlık satırı ve sütunu çıktının açık renginde ve kalın.
-  - Alan modelinde parçalar ölçeğe sadık, her parçanın alanı yazılmaz (cevabı vermesin); yalnızca kenar ölçüleri verilir.
-- **Tablolar:** tam genişlik, ince #c3cad8 kenar; başlık satırı ve ilk sütun açık gri ve kalın.
+Üç ilke: **önce okunabilirlik**, **karakter**, **marka çağrışımı**. Dil üç kaynaktan birleşti: içerik sayfalarının sadeliği (Sarmal), yazı tipi rolleri ve el yazısı yönlendirmeleri (Defter), lacivert ve safran renk blokları (Afiş). Uygulama: `assets/dnamathos.css`, bileşenler: `scripts/dna.py`, yazı tipleri: `assets/fontlar/` (SIL Açık Font Lisansı; lisans metinleri aynı klasörde).
+
+## 1. Sayfa
+
+297 × 167 mm (1123 × 632 px). Her slayt tek sayfa; taşma, kesilme, kayma yok. İçerik slaytlarında 52 px lacivert üst şerit; içerik iç boşluğu 26 px üst, 46 px yan.
+
+## 2. Renk
+
+| Ad | Değer | Kullanım |
+| --- | --- | --- |
+| Lacivert | #14213d | Ana metin, üst şerit, koyu bloklar |
+| Safran | #fca311 | Kapak üst bloğu, konu paneli, Kaydet kartı, vurgu, tüyo notu, etkin düğme |
+| Krem | #fdf6e8 | İçerik slaytlarının zemini |
+| Hardal | #8a4f00 | Açık zeminde turuncu tonlu etiket yazısı |
+| İkincil | #4a5570 | Açıklama ve küçük yazılar |
+| Mürekkep | #1f4fa0 | Açık zeminde el yazısı notlar |
+| Doğru / yanlış | #0b6157 on #e1f3f0 · #b3401a on #fdece6 | Yalnız işaretle (✓ ✗) birlikte |
+
+**Karşıtlık kuralları (ölçüldü):** lacivert yazı krem zeminde 14,9:1, beyaz zeminde 16:1; safran yazı lacivert zeminde ve lacivert yazı safran zeminde 7,9:1; hardal krem zeminde 6,1:1. **Safran, açık zeminde yazı rengi olmaz** (beyazda 2:1); açık zeminde yalnız dolgu, vurgu ve çizgidir.
+
+**Dağılım:** Bir derste koyu (lacivert) ve sıcak (safran) bloklar bir ritim kurar: kapak ikisi birden; ısınma ve kavrama testi kapağı lacivert; konu kartı solda safran panel; Kaydet kartı safran; soru, cevap ve ödev slaytları krem. Aynı renkte iki tam blok art arda en fazla üç kez gelir.
+
+## 3. Yazı tipi rolleri
+
+| Rol | Yazı tipi | Nerede |
+| --- | --- | --- |
+| Başlık | Fraunces 800 (italik 600/800) | Slayt başlıkları, ısınma soruları, Kaydet maddeleri, kapak; marka "DNA*mathos*" |
+| Gövde | Atkinson Hyperlegible Next 400/700 | Soru metni, açıklama, kural cümlesi |
+| Rakam | Inter 400/700 (gövde ailesine gömülü) | Gövdedeki bütün rakamlar; Atkinson'ın çizgili sıfırı saat ve ondalıkta yadırganır |
+| El yazısı | Caveat 600/700 | Öğretmen notları ("kat mı, bölen mi?"), slogan, tüyo; **yalnız kısa notlarda**, gövde metninde asla |
+| Etiket | IBM Plex Mono 500/600 | Haplar, çıktı kodu, bileşen ve güçlük çipleri, "ÖNCE SEN", "ÇÖZÜM" |
+| Formül | KaTeX | Matematik ifadeleri; ℕ ℤ ℚ ℝ için DejaVu Sans |
+
+**Boyutlar:** gövde en az 17 px (soru metni 21–22 px), başlık 30–58 px, ısınma sorusu 48 px, etiket en az 11 px. `tasma-denetimi.js` bu alt sınırları denetler.
+
+## 4. Marka imzaları
+
+- **DNA sarmalı:** kapakta büyük figür; üst şeritte ilerleme göstergesi (basamaklar ders ilerledikçe safrana boyanır).
+- **Marka yazısı:** "DNA" Fraunces 800, "mathos" Fraunces italik 600 safran.
+- **Fosforlu kalem vurgusu:** anahtar sözcüğün alt yarısında safran şerit; slaytta en fazla bir kez.
+- **Çerçeveli haplar:** konu, soru, biçim ve çıktı etiketleri; yön bildiren haplarda ince ok.
+- **El yazısı not:** slayt başına en fazla bir; hafifçe eğik.
+
+## 5. Bileşenler (`scripts/dna.py`)
+
+| Fonksiyon | Slayt |
+| --- | --- |
+| `kapak` | Üstte safran blok (başlığın ilk kısmı), altta lacivert blok (ikinci kısmı, italik safran), ortada "DERS 08" rozeti, sağ altta sarmal |
+| `serit` | Üst şerit: marka, konum, bölüm düğmeleri (Isınma · Konu · Test · Ödev), sarmal ilerleme ve sayfa |
+| `tur_kapak`, `tur_soru`, `tur_cevap` | Isınma turu: lacivert soru ekranı ("20 sn" filigranı, biçim hapı, ilerleme noktaları), krem cevap ekranı |
+| `konu` | Solda safran panel (Konu hapı, başlık, "Önce sen"), sağda kural, şekil, "Sık yapılan hata", "Yazılıda böyle sorulur", "Kitapta", yazı alanı ya da slogan |
+| `soru` | Soru başlığı, metin ve maddeler üstte; **çözüm alanı sorunun hemen altında** (noktalı zemin, ayrı kutu yok); **tüyo aynı sayfada** sağ alt köşede safran yapışkan not |
+| `kaydet` | Safran zeminde 2–4 kural ve el yazısıyla slogan |
+| `kavrama_kapak`, `kavrama` | Kavrama testi: soru, "a) Cevap" ve "b) Nasıl karar verdin?" yazma çizgileri, "Eminim / Emin değilim" kutuları |
+| `odev` | Kavrama testine bağlı ödev cümlesi ve isteğe bağlı ek çalışma tablosu |
+| `sayi_dogrusu`, `tablo` | Şekil ve tablo yardımcıları |
+
+## 6. Soru ve tüyo kuralları
+
+- Çözüm alanı ayrı bir panel ya da kutu değildir; soru metninin bittiği yerden sayfanın altına kadar uzanan noktalı zemindir. `coz_ust` değeri metnin bitişine göre ayarlanır; alan en az 150 px yüksekliktedir (denetlenir).
+- Tüyo başka sayfaya gitmez; aynı slaytta, sorunun okuma yolunun dışında (sağ alt) durur ve "TAKILIRSAN · TÜYO" başlığını taşır. Her zaman görünürdür; PDF katmanlarıyla gizleme Acrobat dışında güvenilir çalışmadığı için kullanılmaz. Öğretmen tüyonun görünmesini istemiyorsa tüyo yalnız öğretmen dosyasına yazılır.
+- Tüyo cevabı, sonucu ya da ilk adımı vermez (konu özeti kuralı).
+
+## 7. Şekil ve tablo
+
+- Şekiller SVG; çizgi lacivert #14213d, vurgu safran #fca311, metin IBM Plex Mono ya da gövde yazısı en az 13 px. Ek renk gerekiyorsa: #1f6fb5, #0b7a5c, #b3401a, #6b2f91 (pastel dolgular: #e8effc, #e1f3f0, #fdece6, #f2e9f9).
+- **Öğrenci slaytında şekil cevabı vermez:** işaretlenecek sayı doğrusu boş gelir; ortak noktalar çevrelenmez (`cevrele` yalnız cevap ya da öğretmen slaytında).
+- Tablolar HTML (`tablo`): ince kenar, başlık satırı açık safran (#fff3d6) ve kalın.
+- Soru görseli ölçütü: `references/ortak/dersler/matematik/soru-gorseli.md`.
+
+## 8. Yazdırılabilir kâğıtlar (A4)
+
+Kavrama testi kâğıdı ve yazılı kâğıtları A4 dikeydir; aynı renk ve yazı tipi rolleri kullanılır: başlık Fraunces, gövde Atkinson (rakamlar Inter), etiketler IBM Plex Mono; zemin beyaz, vurgu safran. Örnek: `ornekler/6-sinif-ortak-kat`.
+
+## 9. Eski tasarım
+
+1.x tasarımının stil dosyası ve denetimi `assets/eski/` klasöründedir; yalnız eski setleri yeniden üretmek için kullanılır.

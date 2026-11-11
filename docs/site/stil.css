@@ -1,19 +1,19 @@
 /* Düzen: lacivert kahraman bandı ve onu izleyen açık-beyaz ardışık bantlar; içerik 72rem'lik tek sütunda, kartlar ızgarada. */
 :root {
   --zemin: #f4f6fa; --yuzey: #ffffff; --metin: #14213d; --ikincil: #4a5570; --cizgi: #d9dde6;
-  --vurgu: #ffd166; --vurgu-metin: #14213d; --lacivert: #14213d; --lacivert-metin: #ffffff; --lacivert-ikincil: #b9c2d6;
+  --vurgu: #fca311; --vurgu-metin: #14213d; --lacivert: #14213d; --lacivert-metin: #ffffff; --lacivert-ikincil: #b9c2d6;
   --kod-zemin: #eef1f7; --odak: #1f5fbf; --golge: 0 1px 2px rgb(20 33 61 / .06), 0 6px 18px rgb(20 33 61 / .06);
-  --yazi: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --baslik: "Lora", Georgia, "Times New Roman", serif;
-  --es: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --yazi: "Atkinson Hyperlegible Next", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --baslik: "Fraunces", Georgia, "Times New Roman", serif;
+  --es: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --zemin: #0d1424; --yuzey: #141d33; --metin: #e7eaf2; --ikincil: #a4adc2; --cizgi: #27324d;
-  --vurgu: #ffd166; --vurgu-metin: #14213d; --lacivert: #0a1020; --lacivert-metin: #f3f5fa; --lacivert-ikincil: #a9b3c9;
+  --vurgu: #fca311; --vurgu-metin: #14213d; --lacivert: #0a1020; --lacivert-metin: #f3f5fa; --lacivert-ikincil: #a9b3c9;
   --kod-zemin: #1b2541; --odak: #8fb4ff; --golge: 0 1px 2px rgb(0 0 0 / .3); color-scheme: dark; } }
 :root[data-theme="dark"] {
   --zemin: #0d1424; --yuzey: #141d33; --metin: #e7eaf2; --ikincil: #a4adc2; --cizgi: #27324d;
-  --vurgu: #ffd166; --vurgu-metin: #14213d; --lacivert: #0a1020; --lacivert-metin: #f3f5fa; --lacivert-ikincil: #a9b3c9;
+  --vurgu: #fca311; --vurgu-metin: #14213d; --lacivert: #0a1020; --lacivert-metin: #f3f5fa; --lacivert-ikincil: #a9b3c9;
   --kod-zemin: #1b2541; --odak: #8fb4ff; --golge: 0 1px 2px rgb(0 0 0 / .3); color-scheme: dark; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }

@@ -14,7 +14,7 @@
 | Harekete çağrı | Tek ve somut |
 | Okunurluk | Gövde yazısı ≥ 40 px, başlık ≥ 72 px; kontrast yeterli |
 | Güvenli alan | Kapakta önemli öğeler ortadaki 3:4 alanda; kenarlardan ≥ 60 px, üst ve alttan ≥ 100 px içeride |
-| Sınıf paleti | Zemin ve çizgi renkleri yalnızca sınıfın paletinden; vurgu yalnızca sarı |
+| Sınıf paleti | Zemin ve çizgi renkleri yalnızca sınıfın paletinden; vurgu yalnızca safran #fca311; koyu zeminde safran yalnız büyük yazıda |
 | Satır | Kapak, satırdaki öteki iki kapakla aynı kapak ızgarasını, ton ritmini ve kaydırma işaretini izliyor; üç başlıkta ortak anahtar sözcük var; sınıf rakamı güvenli alanda ve başlığa binmiyor (`profil-izgarasi.md`) |
 | Rehberlik zemini | Doğa fotoğrafı telifsiz ya da künyesi yazılmış; sınıf paletine boyanmış ve yumuşatılmış; renk katmanı kurala uygun; metin okunaklı (`profil-izgarasi.md`) |
 | Dil | Yazım ve noktalama kusursuz |

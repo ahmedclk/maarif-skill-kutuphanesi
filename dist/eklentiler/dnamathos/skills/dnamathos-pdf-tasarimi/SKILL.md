@@ -1,10 +1,10 @@
 ---
 name: dnamathos-pdf-tasarimi
-description: DNAMATHOS markasının 16:9 ekran PDF tasarım dili ve üretim hattıdır; konu özeti slaytlarını, yazılı kâğıtlarını, cevap anahtarlarını ve çalışma PDF'lerini lacivert üst şerit, menü ve iki panelli slayt düzeniyle HTML, KaTeX ve Playwright üzerinden üretir; taşma, bağlantı ve sayfa denetimini betikle yapar. Bir Maarif skill'i (maarif-konu-ozeti, maarif-ortak-yazili, maarif-beceri-temelli-test, maarif-benzer-soru) DNAMATHOS çıktısı ürettiğinde ya da kullanıcı DNAMATHOS tasarımı, DNAMATHOS PDF'i, bu PDF'in düğmeleri, slayt düzeni veya taşma sorunu dediğinde kullan. İçeriğin pedagojisi için değil (o ilgili Maarif skill'indedir), Instagram görseli için değil (dnamathos-instagram-karusel), Word ya da PowerPoint dosyası için değil (docx, pptx).
+description: DNAMATHOS markasının 16:9 ekran PDF tasarım dili ve üretim hattıdır; konu özeti slaytlarını, yazılı kâğıtlarını, cevap anahtarlarını ve çalışma PDF'lerini safran ve lacivert renk blokları, DNA sarmalı imzası, Fraunces, Atkinson Hyperlegible Next, Caveat ve IBM Plex Mono yazı tipleriyle HTML, KaTeX ve Playwright üzerinden üretir; taşma, bağlantı ve sayfa denetimini betikle yapar. Bir Maarif skill'i (maarif-konu-ozeti, maarif-ortak-yazili, maarif-beceri-temelli-test, maarif-benzer-soru) DNAMATHOS çıktısı ürettiğinde ya da kullanıcı DNAMATHOS tasarımı, DNAMATHOS PDF'i, bu PDF'in düğmeleri, slayt düzeni veya taşma sorunu dediğinde kullan. İçeriğin pedagojisi için değil (o ilgili Maarif skill'indedir), Instagram görseli için değil (dnamathos-instagram-karusel), Word ya da PowerPoint dosyası için değil (docx, pptx).
 license: Lisans kararı bekliyor; bkz. depo kökündeki LISANS.md
-compatibility: Python 3, Playwright (Chromium), KaTeX (npm install katex), pypdf, PyMuPDF; Inter, Lora ve DejaVu Sans yazı tipleri.
+compatibility: Python 3, Playwright (Chromium), KaTeX (npm install katex), pypdf, PyMuPDF. Yazı tipleri skill'in içinde (assets/fontlar).
 metadata:
-  surum: "1.0.0"
+  surum: "2.0.0"
   yazar: DNAMATHOS
   marka: DNAMATHOS
   onceki_ad: maarif-matematik-icerik 7. bölüm ve maarif-konu-ozeti 8. bölüm
@@ -17,24 +17,24 @@ Bu skill içerik üretmez; içeriği üreten Maarif skill'inin verdiğini DNAMAT
 
 ## 1. Tasarım dilini oku
 
-- `references/tasarim-dili.md`: sayfa (297 × 167 mm), renkler, yazı tipleri, üst şerit, soru slaytı, diğer slaytlar, şekil, soru görseli ve tablo kuralları. Her çıktının rengi belge boyunca aynı kalır.
-- Konu özeti üretiliyorsa ayrıca `references/konu-ozeti-tasarimi.md` (konu kartı, tüyo kutusu, ödev kartı, öğretmen PDF'i düğmeleri).
+- `references/tasarim-dili.md`: DNAMATHOS 2.0 — renkler ve karşıtlık kuralları, yazı tipi rolleri (Fraunces başlık, Atkinson Hyperlegible Next gövde, Inter rakam, Caveat el yazısı not, IBM Plex Mono etiket), marka imzaları (DNA sarmalı, fosforlu kalem vurgusu, çerçeveli haplar), bileşenler ve soru ile tüyo kuralları.
+- Konu özeti üretiliyorsa ayrıca `references/konu-ozeti-tasarimi.md`.
 
 ## 2. Üret
 
 Üretim hattı `references/uretim-hatti.md` dosyasındadır. Hazır parçalar:
 
-- `assets/dnamathos-slayt.css`: konu özeti ve yazılı slaytlarının sınanmış stil sayfası (sınıf adları: `.slide`, `.band`, `.left`, `.kleft`, `.kright`, `.qbody`, `.sol`, `.kural`, `.kex`, `.write` …). `.fbox` adlı sınıf kullanılmaz (KaTeX `\boxed` ile çakışır).
-- `assets/tasma-denetimi.js`: KaTeX'i işleyip her slaytta taşma, kart dışına çıkma ve küçük şekil sorunlarını listeleyen denetim.
-- `scripts/slayt_uret.py govde.html cikti.pdf --katex <katex/dist> --goruntu <klasör>`: gövdeyi sarar, denetimi çalıştırır, PDF ve slayt görüntülerini üretir. Taşma varsa 1 ile çıkar; metni kısalt ya da şekli küçült, yeniden üret.
+- `scripts/dna.py`: slayt bileşenleri (`kapak`, `serit`, `tur_soru`, `konu`, `soru`, `kaydet`, `kavrama`, `odev`, `sayi_dogrusu`, `tablo` …). İçerik betiği gövdeyi bu fonksiyonlarla kurar.
+- `assets/dnamathos.css` ve `assets/fontlar/`: stil dosyası ve gömülü yazı tipleri (SIL Açık Font Lisansı).
+- `scripts/slayt_uret.py govde.html cikti.pdf --katex <katex/dist> --goruntu <klasör>`: yazı tiplerini yükler, denetimi (`assets/tasma-denetimi.js`) çalıştırır, PDF ve slayt görüntülerini üretir. Sorun varsa 1 ile çıkar; metni kısalt, `coz_ust` değerini ayarla ya da şekli küçült ve yeniden üret.
 
-Slayt sırası içerik skill'inin akış listesinden üretilir; her slaytın önceki ve sonraki düğmesi bu listeden hesaplanır. Dosyalar arası düğmeler `https://dnamathos.invalid/goto/<dosya>` ile yazılır ve üretimden sonra pypdf ile `/GoToR` bağlantısına çevrilir; bunun için PDF'ler aynı klasörde durmalıdır (kullanıcıya söylenir).
+Tam örnek: `ornekler/6-sinif-ortak-kat/ders_uret.py` (depoda; 25 slaytlık ders).
 
 ## 3. Denetle (dosya üretildikten sonra)
 
-1. `python3 scripts/pdf_denetle.py cikti.pdf --sayfa <akış listesindeki slayt sayısı> --baslik "<başlık>"`: sayfa sayısı, iç ve dosyalar arası bağlantı hedefleri (hatalı 0), üst veri.
-2. Slayt görüntülerinden temas tablosu (contact sheet) yap ve gözle bak; ayrıca kapak, bir soru, bir cevap anahtarı ve son sayfayı PyMuPDF ile görüntüle (`references/ortak/guvence/pdf-ile-calisma.md`).
-3. Öğrenci PDF'inde cevap sızıntısı içerik skill'inin `sizinti_ara.py` adımıyla denetlenir.
+1. `python3 scripts/pdf_denetle.py cikti.pdf --sayfa <slayt sayısı> --sira cikti_sira.json --baslik "<başlık>"`: sayfa sayısı, bağlantı hedefleri (hatalı 0), üst veri.
+2. Slayt görüntülerinden temas tablosu yap ve gözle bak; kapak, bir konu kartı, bir soru ve bir kavrama testi slaytını tam boyutta görüntüle (`references/ortak/guvence/pdf-ile-calisma.md`).
+3. Öğrenci PDF'inde cevap sızıntısı içerik skill'inin `sizinti_ara.py` adımıyla denetlenir; şekillerde cevabı gösteren işaret (çevreleme, boyama) yok.
 
 ## 4. Dosya adları
 
@@ -42,7 +42,8 @@ Slayt sırası içerik skill'inin akış listesinden üretilir; her slaytın ön
 
 ## Denetim listesi
 
-- [ ] Taşma 0 (betik çıkış kodu 0)
+- [ ] Denetim 0 sorun (taşma yok, gövde ≥ 17 px, çözüm alanı ≥ 150 px)
+- [ ] Safran açık zeminde yazı rengi olarak kullanılmadı; şekiller cevabı göstermiyor
 - [ ] Sayfa sayısı akış listesiyle aynı; hatalı bağlantı 0
 - [ ] Temas tablosu ve dört örnek sayfa gözle görüldü
 - [ ] Dosya adları kurala uygun; birbirine bağlanan PDF'ler aynı klasörde

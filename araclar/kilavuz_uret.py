@@ -282,7 +282,7 @@ bas = '''<title>Maarif Skill Kütüphanesi</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Maarif Modeli'ne bağlı, MEB ölçme kurallarına uygun öğretmen skill'leri.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Lora:ital,wght@0,600;0,700;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Fraunces:ital,wght@0,600;0,800;1,600&family=IBM+Plex+Mono:wght@500;600&family=Caveat:wght@700&family=Inter:wght@400;700&display=swap">
 '''
 parca = bas + f"<style>{STIL}</style>\n" + govde + f"\n<script>{BETIK}</script>\n"
 tam = ('<!doctype html>\n<html lang="tr">\n<head>\n<meta charset="utf-8">\n'

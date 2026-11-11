@@ -9,6 +9,8 @@ from playwright.sync_api import sync_playwright
 from PIL import Image
 
 KOK = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.join(KOK, "markalar", "dnamathos", "dnamathos-pdf-tasarimi", "scripts"))
+from slayt_uret import font_css
 CIKTI = os.path.dirname(os.path.abspath(__file__))
 K = yaml.safe_load(open(os.path.join(KOK, "docs", "kilavuz.yaml"), encoding="utf-8"))
 S = K["skills"]
@@ -16,39 +18,39 @@ E = html.escape
 # Öğretmen satırı paleti (lacivert; sınıf paletleriyle aynı açıklık düzeni)
 P = {"koyu": "#14213d", "cizgi": "#4a5570", "orta": "#d9dde6", "acik": "#f2f4f7"}
 
-CSS = f"""
+CSS = font_css() + f"""
 *{{box-sizing:border-box;margin:0;padding:0}}
-body{{background:#888;font-family:Inter,sans-serif;color:#14213d}}
+body{{background:#888;font-family:Govde,sans-serif;color:#14213d}}
 .s{{width:1080px;height:1350px;position:relative;overflow:hidden;background:{P['acik']};padding:150px 80px 150px}}
 .s.koyu{{background:{P['koyu']};color:#fff}}
-.hap{{position:absolute;left:80px;top:72px;font:700 26px Inter;letter-spacing:.06em;padding:12px 24px;border-radius:999px;background:{P['orta']};color:{P['koyu']}}}
-.koyu .hap{{background:rgba(255,255,255,.12);color:#ffd166}}
-.say{{position:absolute;right:80px;top:84px;font:600 26px Inter;color:{P['cizgi']}}}
+.hap{{position:absolute;left:80px;top:72px;font:700 26px 'IBM Plex Mono';letter-spacing:.06em;padding:12px 24px;border-radius:999px;background:{P['orta']};color:{P['koyu']}}}
+.koyu .hap{{background:rgba(255,255,255,.12);color:#fca311}}
+.say{{position:absolute;right:80px;top:84px;font:600 26px 'IBM Plex Mono';color:{P['cizgi']}}}
 .koyu .say{{color:#b9c2d6}}
-.bar{{position:absolute;left:0;top:0;height:10px;background:#ffd166}}
-.marka{{position:absolute;left:80px;bottom:70px;font:800 24px Inter;letter-spacing:.16em;color:{P['cizgi']}}}
+.bar{{position:absolute;left:0;top:0;height:10px;background:#fca311}}
+.marka{{position:absolute;left:80px;bottom:70px;font:800 24px 'IBM Plex Mono';letter-spacing:.16em;color:{P['cizgi']}}}
 .koyu .marka{{color:#b9c2d6}}
-.kaydir{{position:absolute;right:80px;bottom:62px;display:flex;align-items:center;gap:18px;font:800 26px Inter;letter-spacing:.18em;color:{P['koyu']}}}
-.koyu .kaydir{{color:#ffd166}}
+.kaydir{{position:absolute;right:80px;bottom:62px;display:flex;align-items:center;gap:18px;font:800 26px 'IBM Plex Mono';letter-spacing:.18em;color:{P['koyu']}}}
+.koyu .kaydir{{color:#fca311}}
 .kaydir svg{{width:110px;height:24px}}
-h1{{font:700 112px/1.05 Lora,serif;letter-spacing:-.01em}}
-h2{{font:700 92px/1.08 Lora,serif;margin-bottom:56px}}
-h1 em,h2 em{{font-style:italic;color:#ffd166}}
+h1{{font:800 112px/1.05 Fraunces,serif;letter-spacing:-.01em}}
+h2{{font:800 92px/1.08 Fraunces,serif;margin-bottom:56px}}
+h1 em,h2 em{{font-style:italic;color:#fca311}}
 .s:not(.koyu) h2 em{{color:{P['cizgi']}}}
 p,li{{font-size:52px;line-height:1.35}}
 .alt{{font-size:54px;line-height:1.3;color:#d5dbe8;margin-top:44px;max-width:860px}}
-.rakam{{position:absolute;right:90px;bottom:112px;font:700 470px/1 Lora,serif;color:rgba(74,85,112,.55);z-index:0}}
+.rakam{{position:absolute;right:90px;bottom:112px;font:700 470px/1 Fraunces,serif;color:rgba(74,85,112,.55);z-index:0}}
 .icerik{{position:relative;z-index:1}}
-.kutu{{background:#fff;border-radius:22px;padding:44px 48px;border-left:8px solid #ffd166}}
+.kutu{{background:#fff;border-radius:22px;padding:44px 48px;border-left:8px solid #fca311}}
 .kutu.kod{{font:500 38px/1.4 'JetBrains Mono','DejaVu Sans Mono',monospace}}
-.etiket{{font:700 26px Inter;letter-spacing:.12em;text-transform:uppercase;color:{P['cizgi']};margin-bottom:14px}}
+.etiket{{font:700 26px 'IBM Plex Mono';letter-spacing:.12em;text-transform:uppercase;color:{P['cizgi']};margin-bottom:14px}}
 .zincir{{display:flex;flex-direction:column;gap:22px}}
 .zincir div{{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:baseline;background:#fff;border-radius:18px;padding:30px 34px}}
 .zincir b{{font:600 34px 'DejaVu Sans Mono',monospace;color:{P['koyu']}}}
 .zincir span{{font-size:46px;line-height:1.25}}
 .liste{{list-style:none;display:flex;flex-direction:column;gap:26px}}
 .liste li{{display:flex;gap:22px;align-items:flex-start}}
-.liste li i{{font-style:normal;flex:0 0 52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 30px Inter;background:#e1f3f0;color:#0b6157}}
+.liste li i{{font-style:normal;flex:0 0 52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 30px 'IBM Plex Mono';background:#e1f3f0;color:#0b6157}}
 .liste li i.x{{background:#fdece6;color:#b3401a}}
 .grup{{margin-bottom:46px}}
 .grup .etiket{{margin-bottom:12px}}
@@ -57,18 +59,18 @@ p,li{{font-size:52px;line-height:1.35}}
 .yan .k{{border-radius:22px;padding:34px}}
 .yan .k p{{font-size:50px}}
 .yanlis{{background:#fdece6;color:#b3401a}} .dogru{{background:#e1f3f0;color:#0b6157}}
-.yan .k h3{{font:800 30px Inter;letter-spacing:.08em;margin-bottom:16px}}
+.yan .k h3{{font:800 30px 'IBM Plex Mono';letter-spacing:.08em;margin-bottom:16px}}
 .adim{{display:flex;flex-direction:column;gap:46px}}
 .adim div{{display:flex;gap:28px;align-items:flex-start}}
-.adim b{{flex:0 0 72px;height:72px;border-radius:50%;background:{P['koyu']};color:#ffd166;font:700 38px Lora;display:flex;align-items:center;justify-content:center}}
-.adim h3{{font:700 58px Lora;margin-bottom:8px}}
+.adim b{{flex:0 0 72px;height:72px;border-radius:50%;background:{P['koyu']};color:#fca311;font:700 38px Fraunces;display:flex;align-items:center;justify-content:center}}
+.adim h3{{font:700 58px Fraunces;margin-bottom:8px}}
 .adim p{{font-size:46px;color:{P['cizgi']}}}
 .ad{{font:500 30px 'DejaVu Sans Mono',monospace;color:{P['cizgi']};margin:-26px 0 40px}}
 .ne{{font-size:56px;line-height:1.3;margin-bottom:60px}}
 .istem{{font-size:48px;line-height:1.38}}
 .mev{{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px}}
 .mev span{{font:600 30px 'DejaVu Sans Mono',monospace;padding:8px 16px;border-radius:10px;background:{P['orta']};color:{P['koyu']}}}
-.cagri{{font:700 50px/1.3 Lora,serif;color:#ffd166;margin-top:56px}}
+.cagri{{font:700 50px/1.3 Fraunces,serif;color:#fca311;margin-top:56px}}
 """
 OK = '<svg viewBox="0 0 110 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h104M94 2l12 10-12 10"/></svg>'
 

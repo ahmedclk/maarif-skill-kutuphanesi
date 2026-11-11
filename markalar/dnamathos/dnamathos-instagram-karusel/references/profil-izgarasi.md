@@ -44,7 +44,7 @@ Rehberlik gönderisinin bütün slaytlarında, sınıf renginin arkasında bir d
 
 ## Sınıf renk paleti
 
-Paletler CIE Lab uzayında eşit açıklıkla üretildi (koyu L* = 30, çizgi L* = 55, orta L* = 88, açık L* = 96); renk tonu değişir, açıklık aynı ve doygunluk yakın kalır (Arduvaz bilerek daha az doygundur). Bu yüzden farklı sınıfların satırları ızgarada eşit ağırlıkta görünür ve birbirine uyar. Ölçülen kontrastlar her palette aynıdır: koyu zeminde sarı 6,5:1, beyaz 9,3:1; orta zeminde lacivert 11,7:1.
+Paletler CIE Lab uzayında eşit açıklıkla üretildi (koyu L* = 30, çizgi L* = 55, orta L* = 88, açık L* = 96); renk tonu değişir, açıklık aynı ve doygunluk yakın kalır (Arduvaz bilerek daha az doygundur). Bu yüzden farklı sınıfların satırları ızgarada eşit ağırlıkta görünür ve birbirine uyar. Ölçülen kontrastlar her palette aynıdır: koyu zeminde safran #fca311 4,6:1 (yalnız büyük yazıda), beyaz 9,3:1; orta zeminde lacivert 11,7:1.
 
 | Sınıf | Palet | Koyu | Çizgi | Orta | Açık |
 | --- | --- | --- | --- | --- | --- |
@@ -63,10 +63,10 @@ Paletler CIE Lab uzayında eşit açıklıkla üretildi (koyu L* = 30, çizgi L*
 ## Satır tasarım kuralları
 
 - **Ton ritmi:** Her satır soldan sağa açıktan koyuya gider (açık → orta → koyu). Bütün satırlarda aynı ritim, sağ sütunda koyu bir dikey şerit oluşturur ve ızgarayı bir arada tutar.
-- **Ortak kapak ızgarası:** Üç kapak aynı yerleşimi kullanır: sol üstte sütun etiketi hapı ("Gerçek hayatta", "Rehberlik", "Konu anlatımı"); altında Lora başlık (112 px) ve hemen altında alt yazı (46 px), ikisi tek blok hâlinde akar; sağ altta büyük sınıf rakamı ve en altta kaydırma işareti; sol altta sütuna özgü küçük simge (120 px; gerçek hayat: konuya uygun nesne, ör. saat ya da levha; rehberlik: onay kutusu; konu: konunun şekli); en altta "Sınıf · Konu" ve DNAMATHOS.
-- **Sınıf rakamı:** Satırın hangi sınıfa ait olduğu ilk bakışta okunur. Rakam Lora 700 ile tek haneli sınıfta 640 px, iki haneli sınıfta 470 px boyutundadır (LGS satırında 8). Sağdan 90 px, alttan 112 px içeride durur, böylece 3:4 kırpmada kesilmez. Rengi zeminin tonundadır, ama satırda görünür kalır: açık zeminde çizgi tonu %30 opaklıkta, orta zeminde koyu ton %16 opaklıkta, koyu zeminde çizgi tonu %55 opaklıkta. Rakam metnin arkasında durur; başlık ve alt yazı rakama binmez.
+- **Ortak kapak ızgarası:** Üç kapak aynı yerleşimi kullanır: sol üstte sütun etiketi hapı ("Gerçek hayatta", "Rehberlik", "Konu anlatımı"); altında Fraunces başlık (112 px) ve hemen altında alt yazı (46 px), ikisi tek blok hâlinde akar; sağ altta büyük sınıf rakamı ve en altta kaydırma işareti; sol altta sütuna özgü küçük simge (120 px; gerçek hayat: konuya uygun nesne, ör. saat ya da levha; rehberlik: onay kutusu; konu: konunun şekli); en altta "Sınıf · Konu" ve DNAMATHOS.
+- **Sınıf rakamı:** Satırın hangi sınıfa ait olduğu ilk bakışta okunur. Rakam Fraunces 800 ile tek haneli sınıfta 640 px, iki haneli sınıfta 470 px boyutundadır (LGS satırında 8). Sağdan 90 px, alttan 112 px içeride durur, böylece 3:4 kırpmada kesilmez. Rengi zeminin tonundadır, ama satırda görünür kalır: açık zeminde çizgi tonu %30 opaklıkta, orta zeminde koyu ton %16 opaklıkta, koyu zeminde çizgi tonu %55 opaklıkta. Rakam metnin arkasında durur; başlık ve alt yazı rakama binmez.
 - **Ortak anahtar sözcük:** Satırın üç başlığı konunun aynı anahtar sözcüğünü taşır ve bu sözcük üçünde de italik vurgu rengindedir (ör. 6.1.1 satırı "çarpanlar": "Saatin sırrı: çarpanlar" → "Çarpanları kaçırmamanın yolu" → "Duvarı çarpanlar belirler"; 10.1.1 satırı "dik üçgen": "Yokuşun içindeki dik üçgen" → "Dik üçgeni birine anlat" → "Bir dik üçgen, iki isim"). Izgara soldan sağa okunduğu için satır tek bir hikâye gibi akar: sol merak uyandırır, orta nasıl çalışılacağını söyler, sağ fikri öğretir. Her başlık en fazla 6 kelimedir; asıl merak sorusu alt yazıya taşınabilir. Anahtar sözcük öbeği satır sonunda bölünmez.
-- **Başlık:** En fazla 6 kelime; kapak 360 × 480 px'e küçültüldüğünde de okunur. Vurgu sözcüğü italik; açık ve orta zeminde sınıfın çizgi ya da koyu tonunda, koyu zeminde sarı.
+- **Başlık:** En fazla 6 kelime; kapak 360 × 480 px'e küçültüldüğünde de okunur. Vurgu sözcüğü italik; açık ve orta zeminde sınıfın çizgi ya da koyu tonunda, koyu zeminde safran.
 - **Güvenli alan:** Bütün kapak öğeleri ortadaki 3:4 alanda kalır; karolar arasından taşan ya da iki karoya bölünen görsel kullanılmaz.
 - **Boyut:** Üç gönderi de 1080 × 1350 px üretilir; rehberlik ve gerçek hayat tek görselse de aynı boyuttadır.
 

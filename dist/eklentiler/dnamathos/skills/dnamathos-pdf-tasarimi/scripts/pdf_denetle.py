@@ -10,7 +10,7 @@ import argparse, os, sys
 from pypdf import PdfReader, PdfWriter
 
 ap = argparse.ArgumentParser()
-ap.add_argument("pdf"); ap.add_argument("--sayfa", type=int); ap.add_argument("--baslik"); ap.add_argument("--sira")
+ap.add_argument("pdf"); ap.add_argument("--sayfa", type=int); ap.add_argument("--baslik"); ap.add_argument("--sira"); ap.add_argument("--gezinme", action="store_true", help="her slayta bir bağlantıyla ulaşılmasını da iste (önceki/sonraki düğmeli eski düzen)")
 a = ap.parse_args()
 r = PdfReader(a.pdf)
 n = len(r.pages)
@@ -51,8 +51,8 @@ ok = hatali == 0
 if a.sira:
     import json
     sira = json.load(open(a.sira))
-    yanlis = [k for k in sira if sayfa_no.get(k) != sira.index(k)]
-    ulasilamayan = [sira[i] for i in range(1, len(sira)) if i not in ulasilan]
+    yanlis = [k for k in sira if k in sayfa_no and sayfa_no[k] != sira.index(k)]
+    ulasilamayan = [sira[i] for i in range(1, len(sira)) if i not in ulasilan] if a.gezinme else []
     print(f"Yanlış sayfadaki hedef: {yanlis or 'yok'} · ulaşılamayan slayt: {ulasilamayan or 'yok'}")
     ok = ok and not yanlis and not ulasilamayan
 if a.sayfa and a.sayfa != n:

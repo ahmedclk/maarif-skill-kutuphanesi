@@ -2,7 +2,7 @@
 name: dnamathos-instagram-karusel
 description: DNAMATHOS Instagram sayfası için Maarif Modeli çıktısına bağlı matematik içeriği üretir; konu karuseli, Maarif eğilim ve sosyal-duygusal becerilerine dayanan rehberlik gönderisi ve gerçek hayat örneğinden oluşan üçlü ızgara satırını sınıf renk paletiyle tasarlar; 1080 × 1350 PNG slaytları, temas tablosunu, açıklama, etiket ve alternatif metni teslim eder. Tetikleyiciler - Instagram karuseli hazırla, DNAMATHOS gönderisi, LGS karuseli, ızgara satırı, rehberlik gönderisi, gerçek hayat matematiği gönderisi, kaydırmalı post. Ders slaytı ya da PDF için değil (maarif-konu-ozeti, dnamathos-pdf-tasarimi), video için değil (maarif-anlatim-videosu), sınav sorusu için değil (maarif-beceri-temelli-test).
 license: Lisans kararı bekliyor; bkz. depo kökündeki LISANS.md
-compatibility: Python 3, Playwright (Chromium), KaTeX, PIL; Inter ve Lora yazı tipleri. Doğa fotoğrafı için telifsiz kaynaklara web erişimi.
+compatibility: Python 3, Playwright (Chromium), KaTeX, PIL; Fraunces, Atkinson Hyperlegible Next, Inter, Caveat ve IBM Plex Mono yazı tipleri (dnamathos-pdf-tasarimi skill'inde gömülü). Doğa fotoğrafı için telifsiz kaynaklara web erişimi.
 metadata:
   surum: "2.0.0"
   yazar: DNAMATHOS

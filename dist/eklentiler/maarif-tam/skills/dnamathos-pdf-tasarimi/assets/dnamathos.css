@@ -1,0 +1,116 @@
+/* DNAMATHOS tasarım dili 2.0 — 16:9 ekran PDF'i (297 × 167 mm = 1123 × 632 px).
+   Düzen: sade krem içerik sayfaları (Sarmal), Fraunces başlık + Atkinson gövde + Caveat el yazısı notları (Defter),
+   lacivert ve safran renk blokları (Afiş). Yazı tipleri skill'in assets/fontlar klasöründen yüklenir:
+   slayt_uret.py aşağıdaki işaretin yerine @font-face kurallarını koyar. */
+/*{{FONTLAR}}*/
+:root{
+  --lacivert:#14213d; --lacivert-2:#0e1830; --safran:#fca311; --hardal:#8a4f00;
+  --krem:#fdf6e8; --beyaz:#ffffff; --ikincil:#4a5570; --cizgi:#e6dcc7; --murekkep:#1f4fa0;
+  --yesil:#0b6157; --yesil-z:#e1f3f0; --kiremit:#b3401a; --kiremit-z:#fdece6;
+  --baslik:'Fraunces',Georgia,serif; --govde:'Govde','Atkinson Hyperlegible Next','Inter',sans-serif;
+  --el:'Caveat',cursive; --es:'IBM Plex Mono','DejaVu Sans Mono',monospace;
+}
+@page{size:297mm 167mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#6b6b6b}
+.s{width:1123px;height:632px;position:relative;overflow:hidden;break-after:page;background:var(--krem);color:var(--lacivert);font:400 21px/1.45 var(--govde)}
+.s.koyu{background:var(--lacivert);color:#fff}
+.s.altin{background:var(--safran);color:var(--lacivert)}
+h1,h2,h3,.fr{font-family:var(--baslik);font-weight:800;letter-spacing:-.01em;line-height:1.05}
+b,strong{font-weight:700}
+.el{font:700 27px/1.12 var(--el);color:var(--murekkep)}
+.koyu .el{color:var(--safran)} .altin .el{color:var(--lacivert)}
+.mono,.etk{font:500 13px var(--es);letter-spacing:.06em}
+.etk{text-transform:uppercase;font-weight:600;color:var(--hardal)}
+.koyu .etk{color:var(--safran)}
+.hap{display:inline-flex;align-items:center;gap:8px;border:1.8px solid currentColor;border-radius:999px;padding:4px 14px;font:600 13px var(--es);letter-spacing:.04em;align-self:flex-start;white-space:nowrap}
+.hap svg{width:40px;height:10px}
+.vurgu{background:linear-gradient(transparent 56%,rgba(252,163,17,.8) 56%,rgba(252,163,17,.8) 92%,transparent 92%);padding:0 3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.koyu .vurgu{background:linear-gradient(transparent 58%,rgba(252,163,17,.55) 58%,rgba(252,163,17,.55) 92%,transparent 92%)}
+.bos{display:inline-block;min-width:140px;border-bottom:2.5px dashed currentColor;height:1em;vertical-align:baseline}
+a{color:inherit;text-decoration:none}
+
+/* Üst şerit: her içerik slaytında */
+.serit{position:absolute;inset:0 0 auto 0;height:52px;background:var(--lacivert);color:#fff;display:flex;align-items:center;gap:16px;padding:0 32px;z-index:5}
+.marka{font:800 19px var(--baslik)} .marka i{font-style:italic;font-weight:600;color:var(--safran)}
+.serit .yol{font:500 13px var(--es);color:#c9d0e0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.serit .nav{display:flex;gap:6px;margin-left:12px}
+.serit .nav a{font:600 12px var(--es);border:1.5px solid rgba(255,255,255,.35);border-radius:999px;padding:2px 10px;color:#fff}
+.serit .nav a.on{background:var(--safran);border-color:var(--safran);color:var(--lacivert)}
+.serit .sag{margin-left:auto;display:flex;align-items:center;gap:12px;font:500 13px var(--es);color:#c9d0e0;white-space:nowrap}
+.ic{position:absolute;inset:52px 0 0 0;padding:26px 46px}
+
+/* Kapak: üstte safran, altta lacivert blok, ortada rozet */
+.kapak{display:grid;grid-template-rows:1fr 1fr;gap:10px;background:var(--lacivert-2)}
+.kapak .ust{background:var(--safran);border-radius:0 0 26px 26px;padding:30px 44px;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
+.kapak .alt{background:var(--lacivert);color:#fff;border-radius:26px 26px 0 0;padding:30px 44px;position:relative;overflow:hidden}
+.kapak h1{font-size:74px}.kapak .alt h1{color:var(--safran);font-style:italic}
+.kapak .bilgi{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}.kapak .alt .bilgi{color:var(--safran)}
+.kapak .rozet{position:absolute;left:62%;top:50%;transform:translate(-50%,-50%);width:132px;height:132px;border-radius:50%;background:var(--lacivert-2);color:#e9e2d2;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2}
+.kapak .rozet small{font:600 13px var(--es);letter-spacing:.14em}.kapak .rozet b{font:800 52px/1 var(--baslik)}
+.kapak .ust .el{position:absolute;right:44px;top:34px;color:var(--lacivert);transform:rotate(-3deg)}
+.kapak .sarmal{position:absolute;right:30px;bottom:24px}
+.kapak .alt .marka{position:absolute;left:44px;bottom:26px;color:#fff}
+
+/* Isınma turu ve cevap ekranı */
+.tur .ic{display:flex;flex-direction:column;justify-content:center;gap:22px;padding:0 60px}
+.tur .soru{font:800 48px/1.13 var(--baslik);max-width:930px}
+.tur .alt-yazi{color:#c9d0e0}.tur:not(.koyu) .alt-yazi{color:var(--ikincil)}
+.tur .not-el{position:absolute;right:64px;top:118px;transform:rotate(3deg)}
+.tur .filigran{position:absolute;right:46px;bottom:-26px;font:800 italic 190px/1 var(--baslik);color:rgba(252,163,17,.10)}
+.tur .cevap{font:800 54px/1.1 var(--baslik)}
+.noktalar{position:absolute;left:60px;bottom:28px;display:flex;gap:8px}.noktalar i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.25)}.noktalar i.on{background:var(--safran)}
+.tur:not(.koyu) .noktalar i{background:var(--cizgi)}.tur:not(.koyu) .noktalar i.on{background:var(--safran)}
+
+/* Konu kartı: solda safran panel, sağda krem içerik */
+.konu .izgara{position:absolute;inset:0;display:grid;grid-template-columns:372px 1fr}
+.konu .sol{background:var(--safran);padding:84px 32px 28px;display:flex;flex-direction:column;gap:14px;border-radius:0 26px 26px 0}
+.konu .sol h2{font-size:54px}
+.once{background:rgba(255,255,255,.6);border-radius:14px;padding:12px 14px;font-size:19px}
+.once .etk{display:block;color:var(--lacivert);margin-bottom:2px}
+.konu .govde{padding:84px 40px 28px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.kural{font-size:23px;font-weight:700}
+.not{font-size:17px;border-top:1.5px dashed #c9bfa8;padding-top:8px}.not .etk{margin-right:8px}
+.kitapta{font-size:17px;color:var(--yesil)}
+.hata{background:var(--kiremit-z);border-left:5px solid var(--kiremit);border-radius:0 12px 12px 0;padding:10px 14px;font-size:18px}.hata .etk{color:var(--kiremit);display:block}
+.yazi-alani{flex:1;min-height:90px;background-image:radial-gradient(circle,rgba(20,33,61,.16) 1.2px,transparent 1.4px);background-size:24px 24px;border-radius:10px}
+.slogan{margin-top:auto;display:flex;align-items:baseline;gap:12px}.slogan .mono{color:var(--ikincil)}.slogan .el{font-size:34px;color:var(--lacivert)}
+.sekil svg{max-width:100%;height:auto}
+
+/* Soru slaytı: çözüm alanı sorunun altında, tüyo aynı sayfada */
+.soru .bas{display:flex;align-items:baseline;gap:14px}
+.soru h2{font-size:32px}
+.soru .metin{max-width:900px;margin-top:8px}
+.soru .madde{white-space:pre-line;font-weight:700;margin-top:8px;max-width:900px}
+.cipler{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.cipler .hap{color:var(--ikincil);font-size:11.5px;padding:2px 10px}
+.coz{position:absolute;left:46px;right:46px;bottom:24px;background-image:radial-gradient(circle,rgba(20,33,61,.16) 1.2px,transparent 1.4px);background-size:24px 24px;border-top:1.5px solid var(--cizgi)}
+.coz .mono{position:absolute;left:0;top:8px;color:var(--ikincil);background:var(--krem);padding-right:8px}
+.tuyo{position:absolute;right:46px;bottom:28px;width:300px;background:var(--safran);color:var(--lacivert);padding:12px 16px 14px;border-radius:4px 4px 4px 22px;transform:rotate(-1.5deg);box-shadow:3px 4px 0 rgba(20,33,61,.9);z-index:3}
+.tuyo .mono{font-size:11px;font-weight:600;display:block;margin-bottom:2px}.tuyo .el{color:var(--lacivert);font-size:24px}
+
+/* Kaydet kartı */
+.kaydet .ic{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:0 60px}
+.kaydet ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.kaydet li{font:800 36px/1.15 var(--baslik)}
+.kaydet .el{font-size:36px;transform:rotate(-1deg);color:var(--lacivert)}
+
+/* Kavrama testi */
+.kavrama h2{font-size:30px;max-width:820px;margin-top:10px}
+.guven{position:absolute;right:46px;top:84px;display:flex;gap:14px;font-size:17px;color:var(--ikincil)}
+.guven span::before{content:"";display:inline-block;width:15px;height:15px;border:1.8px solid var(--lacivert);border-radius:3px;margin-right:6px;vertical-align:-2px}
+.satir{margin-top:20px;font-weight:700}.satir small{display:block;font:500 12px var(--es);color:var(--ikincil);letter-spacing:.06em}
+.alan{height:118px;background-image:repeating-linear-gradient(transparent 0 38px,var(--cizgi) 38px 39.5px)}
+.alan.kisa{height:44px}
+
+/* Ödev kartı */
+.odev table{width:100%;border-collapse:collapse;font-size:18px;margin-top:12px}
+.odev th,.odev td{border-bottom:1.5px solid var(--cizgi);padding:9px 10px;text-align:left;vertical-align:top}
+.odev th{font:600 12px var(--es);letter-spacing:.08em;color:var(--ikincil);text-transform:uppercase}
+.odev .kutu{width:22px;height:22px;border:2px solid var(--lacivert);border-radius:4px;display:inline-block}
+.odev .ana{font:800 30px/1.2 var(--baslik);margin-top:6px;max-width:900px}
+
+/* Tablolar ve formüller */
+table.dna{border-collapse:collapse;font-size:18px}
+table.dna th,table.dna td{border:1.5px solid #d7ccb4;padding:6px 12px;text-align:center}
+table.dna th{background:#fff3d6;font-weight:700}
+.katex{font-size:1.05em}

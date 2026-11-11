@@ -47,7 +47,7 @@ Amaç: Haftada bir saatlik derste ders kitabındaki konuyu kısa ve öz anlatmak
 
 ## Adım 5 — Ders soruları ve yazılı tüyoları
 
-`references/ders-sorulari-ve-tuyo.md`. Her soru 1–3 komşu bileşen taşır; her derste en az bir varsayım sınama ya da kişi iddiası, bir boşluklu önerme ve bir "gerekçesiyle açıklayınız" maddesi bulunur. Konu sorularında tüyo vardır, ilk bakışta kapalıdır ve cevabı, sonucu ya da ilk adımı vermez. Güçlük Z · Y · C kuralıyla belirlenir (ders dosyasında). Ders soruları ve yazılı provası MEB yazılı kurallarına uyar: açık uçlu ya da kısa cevaplı, bileşenin bilişsel düzeyinde (MEV-10, MEV-11, MEV-13, `references/ortak/maarif/meb-olcme-mevzuati.md`).
+`references/ders-sorulari-ve-tuyo.md`. Her soru 1–3 komşu bileşen taşır; her derste en az bir varsayım sınama ya da kişi iddiası, bir boşluklu önerme ve bir "gerekçesiyle açıklayınız" maddesi bulunur. Konu sorularında tüyo vardır; aynı slaytta sağ alt köşede durur ve cevabı, sonucu ya da ilk adımı vermez. Çözüm alanı sorunun hemen altındadır. Güçlük Z · Y · C kuralıyla belirlenir (ders dosyasında). Ders soruları ve yazılı provası MEB yazılı kurallarına uyar: açık uçlu ya da kısa cevaplı, bileşenin bilişsel düzeyinde (MEV-10, MEV-11, MEV-13, `references/ortak/maarif/meb-olcme-mevzuati.md`).
 
 ## Adım 6 — Isınma turu, slogan ve kavrama testi
 

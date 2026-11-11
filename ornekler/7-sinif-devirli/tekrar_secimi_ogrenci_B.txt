@@ -1,0 +1,5 @@
+7.1.2-b    işlendi: 6. hafta (1 hafta önce) · son karar: Yeniden ele al · öncelik 3
+7.1.2-c    işlendi: 6. hafta (1 hafta önce) · son karar: Yeniden ele al · öncelik 3
+7.1.2-a    işlendi: 6. hafta (1 hafta önce) · son karar: Geçti · öncelik 1
+Dağılım: geçen hafta 3, 2–4 hafta önce 0, daha eski 0
+Not: 5 soru boş; geçen haftanın bileşenlerinden tamamla.

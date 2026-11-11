@@ -1,0 +1,105 @@
+{
+ "hafta": 6,
+ "sinif": 7,
+ "cikti": [
+  "MAT.7.1.2"
+ ],
+ "sorular": {
+  "S1": {
+   "tur": "kume",
+   "bilesenler": [
+    "7.1.2-a",
+    "7.1.2-b"
+   ]
+  },
+  "S2": {
+   "tur": "kume",
+   "bilesenler": [
+    "7.1.2-b",
+    "7.1.2-c"
+   ]
+  },
+  "S3": {
+   "tur": "aktarim",
+   "bilesenler": [
+    "7.1.2-a",
+    "7.1.2-c"
+   ]
+  },
+  "S4": {
+   "tur": "tekrar",
+   "bilesenler": [
+    "7.1.1-b"
+   ],
+   "islendi": 4
+  }
+ },
+ "ogrenciler": {
+  "Öğrenci A": {
+   "S1": {
+    "cevap": 1,
+    "gerekce": 1,
+    "emin": 1
+   },
+   "S2": {
+    "cevap": 1,
+    "gerekce": 1,
+    "emin": 1
+   },
+   "S3": {
+    "cevap": 1,
+    "gerekce": 1,
+    "emin": 1
+   },
+   "S4": {
+    "cevap": 1,
+    "gerekce": 1,
+    "emin": 1
+   }
+  },
+  "Öğrenci B": {
+   "S1": {
+    "cevap": 1,
+    "gerekce": 0.5,
+    "emin": 1
+   },
+   "S2": {
+    "cevap": 0,
+    "gerekce": 0,
+    "emin": 1
+   },
+   "S3": {
+    "cevap": 1,
+    "gerekce": 1,
+    "emin": 0
+   },
+   "S4": {
+    "cevap": 1,
+    "gerekce": 1,
+    "emin": 1
+   }
+  },
+  "Öğrenci C": {
+   "S1": {
+    "cevap": 0,
+    "gerekce": 0,
+    "emin": 0
+   },
+   "S2": {
+    "cevap": 0,
+    "gerekce": 0,
+    "emin": 1
+   },
+   "S3": {
+    "cevap": 0,
+    "gerekce": 0,
+    "emin": 1
+   },
+   "S4": {
+    "cevap": 0,
+    "gerekce": 0,
+    "emin": 0
+   }
+  }
+ }
+}

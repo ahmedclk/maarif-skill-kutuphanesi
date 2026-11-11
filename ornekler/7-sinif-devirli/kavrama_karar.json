@@ -1,0 +1,120 @@
+{
+  "hafta": 6,
+  "ogrenciler": {
+    "Öğrenci A": {
+      "bilesenler": {
+        "7.1.2-a": {
+          "puan": 1.0,
+          "karar": "Geçti",
+          "isaret": [],
+          "kalici": false
+        },
+        "7.1.2-b": {
+          "puan": 1.0,
+          "karar": "Geçti",
+          "isaret": [],
+          "kalici": false
+        },
+        "7.1.2-c": {
+          "puan": 1.0,
+          "karar": "Geçti",
+          "isaret": [],
+          "kalici": false
+        },
+        "7.1.1-b": {
+          "puan": 1.0,
+          "karar": "Geçti",
+          "isaret": [],
+          "kalici": false
+        }
+      },
+      "odev": {},
+      "odev_toplam": 0,
+      "ertelenen": [],
+      "konu_yeniden": false
+    },
+    "Öğrenci B": {
+      "bilesenler": {
+        "7.1.2-a": {
+          "puan": 0.88,
+          "karar": "Geçti",
+          "isaret": [],
+          "kalici": false
+        },
+        "7.1.2-b": {
+          "puan": 0.38,
+          "karar": "Yeniden ele al",
+          "isaret": [
+            "emin-yanlis"
+          ],
+          "kalici": false
+        },
+        "7.1.2-c": {
+          "puan": 0.5,
+          "karar": "Yeniden ele al",
+          "isaret": [
+            "emin-yanlis"
+          ],
+          "kalici": false
+        },
+        "7.1.1-b": {
+          "puan": 1.0,
+          "karar": "Geçti",
+          "isaret": [],
+          "kalici": false
+        }
+      },
+      "odev": {
+        "7.1.2-b": 3,
+        "7.1.2-c": 3
+      },
+      "odev_toplam": 6,
+      "ertelenen": [],
+      "konu_yeniden": false
+    },
+    "Öğrenci C": {
+      "bilesenler": {
+        "7.1.2-a": {
+          "puan": 0.0,
+          "karar": "Yeniden ele al",
+          "isaret": [
+            "emin-yanlis"
+          ],
+          "kalici": false
+        },
+        "7.1.2-b": {
+          "puan": 0.0,
+          "karar": "Yeniden ele al",
+          "isaret": [
+            "emin-yanlis"
+          ],
+          "kalici": false
+        },
+        "7.1.2-c": {
+          "puan": 0.0,
+          "karar": "Yeniden ele al",
+          "isaret": [
+            "emin-yanlis"
+          ],
+          "kalici": false
+        },
+        "7.1.1-b": {
+          "puan": 0.0,
+          "karar": "Yeniden ele al",
+          "isaret": [],
+          "kalici": false
+        }
+      },
+      "odev": {
+        "7.1.2-a": 3
+      },
+      "odev_toplam": 3,
+      "ertelenen": [
+        "7.1.2-b",
+        "7.1.2-c",
+        "7.1.1-b"
+      ],
+      "konu_yeniden": true
+    }
+  }
+}

@@ -1,0 +1,74 @@
+ders: Matematik
+sinif: 7
+kademe: ortaokul
+kaynak:
+  sinif_sayfasi: https://tymm.meb.gov.tr/ogretim-programlari/ortaokul-matematik-dersi/8
+  temalar:
+    '1. Tema: Sayılar ve Nicelikler (1)': https://tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/463
+    '1. Tema: Sayılar ve Nicelikler (2)': https://tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/464
+    '2. Tema: İşlemlerle Cebirsel Düşünme ve Değişimler': https://tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/465
+    '3. Tema: Dönüşüm': https://tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/466
+    '4. Tema: Geometrik Nicelikler (1)': https://tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/467
+    '4. Tema: Geometrik Nicelikler (2)': https://tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/468
+    '5. Tema: Geometrik Şekiller': https://tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/469
+    '6. Tema: İstatistiksel Araştırma Süreci': https://tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/470
+    '7. Tema: Veriden Olasılığa': https://tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/471
+dogrulama:
+  tarih: '2026-11-11'
+  durum: kısmi
+  not: 'Yalnız 1. Tema (1) sayfası (463) okundu. Çıktı ve bileşen metinleri ''birebir'' alanında sayfadan alındı; ''ad'' alanları kısaltmadır. Öteki temalar her çalışmada tema sayfasından alınır.'
+tema_kodlari:
+  MAT.7.1 (463):
+    ders_saati: 35
+    alan_becerileri: [MAB2]
+    kavramsal_beceriler: [KB2.14, KB2.15]
+    egilimler: [E1.1, E3.7]
+    sdb: [SDB1.2, SDB2.2]
+    degerler: [D17]
+    okuryazarlik: [OB3, OB4]
+    beceriler_arasi: [MAB3, KB2.9]
+    genellemeler:
+    - Tam sayılar doğal sayıları, rasyonel sayılar tam sayıları kapsar.
+    - Her tam sayı paydası 1 olan bir rasyonel sayıdır.
+    - Her rasyonel sayı sonlu ya da devirli bir ondalık gösterime sahiptir.
+    - Herhangi iki rasyonel sayı arasında daima bir rasyonel sayı bulunur.
+    anahtar_kavramlar: [devirli ondalıklı gösterim, mutlak değer, rasyonel sayılar, tam sayılar]
+    sembol_gosterim: ['Mutlak değer sembolü: | |']
+ciktilar:
+  MAT.7.1.1:
+    metin: Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme
+    beceri: KB2.14
+    bilesenler:
+      a: {ad: Tam sayıları inceleme, basamak: KB2.14.SB1, birebir: Tam sayıları inceler.}
+      b: {ad: Rasyonel sayılara genişletme; mutlak değer ve sayı doğrusu, basamak: KB2.14.SB2, birebir: Tam sayıları rasyonel sayılara genişletir ve mutlak değerle sayı doğrusunda açıklar.}
+      c: {ad: Her rasyonel sayının sayı doğrusunda bir noktası olduğunu açıklama, basamak: KB2.14.SB3, birebir: Sayı doğrusu üzerinde her rasyonel sayının bir noktaya karşılık geldiğini açıklar.}
+  MAT.7.1.2:
+    metin: Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme
+    beceri: KB2.15
+    sinir: 'Sınırlama cümlesi yok. Uygulama: paydası 10''un kuvveti olarak yazılabilen ve yazılamayan rasyonel sayılarda pay paydaya bölünür; 0,99999… sayısının 1''e eşitliği sınıf tartışmasıdır. Devir çizgisi gösterimi programda geçmez; "…" kullanılır.'
+    bilesenler:
+      a: {ad: Bölmeyle ondalık gösterimi inceleme, basamak: KB2.15.SB1, birebir: Bölme işlemini kullanarak her rasyonel sayının bir ondalık gösterimi olduğunu inceler.}
+      b: {ad: Devirli gösterime dair çıkarım, basamak: KB2.15.SB2, birebir: Rasyonel sayıların ondalık gösterimlerinden bazılarının devirli olduğuna dair çıkarım yapar.}
+      c: {ad: Devirli ya da devirsiz açılımı değerlendirme, basamak: KB2.15.SB3, birebir: Her rasyonel sayının devirli ya da devirsiz ondalık açılımları olduğunu değerlendirir.}
+  MAT.7.1.3:
+    metin: Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme
+    beceri: KB2.14
+    bilesenler:
+      a: {ad: Sayı doğrusunda inceleme, basamak: KB2.14.SB1, birebir: Paydası 1 olan rasyonel sayılardan (tam sayılardan) başlayarak rasyonel sayıları sayı doğrusunda inceler.}
+      b: {ad: Sembolik ifade, basamak: KB2.14.SB2, birebir: Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini sembolik olarak ifade eder.}
+      c: {ad: Kendi ifadesiyle açıklama, basamak: KB2.14.SB3, birebir: Rasyonel sayıların karşılaştırma ve sıralama ilişkisini sayı doğrusu üzerinde kendi ifadeleriyle açıklar.}
+  MAT.7.1.4:
+    metin: Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme
+    beceri: MAB2
+    sinir: 'Sayma pulları ve sanal manipülatiflerin kullanımı toplama ve çıkarma işlemleri ile sınırlandırılmalıdır. Örneklerin seçiminde en fazla üç adımla sınırlı kalınır.'
+    bilesenler:
+      a: {ad: Sayı ve işlem bileşenlerini belirleme}
+      b: {ad: İstenenler ve işlemler arasındaki ilişki}
+      c: {ad: Uygun temsile dönüştürme}
+      ç: {ad: Temsil üzerinden açıklama}
+      d: {ad: Strateji oluşturma}
+      e: {ad: Stratejiyle çözme}
+      f: {ad: Çözümü kontrol etme}
+      g: {ad: Farklı stratejileri inceleme}
+      ğ: {ad: Genelleme yapma}
+      h: {ad: Genellemenin geçerliliğini değerlendirme}

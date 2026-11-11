@@ -1,0 +1,21 @@
+
+@page{size:A4;margin:16mm 16mm 14mm}
+*{box-sizing:border-box}body{font:11pt/1.45 Govde,sans-serif;color:#14213d;margin:0}
+h1{font:800 20pt Fraunces,serif;margin:0}
+.ust{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5pt solid #14213d;padding-bottom:6pt;margin-bottom:8pt}
+.ust small{color:#4a5570;font-size:9pt;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.ad{display:flex;gap:24pt;margin:6pt 0 10pt;font-size:10.5pt}.ad span{flex:1;border-bottom:1pt solid #9aa3b5;padding-bottom:2pt}
+.yon{background:#f2f4f7;border-left:3pt solid #fca311;padding:6pt 9pt;font-size:10pt;margin-bottom:10pt}
+.soru{break-inside:avoid;border:1pt solid #d9dde6;border-radius:6pt;padding:8pt 11pt;margin-bottom:7pt;position:relative}
+.soru h2{font:700 11.5pt Govde;margin:0 0 4pt;padding-right:118pt}
+.guven{position:absolute;right:10pt;top:9pt;font-size:9pt;color:#4a5570;display:flex;gap:8pt}
+.guven span::before{content:"";display:inline-block;width:9pt;height:9pt;border:1pt solid #4a5570;border-radius:2pt;margin-right:3pt;vertical-align:-1pt}
+.alan{margin-top:6pt;font-size:10pt;font-weight:600}
+.satir{border-bottom:1pt dotted #9aa3b5;height:16pt}
+svg{width:100%;height:auto;margin-top:2pt}
+.dna{margin-top:8pt;font:800 8pt 'IBM Plex Mono';letter-spacing:.18em;color:#4a5570}
+table{border-collapse:collapse;width:100%;font-size:9.5pt;margin:4pt 0 8pt}th,td{border:1pt solid #d9dde6;padding:4pt 6pt;text-align:left;vertical-align:top}th{background:#f2f4f7}
+.k{break-inside:avoid;margin-bottom:10pt}.k h2{font:700 12pt Fraunces,serif;margin:0 0 3pt}.etk{font-size:9pt;color:#4a5570}
+ul{margin:2pt 0 4pt;padding-left:14pt}
+h3{font:600 9pt 'IBM Plex Mono';margin:6pt 0 2pt;text-transform:uppercase;letter-spacing:.08em;color:#4a5570}
+h2{font:700 13pt Fraunces,serif;margin:14pt 0 5pt;color:#14213d}.dna i{color:#8a4f00}.k h3{font:700 10.5pt Govde;text-transform:none;letter-spacing:0;color:#14213d}.soru h2{font:700 11.5pt Govde;margin:0 0 4pt}.katex{font-size:1.05em}

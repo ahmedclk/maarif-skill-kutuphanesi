@@ -1,0 +1,22 @@
+
+Öğrenci A
+  7.1.1-b    1.00  Geçti           ödev 0
+  7.1.2-a    1.00  Geçti           ödev 0
+  7.1.2-b    1.00  Geçti           ödev 0
+  7.1.2-c    1.00  Geçti           ödev 0
+  Toplam ödev: 0 soru
+
+Öğrenci B
+  7.1.1-b    1.00  Geçti           ödev 0
+  7.1.2-a    0.88  Geçti           ödev 0
+  7.1.2-b    0.38  Yeniden ele al  ödev 3 · emin-yanlis
+  7.1.2-c    0.50  Yeniden ele al  ödev 3 · emin-yanlis
+  Toplam ödev: 6 soru
+
+Öğrenci C
+  7.1.1-b    0.00  Yeniden ele al  ödev 0
+  7.1.2-a    0.00  Yeniden ele al  ödev 3 · emin-yanlis
+  7.1.2-b    0.00  Yeniden ele al  ödev 0 · emin-yanlis
+  7.1.2-c    0.00  Yeniden ele al  ödev 0 · emin-yanlis
+  Toplam ödev: 3 soru · sonraki haftaya: 7.1.2-b, 7.1.2-c, 7.1.1-b
+  KONU YENİDEN: haftanın bileşenlerinin yarısında ya da fazlasında puan 0,5'in altında. Sonraki derste 10–15 dakika yeniden işleyin; ödev 3 soruyla sınırlı.

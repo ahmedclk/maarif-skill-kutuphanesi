@@ -1,6 +1,7 @@
 // DNAMATHOS 2.0 slayt denetimi (page.evaluate ile çalıştırılır).
 // KaTeX auto-render varsa çalıştırır; sonra her slaytta: (1) metin öğeleri slaytın ve kendi kutusunun dışına taşıyor mu,
-// (2) gövde yazısı 17 px'ten, etiketler 11 px'ten küçük mü, (3) soru metni çözüm alanının üstüne biniyor mu.
+// (2) gövde yazısı 17 px'ten, etiketler 11 px'ten küçük mü, (3) soru metni çözüm alanının üstüne biniyor mu,
+// (4) üst katmandaki öğeler (rozet, tüyo) bir metnin üstüne biniyor mu.
 () => {
   if (window.renderMathInElement) renderMathInElement(document.body, {delimiters:[{left:'$',right:'$',display:false}], throwOnError:true});
   const sorun = []; let enkucuk = 99;
@@ -27,6 +28,18 @@
       if (son > coz.getBoundingClientRect().top - 6) sorun.push(`${s.id}: soru metni çözüm alanına biniyor (coz_ust değerini artır)`);
       if (coz.getBoundingClientRect().height < 150) sorun.push(`${s.id}: çözüm alanı ${Math.round(coz.getBoundingClientRect().height)}px (en az 150)`);
     }
+    s.querySelectorAll('.rozet,.tuyo').forEach(k => {
+      const kb = k.getBoundingClientRect();
+      const tw = document.createTreeWalker(s, NodeFilter.SHOW_TEXT);
+      for (let n = tw.nextNode(); n; n = tw.nextNode()) {
+        if (!n.textContent.trim() || k.contains(n) || n.parentElement.closest('.filigran,.katex-mathml,svg')) continue;
+        const rg = document.createRange(); rg.selectNodeContents(n);
+        for (const b of rg.getClientRects()) {
+          const w = Math.min(b.right, kb.right) - Math.max(b.left, kb.left), h = Math.min(b.bottom, kb.bottom) - Math.max(b.top, kb.top);
+          if (w > 2 && h > 2) { sorun.push(`${s.id}: ${k.className.split(' ')[0]} metnin üstüne biniyor → "${n.textContent.trim().slice(0, 30)}"`); break; }
+        }
+      }
+    });
   });
   return {problems: [...new Set(sorun)], enkucuk};
 }

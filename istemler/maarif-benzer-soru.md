@@ -1,18 +1,13 @@
 # maarif-benzer-soru — hazır istemler
 
-**Ne işe yarar:** Verilen sorunun ikizlerini üretmek.
+> Bu dosya `docs/istemler.yaml` dosyasından üretilir; elle düzenlenmez.
 
 Köşeli parantezleri doldurup kopyala. Skill yüklü değilse istemin başına şunu ekle: "Maarif Modeli'ne uygun çalış; çıktıları TYMM sayfasından doğrula."
 
-## 1
+## Yanlış soruların ikizleri
+
+Aynı bileşeni ölçen, bağlamı ve sayıları değişmiş özgün sorular.
 
 ```
-Ekteki soruların her biri için aynı bileşeni ölçen birer ikiz soru, cevap anahtarı ve adım adım çözüm yaz.
+Öğrencinin yanlış yaptığı ekteki [N] sorunun her biri için aynı bileşeni ölçen birer ikiz soru ve adım adım çözüm yaz.
 ```
-
-## 2
-
-```
-Öğrencinin yanlış yaptığı ekteki 5 sorunun benzerlerinden bir çalışma kâğıdı hazırla.
-```
-

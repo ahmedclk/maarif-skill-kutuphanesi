@@ -1,18 +1,21 @@
 # maarif-kavrama-testi — hazır istemler
 
-**Ne işe yarar:** Haftalık kavrama testi ve hedefli ödev.
+> Bu dosya `docs/istemler.yaml` dosyasından üretilir; elle düzenlenmez.
 
 Köşeli parantezleri doldurup kopyala. Skill yüklü değilse istemin başına şunu ekle: "Maarif Modeli'ne uygun çalış; çıktıları TYMM sayfasından doğrula."
 
-## 1
+## En az soruyla kavrama testi
+
+Haftanın konusu bitince 4 soruluk notsuz test; ödevi sonuç belirler.
 
 ```
-[Sınıf]. sınıfta bu hafta [konu] işledik. En az soruyla kavrama testi hazırla; ödevi sonuca göre vereceğim.
+[sınıf]. sınıfta bu hafta [konu] işledik. En az soruyla kavrama testi hazırla; ödevi sonuca göre vereceğim.
 ```
 
-## 2
+## Sonuca göre hedefli ödev
+
+Kavrama testi sonuçlarından öğrenci başına karar ve en çok 6 soruluk ödev.
 
 ```
 Ekteki kavrama testi sonuçlarına göre öğrenci başına karar ve hedefli ödevi çıkar.
 ```
-

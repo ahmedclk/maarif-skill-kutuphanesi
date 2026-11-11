@@ -1,18 +1,13 @@
 # maarif-anlama-kontrolu — hazır istemler
 
-**Ne işe yarar:** Bir bileşen için 1–3 maddelik anlama kontrolü.
+> Bu dosya `docs/istemler.yaml` dosyasından üretilir; elle düzenlenmez.
 
 Köşeli parantezleri doldurup kopyala. Skill yüklü değilse istemin başına şunu ekle: "Maarif Modeli'ne uygun çalış; çıktıları TYMM sayfasından doğrula."
 
-## 1
+## Çıkış kartı
+
+Tek bileşen için 1–3 maddelik notsuz kontrol ve cevapları okuma kılavuzu.
 
 ```
-[Sınıf]. sınıf [konu ya da çıktı kodu] için ders sonu çıkış kartı hazırla; cevapları okuma kılavuzu da olsun.
+[sınıf]. sınıf [konu ya da çıktı kodu] için ders sonu çıkış kartı hazırla; cevapları okuma kılavuzu da olsun.
 ```
-
-## 2
-
-```
-Konuya geçmeden önce [konu] için kim hazır görmek istiyorum; kısa bir ön değerlendirme kontrolü.
-```
-

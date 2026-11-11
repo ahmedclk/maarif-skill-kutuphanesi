@@ -1,18 +1,21 @@
 # maarif-konu-ozeti — hazır istemler
 
-**Ne işe yarar:** Haftalık ders için konu özeti slaytları.
+> Bu dosya `docs/istemler.yaml` dosyasından üretilir; elle düzenlenmez.
 
 Köşeli parantezleri doldurup kopyala. Skill yüklü değilse istemin başına şunu ekle: "Maarif Modeli'ne uygun çalış; çıktıları TYMM sayfasından doğrula."
 
-## 1
+## Haftalık ders paketi
+
+Isınma turu, konu özeti, slogan, kavrama testi ve sonuca bağlı ödev; tek istekle.
 
 ```
-Ekteki ders kitabına ve haftalık plana göre [sınıf]. sınıf [tema] için ders anlatım sunumunu hazırla; öğretmen çözüm dosyası da olsun.
+Ekteki ders kitabına ve haftalık plana göre [sınıf]. sınıf [konu] dersini hazırla. Ödevi ekteki içindekiler sayfasından isteğe bağlı ek çalışma olarak ver.
 ```
 
-## 2
+## Yalnız konu özeti
+
+Isınma ve kavrama testi olmadan yalnız özet slaytları.
 
 ```
-[Sınav]'a [N] hafta var; ekteki konu listesine göre ders 1–[N] konu özetlerini hazırla. Ödevleri ekteki içindekiler sayfalarından ver.
+[sınıf]. sınıf [konu] için yalnız özet hazırla; ısınma ve kavrama testi olmasın.
 ```
-

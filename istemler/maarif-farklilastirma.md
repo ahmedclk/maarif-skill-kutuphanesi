@@ -1,18 +1,13 @@
 # maarif-farklilastirma — hazır istemler
 
-**Ne işe yarar:** Var olan bir dersi üç gruba uyarlamak.
+> Bu dosya `docs/istemler.yaml` dosyasından üretilir; elle düzenlenmez.
 
 Köşeli parantezleri doldurup kopyala. Skill yüklü değilse istemin başına şunu ekle: "Maarif Modeli'ne uygun çalış; çıktıları TYMM sayfasından doğrula."
 
-## 1
+## Üç gruba uyarla
+
+Var olan dersi destekleme, temel ve zenginleştirme için uyarlamak.
 
 ```
-Ekteki dersi farklılaştır: destekleme, temel ve zenginleştirme için üç çalışma kâğıdı ve bir öğretmen planı.
+Ekteki dersi farklılaştır. Sınıfımda [gözlenen durum, ör. kesirleri modelle göremeyen 6 öğrenci] var; destekleme, temel ve zenginleştirme için üç çalışma kâğıdı ve bir öğretmen planı hazırla.
 ```
-
-## 2
-
-```
-Sınıfımda [gözlenen durum, ör. kesirleri modelle göremeyen 6 öğrenci] var; bu dersi onlar için destekleme yönünde uyarla.
-```
-

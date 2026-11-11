@@ -1,0 +1,138 @@
+# İstem kütüphanesi — tek kaynak.
+# Tanıtım sayfasındaki "İstemler" bölümü ve istemler/<skill>.md dosyaları bu dosyadan üretilir (araclar/kilavuz_uret.py).
+# Köşeli parantez içindeki yerler öğretmenin dolduracağı yerlerdir.
+sekmeler:
+  - {id: planla, ad: Planla}
+  - {id: derse-hazirlan, ad: Derse hazırlan}
+  - {id: olc, ad: Ölç}
+  - {id: telafi, ad: Telafi et}
+  - {id: uret, ad: İçerik üret}
+istemler:
+  - sekme: planla
+    skill: maarif-cikti-cozumleme
+    baslik: Temanın çıktı kartı
+    aciklama: Programdaki çıktıları, bileşenleri ve sınırları tek kartta görmek için.
+    istem: "[sınıf]. sınıf [ders] dersinin [tema adı] temasındaki öğrenme çıktılarını TYMM sayfasından çıkar; her bileşeni beceri basamağıyla eşle, yazılıda ölçülüp ölçülmediğini ve içerik çerçevesi sınırlarını yaz."
+  - sekme: planla
+    skill: maarif-cikti-cozumleme
+    baslik: Kitap ile program eşlemesi
+    aciklama: Ders kitabındaki sayfaların hangi çıktıya denk geldiğini bulmak için.
+    istem: "Ekteki ders kitabının [sayfa aralığı] sayfaları programda hangi çıktı ve bileşenlere denk geliyor? Kitapla site arasında fark varsa belirt."
+  - sekme: planla
+    skill: maarif-ders-takvimi
+    baslik: Yazılıya kalan haftalar
+    aciklama: Konuları sınava kadar derslere dağıtmak ve ödev sayfalarını çıkarmak için.
+    istem: "[sınav adı]'na [N] hafta var, haftada [M] ders yapıyorum. Ekteki senaryo tablosuna göre konuları derslere dağıt; son ders tekrar ve yazılı provası olsun. Ödevleri ekteki içindekiler sayfasından ver."
+  - sekme: planla
+    skill: maarif-ders-plani
+    baslik: Sınıfa hazır ders paketi
+    aciklama: Bir çıktı için ders planı, çalışma kâğıdı ve gözlem formu.
+    istem: "[sınıf]. sınıf [çıktı kodu ya da konu] için [süre] dakikalık ders planı, öğrenci çalışma kâğıdı ve gözlem formu hazırla."
+  - sekme: planla
+    skill: maarif-farklilastirma
+    baslik: Üç gruba uyarla
+    aciklama: Var olan dersi destekleme, temel ve zenginleştirme için uyarlamak.
+    istem: "Ekteki dersi farklılaştır. Sınıfımda [gözlenen durum, ör. kesirleri modelle göremeyen 6 öğrenci] var; destekleme, temel ve zenginleştirme için üç çalışma kâğıdı ve bir öğretmen planı hazırla."
+  - sekme: derse-hazirlan
+    skill: maarif-konu-ozeti
+    baslik: Haftalık ders paketi
+    aciklama: Isınma turu, konu özeti, slogan, kavrama testi ve sonuca bağlı ödev; tek istekle.
+    istem: "Ekteki ders kitabına ve haftalık plana göre [sınıf]. sınıf [konu] dersini hazırla. Ödevi ekteki içindekiler sayfasından isteğe bağlı ek çalışma olarak ver."
+  - sekme: derse-hazirlan
+    skill: maarif-konu-ozeti
+    baslik: Yalnız konu özeti
+    aciklama: Isınma ve kavrama testi olmadan yalnız özet slaytları.
+    istem: "[sınıf]. sınıf [konu] için yalnız özet hazırla; ısınma ve kavrama testi olmasın."
+  - sekme: derse-hazirlan
+    skill: maarif-derse-hazirlik
+    baslik: Derse birlikte hazırlan
+    aciklama: Kilit görevi birlikte çözüp kısa bir hazırlık notu çıkarmak.
+    istem: "Ekteki planla yarınki [konu] dersine hazırlanmama yardım et; kilit görevi önce ben çözeyim, sonra öğrencilerin nerede takılacağını konuşalım."
+  - sekme: derse-hazirlan
+    skill: maarif-hizli-tekrar
+    baslik: Ders başı ısınma ve slogan
+    aciklama: Geçen hafta ve öncesinden karışık 8 hızlı soru ve haftanın sloganı.
+    istem: "Geçen hafta [konu] işledik. Ders başı için 8 soruluk hızlı tekrar turu ve haftanın sloganını hazırla; önceki haftalardan da soru olsun."
+  - sekme: derse-hazirlan
+    skill: maarif-hizli-tekrar
+    baslik: Sloganı denetle
+    aciklama: Bir kural cümlesinin doğru, sınırı belli ve akılda kalıcı olup olmadığını sınamak.
+    istem: "Şu sloganı denetle ve gerekirse düzelt: \"[slogan]\". Karşı örnekle sına ve ardına bir neden sorusu ekle."
+  - sekme: olc
+    skill: maarif-anlama-kontrolu
+    baslik: Çıkış kartı
+    aciklama: Tek bileşen için 1–3 maddelik notsuz kontrol ve cevapları okuma kılavuzu.
+    istem: "[sınıf]. sınıf [konu ya da çıktı kodu] için ders sonu çıkış kartı hazırla; cevapları okuma kılavuzu da olsun."
+  - sekme: olc
+    skill: maarif-kavrama-testi
+    baslik: En az soruyla kavrama testi
+    aciklama: Haftanın konusu bitince 4 soruluk notsuz test; ödevi sonuç belirler.
+    istem: "[sınıf]. sınıfta bu hafta [konu] işledik. En az soruyla kavrama testi hazırla; ödevi sonuca göre vereceğim."
+  - sekme: olc
+    skill: maarif-ortak-yazili
+    baslik: Senaryoya uygun ortak yazılı
+    aciklama: Açık uçlu kâğıt seti, adım puanlı cevap anahtarı ve kapsama tablosu.
+    istem: "Ekteki ortak sınav senaryosuna göre [sınıf]. sınıf [dönem ve yazılı] için açık uçlu yazılı kâğıtları ve cevap anahtarlarını hazırla; kâğıt sayısını kapsamaya göre sen belirle."
+  - sekme: olc
+    skill: maarif-beceri-temelli-test
+    baslik: LGS tarzı tarama testi
+    aciklama: Bağlamlı, görselli, çeldiricileri öğrenci hatasından gelen çoktan seçmeli test.
+    istem: "[sınıf]. sınıf [konu ya da çıktılar] için [N] soruluk LGS tarzı tarama testi ve çeldirici açıklamalı cevap anahtarı hazırla."
+  - sekme: olc
+    skill: maarif-performans-gorevi
+    baslik: Performans görevi
+    aciklama: Yazılıda ölçülemeyen bileşenler için görev ve dereceli puanlama anahtarı.
+    istem: "[sınıf]. sınıf [çıktı ya da tema] için 2 haftalık performans görevi, dereceli puanlama anahtarı, gözlem formu ve öz değerlendirme formu hazırla."
+  - sekme: telafi
+    skill: maarif-kavrama-testi
+    baslik: Sonuca göre hedefli ödev
+    aciklama: Kavrama testi sonuçlarından öğrenci başına karar ve en çok 6 soruluk ödev.
+    istem: "Ekteki kavrama testi sonuçlarına göre öğrenci başına karar ve hedefli ödevi çıkar."
+  - sekme: telafi
+    skill: maarif-hata-analizi
+    baslik: Deneme sonrası hata analizi
+    aciklama: Yanlışları bileşene ve hata türüne ayırıp telafi planı ve tekrar takvimi.
+    istem: "Ekteki deneme sonucuna ve yanlış yapılan sorulara göre hata analizi yap; telafi planı, kontrol soruları ve tekrar takvimi hazırla. Veli için kısa bir özet de ekle."
+  - sekme: telafi
+    skill: maarif-benzer-soru
+    baslik: Yanlış soruların ikizleri
+    aciklama: Aynı bileşeni ölçen, bağlamı ve sayıları değişmiş özgün sorular.
+    istem: "Öğrencinin yanlış yaptığı ekteki [N] sorunun her biri için aynı bileşeni ölçen birer ikiz soru ve adım adım çözüm yaz."
+  - sekme: uret
+    skill: maarif-anlatim-videosu
+    baslik: Kısa anlatım videosu
+    aciklama: Sahne planı, seslendirme metni ve Remotion kodu.
+    istem: "[konu ya da soru] için 45 saniyelik dikey anlatım videosu hazırla: sahne planı, seslendirme metni ve Remotion kodu."
+  - sekme: uret
+    skill: dnamathos-instagram-karusel
+    baslik: Instagram ızgara satırı
+    aciklama: Konu karuseli, rehberlik ve gerçek hayat gönderisi; sınıfın paletiyle.
+    istem: "[sınıf]. sınıf [konu] için konu karuseli, rehberlik ve gerçek hayat gönderilerinden oluşan ızgara satırını hazırla."
+  - sekme: uret
+    skill: dnamathos-pdf-tasarimi
+    baslik: DNAMATHOS PDF'i
+    aciklama: Herhangi bir içeriği DNAMATHOS 16:9 tasarımına dönüştürmek ve denetlemek.
+    istem: "Bu içeriği DNAMATHOS tasarımıyla 16:9 PDF'e çevir; taşma ve bağlantı denetimini yap."
+yenilikler:
+  - tarih: 11 Kasım 2026
+    baslik: DNAMATHOS tasarım dili 2.0
+    metin: Safran ve lacivert, Fraunces başlık, okunaklı Atkinson gövde, el yazısı notlar ve DNA sarmalı. Çözüm alanı sorunun altında, tüyo aynı sayfada.
+  - tarih: 11 Kasım 2026
+    baslik: Haftalık ders paketi
+    metin: Konu özeti artık ısınma turunu, haftanın sloganını ve kavrama testini de üretiyor; ödev testin sonucuna bağlı.
+  - tarih: 11 Kasım 2026
+    baslik: Kavrama testi ve hızlı tekrar
+    metin: Haftalık konuyu 4 soruyla ölçen test ve aralıklı tekrar yapan 5 dakikalık ders başı turu.
+  - tarih: 11 Kasım 2026
+    baslik: MEB ölçme kuralları
+    metin: Ölçme ve Değerlendirme Yönetmeliği, Yönerge ve Kılavuzdaki 28 kural bütün ölçme skill'lerine işlendi.
+  - tarih: 11 Kasım 2026
+    baslik: İlk sürüm
+    metin: Maarif Modeli'ne bağlı 15 skill, ortak başvurular, testler ve öğretmen kılavuzu.
+ipuclari:
+  - Önce çıktı kartını isteyin; aynı sohbette sonraki skill'ler onu kullanır, programı yeniden okumaz.
+  - İstemde sınıfı ve konuyu söylemeniz yeter; gerisini skill varsayılanla doldurur ve teslimde yazar.
+  - Ders kitabını ve kaynak kitabın içindekiler sayfasını ekleyin; ödev sayfaları yalnız oradan okunur, uydurulmaz.
+  - Öğrenci adı vermeyin; skill'ler takma adla çalışır ve sıralama üretmez.
+  - Bir şey beğenmezseniz yalnız o yeri söyleyin; skill bütün ürünü baştan yazmaz, o kısmı düzeltir.
+  - Bir haftada yalnız özet istiyorsanız "yalnız özet" deyin; ısınma ve kavrama testi atlanır.

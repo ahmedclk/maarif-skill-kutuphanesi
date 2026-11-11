@@ -1,18 +1,13 @@
 # dnamathos-pdf-tasarimi — hazır istemler
 
-**Ne işe yarar:** DNAMATHOS PDF üretimi ve denetimi.
+> Bu dosya `docs/istemler.yaml` dosyasından üretilir; elle düzenlenmez.
 
 Köşeli parantezleri doldurup kopyala. Skill yüklü değilse istemin başına şunu ekle: "Maarif Modeli'ne uygun çalış; çıktıları TYMM sayfasından doğrula."
 
-## 1
+## DNAMATHOS PDF'i
+
+Herhangi bir içeriği DNAMATHOS 16:9 tasarımına dönüştürmek ve denetlemek.
 
 ```
-Bu içeriği DNAMATHOS 16:9 düzeninde PDF'e çevir; taşma ve bağlantı denetimini yap.
+Bu içeriği DNAMATHOS tasarımıyla 16:9 PDF'e çevir; taşma ve bağlantı denetimini yap.
 ```
-
-## 2
-
-```
-Ekteki PDF'in düğmelerini ve sayfa sırasını denetle.
-```
-

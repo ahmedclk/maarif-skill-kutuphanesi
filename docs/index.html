@@ -8,613 +8,356 @@
 <meta name="description" content="Maarif Modeli'ne bağlı, MEB ölçme kurallarına uygun öğretmen skill'leri.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Fraunces:ital,wght@0,600;0,800;1,600&family=IBM+Plex+Mono:wght@500;600&family=Caveat:wght@700&family=Inter:wght@400;700&display=swap">
-<style>/* Düzen: lacivert kahraman bandı ve onu izleyen açık-beyaz ardışık bantlar; içerik 72rem'lik tek sütunda, kartlar ızgarada. */
+<style>/* Düzen: solda sabit panel menüsü (marka, karşılama kartı, gruplu bölümler), sağda tek görünüm: üst etiket, büyük başlık, alt yazı, sekmeler ve kart ızgarası. Dar ekranda menü üstte yatay kaydırılan şerit olur. */
 :root {
-  --zemin: #f4f6fa; --yuzey: #ffffff; --metin: #14213d; --ikincil: #4a5570; --cizgi: #d9dde6;
-  --vurgu: #fca311; --vurgu-metin: #14213d; --lacivert: #14213d; --lacivert-metin: #ffffff; --lacivert-ikincil: #b9c2d6;
-  --kod-zemin: #eef1f7; --odak: #1f5fbf; --golge: 0 1px 2px rgb(20 33 61 / .06), 0 6px 18px rgb(20 33 61 / .06);
-  --yazi: "Atkinson Hyperlegible Next", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --zemin: #fdf6e8; --yuzey: #ffffff; --yuzey-2: #f6eedd; --metin: #14213d; --ikincil: #4a5570; --cizgi: #e6dcc7;
+  --lacivert: #14213d; --lacivert-metin: #ffffff; --safran: #fca311; --safran-metin: #14213d; --hardal: #8a4f00;
+  --blok2: #fca311; --blok2-metin: #14213d; --yer-zemin: rgba(252, 163, 17, .28); --yer-metin: #6d3f00; --murekkep: #1f4fa0; --odak: #1f5fbf;
+  --golge: 0 1px 2px rgb(20 33 61 / .05), 0 8px 24px rgb(20 33 61 / .06);
   --baslik: "Fraunces", Georgia, "Times New Roman", serif;
+  --yazi: "Atkinson Hyperlegible Next", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --es: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --el: "Caveat", "Segoe Print", cursive;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --zemin: #0d1424; --yuzey: #141d33; --metin: #e7eaf2; --ikincil: #a4adc2; --cizgi: #27324d;
-  --vurgu: #fca311; --vurgu-metin: #14213d; --lacivert: #0a1020; --lacivert-metin: #f3f5fa; --lacivert-ikincil: #a9b3c9;
-  --kod-zemin: #1b2541; --odak: #8fb4ff; --golge: 0 1px 2px rgb(0 0 0 / .3); color-scheme: dark; } }
+  --zemin: #0e1830; --yuzey: #16213d; --yuzey-2: #1b2848; --metin: #f3efe6; --ikincil: #b3bccf; --cizgi: #2a3758;
+  --lacivert: #fca311; --lacivert-metin: #14213d; --safran: #fca311; --safran-metin: #14213d; --hardal: #f6c26b;
+  --blok2: #2a3758; --blok2-metin: #f3efe6; --yer-zemin: rgba(252, 163, 17, .22); --yer-metin: #ffd38a; --murekkep: #9cc0ff; --odak: #9cc0ff; --golge: 0 1px 2px rgb(0 0 0 / .3); color-scheme: dark; } }
 :root[data-theme="dark"] {
-  --zemin: #0d1424; --yuzey: #141d33; --metin: #e7eaf2; --ikincil: #a4adc2; --cizgi: #27324d;
-  --vurgu: #fca311; --vurgu-metin: #14213d; --lacivert: #0a1020; --lacivert-metin: #f3f5fa; --lacivert-ikincil: #a9b3c9;
-  --kod-zemin: #1b2541; --odak: #8fb4ff; --golge: 0 1px 2px rgb(0 0 0 / .3); color-scheme: dark; }
+  --zemin: #0e1830; --yuzey: #16213d; --yuzey-2: #1b2848; --metin: #f3efe6; --ikincil: #b3bccf; --cizgi: #2a3758;
+  --lacivert: #fca311; --lacivert-metin: #14213d; --safran: #fca311; --safran-metin: #14213d; --hardal: #f6c26b;
+  --blok2: #2a3758; --blok2-metin: #f3efe6; --yer-zemin: rgba(252, 163, 17, .22); --yer-metin: #ffd38a; --murekkep: #9cc0ff; --odak: #9cc0ff; --golge: 0 1px 2px rgb(0 0 0 / .3); color-scheme: dark; }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { margin: 0; background: var(--zemin); color: var(--metin); font: 16px/1.6 var(--yazi); }
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--lacivert); }
-a { color: inherit; text-underline-offset: 3px; }
-a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible { outline: 3px solid var(--odak); outline-offset: 2px; border-radius: 4px; }
-code { font-family: var(--es); font-size: .86em; background: var(--kod-zemin); padding: .1em .35em; border-radius: 4px; }
-h1, h2, h3 { text-wrap: balance; line-height: 1.2; }
-h2 { font-family: var(--baslik); font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.2rem); margin: 0 0 1.25rem; }
-h3 { font-size: 1.05rem; margin: 0; }
-.ic { max-width: 72rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-.ic.dar { max-width: 48rem; }
-.bant { padding-block: clamp(2.5rem, 2rem + 3vw, 4.5rem); }
-.bant.acik { background: var(--yuzey); border-block: 1px solid var(--cizgi); }
-.aciklama { color: var(--ikincil); max-width: 65ch; margin: -.5rem 0 1.5rem; }
+body { margin: 0; background: var(--zemin); color: var(--metin); font: 16px/1.55 var(--yazi); }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--odak); outline-offset: 2px; border-radius: 6px; }
+code, .es { font-family: var(--es); }
+h1, h2, h3 { text-wrap: balance; }
 
-/* Üst şerit */
-.ust { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--lacivert); color: var(--lacivert-metin); }
-.ust-ic { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; padding-block: .7rem; max-width: 72rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-.marka { text-decoration: none; font-weight: 600; display: flex; gap: .45rem; align-items: baseline; }
-.dna { font-weight: 800; letter-spacing: .12em; font-size: .8rem; color: var(--vurgu); }
-.ayrac { color: var(--lacivert-ikincil); }
-.ust nav { display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; font-size: .92rem; }
-.ust nav a { text-decoration: none; color: var(--lacivert-ikincil); }
-.ust nav a:hover { color: var(--lacivert-metin); }
+.kabuk { display: grid; grid-template-columns: 272px minmax(0, 1fr); min-height: 100vh; }
 
-/* Kahraman */
-.kahraman { background: var(--lacivert); color: var(--lacivert-metin); border: 0; }
-.kahraman-ic { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 4vw, 4rem); align-items: center; }
-.ust-etiket { text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 700; color: var(--vurgu); margin: 0 0 1rem; }
-.kahraman h1 { font-family: var(--baslik); font-size: clamp(2.1rem, 1.4rem + 3vw, 3.6rem); margin: 0 0 1.25rem; font-weight: 700; }
-.kahraman h1 em { color: var(--vurgu); font-style: italic; font-weight: 600; }
-.giris { color: var(--lacivert-ikincil); font-size: 1.08rem; max-width: 58ch; margin: 0 0 1.75rem; }
-.dugmeler { display: flex; flex-wrap: wrap; gap: .75rem; }
-.birincil, .ikincil { display: inline-flex; align-items: center; padding: .7rem 1.15rem; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: .95rem; }
-.birincil { background: var(--vurgu); color: var(--vurgu-metin); }
-.birincil:hover { filter: brightness(1.05); }
-.kahraman .ikincil { border: 1px solid rgb(255 255 255 / .28); color: var(--lacivert-metin); }
-.ikincil { border: 1px solid var(--cizgi); color: var(--metin); }
-.rakamlar { list-style: none; display: flex; flex-wrap: wrap; gap: 1.75rem; padding: 0; margin: 2rem 0 0; color: var(--lacivert-ikincil); font-size: .92rem; }
-.rakamlar strong { display: block; font-family: var(--baslik); font-size: 2rem; color: var(--lacivert-metin); font-variant-numeric: tabular-nums; line-height: 1.1; }
+/* Sol panel */
+.panel { position: sticky; top: env(safe-area-inset-top, 0px); height: 100vh; overflow-y: auto; padding-block: 22px 28px; padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: 18px; border-right: 1px solid var(--cizgi); display: flex; flex-direction: column; gap: 18px; background: var(--zemin); }
+.marka { display: flex; align-items: baseline; gap: 10px; text-decoration: none; padding-left: 6px; }
+.marka b { font: 800 22px/1 var(--baslik); }
+.marka i { font: italic 600 22px/1 var(--baslik); color: var(--safran); }
+.marka span { font: 600 11px var(--es); letter-spacing: .16em; color: var(--ikincil); }
+.karsilama { background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--golge); }
+.karsilama .selam { font: 700 17px var(--yazi); }
+.karsilama .selam small { display: block; font: 500 11px var(--es); letter-spacing: .06em; color: var(--ikincil); margin-top: 2px; }
+.karsilama .el { font: 700 20px/1.1 var(--el); color: var(--murekkep); }
+.cta { display: flex; align-items: center; gap: 10px; justify-content: center; background: var(--lacivert); color: var(--lacivert-metin); border: 0; border-radius: 12px; padding: 11px 14px; font-weight: 700; text-decoration: none; cursor: pointer; }
+.cta svg { width: 18px; height: 18px; flex: none; }
+.menu { display: flex; flex-direction: column; gap: 2px; }
+.menu .grup { font: 600 10.5px var(--es); letter-spacing: .14em; text-transform: uppercase; color: var(--ikincil); padding: 14px 12px 6px; }
+.menu a { display: flex; align-items: center; gap: 12px; padding: 9px 12px; border-radius: 12px; text-decoration: none; font-size: 15.5px; color: var(--metin); }
+.menu a svg { width: 18px; height: 18px; flex: none; opacity: .8; }
+.menu a:hover { background: var(--yuzey-2); }
+.menu a[aria-current="page"] { background: var(--lacivert); color: var(--lacivert-metin); font-weight: 700; }
+.menu a[aria-current="page"] svg { opacity: 1; }
+.menu .sayi { margin-left: auto; font: 500 11px var(--es); color: var(--ikincil); }
+.menu a[aria-current="page"] .sayi { color: inherit; opacity: .8; }
+.panel .sarmal { margin-top: auto; padding-left: 6px; color: var(--safran); }
 
-.zincir { margin: 0; background: rgb(255 255 255 / .05); border: 1px solid rgb(255 255 255 / .14); border-radius: 14px; padding: 1.25rem 1.25rem .75rem; }
-.zincir figcaption { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--lacivert-ikincil); margin-bottom: .75rem; }
-.zincir ol { list-style: none; margin: 0; padding: 0; }
-.zincir li { position: relative; display: grid; grid-template-columns: 7.2rem minmax(0, 1fr); gap: .15rem .9rem; padding: .7rem 0 .7rem; border-top: 1px dashed rgb(255 255 255 / .16); }
+/* Görünüm */
+.gorunum { padding-block: 34px 64px; padding-left: max(20px, 3vw); padding-right: max(20px, env(safe-area-inset-right, 0px), 3vw); min-width: 0; }
+.gorunum > section { max-width: 1180px; }
+.ust-etiket { font: 600 12px var(--es); letter-spacing: .14em; text-transform: uppercase; color: var(--hardal); margin: 0 0 8px; }
+.gorunum h1 { font: 800 clamp(2rem, 1.4rem + 2.4vw, 3.25rem)/1.05 var(--baslik); margin: 0 0 10px; letter-spacing: -.015em; }
+.gorunum h1 em { font-style: italic; font-weight: 600; color: var(--hardal); }
+.alt-yazi { color: var(--ikincil); font-size: 17px; max-width: 70ch; margin: 0 0 22px; }
+.yer { background: var(--yer-zemin); color: var(--yer-metin); border-radius: 5px; padding: 0 4px; font-weight: 600; }
+.sekmeler { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+.sekmeler button { border: 1px solid var(--cizgi); background: var(--yuzey); border-radius: 999px; padding: 8px 16px; cursor: pointer; font-size: 15px; }
+.sekmeler button[aria-pressed="true"] { background: var(--lacivert); color: var(--lacivert-metin); border-color: var(--lacivert); font-weight: 700; }
+.izgara { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; align-items: start; }
+
+/* İstem kartı */
+.istem { background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--golge); min-width: 0; }
+.istem h3 { font: 800 20px/1.15 var(--baslik); margin: 0; }
+.istem .ne { color: var(--ikincil); font-size: 14.5px; margin: 0; }
+.istem .kutu { background: var(--yuzey-2); border-radius: 14px; padding: 14px 14px 12px; display: flex; flex-direction: column; gap: 12px; }
+.istem pre { margin: 0; white-space: pre-wrap; word-break: break-word; font: 500 13.5px/1.7 var(--es); }
+.istem .alt { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.istem .skill { font: 500 11.5px var(--es); color: var(--ikincil); overflow-wrap: anywhere; }
+.kopyala { border: 1px solid var(--cizgi); background: var(--yuzey); border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 13.5px; cursor: pointer; white-space: nowrap; }
+.kopyala.oldu { background: var(--safran); color: var(--safran-metin); border-color: var(--safran); }
+
+/* Skill kartı */
+.skill-kart { background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.skill-kart h3 { font: 800 21px/1.1 var(--baslik); margin: 0; }
+.skill-kart .ad { font: 500 12px var(--es); color: var(--ikincil); overflow-wrap: anywhere; }
+.skill-kart p { margin: 0; }
+.cipler { display: flex; flex-wrap: wrap; gap: 6px; }
+.cip { font: 600 11.5px var(--es); border: 1.5px solid var(--cizgi); border-radius: 999px; padding: 2px 10px; color: var(--ikincil); text-decoration: none; }
+.skill-kart details { border-top: 1px dashed var(--cizgi); padding-top: 10px; }
+.skill-kart summary { cursor: pointer; font-weight: 700; }
+.skill-kart dl { margin: 10px 0 0; display: grid; gap: 8px; }
+.skill-kart dt { font: 600 11px var(--es); letter-spacing: .1em; text-transform: uppercase; color: var(--hardal); }
+.skill-kart dd { margin: 0; font-size: 15px; }
+.skill-kart dd ul { margin: 0; padding-left: 18px; }
+
+/* Başla görünümü */
+.kahraman { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 28px; align-items: start; margin-bottom: 34px; }
+.zincir { background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 18px; padding: 16px 18px; margin: 0; box-shadow: var(--golge); }
+.zincir figcaption { font: 600 11px var(--es); letter-spacing: .12em; text-transform: uppercase; color: var(--ikincil); margin-bottom: 8px; }
+.zincir ol { list-style: none; padding: 0; margin: 0; }
+.zincir li { display: grid; grid-template-columns: 6.6rem minmax(0, 1fr); gap: 2px 12px; padding: 9px 0; border-top: 1px dashed var(--cizgi); }
 .zincir li:first-child { border-top: 0; }
-.zincir .kod { font-family: var(--es); font-size: .8rem; color: var(--vurgu); grid-row: span 2; padding-top: .1rem; }
-.zincir span:not(.kod) { font-size: .93rem; }
-.zincir small { color: var(--lacivert-ikincil); font-size: .74rem; letter-spacing: .02em; }
-.zincir .son span:not(.kod) { font-family: var(--baslik); font-style: italic; font-size: 1rem; }
-
-/* İlkeler */
-.ilkeler { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
-.ilke { border-top: 3px solid var(--metin); padding-top: .9rem; }
-.ilke h3 { font-family: var(--baslik); font-size: 1.2rem; margin-bottom: .4rem; }
-.ilke p { margin: 0; color: var(--ikincil); font-size: .95rem; }
-
-/* İskelet */
-.iskelet { counter-reset: adim; list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; border: 1px solid var(--cizgi); border-radius: 12px; overflow: hidden; background: var(--yuzey); }
-.iskelet li { counter-increment: adim; padding: 1rem; border-left: 1px solid var(--cizgi); display: flex; flex-direction: column; gap: .3rem; }
+.zincir .kod { font: 600 12.5px var(--es); color: var(--hardal); grid-row: span 2; padding-top: 2px; }
+.zincir small { color: var(--ikincil); font-size: 12.5px; }
+.zincir .son span:not(.kod) { font: italic 600 17px var(--baslik); }
+.el-not { font: 700 24px/1.1 var(--el); color: var(--murekkep); transform: rotate(-2deg); display: inline-block; margin: 4px 0 0; }
+.ilkeler { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 0 0 34px; }
+.ilke { border-top: 4px solid var(--safran); background: var(--yuzey); border-radius: 0 0 14px 14px; padding: 14px; }
+.ilke h3 { font: 800 18px var(--baslik); margin: 0 0 4px; }
+.ilke p { margin: 0; color: var(--ikincil); font-size: 14.5px; }
+h2.bolum { font: 800 26px var(--baslik); margin: 0 0 14px; }
+.iskelet { list-style: none; counter-reset: a; padding: 0; margin: 0 0 34px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border: 1px solid var(--cizgi); border-radius: 16px; overflow: hidden; background: var(--yuzey); }
+.iskelet li { counter-increment: a; padding: 14px; border-left: 1px solid var(--cizgi); display: flex; flex-direction: column; gap: 4px; }
 .iskelet li:first-child { border-left: 0; }
-.iskelet li::before { content: counter(adim); font-family: var(--es); font-size: .78rem; color: var(--ikincil); }
-.iskelet strong { font-size: .98rem; }
-.iskelet span { color: var(--ikincil); font-size: .86rem; }
+.iskelet li::before { content: counter(a, decimal-leading-zero); font: 600 12px var(--es); color: var(--hardal); }
+.iskelet strong { font-size: 15px; }
+.iskelet span { color: var(--ikincil); font-size: 13.5px; }
+.dongu { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; margin: 0 0 10px; padding: 0; list-style: none; }
+.dongu li { background: var(--lacivert); color: var(--lacivert-metin); padding: 14px; display: flex; flex-direction: column; gap: 4px; }
+.dongu li:nth-child(even) { background: var(--blok2); color: var(--blok2-metin); }
+.dongu li:first-child { border-radius: 14px 0 0 14px; } .dongu li:last-child { border-radius: 0 14px 14px 0; }
+.dongu b { font: 800 16px var(--baslik); } .dongu small { font-size: 13px; opacity: .85; }
 
-/* Skill kartları */
-.baslik-satir { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .75rem 1.5rem; }
-.suzgec { display: flex; flex-wrap: wrap; gap: .4rem; }
-.suzgec button { font: inherit; font-size: .88rem; padding: .4rem .8rem; border-radius: 999px; border: 1px solid var(--cizgi); background: transparent; color: var(--metin); cursor: pointer; }
-.suzgec button.secili { background: var(--metin); color: var(--yuzey); border-color: var(--metin); }
-.ara { display: flex; align-items: center; gap: .6rem; margin: .5rem 0 1.5rem; font-size: .9rem; color: var(--ikincil); }
-.ara input { font: inherit; color: var(--metin); background: var(--zemin); border: 1px solid var(--cizgi); border-radius: 8px; padding: .5rem .75rem; width: min(26rem, 100%); }
-.kartlar { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr)); gap: 1rem; align-items: start; }
-.kart { background: var(--zemin); border: 1px solid var(--cizgi); border-radius: 12px; padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .6rem; min-width: 0; }
-.kart header { display: flex; flex-direction: column; gap: .2rem; }
-.kart h3 { font-family: var(--baslik); font-size: 1.25rem; }
-.kart .ad { background: none; padding: 0; color: var(--ikincil); font-size: .78rem; overflow-wrap: anywhere; }
-.kart .ne { margin: 0; font-size: .95rem; }
-.mevler { display: flex; flex-wrap: wrap; gap: .3rem; }
-.mev { font-family: var(--es); font-size: .72rem; text-decoration: none; padding: .12rem .45rem; border-radius: 4px; border: 1px solid var(--cizgi); color: var(--ikincil); }
-.mev:hover { border-color: var(--metin); color: var(--metin); }
-.yok { font-size: .78rem; color: var(--ikincil); }
-.kart details { border-top: 1px solid var(--cizgi); padding-top: .55rem; }
-.kart summary { cursor: pointer; font-weight: 600; font-size: .92rem; }
-.kart dl { margin: .75rem 0 .5rem; display: grid; gap: .55rem; }
-.kart dt { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ikincil); font-weight: 700; }
-.kart dd { margin: 0; font-size: .92rem; }
-.kart dd ul { margin: 0; padding-left: 1.1rem; }
-.istem { display: flex; gap: .5rem; align-items: flex-start; background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 8px; padding: .6rem .7rem; }
-.istem p { margin: 0; flex: 1; min-width: 0; font-size: .9rem; }
-.kopyala { font: inherit; font-size: .78rem; font-weight: 600; padding: .3rem .6rem; border-radius: 6px; border: 1px solid var(--cizgi); background: var(--zemin); color: var(--metin); cursor: pointer; white-space: nowrap; }
-.kart details .ikincil { margin-top: .25rem; font-size: .85rem; padding: .45rem .8rem; }
-.bos { color: var(--ikincil); }
-.kart.vurgulu { outline: 2px solid var(--vurgu); outline-offset: 2px; }
+/* Tablo ve listeler */
+.tablo-kap { overflow-x: auto; border: 1px solid var(--cizgi); border-radius: 16px; background: var(--yuzey); }
+table { border-collapse: collapse; width: 100%; min-width: 40rem; font-size: 14.5px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-top: 1px solid var(--cizgi); }
+thead th { border-top: 0; font: 600 11px var(--es); letter-spacing: .1em; text-transform: uppercase; color: var(--ikincil); background: var(--yuzey-2); }
+tbody th { font: 600 12.5px var(--es); white-space: nowrap; color: var(--hardal); }
+.dayanak { color: var(--ikincil); font-size: 13px; min-width: 10rem; }
+tr:target { background: var(--yer-zemin); }
+.akislar { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 16px; }
+.akis { background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 18px; padding: 18px; }
+.akis h3 { font: 800 19px var(--baslik); margin: 0 0 8px; }
+.akis p { color: var(--ikincil); font-size: 14px; margin: 0 0 8px; }
+.akis ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 14.5px; }
+.akis code, .gorunum code { font-size: .86em; background: var(--yuzey-2); padding: 1px 5px; border-radius: 5px; }
+.yenilik { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 14px; padding: 16px 0; border-top: 1px solid var(--cizgi); }
+.yenilik time { font: 600 12px var(--es); color: var(--hardal); padding-top: 4px; }
+.yenilik h3 { font: 800 19px var(--baslik); margin: 0 0 4px; }
+.yenilik p { margin: 0; color: var(--ikincil); }
+.ipuclari { list-style: none; padding: 0; margin: 0 0 30px; display: grid; gap: 10px; }
+.ipuclari li { background: var(--yuzey); border: 1px solid var(--cizgi); border-left: 5px solid var(--safran); border-radius: 0 14px 14px 0; padding: 12px 16px; }
+.sss { border-bottom: 1px solid var(--cizgi); padding: 12px 0; } .sss summary { cursor: pointer; font-weight: 700; } .sss p { color: var(--ikincil); margin: 8px 0 0; }
+.uc-yol { list-style: none; counter-reset: y; padding: 0; margin: 0 0 26px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.uc-yol li { counter-increment: y; background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 18px; padding: 16px; }
+.uc-yol li::before { content: "Yol " counter(y); font: 600 11px var(--es); letter-spacing: .12em; text-transform: uppercase; color: var(--hardal); display: block; margin-bottom: 4px; }
+.uc-yol h3 { font: 800 19px var(--baslik); margin: 0 0 4px; } .uc-yol p { margin: 0; color: var(--ikincil); font-size: 14.5px; }
+.form { background: var(--yuzey); border: 1px solid var(--cizgi); border-radius: 18px; padding: 18px; }
+.form pre { margin: 0 0 12px; white-space: pre-wrap; font: 500 13.5px/1.7 var(--es); background: var(--yuzey-2); border-radius: 12px; padding: 14px; }
+.not-satiri { color: var(--ikincil); font-size: 14px; margin-top: 16px; }
 
-/* Tablolar */
-.tablo-kap { overflow-x: auto; border: 1px solid var(--cizgi); border-radius: 12px; background: var(--yuzey); }
-table { border-collapse: collapse; width: 100%; min-width: 40rem; font-size: .92rem; }
-th, td { text-align: left; vertical-align: top; padding: .65rem .9rem; border-top: 1px solid var(--cizgi); }
-thead th { border-top: 0; font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ikincil); background: var(--zemin); }
-.mev-tablo tbody th { font-family: var(--es); font-size: .8rem; white-space: nowrap; }
-.mev-tablo tr:target { background: color-mix(in srgb, var(--vurgu) 22%, transparent); }
-.dayanak { color: var(--ikincil); font-size: .82rem; min-width: 11rem; }
-.sayi { font-variant-numeric: tabular-nums; text-align: right; }
-
-/* Akışlar ve kurulum */
-.akislar { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1.25rem; }
-.akis h3 { font-family: var(--baslik); font-size: 1.15rem; margin-bottom: .6rem; }
-.akis ol { margin: 0; padding-left: 1.2rem; font-size: .92rem; display: grid; gap: .35rem; }
-.akis code { font-size: .8em; }
-.kurulum { list-style: none; counter-reset: k; padding: 0; margin: 0 0 2rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.kurulum li { counter-increment: k; border: 1px solid var(--cizgi); border-radius: 12px; padding: 1.1rem; background: var(--yuzey); }
-.kurulum li::before { content: "Yol " counter(k); display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--ikincil); font-weight: 700; margin-bottom: .35rem; }
-.kurulum h3 { font-family: var(--baslik); font-size: 1.2rem; margin-bottom: .35rem; }
-.kurulum p { margin: 0; color: var(--ikincil); font-size: .93rem; }
-h3.alt { font-family: var(--baslik); font-size: 1.25rem; margin: 0 0 .75rem; }
-#kurulum .aciklama { margin-top: 1.25rem; }
-
-/* SSS ve alt bilgi */
-.sss { border-bottom: 1px solid var(--cizgi); padding: .9rem 0; }
-.sss summary { cursor: pointer; font-weight: 600; }
-.sss p { margin: .6rem 0 0; color: var(--ikincil); }
-.alt-bilgi { background: var(--lacivert); color: var(--lacivert-ikincil); font-size: .88rem; padding-block: 2rem; }
-.alt-bilgi strong { color: var(--vurgu); letter-spacing: .08em; }
-.alt-bilgi p { max-width: 72ch; }
-
-@media (max-width: 960px) {
-  .kahraman-ic { grid-template-columns: minmax(0, 1fr); }
-  .ilkeler { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .iskelet { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .iskelet li:nth-child(4) { border-left: 0; }
-  .iskelet li:nth-child(n+4) { border-top: 1px solid var(--cizgi); }
-  .kurulum { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 1100px) { .ilkeler { grid-template-columns: repeat(2, minmax(0, 1fr)); } .iskelet { grid-template-columns: repeat(3, minmax(0, 1fr)); } .iskelet li:nth-child(4) { border-left: 0; } .iskelet li:nth-child(n+4) { border-top: 1px solid var(--cizgi); } .kahraman { grid-template-columns: minmax(0, 1fr); } .dongu { grid-template-columns: minmax(0, 1fr); } .dongu li:first-child { border-radius: 14px 14px 0 0; } .dongu li:last-child { border-radius: 0 0 14px 14px; } }
+@media (max-width: 820px) {
+  .kabuk { grid-template-columns: minmax(0, 1fr); }
+  .panel { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; height: auto; flex-direction: row; align-items: center; gap: 12px; padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); border-right: 0; border-bottom: 1px solid var(--cizgi); overflow-x: auto; overflow-y: hidden; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--zemin); }
+  .karsilama, .panel .sarmal, .menu .grup, .menu .sayi { display: none; }
+  .marka span { display: none; }
+  .menu { flex-direction: row; gap: 4px; }
+  .menu a { white-space: nowrap; padding: 7px 12px; font-size: 14.5px; }
+  .menu a svg { display: none; }
+  .gorunum { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 48px; }
+  .ilkeler, .iskelet, .uc-yol { grid-template-columns: minmax(0, 1fr); }
+  .iskelet li { border-left: 0; border-top: 1px solid var(--cizgi); } .iskelet li:first-child { border-top: 0; }
+  .yenilik { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .zincir li { grid-template-columns: minmax(0, 1fr); } .zincir .kod { grid-row: auto; }
 }
-@media (max-width: 560px) {
-  .ilkeler, .iskelet { grid-template-columns: minmax(0, 1fr); }
-  .iskelet li { border-left: 0; border-top: 1px solid var(--cizgi); }
-  .iskelet li:first-child { border-top: 0; }
-  .zincir li { grid-template-columns: minmax(0, 1fr); }
-  .zincir .kod { grid-row: auto; }
-  .ust nav { font-size: .85rem; }
-}
+@media (prefers-reduced-motion: no-preference) { .istem, .skill-kart { transition: transform .15s ease; } .istem:hover, .skill-kart:hover { transform: translateY(-2px); } }
 </style>
 </head>
 <body>
-
-<header class="ust">
-  <div class="ust-ic">
-    <a class="marka" href="#ust"><span class="dna">DNAMATHOS</span><span class="ayrac">·</span>Maarif Skill Kütüphanesi</a>
-    <nav aria-label="Bölümler"><a href="#skiller">Skill'ler</a><a href="#kurallar">MEB kuralları</a><a href="#akislar">İş akışları</a><a href="#kurulum">Kurulum</a><a href="#sss">SSS</a></nav>
-  </div>
-</header>
-<main id="ust">
-<section class="kahraman bant">
-  <div class="ic kahraman-ic">
-    <div class="kahraman-metin">
-      <p class="ust-etiket">Öğretmenler için Claude skill'leri</p>
-      <h1>Programdan soruya, <em>her adımı Maarif'e bağlı.</em></h1>
-      <p class="giris">Claude ile ders planı, ortak yazılı, anlama kontrolü, performans görevi ve hata analizi hazırlarken her ürün bir öğrenme çıktısına ve süreç bileşenine bağlanır; çıktılar TYMM sayfasından doğrulanır, sorular MEB ölçme ve değerlendirme mevzuatına uyar.</p>
-      <div class="dugmeler"><a class="birincil" href="#kurulum">Kurulumu gör</a><a class="ikincil" href="#skiller">Skill'leri incele</a></div>
-      <ul class="rakamlar" aria-label="Kütüphane özeti">
-        <li><strong>17</strong> skill</li><li><strong>28</strong> MEB kuralı</li><li><strong>5</strong> paket</li>
-      </ul>
-    </div>
-    <figure class="zincir" aria-label="Bir sorunun programa bağlanma zinciri">
-      <figcaption>Bir yazılı sorusunun kimliği</figcaption>
-      <ol>
-        <li><span class="kod">MAT.6.1.1</span><span>Karşılaştığı problem durumlarında bir doğal sayının çarpan ve katlarına yönelik muhakeme yapabilme</span><small>Öğrenme çıktısı · TYMM</small></li>
-        <li><span class="kod">6.1.1-a</span><span>Karşılaştığı durumlarda bir doğal sayının çarpan ve katlarına yönelik varsayımlarda bulunur.</span><small>Süreç bileşeni · birebir</small></li>
-        <li><span class="kod">KB2.10.SB1</span><span>Çıkarım Yapma · varsayımda bulunma</span><small>Beceri basamağı</small></li>
-        <li><span class="kod">MEV-10</span><span>Açık uçlu; cevabı öğrenci oluşturur</span><small>MEB yazılı kuralı</small></li>
-        <li class="son"><span class="kod">Soru 1.a</span><span>“… sayısının katlarına ilişkin bir tahminde bulununuz.”</span><small>Öğrenciye giden yönerge</small></li>
-      </ol>
-    </figure>
-  </div>
+<div class="kabuk">
+<aside class="panel" aria-label="Menü">
+  <a class="marka" href="#basla"><b>DNA</b><i>mathos</i><span>MAARİF</span></a>
+  <div class="karsilama"><div class="selam">Merhaba öğretmenim<small>17 SKILL · 28 MEB KURALI</small></div><div class="el">her soru bir çıktıya bağlı</div>
+    <a class="cta" href="#istemler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg>İstemlere geç</a></div>
+  <nav class="menu"><div class="grup">Başla</div><a href="#basla"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6"/></svg><span>Başla</span></a><a href="#yenilikler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg><span>Yenilikler</span><span class=sayi>5</span></a><div class="grup">Kütüphane</div><a href="#skiller"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Skill&#x27;ler</span><span class=sayi>17</span></a><a href="#istemler"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7l5 5-5 5M12 17h7"/></svg><span>İstemler</span><span class=sayi>21</span></a><a href="#kurallar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 16h7"/></svg><span>MEB kuralları</span><span class=sayi>28</span></a><a href="#akislar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="12" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8.5 6h4a3 3 0 0 1 3 3v.5M15.5 14.5V15a3 3 0 0 1-3 3h-4"/></svg><span>İş akışları</span><span class=sayi>5</span></a><div class="grup">Yardım</div><a href="#dosyalar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Dosyalar</span></a><a href="#ipuclari"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span>İpuçları</span></a><a href="#destek"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"/></svg><span>Destek</span></a></nav>
+  <div class="sarmal"><svg width="200" height="40" viewBox="0 0 200 40" aria-hidden="true"><line x1="8.0" y1="25.9" x2="8.0" y2="14.1" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".9"/><line x1="28.4" y1="35.6" x2="28.4" y2="4.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".9"/><line x1="48.9" y1="31.9" x2="48.9" y2="8.1" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".9"/><line x1="69.3" y1="18.0" x2="69.3" y2="22.0" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".9"/><line x1="89.8" y1="5.8" x2="89.8" y2="34.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".9"/><line x1="110.2" y1="5.8" x2="110.2" y2="34.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".9"/><line x1="130.7" y1="18.0" x2="130.7" y2="22.0" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".9"/><line x1="151.1" y1="31.9" x2="151.1" y2="8.1" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".9"/><line x1="171.6" y1="35.6" x2="171.6" y2="4.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".9"/><line x1="192.0" y1="25.9" x2="192.0" y2="14.1" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".9"/><polyline points="0,20.0 4,23.0 8,25.9 12,28.6 16,31.0 20,32.9 24,34.5 28,35.5 32,36.0 36,35.9 40,35.2 44,34.0 48,32.3 52,30.2 56,27.7 60,24.9 64,22.0 68,19.0 72,16.0 76,13.2 80,10.6 84,8.3 88,6.5 92,5.1 96,4.3 100,4.0 104,4.3 108,5.1 112,6.5 116,8.3 120,10.6 124,13.2 128,16.0 132,19.0 136,22.0 140,24.9 144,27.7 148,30.2 152,32.3 156,34.0 160,35.2 164,35.9 168,36.0 172,35.5 176,34.5 180,32.9 184,31.0 188,28.6 192,25.9 196,23.0 200,20.0" fill="none" stroke="var(--metin)" stroke-width="2"/><polyline points="0,20.0 4,17.0 8,14.1 12,11.4 16,9.0 20,7.1 24,5.5 28,4.5 32,4.0 36,4.1 40,4.8 44,6.0 48,7.7 52,9.8 56,12.3 60,15.1 64,18.0 68,21.0 72,24.0 76,26.8 80,29.4 84,31.7 88,33.5 92,34.9 96,35.7 100,36.0 104,35.7 108,34.9 112,33.5 116,31.7 120,29.4 124,26.8 128,24.0 132,21.0 136,18.0 140,15.1 144,12.3 148,9.8 152,7.7 156,6.0 160,4.8 164,4.1 168,4.0 172,4.5 176,5.5 180,7.1 184,9.0 188,11.4 192,14.1 196,17.0 200,20.0" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+</aside>
+<main class="gorunum">
+<section id="g-basla">
+  <div class="kahraman"><div><p class="ust-etiket">Öğretmenler için Claude skill'leri</p><h1>Programdan soruya, <em>her adımı Maarif'e bağlı.</em></h1><p class="alt-yazi">Claude ile ders planı, ortak yazılı, anlama kontrolü, performans görevi ve hata analizi hazırlarken her ürün bir öğrenme çıktısına ve süreç bileşenine bağlanır; çıktılar TYMM sayfasından doğrulanır, sorular MEB ölçme ve değerlendirme mevzuatına uyar.</p>
+    <a class="cta" href="#istemler" style="display:inline-flex">İstemlere göz at</a> <span class="el-not">önce çıktı kartını iste</span></div>
+    <figure class="zincir"><figcaption>Bir yazılı sorusunun kimliği</figcaption><ol>
+      <li><span class="kod">MAT.6.1.4</span><span>Ortak kat ve ortak böleni yorumlayabilme</span><small>Öğrenme çıktısı · TYMM</small></li>
+      <li><span class="kod">6.1.4-a</span><span>Verilen iki sayının ortak katlarını ve ortak bölenlerini inceler.</span><small>Süreç bileşeni</small></li>
+      <li><span class="kod">KB2.4</span><span>Çözümleme</span><small>Beceri</small></li>
+      <li><span class="kod">MEV-10</span><span>Açık uçlu; cevabı öğrenci oluşturur</span><small>MEB yazılı kuralı</small></li>
+      <li class="son"><span class="kod">Soru 1.a</span><span>“… birlikte kalktığı saatleri yazınız.”</span><small>Öğrenciye giden yönerge</small></li></ol></figure></div>
+  <h2 class="bolum">Dört ilke</h2>
+  <div class="ilkeler"><div class="ilke"><h3>Önce program</h3><p>Her skill çıktıyı, bileşenleri ve içerik çerçevesi sınırlarını TYMM sayfasından alır; bellekten yazmaz, kod uydurmaz.</p></div><div class="ilke"><h3>MEB kurallarına uyum</h3><p>Okul yazılısı açık uçludur, 100 puan üzerindendir, bir ders saatine sığar; kısa süreli sınav notsuzdur; ilkokulda sınav yapılmaz.</p></div><div class="ilke"><h3>Doğrulanmış ürün</h3><p>Sorular yazıldıktan sonra tek doğru cevap, çeldirici, kod, puan ve cevap sızıntısı betiklerle denetlenir.</p></div><div class="ilke"><h3>Son söz öğretmenin</h3><p>Skill hazırlar, öğretmen onaylar. Ürünün sınıfa uygunluğunu her zaman siz kontrol edersiniz.</p></div></div>
+  <h2 class="bolum">Her skill aynı yolu izler</h2>
+  <ol class="iskelet"><li><strong>Programı okur</strong><span>Maarif çerçevesi ve ders dosyası</span></li><li><strong>En çok bir soru sorar</strong><span>Yalnız ürünü değiştirecekse</span></li><li><strong>Programa dayandırır</strong><span>Çıktı, bileşen ve sınırlar sayfadan</span></li><li><strong>Üretir</strong><span>Tek kaynaktan bütün belgeler</span></li><li><strong>Denetler</strong><span>Tek cevap, çeldirici, kod, puan, sızıntı, MEB</span></li><li><strong>Teslim eder</strong><span>Kısa özet, en çok iki öneri</span></li></ol>
+  <h2 class="bolum">Haftalık döngü</h2>
+  <ol class="dongu"><li><b>Isınma</b><small>5 dk, geçen haftalar</small></li><li><b>Konu</b><small>kart ve ardındaki soru</small></li><li><b>Kaydet</b><small>kural ve slogan</small></li><li><b>Kavrama testi</b><small>4 soru, notsuz</small></li><li><b>Hedefli ödev</b><small>yalnız takılan yere</small></li></ol>
+  <p class="not-satiri">Konu özeti istediğinizde bu döngünün tamamı tek istekle gelir.</p>
 </section>
-
-<section class="bant acik">
-  <div class="ic">
-    <h2>Dört ilke</h2>
-    <div class="ilkeler"><div class="ilke"><h3>Önce program</h3><p>Her skill çıktıyı, bileşenleri ve içerik çerçevesi sınırlarını TYMM sayfasından alır; bellekten yazmaz, kod uydurmaz.</p></div><div class="ilke"><h3>MEB kurallarına uyum</h3><p>Okul yazılısı açık uçludur, 100 puan üzerindendir, bir ders saatine sığar; kısa süreli sınav notsuzdur; ilkokulda sınav yapılmaz.</p></div><div class="ilke"><h3>Doğrulanmış ürün</h3><p>Sorular yazıldıktan sonra tek doğru cevap, çeldirici, kod, puan ve cevap sızıntısı betiklerle denetlenir.</p></div><div class="ilke"><h3>Son söz öğretmenin</h3><p>Skill hazırlar, öğretmen onaylar. Ürünün sınıfa uygunluğunu her zaman siz kontrol edersiniz.</p></div></div>
-  </div>
-</section>
-
-<section class="bant" id="nasil">
-  <div class="ic">
-    <h2>Her skill aynı yolu izler</h2>
-    <ol class="iskelet">
-      <li><strong>Programı okur</strong><span>Maarif çerçevesi ve dersin başvuru dosyası</span></li>
-      <li><strong>En çok bir soru sorar</strong><span>Yalnız ürünü değiştirecekse</span></li>
-      <li><strong>Programa dayandırır</strong><span>Çıktı, bileşen ve sınırlar TYMM sayfasından</span></li>
-      <li><strong>Üretir</strong><span>Tek kaynaktan bütün belgeler</span></li>
-      <li><strong>Denetler</strong><span>Tek cevap, çeldirici, kod, puan, sızıntı, MEB kuralları</span></li>
-      <li><strong>Teslim eder</strong><span>Kısa özet ve en çok iki somut öneri</span></li>
-    </ol>
-  </div>
-</section>
-
-<section class="bant acik" id="skiller">
-  <div class="ic">
-    <div class="baslik-satir">
-      <h2>Hangi iş için hangi skill?</h2>
-      <div class="suzgec" role="group" aria-label="Skill grubunu seç">
-        <button type="button" class="secili" data-grup="hepsi" aria-pressed="true">Hepsi</button>
-        <button type="button" data-grup="plan" aria-pressed="false">Planlama</button>
-        <button type="button" data-grup="olcme" aria-pressed="false">Ölçme ve değerlendirme</button>
-        <button type="button" data-grup="icerik" aria-pressed="false">İçerik üretimi</button>
-      </div>
-    </div>
-    <label class="ara" for="ara">Ara <input id="ara" type="search" placeholder="ör. çıkış kartı, yazılı, BEP" autocomplete="off"></label>
-    <div class="kartlar">
-<article class="kart" id="maarif-cikti-cozumleme" data-grup="plan" data-ara="programı çözümle maarif-cikti-cozumleme bir temanın ya da çıktının programını tek bir çıktı kartında toplar. yeni bir temaya başlarken ders kitabındaki konunun hangi çıktıya denk geldiğini öğrenmek için öteki skill&#x27;lerden önce ilk adım olarak">
-  <header><h3>Programı çözümle</h3><code class="ad">maarif-cikti-cozumleme</code></header>
-  <p class="ne">Bir temanın ya da çıktının programını tek bir çıktı kartında toplar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-01" title="Başarı, programdaki çıktılara dayanan ve dersin yapısına uygun ölçmelerle belirlenir. Ölçme şekli çıktının özelliğine göre seçilir; bütün çıktılar planlı bir izlemeyle ölçülür.">MEV-01</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Yeni bir temaya başlarken</li><li>Ders kitabındaki konunun hangi çıktıya denk geldiğini öğrenmek için</li><li>Öteki skill&#x27;lerden önce ilk adım olarak</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Sınıf ve ders</li><li>Tema adı ya da çıktı kodu</li><li>İsterseniz ders kitabı sayfaları</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Birebir çıktı metni ve süreç bileşenleri</li><li>Her bileşenin beceri basamağı ve yazılıda ölçülüp ölçülmediği</li><li>İçerik çerçevesi sınırları</li><li>Temadaki eğilim</li><li>SDB</li><li>değer ve okuryazarlık kodları</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-cikti-cozumleme">6. sınıf matematik 1. temanın öğrenme çıktılarını çıkar; bileşenleri beceri basamaklarıyla eşle ve sınırları yaz.</p><button type="button" class="kopyala" data-hedef="i-maarif-cikti-cozumleme">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Kitap ile site arasında tema numarası farkı varsa kartın altındaki nota bakın.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-ders-takvimi">Ders takvimi</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-ders-takvimi" data-grup="plan" data-ara="ders takvimi maarif-ders-takvimi sınava kalan haftalara göre çıktıları derslere dağıtır. dönem başında ya da yazılıdan birkaç hafta önce özel ders ya da koçluk planında">
-  <header><h3>Ders takvimi</h3><code class="ad">maarif-ders-takvimi</code></header>
-  <p class="ne">Sınava kalan haftalara göre çıktıları derslere dağıtır.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-14" title="Okul sınavları konu soru dağılım tablosuna göre hazırlanır. Tabloyu il sınıf/alan zümreleri senaryolu olarak hazırlar; okul zümresi senaryoyu seçer; soru sayısı seçilen senaryoya uyar. Ülke geneli sınavın tablosunu Genel Müdürlük hazırlar ve örnek tablolar yayımlar.">MEV-14</a><a class="mev" href="#mev-15" title="Bir dönemde her dersten iki yazılı yapılır (haftada 6 saat ve üstü derslerde il zümresi kararıyla üçüncü).">MEV-15</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Dönem başında ya da yazılıdan birkaç hafta önce</li><li>Özel ders ya da koçluk planında</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Kalan hafta ve haftalık ders sayısı</li><li>Okul zümresinin seçtiği senaryo tablosu</li><li>İsterseniz kaynak kitabın içindekiler sayfası</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Haftalık takvim tablosu</li><li>Her derste çıktı kodu ve bileşenler</li><li>Kitap sayfası ve ödev sayfaları</li><li>Kapsama özeti</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-ders-takvimi">2. yazılıya 8 hafta var, haftada bir ders yapıyorum. Ekteki senaryoya göre konuları dağıt; son ders tekrar olsun.</p><button type="button" class="kopyala" data-hedef="i-maarif-ders-takvimi">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Ödev sayfalarının içindekiler sayfasıyla aynı olduğunu bir kez gözle kontrol edin.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-konu-ozeti">Konu özeti</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-ders-plani" data-grup="plan" data-ara="ders planı maarif-ders-plani bir çıktı için ders planı, öğrenci çalışma kâğıdı ve gözlem formunu birlikte hazırlar. yeni bir dersi sıfırdan planlarken mini ders ya da etkinlik planı için">
-  <header><h3>Ders planı</h3><code class="ad">maarif-ders-plani</code></header>
-  <p class="ne">Bir çıktı için ders planı, öğrenci çalışma kâğıdı ve gözlem formunu birlikte hazırlar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-03" title="Değerlendirme süreç odaklıdır: öğrencinin başlangıç ve son düzeyi karşılaştırılır, gelişim aralıklarla izlenir, öğrenciye ve veliye geri bildirim verilir. Ölçme yalnız not vermek değil, geri bildirim vermektir.">MEV-03</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Yeni bir dersi sıfırdan planlarken</li><li>Mini ders ya da etkinlik planı için</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Sınıf</li><li>Çıktı kodu ya da konu</li><li>İsterseniz süre ve sınıf mevcudu</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Ön değerlendirme, köprü kurma, keşfet, tartış, genelle ve çıkış kartından oluşan akış</li><li>Bileşen kapsama tablosu</li><li>Çalışma kâğıdı ve gözlem formu</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-ders-plani">Yarın 6. sınıfa ortak katları anlatacağım; 40 dakikalık ders planı, çalışma kâğıdı ve gözlem formu hazırla.</p><button type="button" class="kopyala" data-hedef="i-maarif-ders-plani">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Çıkış kartının dersin en zor durumunu yokladığını ve üç grup ölçütünü okuyun.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-derse-hazirlik">Derse hazırlık</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-derse-hazirlik" data-grup="plan" data-ara="derse hazırlık maarif-derse-hazirlik var olan bir derse sizinle birlikte hazırlanır ve kısa bir hazırlık notu bırakır. dersten bir gün önce i̇lk kez anlatacağınız bir etkinlikte">
-  <header><h3>Derse hazırlık</h3><code class="ad">maarif-derse-hazirlik</code></header>
-  <p class="ne">Var olan bir derse sizinle birlikte hazırlanır ve kısa bir hazırlık notu bırakır.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><span class="yok">Ölçme ürünü üretmez</span></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Dersten bir gün önce</li><li>İlk kez anlatacağınız bir etkinlikte</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Ders planı ya da kitap sayfası</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Kilit görev üzerine birlikte düşünme</li><li>Neredeyse doğru öğrenci cevapları</li><li>200–300 sözcüklük hazırlık notu</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-derse-hazirlik">Ekteki planla yarınki derse hazırlanmama yardım et; kilit görevi önce ben çözeyim.</p><button type="button" class="kopyala" data-hedef="i-maarif-derse-hazirlik">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Hazırlık notunu dersin bölümlerine göre okuyun; değişmesi gereken yeri söyleyin.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-anlama-kontrolu">Anlama kontrolü</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-farklilastirma" data-grup="plan" data-ara="farklılaştırma maarif-farklilastirma var olan bir dersi destekleme, temel ve zenginleştirme için üç gruba uyarlar. ön değerlendirmeden sonra sınıfta farklı hazırbulunuşluk varken bep hedefi olan öğrenci için">
-  <header><h3>Farklılaştırma</h3><code class="ad">maarif-farklilastirma</code></header>
-  <p class="ne">Var olan bir dersi destekleme, temel ve zenginleştirme için üç gruba uyarlar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-04" title="Kaynaştırma ya da bütünleştirme yoluyla eğitim gören öğrencilerde ölçme ve değerlendirmenin temeli BEP&#x27;tir; ölçme araçları BEP&#x27;e göre hazırlanır, gerekirse farklı soru tipleri kullanılır.">MEV-04</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Ön değerlendirmeden sonra</li><li>Sınıfta farklı hazırbulunuşluk varken</li><li>BEP hedefi olan öğrenci için</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Ders planı ya da çalışma kâğıdı</li><li>İsterseniz gözlediğiniz durum ya da BEP hedefi</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Öğretmen farklılaştırma planı</li><li>A B C çalışma kâğıtları</li><li>Her grupta aynı çıktı ve aynı zor durum</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-farklilastirma">Ekteki dersi farklılaştır; kesirleri modelle göremeyen öğrenciler için destek ekle.</p><button type="button" class="kopyala" data-hedef="i-maarif-farklilastirma">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Öğrenci kâğıtlarında düzey adı yazmadığını kontrol edin.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-anlama-kontrolu">Anlama kontrolü</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-anlama-kontrolu" data-grup="olcme" data-ara="anlama kontrolü maarif-anlama-kontrolu tek bir bileşen için 1–3 maddelik notsuz kontrol ve cevapları okuma kılavuzu hazırlar. ders sonunda çıkış kartı olarak yeni konuya geçmeden ön değerlendirme olarak kısa süreli sınav yerine">
-  <header><h3>Anlama kontrolü</h3><code class="ad">maarif-anlama-kontrolu</code></header>
-  <p class="ne">Tek bir bileşen için 1–3 maddelik notsuz kontrol ve cevapları okuma kılavuzu hazırlar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-40" title="Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için kısa süreli sınav yapılabilir: birkaç soru, kısa süre, anında geri bildirim. Not ya da puanla değerlendirilmez; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.">MEV-40</a><a class="mev" href="#mev-41" title="İlkokulda kısa süreli, hazırbulunuşluk, deneme ve tarama sınavı dâhil hiçbir adla sınav yapılmaz; süreç odaklı değerlendirme araçlarında çoktan seçmeli soru kullanılmaz. Gelişim değerlendirme formu, kontrol listesi ve dereceleme ölçeğiyle izlenir; araçlar öğrenci gelişim dosyasında tutulur.">MEV-41</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Ders sonunda çıkış kartı olarak</li><li>Yeni konuya geçmeden ön değerlendirme olarak</li><li>Kısa süreli sınav yerine</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Sınıf</li><li>Konu ya da çıktı kodu</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Öğrenci kâğıdı</li><li>Her cevabın neyi gösterdiği</li><li>Sonraki öğretim adımı</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-anlama-kontrolu">6. sınıf ondalık gösterim için ders sonu çıkış kartı hazırla; cevapları okuma kılavuzu da olsun.</p><button type="button" class="kopyala" data-hedef="i-maarif-anlama-kontrolu">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Skill odak bileşeni önce size sorar; onayladığınız bileşenin doğru olduğundan emin olun.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-hata-analizi">Hata analizi</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-kavrama-testi" data-grup="olcme" data-ara="kavrama testi maarif-kavrama-testi haftanın konusunu 4–5 soruyla ölçer; ödevi yalnız takılan bileşenlere verir. haftalık konu bittikten sonra ödevi azaltmak istediğinizde koçlukta haftalık izlemede">
-  <header><h3>Kavrama testi</h3><code class="ad">maarif-kavrama-testi</code></header>
-  <p class="ne">Haftanın konusunu 4–5 soruyla ölçer; ödevi yalnız takılan bileşenlere verir.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-40" title="Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için kısa süreli sınav yapılabilir: birkaç soru, kısa süre, anında geri bildirim. Not ya da puanla değerlendirilmez; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.">MEV-40</a><a class="mev" href="#mev-41" title="İlkokulda kısa süreli, hazırbulunuşluk, deneme ve tarama sınavı dâhil hiçbir adla sınav yapılmaz; süreç odaklı değerlendirme araçlarında çoktan seçmeli soru kullanılmaz. Gelişim değerlendirme formu, kontrol listesi ve dereceleme ölçeğiyle izlenir; araçlar öğrenci gelişim dosyasında tutulur.">MEV-41</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Haftalık konu bittikten sonra</li><li>Ödevi azaltmak istediğinizde</li><li>Koçlukta haftalık izlemede</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Haftanın konusu ya da çıktısı</li><li>Sonuç geldiğinde öğrencilerin cevapları</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Cevap ve gerekçe isteyen 4–5 soruluk kâğıt</li><li>Öğretmen anahtarı ve karar tablosu</li><li>Öğrenci başına geçti / kısa telafi / yeniden ele al kararı</li><li>En çok 6 soruluk hedefli ödev</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-kavrama-testi">6. sınıfta bu hafta ortak kat ve ortak böleni bitirdik; en az soruyla kavrama testi hazırla.</p><button type="button" class="kopyala" data-hedef="i-maarif-kavrama-testi">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Öğrenci sonuçlarını takma adla girin; karar ve ödev betikle hesaplanır.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-hizli-tekrar">Hızlı tekrar</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-hizli-tekrar" data-grup="olcme" data-ara="hızlı tekrar maarif-hizli-tekrar ders başı 5 dakikalık soru-cevap turu ve denetlenmiş haftanın sloganını hazırlar. her dersin ilk 5 dakikasında önceki haftaları unutturmamak için grup dersinde kısa yarışma olarak">
-  <header><h3>Hızlı tekrar</h3><code class="ad">maarif-hizli-tekrar</code></header>
-  <p class="ne">Ders başı 5 dakikalık soru-cevap turu ve denetlenmiş haftanın sloganını hazırlar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-40" title="Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için kısa süreli sınav yapılabilir: birkaç soru, kısa süre, anında geri bildirim. Not ya da puanla değerlendirilmez; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.">MEV-40</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Her dersin ilk 5 dakikasında</li><li>Önceki haftaları unutturmamak için</li><li>Grup dersinde kısa yarışma olarak</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Bu hafta işlenen konu</li><li>İsterseniz kavrama testi geçmişi</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>8 soruluk karışık tur (geçen hafta ve öncesi)</li><li>Cevap ekranları ve öğretmen listesi</li><li>Karşı örnekle sınanmış slogan ve neden sorusu</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-hizli-tekrar">Geçen hafta ortak katı işledik; ders başı için hızlı tekrar turu ve haftanın sloganını hazırla.</p><button type="button" class="kopyala" data-hedef="i-maarif-hizli-tekrar">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Sloganın sınırını ve karşı örneğini okuyun; slogan kuralın yerine geçmez, onu hatırlatır.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-kavrama-testi">Kavrama testi</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-ortak-yazili" data-grup="olcme" data-ara="ortak yazılı maarif-ortak-yazili seçilen senaryoya uyan açık uçlu yazılı kâğıtlarını ve cevap anahtarlarını hazırlar. okul geneli ortak yazılıdan önce yazılı provası için">
-  <header><h3>Ortak yazılı</h3><code class="ad">maarif-ortak-yazili</code></header>
-  <p class="ne">Seçilen senaryoya uyan açık uçlu yazılı kâğıtlarını ve cevap anahtarlarını hazırlar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-10" title="Okul sınavları, cevabını öğrencinin oluşturduğu ve farklı bilişsel düzeydeki çıktıları ölçen maddelerden oluşan yazılı yoklamadır. Açık uçlu soru esastır.">MEV-10</a><a class="mev" href="#mev-11" title="Çıktının özelliğine ve bilişsel düzeyine göre kısa cevaplı soru da kullanılabilir; ama yalnız kısa cevaplı sorulardan oluşan yazılı yapılamaz.">MEV-11</a><a class="mev" href="#mev-12" title="Okul yazılısında cevabı yalnız işaretlemeye dayanan maddeler (çoktan seçmeli, gerekçesiz doğru-yanlış, gerekçesiz eşleştirme) kullanılmaz, çünkü cevabı öğrenci oluşturmaz. Doğru-yanlış ya da eşleştirme ancak öğrenci kararının gerekçesini yazıyorsa açık uçlu madde sayılır (MEB örnek yazılılarındaki &quot;doğru ya da yanlış olma nedenleri&quot; gibi). Yabancı dilde, eşleştirme olmayacak biçimde verilenler arasından seçilen boşluk doldurma kullanılabilir.">MEV-12</a><a class="mev" href="#mev-13" title="Soru, ölçtüğü çıktının bilişsel düzeyindedir: çözümleme ya da değerlendirme düzeyindeki bir çıktı, aynı düzeyde soru gerektirir.">MEV-13</a><a class="mev" href="#mev-14" title="Okul sınavları konu soru dağılım tablosuna göre hazırlanır. Tabloyu il sınıf/alan zümreleri senaryolu olarak hazırlar; okul zümresi senaryoyu seçer; soru sayısı seçilen senaryoya uyar. Ülke geneli sınavın tablosunu Genel Müdürlük hazırlar ve örnek tablolar yayımlar.">MEV-14</a><a class="mev" href="#mev-16" title="Yazılı sınavın süresi, zorunlu hâller dışında bir ders saatini geçemez. Kâğıt bu süreye sığacak uzunluktadır.">MEV-16</a><a class="mev" href="#mev-17" title="Sınav kâğıdında öğrencinin cevabı için yeterli alan bırakılır.">MEV-17</a><a class="mev" href="#mev-19" title="Sınavlar 100 tam puan üzerinden değerlendirilir; yanlış cevaplar doğru cevapları etkilemez (götürü yoktur).">MEV-19</a><a class="mev" href="#mev-30" title="Puanlanan cevap kâğıtları öğrencilere gösterilir; kâğıtta eksik ya da yanlış öğrenmelere yönelik öğretmen notları bulunur.">MEV-30</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Okul geneli ortak yazılıdan önce</li><li>Yazılı provası için</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Okul zümresinin seçtiği senaryo tablosu</li><li>Sınıf ve dönem</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Kâğıt seti ve kapsama planı</li><li>Adım puanlı cevap anahtarı ve öğretmen notları</li><li>Kapsama tablosu</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-ortak-yazili">Ekteki senaryoya göre 9. sınıf 1. dönem 2. yazılı kâğıtlarını ve cevap anahtarlarını hazırla.</p><button type="button" class="kopyala" data-hedef="i-maarif-ortak-yazili">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Kâğıtların bir ders saatine sığdığını ve cevap alanlarının yeterli olduğunu kontrol edin.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-hata-analizi">Hata analizi</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-beceri-temelli-test" data-grup="olcme" data-ara="beceri temelli test maarif-beceri-temelli-test lgs ve tyt tarzı, bağlamlı ve görselli çoktan seçmeli test hazırlar. lgs ya da tyt hazırlığında tarama testi olarak">
-  <header><h3>Beceri temelli test</h3><code class="ad">maarif-beceri-temelli-test</code></header>
-  <p class="ne">LGS ve TYT tarzı, bağlamlı ve görselli çoktan seçmeli test hazırlar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-12" title="Okul yazılısında cevabı yalnız işaretlemeye dayanan maddeler (çoktan seçmeli, gerekçesiz doğru-yanlış, gerekçesiz eşleştirme) kullanılmaz, çünkü cevabı öğrenci oluşturmaz. Doğru-yanlış ya da eşleştirme ancak öğrenci kararının gerekçesini yazıyorsa açık uçlu madde sayılır (MEB örnek yazılılarındaki &quot;doğru ya da yanlış olma nedenleri&quot; gibi). Yabancı dilde, eşleştirme olmayacak biçimde verilenler arasından seçilen boşluk doldurma kullanılabilir.">MEV-12</a><a class="mev" href="#mev-40" title="Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için kısa süreli sınav yapılabilir: birkaç soru, kısa süre, anında geri bildirim. Not ya da puanla değerlendirilmez; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.">MEV-40</a><a class="mev" href="#mev-41" title="İlkokulda kısa süreli, hazırbulunuşluk, deneme ve tarama sınavı dâhil hiçbir adla sınav yapılmaz; süreç odaklı değerlendirme araçlarında çoktan seçmeli soru kullanılmaz. Gelişim değerlendirme formu, kontrol listesi ve dereceleme ölçeğiyle izlenir; araçlar öğrenci gelişim dosyasında tutulur.">MEV-41</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>LGS ya da TYT hazırlığında</li><li>Tarama testi olarak</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Sınıf</li><li>Konu ya da çıktılar</li><li>Soru sayısı</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Test kâğıdı</li><li>Çeldirici açıklamalı cevap anahtarı</li><li>Güçlük dağılımı</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-beceri-temelli-test">8. sınıf üslü ifadeler için 15 soruluk LGS tarzı tarama testi hazırla.</p><button type="button" class="kopyala" data-hedef="i-maarif-beceri-temelli-test">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Bu test okul yazılısı yerine kullanılmaz; okul yazılısı için ortak yazılı skill&#x27;ini kullanın.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-hata-analizi">Hata analizi</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-performans-gorevi" data-grup="olcme" data-ara="performans görevi maarif-performans-gorevi yazılıda ölçülemeyen bileşenler için görev, dereceli puanlama anahtarı ve formlar hazırlar. veri toplama ya da araştırma gerektiren çıktılarda proje ödevi için">
-  <header><h3>Performans görevi</h3><code class="ad">maarif-performans-gorevi</code></header>
-  <p class="ne">Yazılıda ölçülemeyen bileşenler için görev, dereceli puanlama anahtarı ve formlar hazırlar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-02" title="Ölçme araçları geçerli, güvenilir ve kullanışlı olur. Araca göre cevap anahtarı, puanlama anahtarı, derecelendirme ölçeği ya da kontrol listesi kullanılır.">MEV-02</a><a class="mev" href="#mev-51" title="Uzun süreli ürün ve süreç değerlendirmesinde araca uygun puanlama aracı kullanılır: dereceli puanlama anahtarı, derecelendirme ölçeği ya da kontrol listesi (MEV-02). Kitapçıkta performans görevi ve projeye ayrı madde yoktur; o yılın Bakanlık duyurusu esas alınır.">MEV-51</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Veri toplama ya da araştırma gerektiren çıktılarda</li><li>Proje ödevi için</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Sınıf</li><li>Çıktı ya da tema</li><li>İsterseniz süre ve bireysel ya da grup</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Öğrenci görev kâğıdı</li><li>Dereceli puanlama anahtarı</li><li>Puansız gözlem formu</li><li>Öz ve akran değerlendirme formu</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-performans-gorevi">6. sınıf olasılık çıktısı için iki haftalık bir deney görevi ve dereceli puanlama anahtarı hazırla.</p><button type="button" class="kopyala" data-hedef="i-maarif-performans-gorevi">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Görevin ücret, internet ya da veli emeği gerektirmediğini kontrol edin.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-hata-analizi">Hata analizi</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-benzer-soru" data-grup="olcme" data-ara="i̇kiz soru maarif-benzer-soru verdiğiniz soruların aynı bileşeni ölçen özgün ikizlerini yazar. öğrencinin yanlış yaptığı sorular için paralel kâğıt ya da ek alıştırma için">
-  <header><h3>İkiz soru</h3><code class="ad">maarif-benzer-soru</code></header>
-  <p class="ne">Verdiğiniz soruların aynı bileşeni ölçen özgün ikizlerini yazar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-12" title="Okul yazılısında cevabı yalnız işaretlemeye dayanan maddeler (çoktan seçmeli, gerekçesiz doğru-yanlış, gerekçesiz eşleştirme) kullanılmaz, çünkü cevabı öğrenci oluşturmaz. Doğru-yanlış ya da eşleştirme ancak öğrenci kararının gerekçesini yazıyorsa açık uçlu madde sayılır (MEB örnek yazılılarındaki &quot;doğru ya da yanlış olma nedenleri&quot; gibi). Yabancı dilde, eşleştirme olmayacak biçimde verilenler arasından seçilen boşluk doldurma kullanılabilir.">MEV-12</a><a class="mev" href="#mev-60" title="Merkezî ve ortak sınavlarda kullanılan soruları izinsiz çoğaltmak, yayımlamak ya da kullanmak yasaktır (5846 sayılı Fikir ve Sanat Eserleri Kanunu). Bu sorular model alınır; birebir kullanılmaz.">MEV-60</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Öğrencinin yanlış yaptığı sorular için</li><li>Paralel kâğıt ya da ek alıştırma için</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Kaynak sorular (PDF ya da fotoğraf)</li><li>Kaç ikiz istediğiniz</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>İkiz sorular</li><li>Cevap anahtarı</li><li>Adım adım çözümler</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-benzer-soru">Ekteki 5 sorunun her biri için aynı bileşeni ölçen birer ikiz soru ve çözüm yaz.</p><button type="button" class="kopyala" data-hedef="i-maarif-benzer-soru">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>İkizler okul yazılısında kullanılacaksa bunu belirtin; çoktan seçmeliler açık uçluya çevrilir.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-hata-analizi">Hata analizi</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-hata-analizi" data-grup="olcme" data-ara="hata analizi maarif-hata-analizi yanlışları bileşene ve hata türüne göre ayırır, telafi planı ve tekrar takvimi hazırlar. yazılı ya da deneme sonrasında koçluk görüşmesinden önce">
-  <header><h3>Hata analizi</h3><code class="ad">maarif-hata-analizi</code></header>
-  <p class="ne">Yanlışları bileşene ve hata türüne göre ayırır, telafi planı ve tekrar takvimi hazırlar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-30" title="Puanlanan cevap kâğıtları öğrencilere gösterilir; kâğıtta eksik ya da yanlış öğrenmelere yönelik öğretmen notları bulunur.">MEV-30</a><a class="mev" href="#mev-31" title="Her sınavdan sonra öğretmen cevapları analiz eder, hangi çıktıda eksik ya da yanlış öğrenme olduğunu belirler, öğrenciye bireysel geri bildirim verir ve gerekirse telafi yapar.">MEV-31</a><a class="mev" href="#mev-32" title="Öğretmenin analizi kendi kullanımı içindir; okul idaresine ayrıca rapor verilerek evrak yükü oluşturulmaz.">MEV-32</a><a class="mev" href="#mev-33" title="Ortak sınav sonuçlarından öğrenci toplu listesi, okullar ya da sınıflar arası karşılaştırmalı veri yayımlanmaz; öğrenci adlı reklam listesi yapılmaz.">MEV-33</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Yazılı ya da deneme sonrasında</li><li>Koçluk görüşmesinden önce</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Yanlış yapılan sorular ve öğrenci cevapları</li><li>İsterseniz çözüm kâğıdı fotoğrafı ya da sonuç tablosu</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Öğretmen raporu</li><li>Öğrenci telafi çalışma sayfası</li><li>Tekrar takvimi</li><li>İsteğe bağlı veli özeti</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-hata-analizi">Ekteki deneme sonucuna göre hata analizi yap; telafi planı ve kontrol soruları hazırla.</p><button type="button" class="kopyala" data-hedef="i-maarif-hata-analizi">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Raporda gerçek ad kullanılmaz; öğrencileri takma adla tanırsınız.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-benzer-soru">İkiz soru</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-konu-ozeti" data-grup="icerik" data-ara="konu özeti maarif-konu-ozeti haftalık ders paketini hazırlar - ısınma turu, konu özeti slaytları, slogan, kavrama testi ve sonuca bağlı ödev. haftalık özel derste yazılıya kadar konu tekrarında">
-  <header><h3>Konu özeti</h3><code class="ad">maarif-konu-ozeti</code></header>
-  <p class="ne">Haftalık ders paketini hazırlar - ısınma turu, konu özeti slaytları, slogan, kavrama testi ve sonuca bağlı ödev.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><a class="mev" href="#mev-10" title="Okul sınavları, cevabını öğrencinin oluşturduğu ve farklı bilişsel düzeydeki çıktıları ölçen maddelerden oluşan yazılı yoklamadır. Açık uçlu soru esastır.">MEV-10</a><a class="mev" href="#mev-13" title="Soru, ölçtüğü çıktının bilişsel düzeyindedir: çözümleme ya da değerlendirme düzeyindeki bir çıktı, aynı düzeyde soru gerektirir.">MEV-13</a></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Haftalık özel derste</li><li>Yazılıya kadar konu tekrarında</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Ders kitabı</li><li>İsterseniz takvim ve kaynak kitabın içindekiler sayfası</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Ders başı ısınma turu (aralıklı tekrar)</li><li>Konu kartları ve yazılı tarzı sorular</li><li>Haftanın sloganı</li><li>4 soruluk kavrama testi (slayt ve A4 kâğıt)</li><li>Kavrama testine bağlı ödev kartı</li><li>Öğretmen çözüm dosyası</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-konu-ozeti">Ekteki ders kitabına ve haftalık plana göre 9. sınıf ders anlatım sunumunu hazırla.</p><button type="button" class="kopyala" data-hedef="i-maarif-konu-ozeti">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Yalnız özet istediğiniz hafta &quot;yalnız özet&quot; deyin; ısınma ve kavrama testi atlanır.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-anlama-kontrolu">Anlama kontrolü</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="maarif-anlatim-videosu" data-grup="icerik" data-ara="anlatım videosu maarif-anlatim-videosu bir konu ya da soru için sahne planı, seslendirme metni ve remotion kodu hazırlar. kısa ders videosu ya da soru çözümü için">
-  <header><h3>Anlatım videosu</h3><code class="ad">maarif-anlatim-videosu</code></header>
-  <p class="ne">Bir konu ya da soru için sahne planı, seslendirme metni ve Remotion kodu hazırlar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><span class="yok">Ölçme ürünü üretmez</span></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Kısa ders videosu ya da soru çözümü için</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Konu ya da soru</li><li>Biçim (dikey ya da yatay)</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>Sahne planı</li><li>Seslendirme metni</li><li>Remotion kodu ve son kare görüntüleri</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-maarif-anlatim-videosu">Ortak kat için 45 saniyelik dikey anlatım videosu hazırla.</p><button type="button" class="kopyala" data-hedef="i-maarif-anlatim-videosu">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Seslendirmedeki sayıların ekrandakiyle aynı olduğunu dinleyerek kontrol edin.</dd>
-      <dt>Sonra</dt><dd><a href="#dnamathos-instagram-karusel">Instagram karuseli</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="dnamathos-pdf-tasarimi" data-grup="icerik" data-ara="dnamathos pdf dnamathos-pdf-tasarimi i̇çeriği dnamathos&#x27;un 16:9 pdf tasarımına dönüştürür ve dosyayı denetler. konu özeti yazılı ya da test dnamathos görünümünde istendiğinde">
-  <header><h3>DNAMATHOS PDF</h3><code class="ad">dnamathos-pdf-tasarimi</code></header>
-  <p class="ne">İçeriği DNAMATHOS&#x27;un 16:9 PDF tasarımına dönüştürür ve dosyayı denetler.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><span class="yok">Ölçme ürünü üretmez</span></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Konu özeti</li><li>yazılı ya da test DNAMATHOS görünümünde istendiğinde</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>İçerik (öteki skill&#x27;lerin ürünü)</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>PDF</li><li>Taşma ve bağlantı denetimi</li><li>Slayt görüntüleri</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-dnamathos-pdf-tasarimi">Bu içeriği DNAMATHOS 16:9 düzeninde PDF&#x27;e çevir ve bağlantıları denetle.</p><button type="button" class="kopyala" data-hedef="i-dnamathos-pdf-tasarimi">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Birbirine bağlanan PDF&#x27;leri aynı klasörde tutun.</dd>
-      <dt>Sonra</dt><dd><a href="#dnamathos-instagram-karusel">Instagram karuseli</a></dd>
-    </dl>
-    
-  </details>
-</article>
-<article class="kart" id="dnamathos-instagram-karusel" data-grup="icerik" data-ara="instagram karuseli dnamathos-instagram-karusel konu karuseli, rehberlik ve gerçek hayat gönderisinden oluşan ızgara satırını hazırlar. haftalık sosyal medya içeriğinde">
-  <header><h3>Instagram karuseli</h3><code class="ad">dnamathos-instagram-karusel</code></header>
-  <p class="ne">Konu karuseli, rehberlik ve gerçek hayat gönderisinden oluşan ızgara satırını hazırlar.</p>
-  <div class="mevler" aria-label="Uyduğu MEB kuralları"><span class="yok">Ölçme ürünü üretmez</span></div>
-  <details>
-    <summary>Nasıl kullanılır?</summary>
-    <dl>
-      <dt>Ne zaman</dt><dd><ul><li>Haftalık sosyal medya içeriğinde</li></ul></dd>
-      <dt>Siz verin</dt><dd><ul><li>Sınıf ve konu</li><li>İsterseniz çıktı kodu</li></ul></dd>
-      <dt>Siz alırsınız</dt><dd><ul><li>1080 × 1350 PNG slaytlar</li><li>Açıklama ve etiketler</li><li>Paylaşım sırası</li></ul></dd>
-      <dt>Örnek istem</dt><dd><div class="istem"><p id="i-dnamathos-instagram-karusel">8. sınıf üslü ifadeler için konu karuseli, rehberlik ve gerçek hayat gönderilerinden oluşan satırı hazırla.</p><button type="button" class="kopyala" data-hedef="i-dnamathos-instagram-karusel">Kopyala</button></div></dd>
-      <dt>Kontrol edin</dt><dd>Paylaşırken sırayı izleyin - önce karusel, sonra rehberlik, en son gerçek hayat.</dd>
-      <dt>Sonra</dt><dd><a href="#maarif-anlatim-videosu">Anlatım videosu</a></dd>
-    </dl>
-    
-  </details>
-</article></div>
-    <p class="bos" id="bos" hidden>Bu aramaya uyan skill yok. Başka bir sözcük deneyin.</p>
-  </div>
-</section>
-
-<section class="bant" id="kurallar">
-  <div class="ic">
-    <h2>MEB ölçme ve değerlendirme kuralları</h2>
-    <p class="aciklama">Skill'ler soru hazırlarken Millî Eğitim Bakanlığı Ölçme ve Değerlendirme Yönetmeliği, Yazılı ve Uygulamalı Sınavlar Yönergesi ve Kılavuzundaki bu kurallara uyar. Kurallar madde özetidir; birebir metin için <a href="https://odsgm.meb.gov.tr/meb_iys_dosyalar/2024_02/07101329_odsgm_mevzuat_kitapcigi.pdf" target="_blank" rel="noopener">ODSGM mevzuat kitapçığına</a> bakın.</p>
-    <div class="tablo-kap"><table class="mev-tablo">
-      <thead><tr><th scope="col">Kod</th><th scope="col">Kural</th><th scope="col">Dayanak</th></tr></thead>
-      <tbody><tr id="mev-01"><th scope="row">MEV-01</th><td>Başarı, programdaki çıktılara dayanan ve dersin yapısına uygun ölçmelerle belirlenir. Ölçme şekli çıktının özelliğine göre seçilir; bütün çıktılar planlı bir izlemeyle ölçülür.</td><td class="dayanak">Yönetmelik 4/a; Kılavuz, Temel Yaklaşım</td></tr><tr id="mev-02"><th scope="row">MEV-02</th><td>Ölçme araçları geçerli, güvenilir ve kullanışlı olur. Araca göre <strong>cevap anahtarı, puanlama anahtarı, derecelendirme ölçeği ya da kontrol listesi</strong> kullanılır.</td><td class="dayanak">Yönetmelik 4/c</td></tr><tr id="mev-03"><th scope="row">MEV-03</th><td>Değerlendirme süreç odaklıdır: öğrencinin başlangıç ve son düzeyi karşılaştırılır, gelişim aralıklarla izlenir, öğrenciye ve veliye geri bildirim verilir. Ölçme yalnız not vermek değil, geri bildirim vermektir.</td><td class="dayanak">Yönerge 5/g; Kılavuz, Temel Yaklaşım</td></tr><tr id="mev-04"><th scope="row">MEV-04</th><td>Kaynaştırma ya da bütünleştirme yoluyla eğitim gören öğrencilerde ölçme ve değerlendirmenin temeli <strong>BEP</strong>&#x27;tir; ölçme araçları BEP&#x27;e göre hazırlanır, gerekirse farklı soru tipleri kullanılır.</td><td class="dayanak">Yönetmelik 4/ç, 5/n; Kılavuz 15</td></tr><tr id="mev-05"><th scope="row">MEV-05</th><td>Sınav ve ölçme işleri güvenirlik, gizlilik ve tarafsızlık ilkeleriyle yürütülür.</td><td class="dayanak">Yönetmelik 4/d</td></tr><tr id="mev-10"><th scope="row">MEV-10</th><td>Okul sınavları, cevabını <strong>öğrencinin oluşturduğu</strong> ve farklı bilişsel düzeydeki çıktıları ölçen maddelerden oluşan yazılı yoklamadır. <strong>Açık uçlu soru esastır.</strong></td><td class="dayanak">Yönetmelik 5/g; Yönerge 5/e; Kılavuz 3</td></tr><tr id="mev-11"><th scope="row">MEV-11</th><td>Çıktının özelliğine ve bilişsel düzeyine göre <strong>kısa cevaplı</strong> soru da kullanılabilir; ama <strong>yalnız kısa cevaplı sorulardan oluşan yazılı yapılamaz.</strong></td><td class="dayanak">Kılavuz 3</td></tr><tr id="mev-12"><th scope="row">MEV-12</th><td>Okul yazılısında cevabı <strong>yalnız işaretlemeye</strong> dayanan maddeler (çoktan seçmeli, gerekçesiz doğru-yanlış, gerekçesiz eşleştirme) kullanılmaz, çünkü cevabı öğrenci oluşturmaz. Doğru-yanlış ya da eşleştirme ancak öğrenci kararının <strong>gerekçesini yazıyorsa</strong> açık uçlu madde sayılır (MEB örnek yazılılarındaki &quot;doğru ya da yanlış olma nedenleri&quot; gibi). Yabancı dilde, eşleştirme olmayacak biçimde verilenler arasından seçilen boşluk doldurma kullanılabilir.</td><td class="dayanak">Kılavuz 3 (MEV-10&#x27;dan çıkarım; yabancı dil istisnası birebir)</td></tr><tr id="mev-13"><th scope="row">MEV-13</th><td>Soru, ölçtüğü çıktının <strong>bilişsel düzeyindedir</strong>: çözümleme ya da değerlendirme düzeyindeki bir çıktı, aynı düzeyde soru gerektirir.</td><td class="dayanak">Kılavuz 2, 3</td></tr><tr id="mev-14"><th scope="row">MEV-14</th><td>Okul sınavları <strong>konu soru dağılım tablosuna</strong> göre hazırlanır. Tabloyu il sınıf/alan zümreleri senaryolu olarak hazırlar; okul zümresi senaryoyu seçer; <strong>soru sayısı seçilen senaryoya uyar.</strong> Ülke geneli sınavın tablosunu Genel Müdürlük hazırlar ve örnek tablolar yayımlar.</td><td class="dayanak">Yönetmelik 5/f, 6/ç; Yönerge 5/m; Kılavuz 2, 6</td></tr><tr id="mev-15"><th scope="row">MEV-15</th><td>Bir dönemde her dersten <strong>iki yazılı</strong> yapılır (haftada 6 saat ve üstü derslerde il zümresi kararıyla üçüncü).</td><td class="dayanak">Yönetmelik 5/c; Yönerge 5/c</td></tr><tr id="mev-16"><th scope="row">MEV-16</th><td>Yazılı sınavın süresi, zorunlu hâller dışında <strong>bir ders saatini geçemez.</strong> Kâğıt bu süreye sığacak uzunluktadır.</td><td class="dayanak">Yönetmelik 5/l</td></tr><tr id="mev-17"><th scope="row">MEV-17</th><td>Sınav kâğıdında <strong>öğrencinin cevabı için yeterli alan</strong> bırakılır.</td><td class="dayanak">Kılavuz 2</td></tr><tr id="mev-18"><th scope="row">MEV-18</th><td>Sınav kâğıdında <strong>kazanım (çıktı) ifadesine yer verilmesi gerekmez.</strong></td><td class="dayanak">Kılavuz 2</td></tr><tr id="mev-19"><th scope="row">MEV-19</th><td>Sınavlar <strong>100 tam puan</strong> üzerinden değerlendirilir; <strong>yanlış cevaplar doğru cevapları etkilemez</strong> (götürü yoktur).</td><td class="dayanak">Yönerge 6/a</td></tr><tr id="mev-20"><th scope="row">MEV-20</th><td>İptal edilen soru değerlendirme dışı kalır; kalan soruların puanları yeniden belirlenir.</td><td class="dayanak">Yönerge 6/ı; Kılavuz 9</td></tr><tr id="mev-21"><th scope="row">MEV-21</th><td>Okul geneli sınavın sorularını ve cevaplarını eğitim kurumu sınıf/alan zümresi hazırlar; puanlamayı zümre yapar. Ülke, il ve ilçe geneli sınavların soruları ilgili kurumlarca hazırlanır.</td><td class="dayanak">Yönerge 5/n, 5/p; Kılavuz 4, 9</td></tr><tr id="mev-22"><th scope="row">MEV-22</th><td>Türkçe ve yabancı dilde sınav yazılı ve uygulamalı iki aşamadır: yazılı %50, dinleme %25, konuşma %25 (Türk dili ve edebiyatında %70, %15, %15).</td><td class="dayanak">Yönerge 5/ğ, 6/ç, 6/d</td></tr><tr id="mev-30"><th scope="row">MEV-30</th><td>Puanlanan cevap kâğıtları öğrencilere gösterilir; kâğıtta eksik ya da yanlış öğrenmelere yönelik <strong>öğretmen notları</strong> bulunur.</td><td class="dayanak">Kılavuz 9</td></tr><tr id="mev-31"><th scope="row">MEV-31</th><td>Her sınavdan sonra öğretmen cevapları analiz eder, hangi çıktıda eksik ya da yanlış öğrenme olduğunu belirler, öğrenciye <strong>bireysel geri bildirim</strong> verir ve gerekirse <strong>telafi</strong> yapar.</td><td class="dayanak">Kılavuz 12; Yönerge 5/f</td></tr><tr id="mev-32"><th scope="row">MEV-32</th><td>Öğretmenin analizi kendi kullanımı içindir; okul idaresine ayrıca rapor verilerek evrak yükü oluşturulmaz.</td><td class="dayanak">Kılavuz 12</td></tr><tr id="mev-33"><th scope="row">MEV-33</th><td>Ortak sınav sonuçlarından <strong>öğrenci toplu listesi, okullar ya da sınıflar arası karşılaştırmalı veri</strong> yayımlanmaz; öğrenci adlı reklam listesi yapılmaz.</td><td class="dayanak">Yönerge 5/r; Kılavuz 2</td></tr><tr id="mev-34"><th scope="row">MEV-34</th><td>Analizler şube ve sınıf bazında yapılır; eksiklik görülen öğrenciler için zümre iyileştirici önlem alır.</td><td class="dayanak">Yönetmelik 5/d; Yönerge 6/b</td></tr><tr id="mev-40"><th scope="row">MEV-40</th><td>Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için <strong>kısa süreli sınav</strong> yapılabilir: birkaç soru, kısa süre, anında geri bildirim. <strong>Not ya da puanla değerlendirilmez</strong>; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.</td><td class="dayanak">Yönetmelik 5/m; Yönerge 5/l; Kılavuz 13</td></tr><tr id="mev-41"><th scope="row">MEV-41</th><td><strong>İlkokulda</strong> kısa süreli, hazırbulunuşluk, deneme ve tarama sınavı dâhil <strong>hiçbir adla sınav yapılmaz</strong>; süreç odaklı değerlendirme araçlarında <strong>çoktan seçmeli soru kullanılmaz</strong>. Gelişim değerlendirme formu, kontrol listesi ve dereceleme ölçeğiyle izlenir; araçlar öğrenci gelişim dosyasında tutulur.</td><td class="dayanak">Yönerge 5/h, 5/ı; Kılavuz 14</td></tr><tr id="mev-50"><th scope="row">MEV-50</th><td>Uygulamalı sınavların biçimi, sayısı ve süresi zümrece belirlenir; bütün şubelerde aynı çıktı ve becerilerden yapılır.</td><td class="dayanak">Yönetmelik 5/ğ; Kılavuz 8</td></tr><tr id="mev-51"><th scope="row">MEV-51</th><td>Uzun süreli ürün ve süreç değerlendirmesinde araca uygun puanlama aracı kullanılır: dereceli puanlama anahtarı, derecelendirme ölçeği ya da kontrol listesi (MEV-02). Kitapçıkta performans görevi ve projeye ayrı madde yoktur; o yılın Bakanlık duyurusu esas alınır.</td><td class="dayanak">Yönetmelik 4/c</td></tr><tr id="mev-60"><th scope="row">MEV-60</th><td>Merkezî ve ortak sınavlarda kullanılan soruları izinsiz çoğaltmak, yayımlamak ya da kullanmak yasaktır (5846 sayılı Fikir ve Sanat Eserleri Kanunu). Bu sorular model alınır; birebir kullanılmaz.</td><td class="dayanak">Yönetmelik 23</td></tr></tbody>
-    </table></div>
-  </div>
-</section>
-
-<section class="bant acik" id="akislar">
-  <div class="ic">
-    <h2>İş akışları</h2>
-    <p class="aciklama">Aynı sohbette sırayla çalıştırın; bir skill'in ürünü sonrakinin girdisidir.</p>
-    <div class="akislar"><section class="akis"><h3>Yazılıya 8 hafta kala</h3><ol><li><code>maarif-cikti-cozumleme</code> — senaryodaki çıktıların kartı (&quot;Ekteki senaryodaki çıktıların kartını çıkar.&quot;)</li><li><code>maarif-ders-takvimi</code> — 8 derslik takvim, son ders tekrar ve prova</li><li><code>maarif-konu-ozeti</code> — her hafta o haftanın konu özeti ve ödev kartı</li><li><code>maarif-anlama-kontrolu</code> — her dersin sonunda bir çıkış kartı</li><li><code>maarif-ortak-yazili</code> — 7. hafta: senaryoya uyan prova kâğıtları</li><li><code>maarif-hata-analizi</code> — prova sonuçlarına göre telafi planı</li><li><code>maarif-benzer-soru</code> — en sık iki hata örüntüsü için ikiz soru seti</li></ol></section><section class="akis"><h3>Haftalık döngü (az ödev, kalıcı öğrenme)</h3><ol><li><code>maarif-hizli-tekrar</code> — dersin ilk 5 dakikası: geçen hafta ve öncesinden karışık 6–8 soru, haftanın sloganı</li><li><code>maarif-konu-ozeti</code> ya da <code>maarif-ders-plani</code> — haftanın konusu</li><li><code>maarif-kavrama-testi</code> — konu bitince 4 soruluk notsuz test</li><li>Sonuçlar girilince (<code>kavrama_karari.py</code>) — öğrenci başına karar ve en çok 6 soruluk hedefli ödev</li><li>Sonraki hafta — takılan bileşenler ısınma turunun başına gelir</li></ol></section><section class="akis"><h3>Yeni bir temaya başlarken</h3><ol><li><code>maarif-cikti-cozumleme</code> — tema kartı (temel kabuller, ön değerlendirme, köprü kurma)</li><li><code>maarif-anlama-kontrolu</code> — ön değerlendirme kontrolü (ön koşul bileşeni)</li><li><code>maarif-ders-plani</code> — ilk dersin paketi</li><li><code>maarif-farklilastirma</code> — ön değerlendirme sonucuna göre üç grup</li><li><code>maarif-derse-hazirlik</code> — dersten bir gün önce</li></ol></section><section class="akis"><h3>Dönem içi süreç değerlendirmesi</h3><ol><li><code>maarif-performans-gorevi</code> — yazılı dışı bileşenler için görev ve dereceli anahtar</li><li><code>maarif-anlama-kontrolu</code> — ara teslimlerde kısa kontroller</li><li><code>maarif-hata-analizi</code> — sınıf düzeyi rapor ve destekleme grubu</li></ol></section><section class="akis"><h3>DNAMATHOS haftalık üretim</h3><ol><li><code>maarif-konu-ozeti</code> + <code>dnamathos-pdf-tasarimi</code> — haftanın ders PDF&#x27;leri</li><li><code>dnamathos-instagram-karusel</code> — aynı konunun ızgara satırı</li><li><code>maarif-anlatim-videosu</code> — satırın konusu için Shorts</li></ol></section></div>
-  </div>
-</section>
-
-<section class="bant" id="kurulum">
-  <div class="ic">
-    <h2>Kurulum: üç yol</h2>
-    <ol class="kurulum"><li><h3>Hazır istem</h3><p>istemler klasöründeki istemi kopyalayın, köşeli parantezleri doldurun ve Claude&#x27;a yapıştırın. Kurulum gerekmez.</p></li><li><h3>Skill yükleme</h3><p>dist/zip klasöründeki skill dosyasını Claude ayarlarındaki skill bölümünden yükleyin ve açın. Claude isteğinize uyan skill&#x27;i kendisi seçer.</p></li><li><h3>Paket</h3><p>Claude Code kullanıyorsanız depoyu eklenti pazar yeri olarak ekleyin ve bir paketi kurun (ör. maarif-ogretmen-temel).</p></li></ol>
-    <h3 class="alt">Paketler</h3>
-    <div class="tablo-kap"><table class="paket-tablo"><thead><tr><th scope="col">Paket</th><th scope="col">İçerik</th><th scope="col">Skill</th></tr></thead><tbody><tr><th scope="row"><code>dnamathos</code></th><td>DNAMATHOS markasının PDF tasarımı ve Instagram karuseli; konu özeti ve ortak yazılı ile birlikte.</td><td class="sayi">8</td></tr><tr><th scope="row"><code>maarif-icerik-uretimi</code></th><td>Konu özeti slaytları, anlatım videosu ve ikiz soru üretimi; program okuma ile birlikte.</td><td class="sayi">4</td></tr><tr><th scope="row"><code>maarif-ogretmen-temel</code></th><td>Programı okuma, takvim, ders planı, derse hazırlık, farklılaştırma ve anlama kontrolü. Her branş öğretmeninin başlangıç paketi.</td><td class="sayi">7</td></tr><tr><th scope="row"><code>maarif-olcme-degerlendirme</code></th><td>Süreç odaklı değerlendirme zinciri - anlama kontrolü, ortak yazılı, beceri temelli test, performans görevi, ikiz soru ve hata analizi.</td><td class="sayi">9</td></tr><tr><th scope="row"><code>maarif-tam</code></th><td>Kütüphanedeki bütün skill&#x27;ler.</td><td class="sayi">17</td></tr></tbody></table></div>
-    <p class="aciklama">Ayrıntılı kılavuz: <code>docs/kilavuz.md</code> · Katalog: <code>KATALOG.md</code> · Katkı kuralları: <code>KATKI.md</code></p>
-  </div>
-</section>
-
-<section class="bant acik" id="sss">
-  <div class="ic dar">
-    <h2>Sık sorulanlar</h2>
-    <details class="sss"><summary>Skill&#x27;ler başka derslerde çalışır mı?</summary><p>Bütün skill&#x27;ler Maarif omurgasıyla çalışır; ayrıntılı ders dosyası şu an matematik için hazır. Başka derslerde skill programı doğrudan tema sayfasından okur ve bunu ürünün sonunda belirtir.</p></details><details class="sss"><summary>TYMM sayfası açılmazsa ne olur?</summary><p>Skill, verdiğiniz çıktı metniyle çalışır ve ürüne &quot;program sayfasından doğrulanamadı&quot; notunu ekler. Kod ya da kaynak uydurmaz.</p></details><details class="sss"><summary>Çoktan seçmeli test yazılı yerine kullanılabilir mi?</summary><p>Hayır. MEB mevzuatına göre okul yazılıları açık uçludur ve cevabı öğrenci oluşturur. Çoktan seçmeli test LGS hazırlığı, tarama ya da notsuz kısa süreli sınav içindir.</p></details><details class="sss"><summary>Haftalık ödevi nasıl azaltırım?</summary><p>Konu bitince kavrama testi yapın. Bileşeni geçen öğrenciye o konudan ödev verilmez; takılan öğrenciye yalnız takıldığı bileşen için 2–3 hedefli soru verilir. Haftalık üst sınır 6 sorudur.</p></details><details class="sss"><summary>Öğrenci adlarını vermeli miyim?</summary><p>Gerek yok. Skill&#x27;ler öğrencileri takma adla işler; sınıflar ya da öğrenciler arası sıralama üretmez.</p></details><details class="sss"><summary>Ürünü doğrudan sınıfa götürebilir miyim?</summary><p>Ürünler denetlenmiş olarak gelir, ama son kontrol sizindir. Sorunu bulduğunuz yeri söylerseniz skill yalnız o kısmı düzeltir.</p></details>
-  </div>
-</section>
-</main>
-<footer class="alt-bilgi">
-  <div class="ic">
-    <p><strong>DNAMATHOS</strong> · Maarif Skill Kütüphanesi. Program metinleri ve kodları Millî Eğitim Bakanlığına aittir (<a href="https://tymm.meb.gov.tr" target="_blank" rel="noopener">tymm.meb.gov.tr</a>).</p>
-    <p>Ders planı, farklılaştırma, derse hazırlık ve anlama kontrolü skill'leri <a href="https://github.com/anthropics/k12-teacher-skills" target="_blank" rel="noopener">anthropics/k12-teacher-skills</a> (Apache-2.0) çalışmasından uyarlanmıştır. Lisans ayrıntısı: <code>LISANS.md</code>.</p>
-  </div>
-</footer>
-
+<section id="g-yenilikler" hidden><p class="ust-etiket">Yenilikler</p><h1>Neler değişti?</h1><p class="alt-yazi">Kütüphanenin son sürümleri.</p>
+  <article class="yenilik"><time>11 Kasım 2026</time><div><h3>DNAMATHOS tasarım dili 2.0</h3><p>Safran ve lacivert, Fraunces başlık, okunaklı Atkinson gövde, el yazısı notlar ve DNA sarmalı. Çözüm alanı sorunun altında, tüyo aynı sayfada.</p></div></article><article class="yenilik"><time>11 Kasım 2026</time><div><h3>Haftalık ders paketi</h3><p>Konu özeti artık ısınma turunu, haftanın sloganını ve kavrama testini de üretiyor; ödev testin sonucuna bağlı.</p></div></article><article class="yenilik"><time>11 Kasım 2026</time><div><h3>Kavrama testi ve hızlı tekrar</h3><p>Haftalık konuyu 4 soruyla ölçen test ve aralıklı tekrar yapan 5 dakikalık ders başı turu.</p></div></article><article class="yenilik"><time>11 Kasım 2026</time><div><h3>MEB ölçme kuralları</h3><p>Ölçme ve Değerlendirme Yönetmeliği, Yönerge ve Kılavuzdaki 28 kural bütün ölçme skill&#x27;lerine işlendi.</p></div></article><article class="yenilik"><time>11 Kasım 2026</time><div><h3>İlk sürüm</h3><p>Maarif Modeli&#x27;ne bağlı 15 skill, ortak başvurular, testler ve öğretmen kılavuzu.</p></div></article></section>
+<section id="g-istemler" hidden><p class="ust-etiket">İstem kütüphanesi</p><h1>Claude'a ne yazmalı?</h1><p class="alt-yazi">Kopyala, Claude'a yapıştır. <span class="yer">[Safran]</span> yerleri kendi bilginle değiştir.</p>
+  <div class="sekmeler" role="group" aria-label="Süzgeç" data-hedef="istem-izgara"><button type="button" data-sekme="hepsi" aria-pressed="true">Tümü</button><button type="button" data-sekme="planla" aria-pressed="false">Planla</button><button type="button" data-sekme="derse-hazirlan" aria-pressed="false">Derse hazırlan</button><button type="button" data-sekme="olc" aria-pressed="false">Ölç</button><button type="button" data-sekme="telafi" aria-pressed="false">Telafi et</button><button type="button" data-sekme="uret" aria-pressed="false">İçerik üret</button></div><div class="izgara" id="istem-izgara"><article class="istem" data-sekme="planla"><h3>Temanın çıktı kartı</h3><p class="ne">Programdaki çıktıları, bileşenleri ve sınırları tek kartta görmek için.</p>
+<div class="kutu"><pre id="ist0"><span class="yer">[sınıf]</span>. sınıf <span class="yer">[ders]</span> dersinin <span class="yer">[tema adı]</span> temasındaki öğrenme çıktılarını TYMM sayfasından çıkar; her bileşeni beceri basamağıyla eşle, yazılıda ölçülüp ölçülmediğini ve içerik çerçevesi sınırlarını yaz.</pre><div class="alt"><a class="skill" href="#maarif-cikti-cozumleme">maarif-cikti-cozumleme</a><button type="button" class="kopyala" data-hedef="ist0">Kopyala</button></div></div></article><article class="istem" data-sekme="planla"><h3>Kitap ile program eşlemesi</h3><p class="ne">Ders kitabındaki sayfaların hangi çıktıya denk geldiğini bulmak için.</p>
+<div class="kutu"><pre id="ist1">Ekteki ders kitabının <span class="yer">[sayfa aralığı]</span> sayfaları programda hangi çıktı ve bileşenlere denk geliyor? Kitapla site arasında fark varsa belirt.</pre><div class="alt"><a class="skill" href="#maarif-cikti-cozumleme">maarif-cikti-cozumleme</a><button type="button" class="kopyala" data-hedef="ist1">Kopyala</button></div></div></article><article class="istem" data-sekme="planla"><h3>Yazılıya kalan haftalar</h3><p class="ne">Konuları sınava kadar derslere dağıtmak ve ödev sayfalarını çıkarmak için.</p>
+<div class="kutu"><pre id="ist2"><span class="yer">[sınav adı]</span>&#x27;na <span class="yer">[N]</span> hafta var, haftada <span class="yer">[M]</span> ders yapıyorum. Ekteki senaryo tablosuna göre konuları derslere dağıt; son ders tekrar ve yazılı provası olsun. Ödevleri ekteki içindekiler sayfasından ver.</pre><div class="alt"><a class="skill" href="#maarif-ders-takvimi">maarif-ders-takvimi</a><button type="button" class="kopyala" data-hedef="ist2">Kopyala</button></div></div></article><article class="istem" data-sekme="planla"><h3>Sınıfa hazır ders paketi</h3><p class="ne">Bir çıktı için ders planı, çalışma kâğıdı ve gözlem formu.</p>
+<div class="kutu"><pre id="ist3"><span class="yer">[sınıf]</span>. sınıf <span class="yer">[çıktı kodu ya da konu]</span> için <span class="yer">[süre]</span> dakikalık ders planı, öğrenci çalışma kâğıdı ve gözlem formu hazırla.</pre><div class="alt"><a class="skill" href="#maarif-ders-plani">maarif-ders-plani</a><button type="button" class="kopyala" data-hedef="ist3">Kopyala</button></div></div></article><article class="istem" data-sekme="planla"><h3>Üç gruba uyarla</h3><p class="ne">Var olan dersi destekleme, temel ve zenginleştirme için uyarlamak.</p>
+<div class="kutu"><pre id="ist4">Ekteki dersi farklılaştır. Sınıfımda <span class="yer">[gözlenen durum, ör. kesirleri modelle göremeyen 6 öğrenci]</span> var; destekleme, temel ve zenginleştirme için üç çalışma kâğıdı ve bir öğretmen planı hazırla.</pre><div class="alt"><a class="skill" href="#maarif-farklilastirma">maarif-farklilastirma</a><button type="button" class="kopyala" data-hedef="ist4">Kopyala</button></div></div></article><article class="istem" data-sekme="derse-hazirlan"><h3>Haftalık ders paketi</h3><p class="ne">Isınma turu, konu özeti, slogan, kavrama testi ve sonuca bağlı ödev; tek istekle.</p>
+<div class="kutu"><pre id="ist5">Ekteki ders kitabına ve haftalık plana göre <span class="yer">[sınıf]</span>. sınıf <span class="yer">[konu]</span> dersini hazırla. Ödevi ekteki içindekiler sayfasından isteğe bağlı ek çalışma olarak ver.</pre><div class="alt"><a class="skill" href="#maarif-konu-ozeti">maarif-konu-ozeti</a><button type="button" class="kopyala" data-hedef="ist5">Kopyala</button></div></div></article><article class="istem" data-sekme="derse-hazirlan"><h3>Yalnız konu özeti</h3><p class="ne">Isınma ve kavrama testi olmadan yalnız özet slaytları.</p>
+<div class="kutu"><pre id="ist6"><span class="yer">[sınıf]</span>. sınıf <span class="yer">[konu]</span> için yalnız özet hazırla; ısınma ve kavrama testi olmasın.</pre><div class="alt"><a class="skill" href="#maarif-konu-ozeti">maarif-konu-ozeti</a><button type="button" class="kopyala" data-hedef="ist6">Kopyala</button></div></div></article><article class="istem" data-sekme="derse-hazirlan"><h3>Derse birlikte hazırlan</h3><p class="ne">Kilit görevi birlikte çözüp kısa bir hazırlık notu çıkarmak.</p>
+<div class="kutu"><pre id="ist7">Ekteki planla yarınki <span class="yer">[konu]</span> dersine hazırlanmama yardım et; kilit görevi önce ben çözeyim, sonra öğrencilerin nerede takılacağını konuşalım.</pre><div class="alt"><a class="skill" href="#maarif-derse-hazirlik">maarif-derse-hazirlik</a><button type="button" class="kopyala" data-hedef="ist7">Kopyala</button></div></div></article><article class="istem" data-sekme="derse-hazirlan"><h3>Ders başı ısınma ve slogan</h3><p class="ne">Geçen hafta ve öncesinden karışık 8 hızlı soru ve haftanın sloganı.</p>
+<div class="kutu"><pre id="ist8">Geçen hafta <span class="yer">[konu]</span> işledik. Ders başı için 8 soruluk hızlı tekrar turu ve haftanın sloganını hazırla; önceki haftalardan da soru olsun.</pre><div class="alt"><a class="skill" href="#maarif-hizli-tekrar">maarif-hizli-tekrar</a><button type="button" class="kopyala" data-hedef="ist8">Kopyala</button></div></div></article><article class="istem" data-sekme="derse-hazirlan"><h3>Sloganı denetle</h3><p class="ne">Bir kural cümlesinin doğru, sınırı belli ve akılda kalıcı olup olmadığını sınamak.</p>
+<div class="kutu"><pre id="ist9">Şu sloganı denetle ve gerekirse düzelt: &quot;<span class="yer">[slogan]</span>&quot;. Karşı örnekle sına ve ardına bir neden sorusu ekle.</pre><div class="alt"><a class="skill" href="#maarif-hizli-tekrar">maarif-hizli-tekrar</a><button type="button" class="kopyala" data-hedef="ist9">Kopyala</button></div></div></article><article class="istem" data-sekme="olc"><h3>Çıkış kartı</h3><p class="ne">Tek bileşen için 1–3 maddelik notsuz kontrol ve cevapları okuma kılavuzu.</p>
+<div class="kutu"><pre id="ist10"><span class="yer">[sınıf]</span>. sınıf <span class="yer">[konu ya da çıktı kodu]</span> için ders sonu çıkış kartı hazırla; cevapları okuma kılavuzu da olsun.</pre><div class="alt"><a class="skill" href="#maarif-anlama-kontrolu">maarif-anlama-kontrolu</a><button type="button" class="kopyala" data-hedef="ist10">Kopyala</button></div></div></article><article class="istem" data-sekme="olc"><h3>En az soruyla kavrama testi</h3><p class="ne">Haftanın konusu bitince 4 soruluk notsuz test; ödevi sonuç belirler.</p>
+<div class="kutu"><pre id="ist11"><span class="yer">[sınıf]</span>. sınıfta bu hafta <span class="yer">[konu]</span> işledik. En az soruyla kavrama testi hazırla; ödevi sonuca göre vereceğim.</pre><div class="alt"><a class="skill" href="#maarif-kavrama-testi">maarif-kavrama-testi</a><button type="button" class="kopyala" data-hedef="ist11">Kopyala</button></div></div></article><article class="istem" data-sekme="olc"><h3>Senaryoya uygun ortak yazılı</h3><p class="ne">Açık uçlu kâğıt seti, adım puanlı cevap anahtarı ve kapsama tablosu.</p>
+<div class="kutu"><pre id="ist12">Ekteki ortak sınav senaryosuna göre <span class="yer">[sınıf]</span>. sınıf <span class="yer">[dönem ve yazılı]</span> için açık uçlu yazılı kâğıtları ve cevap anahtarlarını hazırla; kâğıt sayısını kapsamaya göre sen belirle.</pre><div class="alt"><a class="skill" href="#maarif-ortak-yazili">maarif-ortak-yazili</a><button type="button" class="kopyala" data-hedef="ist12">Kopyala</button></div></div></article><article class="istem" data-sekme="olc"><h3>LGS tarzı tarama testi</h3><p class="ne">Bağlamlı, görselli, çeldiricileri öğrenci hatasından gelen çoktan seçmeli test.</p>
+<div class="kutu"><pre id="ist13"><span class="yer">[sınıf]</span>. sınıf <span class="yer">[konu ya da çıktılar]</span> için <span class="yer">[N]</span> soruluk LGS tarzı tarama testi ve çeldirici açıklamalı cevap anahtarı hazırla.</pre><div class="alt"><a class="skill" href="#maarif-beceri-temelli-test">maarif-beceri-temelli-test</a><button type="button" class="kopyala" data-hedef="ist13">Kopyala</button></div></div></article><article class="istem" data-sekme="olc"><h3>Performans görevi</h3><p class="ne">Yazılıda ölçülemeyen bileşenler için görev ve dereceli puanlama anahtarı.</p>
+<div class="kutu"><pre id="ist14"><span class="yer">[sınıf]</span>. sınıf <span class="yer">[çıktı ya da tema]</span> için 2 haftalık performans görevi, dereceli puanlama anahtarı, gözlem formu ve öz değerlendirme formu hazırla.</pre><div class="alt"><a class="skill" href="#maarif-performans-gorevi">maarif-performans-gorevi</a><button type="button" class="kopyala" data-hedef="ist14">Kopyala</button></div></div></article><article class="istem" data-sekme="telafi"><h3>Sonuca göre hedefli ödev</h3><p class="ne">Kavrama testi sonuçlarından öğrenci başına karar ve en çok 6 soruluk ödev.</p>
+<div class="kutu"><pre id="ist15">Ekteki kavrama testi sonuçlarına göre öğrenci başına karar ve hedefli ödevi çıkar.</pre><div class="alt"><a class="skill" href="#maarif-kavrama-testi">maarif-kavrama-testi</a><button type="button" class="kopyala" data-hedef="ist15">Kopyala</button></div></div></article><article class="istem" data-sekme="telafi"><h3>Deneme sonrası hata analizi</h3><p class="ne">Yanlışları bileşene ve hata türüne ayırıp telafi planı ve tekrar takvimi.</p>
+<div class="kutu"><pre id="ist16">Ekteki deneme sonucuna ve yanlış yapılan sorulara göre hata analizi yap; telafi planı, kontrol soruları ve tekrar takvimi hazırla. Veli için kısa bir özet de ekle.</pre><div class="alt"><a class="skill" href="#maarif-hata-analizi">maarif-hata-analizi</a><button type="button" class="kopyala" data-hedef="ist16">Kopyala</button></div></div></article><article class="istem" data-sekme="telafi"><h3>Yanlış soruların ikizleri</h3><p class="ne">Aynı bileşeni ölçen, bağlamı ve sayıları değişmiş özgün sorular.</p>
+<div class="kutu"><pre id="ist17">Öğrencinin yanlış yaptığı ekteki <span class="yer">[N]</span> sorunun her biri için aynı bileşeni ölçen birer ikiz soru ve adım adım çözüm yaz.</pre><div class="alt"><a class="skill" href="#maarif-benzer-soru">maarif-benzer-soru</a><button type="button" class="kopyala" data-hedef="ist17">Kopyala</button></div></div></article><article class="istem" data-sekme="uret"><h3>Kısa anlatım videosu</h3><p class="ne">Sahne planı, seslendirme metni ve Remotion kodu.</p>
+<div class="kutu"><pre id="ist18"><span class="yer">[konu ya da soru]</span> için 45 saniyelik dikey anlatım videosu hazırla: sahne planı, seslendirme metni ve Remotion kodu.</pre><div class="alt"><a class="skill" href="#maarif-anlatim-videosu">maarif-anlatim-videosu</a><button type="button" class="kopyala" data-hedef="ist18">Kopyala</button></div></div></article><article class="istem" data-sekme="uret"><h3>Instagram ızgara satırı</h3><p class="ne">Konu karuseli, rehberlik ve gerçek hayat gönderisi; sınıfın paletiyle.</p>
+<div class="kutu"><pre id="ist19"><span class="yer">[sınıf]</span>. sınıf <span class="yer">[konu]</span> için konu karuseli, rehberlik ve gerçek hayat gönderilerinden oluşan ızgara satırını hazırla.</pre><div class="alt"><a class="skill" href="#dnamathos-instagram-karusel">dnamathos-instagram-karusel</a><button type="button" class="kopyala" data-hedef="ist19">Kopyala</button></div></div></article><article class="istem" data-sekme="uret"><h3>DNAMATHOS PDF&#x27;i</h3><p class="ne">Herhangi bir içeriği DNAMATHOS 16:9 tasarımına dönüştürmek ve denetlemek.</p>
+<div class="kutu"><pre id="ist20">Bu içeriği DNAMATHOS tasarımıyla 16:9 PDF&#x27;e çevir; taşma ve bağlantı denetimini yap.</pre><div class="alt"><a class="skill" href="#dnamathos-pdf-tasarimi">dnamathos-pdf-tasarimi</a><button type="button" class="kopyala" data-hedef="ist20">Kopyala</button></div></div></article></div></section>
+<section id="g-skiller" hidden><p class="ust-etiket">Skill kataloğu</p><h1>Hangi iş için hangi skill?</h1><p class="alt-yazi">Her skill bir öğretmen işini baştan sona yapar ve ürettiği her şeyi bir öğrenme çıktısına bağlar.</p>
+  <div class="sekmeler" role="group" aria-label="Süzgeç" data-hedef="skill-izgara"><button type="button" data-sekme="hepsi" aria-pressed="true">Tümü</button><button type="button" data-sekme="plan" aria-pressed="false">Planlama</button><button type="button" data-sekme="olcme" aria-pressed="false">Ölçme ve değerlendirme</button><button type="button" data-sekme="icerik" aria-pressed="false">İçerik üretimi</button></div><div class="izgara" id="skill-izgara"><article class="skill-kart" id="maarif-cikti-cozumleme" data-sekme="plan"><h3>Programı çözümle</h3><code class="ad">maarif-cikti-cozumleme</code><p>Bir temanın ya da çıktının programını tek bir çıktı kartında toplar.</p>
+<div class="cipler"><a class="cip" href="#mev-01" title="Başarı, programdaki çıktılara dayanan ve dersin yapısına uygun ölçmelerle belirlenir. Ölçme şekli çıktının özelliğine göre seçilir; bütün çıktılar planlı bir izlemeyle ölçülür.">MEV-01</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Yeni bir temaya başlarken</li><li>Ders kitabındaki konunun hangi çıktıya denk geldiğini öğrenmek için</li><li>Öteki skill&#x27;lerden önce ilk adım olarak</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Sınıf ve ders</li><li>Tema adı ya da çıktı kodu</li><li>İsterseniz ders kitabı sayfaları</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Birebir çıktı metni ve süreç bileşenleri</li><li>Her bileşenin beceri basamağı ve yazılıda ölçülüp ölçülmediği</li><li>İçerik çerçevesi sınırları</li><li>Temadaki eğilim</li><li>SDB</li><li>değer ve okuryazarlık kodları</li></ul></dd><dt>Örnek istem</dt><dd>6. sınıf matematik 1. temanın öğrenme çıktılarını çıkar; bileşenleri beceri basamaklarıyla eşle ve sınırları yaz.</dd><dt>Kontrol edin</dt><dd>Kitap ile site arasında tema numarası farkı varsa kartın altındaki nota bakın.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-ders-takvimi">Ders takvimi</a></dd></dl></details></article><article class="skill-kart" id="maarif-ders-takvimi" data-sekme="plan"><h3>Ders takvimi</h3><code class="ad">maarif-ders-takvimi</code><p>Sınava kalan haftalara göre çıktıları derslere dağıtır.</p>
+<div class="cipler"><a class="cip" href="#mev-14" title="Okul sınavları konu soru dağılım tablosuna göre hazırlanır. Tabloyu il sınıf/alan zümreleri senaryolu olarak hazırlar; okul zümresi senaryoyu seçer; soru sayısı seçilen senaryoya uyar. Ülke geneli sınavın tablosunu Genel Müdürlük hazırlar ve örnek tablolar yayımlar.">MEV-14</a><a class="cip" href="#mev-15" title="Bir dönemde her dersten iki yazılı yapılır (haftada 6 saat ve üstü derslerde il zümresi kararıyla üçüncü).">MEV-15</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Dönem başında ya da yazılıdan birkaç hafta önce</li><li>Özel ders ya da koçluk planında</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Kalan hafta ve haftalık ders sayısı</li><li>Okul zümresinin seçtiği senaryo tablosu</li><li>İsterseniz kaynak kitabın içindekiler sayfası</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Haftalık takvim tablosu</li><li>Her derste çıktı kodu ve bileşenler</li><li>Kitap sayfası ve ödev sayfaları</li><li>Kapsama özeti</li></ul></dd><dt>Örnek istem</dt><dd>2. yazılıya 8 hafta var, haftada bir ders yapıyorum. Ekteki senaryoya göre konuları dağıt; son ders tekrar olsun.</dd><dt>Kontrol edin</dt><dd>Ödev sayfalarının içindekiler sayfasıyla aynı olduğunu bir kez gözle kontrol edin.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-konu-ozeti">Konu özeti</a></dd></dl></details></article><article class="skill-kart" id="maarif-ders-plani" data-sekme="plan"><h3>Ders planı</h3><code class="ad">maarif-ders-plani</code><p>Bir çıktı için ders planı, öğrenci çalışma kâğıdı ve gözlem formunu birlikte hazırlar.</p>
+<div class="cipler"><a class="cip" href="#mev-03" title="Değerlendirme süreç odaklıdır: öğrencinin başlangıç ve son düzeyi karşılaştırılır, gelişim aralıklarla izlenir, öğrenciye ve veliye geri bildirim verilir. Ölçme yalnız not vermek değil, geri bildirim vermektir.">MEV-03</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Yeni bir dersi sıfırdan planlarken</li><li>Mini ders ya da etkinlik planı için</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Sınıf</li><li>Çıktı kodu ya da konu</li><li>İsterseniz süre ve sınıf mevcudu</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Ön değerlendirme, köprü kurma, keşfet, tartış, genelle ve çıkış kartından oluşan akış</li><li>Bileşen kapsama tablosu</li><li>Çalışma kâğıdı ve gözlem formu</li></ul></dd><dt>Örnek istem</dt><dd>Yarın 6. sınıfa ortak katları anlatacağım; 40 dakikalık ders planı, çalışma kâğıdı ve gözlem formu hazırla.</dd><dt>Kontrol edin</dt><dd>Çıkış kartının dersin en zor durumunu yokladığını ve üç grup ölçütünü okuyun.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-derse-hazirlik">Derse hazırlık</a></dd></dl></details></article><article class="skill-kart" id="maarif-derse-hazirlik" data-sekme="plan"><h3>Derse hazırlık</h3><code class="ad">maarif-derse-hazirlik</code><p>Var olan bir derse sizinle birlikte hazırlanır ve kısa bir hazırlık notu bırakır.</p>
+<div class="cipler"><span class="cip">Ölçme ürünü üretmez</span></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Dersten bir gün önce</li><li>İlk kez anlatacağınız bir etkinlikte</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Ders planı ya da kitap sayfası</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Kilit görev üzerine birlikte düşünme</li><li>Neredeyse doğru öğrenci cevapları</li><li>200–300 sözcüklük hazırlık notu</li></ul></dd><dt>Örnek istem</dt><dd>Ekteki planla yarınki derse hazırlanmama yardım et; kilit görevi önce ben çözeyim.</dd><dt>Kontrol edin</dt><dd>Hazırlık notunu dersin bölümlerine göre okuyun; değişmesi gereken yeri söyleyin.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-anlama-kontrolu">Anlama kontrolü</a></dd></dl></details></article><article class="skill-kart" id="maarif-farklilastirma" data-sekme="plan"><h3>Farklılaştırma</h3><code class="ad">maarif-farklilastirma</code><p>Var olan bir dersi destekleme, temel ve zenginleştirme için üç gruba uyarlar.</p>
+<div class="cipler"><a class="cip" href="#mev-04" title="Kaynaştırma ya da bütünleştirme yoluyla eğitim gören öğrencilerde ölçme ve değerlendirmenin temeli BEP&#x27;tir; ölçme araçları BEP&#x27;e göre hazırlanır, gerekirse farklı soru tipleri kullanılır.">MEV-04</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Ön değerlendirmeden sonra</li><li>Sınıfta farklı hazırbulunuşluk varken</li><li>BEP hedefi olan öğrenci için</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Ders planı ya da çalışma kâğıdı</li><li>İsterseniz gözlediğiniz durum ya da BEP hedefi</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Öğretmen farklılaştırma planı</li><li>A B C çalışma kâğıtları</li><li>Her grupta aynı çıktı ve aynı zor durum</li></ul></dd><dt>Örnek istem</dt><dd>Ekteki dersi farklılaştır; kesirleri modelle göremeyen öğrenciler için destek ekle.</dd><dt>Kontrol edin</dt><dd>Öğrenci kâğıtlarında düzey adı yazmadığını kontrol edin.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-anlama-kontrolu">Anlama kontrolü</a></dd></dl></details></article><article class="skill-kart" id="maarif-anlama-kontrolu" data-sekme="olcme"><h3>Anlama kontrolü</h3><code class="ad">maarif-anlama-kontrolu</code><p>Tek bir bileşen için 1–3 maddelik notsuz kontrol ve cevapları okuma kılavuzu hazırlar.</p>
+<div class="cipler"><a class="cip" href="#mev-40" title="Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için kısa süreli sınav yapılabilir: birkaç soru, kısa süre, anında geri bildirim. Not ya da puanla değerlendirilmez; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.">MEV-40</a><a class="cip" href="#mev-41" title="İlkokulda kısa süreli, hazırbulunuşluk, deneme ve tarama sınavı dâhil hiçbir adla sınav yapılmaz; süreç odaklı değerlendirme araçlarında çoktan seçmeli soru kullanılmaz. Gelişim değerlendirme formu, kontrol listesi ve dereceleme ölçeğiyle izlenir; araçlar öğrenci gelişim dosyasında tutulur.">MEV-41</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Ders sonunda çıkış kartı olarak</li><li>Yeni konuya geçmeden ön değerlendirme olarak</li><li>Kısa süreli sınav yerine</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Sınıf</li><li>Konu ya da çıktı kodu</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Öğrenci kâğıdı</li><li>Her cevabın neyi gösterdiği</li><li>Sonraki öğretim adımı</li></ul></dd><dt>Örnek istem</dt><dd>6. sınıf ondalık gösterim için ders sonu çıkış kartı hazırla; cevapları okuma kılavuzu da olsun.</dd><dt>Kontrol edin</dt><dd>Skill odak bileşeni önce size sorar; onayladığınız bileşenin doğru olduğundan emin olun.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-hata-analizi">Hata analizi</a></dd></dl></details></article><article class="skill-kart" id="maarif-kavrama-testi" data-sekme="olcme"><h3>Kavrama testi</h3><code class="ad">maarif-kavrama-testi</code><p>Haftanın konusunu 4–5 soruyla ölçer; ödevi yalnız takılan bileşenlere verir.</p>
+<div class="cipler"><a class="cip" href="#mev-40" title="Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için kısa süreli sınav yapılabilir: birkaç soru, kısa süre, anında geri bildirim. Not ya da puanla değerlendirilmez; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.">MEV-40</a><a class="cip" href="#mev-41" title="İlkokulda kısa süreli, hazırbulunuşluk, deneme ve tarama sınavı dâhil hiçbir adla sınav yapılmaz; süreç odaklı değerlendirme araçlarında çoktan seçmeli soru kullanılmaz. Gelişim değerlendirme formu, kontrol listesi ve dereceleme ölçeğiyle izlenir; araçlar öğrenci gelişim dosyasında tutulur.">MEV-41</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Haftalık konu bittikten sonra</li><li>Ödevi azaltmak istediğinizde</li><li>Koçlukta haftalık izlemede</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Haftanın konusu ya da çıktısı</li><li>Sonuç geldiğinde öğrencilerin cevapları</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Cevap ve gerekçe isteyen 4–5 soruluk kâğıt</li><li>Öğretmen anahtarı ve karar tablosu</li><li>Öğrenci başına geçti / kısa telafi / yeniden ele al kararı</li><li>En çok 6 soruluk hedefli ödev</li></ul></dd><dt>Örnek istem</dt><dd>6. sınıfta bu hafta ortak kat ve ortak böleni bitirdik; en az soruyla kavrama testi hazırla.</dd><dt>Kontrol edin</dt><dd>Öğrenci sonuçlarını takma adla girin; karar ve ödev betikle hesaplanır.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-hizli-tekrar">Hızlı tekrar</a></dd></dl></details></article><article class="skill-kart" id="maarif-hizli-tekrar" data-sekme="olcme"><h3>Hızlı tekrar</h3><code class="ad">maarif-hizli-tekrar</code><p>Ders başı 5 dakikalık soru-cevap turu ve denetlenmiş haftanın sloganını hazırlar.</p>
+<div class="cipler"><a class="cip" href="#mev-40" title="Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için kısa süreli sınav yapılabilir: birkaç soru, kısa süre, anında geri bildirim. Not ya da puanla değerlendirilmez; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.">MEV-40</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Her dersin ilk 5 dakikasında</li><li>Önceki haftaları unutturmamak için</li><li>Grup dersinde kısa yarışma olarak</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Bu hafta işlenen konu</li><li>İsterseniz kavrama testi geçmişi</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>8 soruluk karışık tur (geçen hafta ve öncesi)</li><li>Cevap ekranları ve öğretmen listesi</li><li>Karşı örnekle sınanmış slogan ve neden sorusu</li></ul></dd><dt>Örnek istem</dt><dd>Geçen hafta ortak katı işledik; ders başı için hızlı tekrar turu ve haftanın sloganını hazırla.</dd><dt>Kontrol edin</dt><dd>Sloganın sınırını ve karşı örneğini okuyun; slogan kuralın yerine geçmez, onu hatırlatır.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-kavrama-testi">Kavrama testi</a></dd></dl></details></article><article class="skill-kart" id="maarif-ortak-yazili" data-sekme="olcme"><h3>Ortak yazılı</h3><code class="ad">maarif-ortak-yazili</code><p>Seçilen senaryoya uyan açık uçlu yazılı kâğıtlarını ve cevap anahtarlarını hazırlar.</p>
+<div class="cipler"><a class="cip" href="#mev-10" title="Okul sınavları, cevabını öğrencinin oluşturduğu ve farklı bilişsel düzeydeki çıktıları ölçen maddelerden oluşan yazılı yoklamadır. Açık uçlu soru esastır.">MEV-10</a><a class="cip" href="#mev-11" title="Çıktının özelliğine ve bilişsel düzeyine göre kısa cevaplı soru da kullanılabilir; ama yalnız kısa cevaplı sorulardan oluşan yazılı yapılamaz.">MEV-11</a><a class="cip" href="#mev-12" title="Okul yazılısında cevabı yalnız işaretlemeye dayanan maddeler (çoktan seçmeli, gerekçesiz doğru-yanlış, gerekçesiz eşleştirme) kullanılmaz, çünkü cevabı öğrenci oluşturmaz. Doğru-yanlış ya da eşleştirme ancak öğrenci kararının gerekçesini yazıyorsa açık uçlu madde sayılır (MEB örnek yazılılarındaki &quot;doğru ya da yanlış olma nedenleri&quot; gibi). Yabancı dilde, eşleştirme olmayacak biçimde verilenler arasından seçilen boşluk doldurma kullanılabilir.">MEV-12</a><a class="cip" href="#mev-13" title="Soru, ölçtüğü çıktının bilişsel düzeyindedir: çözümleme ya da değerlendirme düzeyindeki bir çıktı, aynı düzeyde soru gerektirir.">MEV-13</a><a class="cip" href="#mev-14" title="Okul sınavları konu soru dağılım tablosuna göre hazırlanır. Tabloyu il sınıf/alan zümreleri senaryolu olarak hazırlar; okul zümresi senaryoyu seçer; soru sayısı seçilen senaryoya uyar. Ülke geneli sınavın tablosunu Genel Müdürlük hazırlar ve örnek tablolar yayımlar.">MEV-14</a><a class="cip" href="#mev-16" title="Yazılı sınavın süresi, zorunlu hâller dışında bir ders saatini geçemez. Kâğıt bu süreye sığacak uzunluktadır.">MEV-16</a><a class="cip" href="#mev-17" title="Sınav kâğıdında öğrencinin cevabı için yeterli alan bırakılır.">MEV-17</a><a class="cip" href="#mev-19" title="Sınavlar 100 tam puan üzerinden değerlendirilir; yanlış cevaplar doğru cevapları etkilemez (götürü yoktur).">MEV-19</a><a class="cip" href="#mev-30" title="Puanlanan cevap kâğıtları öğrencilere gösterilir; kâğıtta eksik ya da yanlış öğrenmelere yönelik öğretmen notları bulunur.">MEV-30</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Okul geneli ortak yazılıdan önce</li><li>Yazılı provası için</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Okul zümresinin seçtiği senaryo tablosu</li><li>Sınıf ve dönem</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Kâğıt seti ve kapsama planı</li><li>Adım puanlı cevap anahtarı ve öğretmen notları</li><li>Kapsama tablosu</li></ul></dd><dt>Örnek istem</dt><dd>Ekteki senaryoya göre 9. sınıf 1. dönem 2. yazılı kâğıtlarını ve cevap anahtarlarını hazırla.</dd><dt>Kontrol edin</dt><dd>Kâğıtların bir ders saatine sığdığını ve cevap alanlarının yeterli olduğunu kontrol edin.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-hata-analizi">Hata analizi</a></dd></dl></details></article><article class="skill-kart" id="maarif-beceri-temelli-test" data-sekme="olcme"><h3>Beceri temelli test</h3><code class="ad">maarif-beceri-temelli-test</code><p>LGS ve TYT tarzı, bağlamlı ve görselli çoktan seçmeli test hazırlar.</p>
+<div class="cipler"><a class="cip" href="#mev-12" title="Okul yazılısında cevabı yalnız işaretlemeye dayanan maddeler (çoktan seçmeli, gerekçesiz doğru-yanlış, gerekçesiz eşleştirme) kullanılmaz, çünkü cevabı öğrenci oluşturmaz. Doğru-yanlış ya da eşleştirme ancak öğrenci kararının gerekçesini yazıyorsa açık uçlu madde sayılır (MEB örnek yazılılarındaki &quot;doğru ya da yanlış olma nedenleri&quot; gibi). Yabancı dilde, eşleştirme olmayacak biçimde verilenler arasından seçilen boşluk doldurma kullanılabilir.">MEV-12</a><a class="cip" href="#mev-40" title="Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için kısa süreli sınav yapılabilir: birkaç soru, kısa süre, anında geri bildirim. Not ya da puanla değerlendirilmez; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.">MEV-40</a><a class="cip" href="#mev-41" title="İlkokulda kısa süreli, hazırbulunuşluk, deneme ve tarama sınavı dâhil hiçbir adla sınav yapılmaz; süreç odaklı değerlendirme araçlarında çoktan seçmeli soru kullanılmaz. Gelişim değerlendirme formu, kontrol listesi ve dereceleme ölçeğiyle izlenir; araçlar öğrenci gelişim dosyasında tutulur.">MEV-41</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>LGS ya da TYT hazırlığında</li><li>Tarama testi olarak</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Sınıf</li><li>Konu ya da çıktılar</li><li>Soru sayısı</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Test kâğıdı</li><li>Çeldirici açıklamalı cevap anahtarı</li><li>Güçlük dağılımı</li></ul></dd><dt>Örnek istem</dt><dd>8. sınıf üslü ifadeler için 15 soruluk LGS tarzı tarama testi hazırla.</dd><dt>Kontrol edin</dt><dd>Bu test okul yazılısı yerine kullanılmaz; okul yazılısı için ortak yazılı skill&#x27;ini kullanın.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-hata-analizi">Hata analizi</a></dd></dl></details></article><article class="skill-kart" id="maarif-performans-gorevi" data-sekme="olcme"><h3>Performans görevi</h3><code class="ad">maarif-performans-gorevi</code><p>Yazılıda ölçülemeyen bileşenler için görev, dereceli puanlama anahtarı ve formlar hazırlar.</p>
+<div class="cipler"><a class="cip" href="#mev-02" title="Ölçme araçları geçerli, güvenilir ve kullanışlı olur. Araca göre cevap anahtarı, puanlama anahtarı, derecelendirme ölçeği ya da kontrol listesi kullanılır.">MEV-02</a><a class="cip" href="#mev-51" title="Uzun süreli ürün ve süreç değerlendirmesinde araca uygun puanlama aracı kullanılır: dereceli puanlama anahtarı, derecelendirme ölçeği ya da kontrol listesi (MEV-02). Kitapçıkta performans görevi ve projeye ayrı madde yoktur; o yılın Bakanlık duyurusu esas alınır.">MEV-51</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Veri toplama ya da araştırma gerektiren çıktılarda</li><li>Proje ödevi için</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Sınıf</li><li>Çıktı ya da tema</li><li>İsterseniz süre ve bireysel ya da grup</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Öğrenci görev kâğıdı</li><li>Dereceli puanlama anahtarı</li><li>Puansız gözlem formu</li><li>Öz ve akran değerlendirme formu</li></ul></dd><dt>Örnek istem</dt><dd>6. sınıf olasılık çıktısı için iki haftalık bir deney görevi ve dereceli puanlama anahtarı hazırla.</dd><dt>Kontrol edin</dt><dd>Görevin ücret, internet ya da veli emeği gerektirmediğini kontrol edin.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-hata-analizi">Hata analizi</a></dd></dl></details></article><article class="skill-kart" id="maarif-benzer-soru" data-sekme="olcme"><h3>İkiz soru</h3><code class="ad">maarif-benzer-soru</code><p>Verdiğiniz soruların aynı bileşeni ölçen özgün ikizlerini yazar.</p>
+<div class="cipler"><a class="cip" href="#mev-12" title="Okul yazılısında cevabı yalnız işaretlemeye dayanan maddeler (çoktan seçmeli, gerekçesiz doğru-yanlış, gerekçesiz eşleştirme) kullanılmaz, çünkü cevabı öğrenci oluşturmaz. Doğru-yanlış ya da eşleştirme ancak öğrenci kararının gerekçesini yazıyorsa açık uçlu madde sayılır (MEB örnek yazılılarındaki &quot;doğru ya da yanlış olma nedenleri&quot; gibi). Yabancı dilde, eşleştirme olmayacak biçimde verilenler arasından seçilen boşluk doldurma kullanılabilir.">MEV-12</a><a class="cip" href="#mev-60" title="Merkezî ve ortak sınavlarda kullanılan soruları izinsiz çoğaltmak, yayımlamak ya da kullanmak yasaktır (5846 sayılı Fikir ve Sanat Eserleri Kanunu). Bu sorular model alınır; birebir kullanılmaz.">MEV-60</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Öğrencinin yanlış yaptığı sorular için</li><li>Paralel kâğıt ya da ek alıştırma için</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Kaynak sorular (PDF ya da fotoğraf)</li><li>Kaç ikiz istediğiniz</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>İkiz sorular</li><li>Cevap anahtarı</li><li>Adım adım çözümler</li></ul></dd><dt>Örnek istem</dt><dd>Ekteki 5 sorunun her biri için aynı bileşeni ölçen birer ikiz soru ve çözüm yaz.</dd><dt>Kontrol edin</dt><dd>İkizler okul yazılısında kullanılacaksa bunu belirtin; çoktan seçmeliler açık uçluya çevrilir.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-hata-analizi">Hata analizi</a></dd></dl></details></article><article class="skill-kart" id="maarif-hata-analizi" data-sekme="olcme"><h3>Hata analizi</h3><code class="ad">maarif-hata-analizi</code><p>Yanlışları bileşene ve hata türüne göre ayırır, telafi planı ve tekrar takvimi hazırlar.</p>
+<div class="cipler"><a class="cip" href="#mev-30" title="Puanlanan cevap kâğıtları öğrencilere gösterilir; kâğıtta eksik ya da yanlış öğrenmelere yönelik öğretmen notları bulunur.">MEV-30</a><a class="cip" href="#mev-31" title="Her sınavdan sonra öğretmen cevapları analiz eder, hangi çıktıda eksik ya da yanlış öğrenme olduğunu belirler, öğrenciye bireysel geri bildirim verir ve gerekirse telafi yapar.">MEV-31</a><a class="cip" href="#mev-32" title="Öğretmenin analizi kendi kullanımı içindir; okul idaresine ayrıca rapor verilerek evrak yükü oluşturulmaz.">MEV-32</a><a class="cip" href="#mev-33" title="Ortak sınav sonuçlarından öğrenci toplu listesi, okullar ya da sınıflar arası karşılaştırmalı veri yayımlanmaz; öğrenci adlı reklam listesi yapılmaz.">MEV-33</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Yazılı ya da deneme sonrasında</li><li>Koçluk görüşmesinden önce</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Yanlış yapılan sorular ve öğrenci cevapları</li><li>İsterseniz çözüm kâğıdı fotoğrafı ya da sonuç tablosu</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Öğretmen raporu</li><li>Öğrenci telafi çalışma sayfası</li><li>Tekrar takvimi</li><li>İsteğe bağlı veli özeti</li></ul></dd><dt>Örnek istem</dt><dd>Ekteki deneme sonucuna göre hata analizi yap; telafi planı ve kontrol soruları hazırla.</dd><dt>Kontrol edin</dt><dd>Raporda gerçek ad kullanılmaz; öğrencileri takma adla tanırsınız.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-benzer-soru">İkiz soru</a></dd></dl></details></article><article class="skill-kart" id="maarif-konu-ozeti" data-sekme="icerik"><h3>Konu özeti</h3><code class="ad">maarif-konu-ozeti</code><p>Haftalık ders paketini hazırlar - ısınma turu, konu özeti slaytları, slogan, kavrama testi ve sonuca bağlı ödev.</p>
+<div class="cipler"><a class="cip" href="#mev-10" title="Okul sınavları, cevabını öğrencinin oluşturduğu ve farklı bilişsel düzeydeki çıktıları ölçen maddelerden oluşan yazılı yoklamadır. Açık uçlu soru esastır.">MEV-10</a><a class="cip" href="#mev-13" title="Soru, ölçtüğü çıktının bilişsel düzeyindedir: çözümleme ya da değerlendirme düzeyindeki bir çıktı, aynı düzeyde soru gerektirir.">MEV-13</a></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Haftalık özel derste</li><li>Yazılıya kadar konu tekrarında</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Ders kitabı</li><li>İsterseniz takvim ve kaynak kitabın içindekiler sayfası</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Ders başı ısınma turu (aralıklı tekrar)</li><li>Konu kartları ve yazılı tarzı sorular</li><li>Haftanın sloganı</li><li>4 soruluk kavrama testi (slayt ve A4 kâğıt)</li><li>Kavrama testine bağlı ödev kartı</li><li>Öğretmen çözüm dosyası</li></ul></dd><dt>Örnek istem</dt><dd>Ekteki ders kitabına ve haftalık plana göre 9. sınıf ders anlatım sunumunu hazırla.</dd><dt>Kontrol edin</dt><dd>Yalnız özet istediğiniz hafta &quot;yalnız özet&quot; deyin; ısınma ve kavrama testi atlanır.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-anlama-kontrolu">Anlama kontrolü</a></dd></dl></details></article><article class="skill-kart" id="maarif-anlatim-videosu" data-sekme="icerik"><h3>Anlatım videosu</h3><code class="ad">maarif-anlatim-videosu</code><p>Bir konu ya da soru için sahne planı, seslendirme metni ve Remotion kodu hazırlar.</p>
+<div class="cipler"><span class="cip">Ölçme ürünü üretmez</span></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Kısa ders videosu ya da soru çözümü için</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Konu ya da soru</li><li>Biçim (dikey ya da yatay)</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>Sahne planı</li><li>Seslendirme metni</li><li>Remotion kodu ve son kare görüntüleri</li></ul></dd><dt>Örnek istem</dt><dd>Ortak kat için 45 saniyelik dikey anlatım videosu hazırla.</dd><dt>Kontrol edin</dt><dd>Seslendirmedeki sayıların ekrandakiyle aynı olduğunu dinleyerek kontrol edin.</dd>
+<dt>Sonra</dt><dd><a href="#dnamathos-instagram-karusel">Instagram karuseli</a></dd></dl></details></article><article class="skill-kart" id="dnamathos-pdf-tasarimi" data-sekme="icerik"><h3>DNAMATHOS PDF</h3><code class="ad">dnamathos-pdf-tasarimi</code><p>İçeriği DNAMATHOS&#x27;un 16:9 PDF tasarımına dönüştürür ve dosyayı denetler.</p>
+<div class="cipler"><span class="cip">Ölçme ürünü üretmez</span></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Konu özeti</li><li>yazılı ya da test DNAMATHOS görünümünde istendiğinde</li></ul></dd><dt>Siz verin</dt><dd><ul><li>İçerik (öteki skill&#x27;lerin ürünü)</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>PDF</li><li>Taşma ve bağlantı denetimi</li><li>Slayt görüntüleri</li></ul></dd><dt>Örnek istem</dt><dd>Bu içeriği DNAMATHOS 16:9 düzeninde PDF&#x27;e çevir ve bağlantıları denetle.</dd><dt>Kontrol edin</dt><dd>Birbirine bağlanan PDF&#x27;leri aynı klasörde tutun.</dd>
+<dt>Sonra</dt><dd><a href="#dnamathos-instagram-karusel">Instagram karuseli</a></dd></dl></details></article><article class="skill-kart" id="dnamathos-instagram-karusel" data-sekme="icerik"><h3>Instagram karuseli</h3><code class="ad">dnamathos-instagram-karusel</code><p>Konu karuseli, rehberlik ve gerçek hayat gönderisinden oluşan ızgara satırını hazırlar.</p>
+<div class="cipler"><span class="cip">Ölçme ürünü üretmez</span></div>
+<details><summary>Nasıl kullanılır?</summary><dl><dt>Ne zaman</dt><dd><ul><li>Haftalık sosyal medya içeriğinde</li></ul></dd><dt>Siz verin</dt><dd><ul><li>Sınıf ve konu</li><li>İsterseniz çıktı kodu</li></ul></dd>
+<dt>Siz alırsınız</dt><dd><ul><li>1080 × 1350 PNG slaytlar</li><li>Açıklama ve etiketler</li><li>Paylaşım sırası</li></ul></dd><dt>Örnek istem</dt><dd>8. sınıf üslü ifadeler için konu karuseli, rehberlik ve gerçek hayat gönderilerinden oluşan satırı hazırla.</dd><dt>Kontrol edin</dt><dd>Paylaşırken sırayı izleyin - önce karusel, sonra rehberlik, en son gerçek hayat.</dd>
+<dt>Sonra</dt><dd><a href="#maarif-anlatim-videosu">Anlatım videosu</a></dd></dl></details></article></div></section>
+<section id="g-kurallar" hidden><p class="ust-etiket">MEB ölçme kuralları</p><h1>Soru yazarken uyulan kurallar</h1><p class="alt-yazi">Ölçme ve Değerlendirme Yönetmeliği, Yazılı ve Uygulamalı Sınavlar Yönergesi ve Kılavuzundan madde özetleri. Birebir metin: <a href="https://odsgm.meb.gov.tr/meb_iys_dosyalar/2024_02/07101329_odsgm_mevzuat_kitapcigi.pdf" target="_blank" rel="noopener">ODSGM mevzuat kitapçığı</a>.</p>
+  <div class="tablo-kap"><table><thead><tr><th scope="col">Kod</th><th scope="col">Kural</th><th scope="col">Dayanak</th></tr></thead><tbody><tr id="mev-01"><th scope="row">MEV-01</th><td>Başarı, programdaki çıktılara dayanan ve dersin yapısına uygun ölçmelerle belirlenir. Ölçme şekli çıktının özelliğine göre seçilir; bütün çıktılar planlı bir izlemeyle ölçülür.</td><td class="dayanak">Yönetmelik 4/a; Kılavuz, Temel Yaklaşım</td></tr><tr id="mev-02"><th scope="row">MEV-02</th><td>Ölçme araçları geçerli, güvenilir ve kullanışlı olur. Araca göre <strong>cevap anahtarı, puanlama anahtarı, derecelendirme ölçeği ya da kontrol listesi</strong> kullanılır.</td><td class="dayanak">Yönetmelik 4/c</td></tr><tr id="mev-03"><th scope="row">MEV-03</th><td>Değerlendirme süreç odaklıdır: öğrencinin başlangıç ve son düzeyi karşılaştırılır, gelişim aralıklarla izlenir, öğrenciye ve veliye geri bildirim verilir. Ölçme yalnız not vermek değil, geri bildirim vermektir.</td><td class="dayanak">Yönerge 5/g; Kılavuz, Temel Yaklaşım</td></tr><tr id="mev-04"><th scope="row">MEV-04</th><td>Kaynaştırma ya da bütünleştirme yoluyla eğitim gören öğrencilerde ölçme ve değerlendirmenin temeli <strong>BEP</strong>&#x27;tir; ölçme araçları BEP&#x27;e göre hazırlanır, gerekirse farklı soru tipleri kullanılır.</td><td class="dayanak">Yönetmelik 4/ç, 5/n; Kılavuz 15</td></tr><tr id="mev-05"><th scope="row">MEV-05</th><td>Sınav ve ölçme işleri güvenirlik, gizlilik ve tarafsızlık ilkeleriyle yürütülür.</td><td class="dayanak">Yönetmelik 4/d</td></tr><tr id="mev-10"><th scope="row">MEV-10</th><td>Okul sınavları, cevabını <strong>öğrencinin oluşturduğu</strong> ve farklı bilişsel düzeydeki çıktıları ölçen maddelerden oluşan yazılı yoklamadır. <strong>Açık uçlu soru esastır.</strong></td><td class="dayanak">Yönetmelik 5/g; Yönerge 5/e; Kılavuz 3</td></tr><tr id="mev-11"><th scope="row">MEV-11</th><td>Çıktının özelliğine ve bilişsel düzeyine göre <strong>kısa cevaplı</strong> soru da kullanılabilir; ama <strong>yalnız kısa cevaplı sorulardan oluşan yazılı yapılamaz.</strong></td><td class="dayanak">Kılavuz 3</td></tr><tr id="mev-12"><th scope="row">MEV-12</th><td>Okul yazılısında cevabı <strong>yalnız işaretlemeye</strong> dayanan maddeler (çoktan seçmeli, gerekçesiz doğru-yanlış, gerekçesiz eşleştirme) kullanılmaz, çünkü cevabı öğrenci oluşturmaz. Doğru-yanlış ya da eşleştirme ancak öğrenci kararının <strong>gerekçesini yazıyorsa</strong> açık uçlu madde sayılır (MEB örnek yazılılarındaki &quot;doğru ya da yanlış olma nedenleri&quot; gibi). Yabancı dilde, eşleştirme olmayacak biçimde verilenler arasından seçilen boşluk doldurma kullanılabilir.</td><td class="dayanak">Kılavuz 3 (MEV-10&#x27;dan çıkarım; yabancı dil istisnası birebir)</td></tr><tr id="mev-13"><th scope="row">MEV-13</th><td>Soru, ölçtüğü çıktının <strong>bilişsel düzeyindedir</strong>: çözümleme ya da değerlendirme düzeyindeki bir çıktı, aynı düzeyde soru gerektirir.</td><td class="dayanak">Kılavuz 2, 3</td></tr><tr id="mev-14"><th scope="row">MEV-14</th><td>Okul sınavları <strong>konu soru dağılım tablosuna</strong> göre hazırlanır. Tabloyu il sınıf/alan zümreleri senaryolu olarak hazırlar; okul zümresi senaryoyu seçer; <strong>soru sayısı seçilen senaryoya uyar.</strong> Ülke geneli sınavın tablosunu Genel Müdürlük hazırlar ve örnek tablolar yayımlar.</td><td class="dayanak">Yönetmelik 5/f, 6/ç; Yönerge 5/m; Kılavuz 2, 6</td></tr><tr id="mev-15"><th scope="row">MEV-15</th><td>Bir dönemde her dersten <strong>iki yazılı</strong> yapılır (haftada 6 saat ve üstü derslerde il zümresi kararıyla üçüncü).</td><td class="dayanak">Yönetmelik 5/c; Yönerge 5/c</td></tr><tr id="mev-16"><th scope="row">MEV-16</th><td>Yazılı sınavın süresi, zorunlu hâller dışında <strong>bir ders saatini geçemez.</strong> Kâğıt bu süreye sığacak uzunluktadır.</td><td class="dayanak">Yönetmelik 5/l</td></tr><tr id="mev-17"><th scope="row">MEV-17</th><td>Sınav kâğıdında <strong>öğrencinin cevabı için yeterli alan</strong> bırakılır.</td><td class="dayanak">Kılavuz 2</td></tr><tr id="mev-18"><th scope="row">MEV-18</th><td>Sınav kâğıdında <strong>kazanım (çıktı) ifadesine yer verilmesi gerekmez.</strong></td><td class="dayanak">Kılavuz 2</td></tr><tr id="mev-19"><th scope="row">MEV-19</th><td>Sınavlar <strong>100 tam puan</strong> üzerinden değerlendirilir; <strong>yanlış cevaplar doğru cevapları etkilemez</strong> (götürü yoktur).</td><td class="dayanak">Yönerge 6/a</td></tr><tr id="mev-20"><th scope="row">MEV-20</th><td>İptal edilen soru değerlendirme dışı kalır; kalan soruların puanları yeniden belirlenir.</td><td class="dayanak">Yönerge 6/ı; Kılavuz 9</td></tr><tr id="mev-21"><th scope="row">MEV-21</th><td>Okul geneli sınavın sorularını ve cevaplarını eğitim kurumu sınıf/alan zümresi hazırlar; puanlamayı zümre yapar. Ülke, il ve ilçe geneli sınavların soruları ilgili kurumlarca hazırlanır.</td><td class="dayanak">Yönerge 5/n, 5/p; Kılavuz 4, 9</td></tr><tr id="mev-22"><th scope="row">MEV-22</th><td>Türkçe ve yabancı dilde sınav yazılı ve uygulamalı iki aşamadır: yazılı %50, dinleme %25, konuşma %25 (Türk dili ve edebiyatında %70, %15, %15).</td><td class="dayanak">Yönerge 5/ğ, 6/ç, 6/d</td></tr><tr id="mev-30"><th scope="row">MEV-30</th><td>Puanlanan cevap kâğıtları öğrencilere gösterilir; kâğıtta eksik ya da yanlış öğrenmelere yönelik <strong>öğretmen notları</strong> bulunur.</td><td class="dayanak">Kılavuz 9</td></tr><tr id="mev-31"><th scope="row">MEV-31</th><td>Her sınavdan sonra öğretmen cevapları analiz eder, hangi çıktıda eksik ya da yanlış öğrenme olduğunu belirler, öğrenciye <strong>bireysel geri bildirim</strong> verir ve gerekirse <strong>telafi</strong> yapar.</td><td class="dayanak">Kılavuz 12; Yönerge 5/f</td></tr><tr id="mev-32"><th scope="row">MEV-32</th><td>Öğretmenin analizi kendi kullanımı içindir; okul idaresine ayrıca rapor verilerek evrak yükü oluşturulmaz.</td><td class="dayanak">Kılavuz 12</td></tr><tr id="mev-33"><th scope="row">MEV-33</th><td>Ortak sınav sonuçlarından <strong>öğrenci toplu listesi, okullar ya da sınıflar arası karşılaştırmalı veri</strong> yayımlanmaz; öğrenci adlı reklam listesi yapılmaz.</td><td class="dayanak">Yönerge 5/r; Kılavuz 2</td></tr><tr id="mev-34"><th scope="row">MEV-34</th><td>Analizler şube ve sınıf bazında yapılır; eksiklik görülen öğrenciler için zümre iyileştirici önlem alır.</td><td class="dayanak">Yönetmelik 5/d; Yönerge 6/b</td></tr><tr id="mev-40"><th scope="row">MEV-40</th><td>Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için <strong>kısa süreli sınav</strong> yapılabilir: birkaç soru, kısa süre, anında geri bildirim. <strong>Not ya da puanla değerlendirilmez</strong>; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.</td><td class="dayanak">Yönetmelik 5/m; Yönerge 5/l; Kılavuz 13</td></tr><tr id="mev-41"><th scope="row">MEV-41</th><td><strong>İlkokulda</strong> kısa süreli, hazırbulunuşluk, deneme ve tarama sınavı dâhil <strong>hiçbir adla sınav yapılmaz</strong>; süreç odaklı değerlendirme araçlarında <strong>çoktan seçmeli soru kullanılmaz</strong>. Gelişim değerlendirme formu, kontrol listesi ve dereceleme ölçeğiyle izlenir; araçlar öğrenci gelişim dosyasında tutulur.</td><td class="dayanak">Yönerge 5/h, 5/ı; Kılavuz 14</td></tr><tr id="mev-50"><th scope="row">MEV-50</th><td>Uygulamalı sınavların biçimi, sayısı ve süresi zümrece belirlenir; bütün şubelerde aynı çıktı ve becerilerden yapılır.</td><td class="dayanak">Yönetmelik 5/ğ; Kılavuz 8</td></tr><tr id="mev-51"><th scope="row">MEV-51</th><td>Uzun süreli ürün ve süreç değerlendirmesinde araca uygun puanlama aracı kullanılır: dereceli puanlama anahtarı, derecelendirme ölçeği ya da kontrol listesi (MEV-02). Kitapçıkta performans görevi ve projeye ayrı madde yoktur; o yılın Bakanlık duyurusu esas alınır.</td><td class="dayanak">Yönetmelik 4/c</td></tr><tr id="mev-60"><th scope="row">MEV-60</th><td>Merkezî ve ortak sınavlarda kullanılan soruları izinsiz çoğaltmak, yayımlamak ya da kullanmak yasaktır (5846 sayılı Fikir ve Sanat Eserleri Kanunu). Bu sorular model alınır; birebir kullanılmaz.</td><td class="dayanak">Yönetmelik 23</td></tr></tbody></table></div></section>
+<section id="g-akislar" hidden><p class="ust-etiket">İş akışları</p><h1>Skill'leri sırayla kullanın</h1><p class="alt-yazi">Aynı sohbette çalıştırın; bir skill'in ürünü sonrakinin girdisidir.</p><div class="akislar"><section class="akis"><h3>Yazılıya 8 hafta kala</h3><ol><li><code>maarif-cikti-cozumleme</code> — senaryodaki çıktıların kartı (&quot;Ekteki senaryodaki çıktıların kartını çıkar.&quot;)</li><li><code>maarif-ders-takvimi</code> — 8 derslik takvim, son ders tekrar ve prova</li><li><code>maarif-konu-ozeti</code> — her hafta o haftanın konu özeti ve ödev kartı</li><li><code>maarif-anlama-kontrolu</code> — her dersin sonunda bir çıkış kartı</li><li><code>maarif-ortak-yazili</code> — 7. hafta: senaryoya uyan prova kâğıtları</li><li><code>maarif-hata-analizi</code> — prova sonuçlarına göre telafi planı</li><li><code>maarif-benzer-soru</code> — en sık iki hata örüntüsü için ikiz soru seti</li></ol></section><section class="akis"><h3>Haftalık döngü (az ödev, kalıcı öğrenme)</h3><ol><li><code>maarif-hizli-tekrar</code> — dersin ilk 5 dakikası: geçen hafta ve öncesinden karışık 6–8 soru, haftanın sloganı</li><li><code>maarif-konu-ozeti</code> ya da <code>maarif-ders-plani</code> — haftanın konusu</li><li><code>maarif-kavrama-testi</code> — konu bitince 4 soruluk notsuz test</li><li>Sonuçlar girilince (<code>kavrama_karari.py</code>) — öğrenci başına karar ve en çok 6 soruluk hedefli ödev</li><li>Sonraki hafta — takılan bileşenler ısınma turunun başına gelir</li></ol></section><section class="akis"><h3>Yeni bir temaya başlarken</h3><ol><li><code>maarif-cikti-cozumleme</code> — tema kartı (temel kabuller, ön değerlendirme, köprü kurma)</li><li><code>maarif-anlama-kontrolu</code> — ön değerlendirme kontrolü (ön koşul bileşeni)</li><li><code>maarif-ders-plani</code> — ilk dersin paketi</li><li><code>maarif-farklilastirma</code> — ön değerlendirme sonucuna göre üç grup</li><li><code>maarif-derse-hazirlik</code> — dersten bir gün önce</li></ol></section><section class="akis"><h3>Dönem içi süreç değerlendirmesi</h3><ol><li><code>maarif-performans-gorevi</code> — yazılı dışı bileşenler için görev ve dereceli anahtar</li><li><code>maarif-anlama-kontrolu</code> — ara teslimlerde kısa kontroller</li><li><code>maarif-hata-analizi</code> — sınıf düzeyi rapor ve destekleme grubu</li></ol></section><section class="akis"><h3>DNAMATHOS haftalık üretim</h3><ol><li><code>maarif-konu-ozeti</code> + <code>dnamathos-pdf-tasarimi</code> — haftanın ders PDF&#x27;leri</li><li><code>dnamathos-instagram-karusel</code> — aynı konunun ızgara satırı</li><li><code>maarif-anlatim-videosu</code> — satırın konusu için Shorts</li></ol></section></div></section>
+<section id="g-dosyalar" hidden><p class="ust-etiket">Dosyalar</p><h1>Kurulum ve indirme</h1><p class="alt-yazi">Üç yoldan biriyle başlayın.</p>
+  <ol class="uc-yol"><li><h3>Hazır istem</h3><p>istemler klasöründeki istemi kopyalayın, köşeli parantezleri doldurun ve Claude&#x27;a yapıştırın. Kurulum gerekmez.</p></li><li><h3>Skill yükleme</h3><p>dist/zip klasöründeki skill dosyasını Claude ayarlarındaki skill bölümünden yükleyin ve açın. Claude isteğinize uyan skill&#x27;i kendisi seçer.</p></li><li><h3>Paket</h3><p>Claude Code kullanıyorsanız depoyu eklenti pazar yeri olarak ekleyin ve bir paketi kurun (ör. maarif-ogretmen-temel).</p></li></ol>
+  <h2 class="bolum">Skill dosyaları</h2><div class="tablo-kap"><table><thead><tr><th scope="col">Skill</th><th scope="col">Ad</th><th scope="col">Dosya</th></tr></thead><tbody><tr><th scope="row">maarif-cikti-cozumleme</th><td>Programı çözümle</td><td><code>dist/zip/maarif-cikti-cozumleme.zip</code></td></tr><tr><th scope="row">maarif-ders-takvimi</th><td>Ders takvimi</td><td><code>dist/zip/maarif-ders-takvimi.zip</code></td></tr><tr><th scope="row">maarif-ders-plani</th><td>Ders planı</td><td><code>dist/zip/maarif-ders-plani.zip</code></td></tr><tr><th scope="row">maarif-derse-hazirlik</th><td>Derse hazırlık</td><td><code>dist/zip/maarif-derse-hazirlik.zip</code></td></tr><tr><th scope="row">maarif-farklilastirma</th><td>Farklılaştırma</td><td><code>dist/zip/maarif-farklilastirma.zip</code></td></tr><tr><th scope="row">maarif-anlama-kontrolu</th><td>Anlama kontrolü</td><td><code>dist/zip/maarif-anlama-kontrolu.zip</code></td></tr><tr><th scope="row">maarif-kavrama-testi</th><td>Kavrama testi</td><td><code>dist/zip/maarif-kavrama-testi.zip</code></td></tr><tr><th scope="row">maarif-hizli-tekrar</th><td>Hızlı tekrar</td><td><code>dist/zip/maarif-hizli-tekrar.zip</code></td></tr><tr><th scope="row">maarif-ortak-yazili</th><td>Ortak yazılı</td><td><code>dist/zip/maarif-ortak-yazili.zip</code></td></tr><tr><th scope="row">maarif-beceri-temelli-test</th><td>Beceri temelli test</td><td><code>dist/zip/maarif-beceri-temelli-test.zip</code></td></tr><tr><th scope="row">maarif-performans-gorevi</th><td>Performans görevi</td><td><code>dist/zip/maarif-performans-gorevi.zip</code></td></tr><tr><th scope="row">maarif-benzer-soru</th><td>İkiz soru</td><td><code>dist/zip/maarif-benzer-soru.zip</code></td></tr><tr><th scope="row">maarif-hata-analizi</th><td>Hata analizi</td><td><code>dist/zip/maarif-hata-analizi.zip</code></td></tr><tr><th scope="row">maarif-konu-ozeti</th><td>Konu özeti</td><td><code>dist/zip/maarif-konu-ozeti.zip</code></td></tr><tr><th scope="row">maarif-anlatim-videosu</th><td>Anlatım videosu</td><td><code>dist/zip/maarif-anlatim-videosu.zip</code></td></tr><tr><th scope="row">dnamathos-pdf-tasarimi</th><td>DNAMATHOS PDF</td><td><code>dist/zip/dnamathos-pdf-tasarimi.zip</code></td></tr><tr><th scope="row">dnamathos-instagram-karusel</th><td>Instagram karuseli</td><td><code>dist/zip/dnamathos-instagram-karusel.zip</code></td></tr></tbody></table></div>
+  <h2 class="bolum" style="margin-top:26px">Paketler</h2><div class="tablo-kap"><table><thead><tr><th scope="col">Paket</th><th scope="col">İçerik</th><th scope="col">Skill</th></tr></thead><tbody><tr><th scope="row">dnamathos</th><td>DNAMATHOS markasının PDF tasarımı ve Instagram karuseli; konu özeti ve ortak yazılı ile birlikte.</td><td>8</td></tr><tr><th scope="row">maarif-icerik-uretimi</th><td>Konu özeti slaytları, anlatım videosu ve ikiz soru üretimi; program okuma ile birlikte.</td><td>4</td></tr><tr><th scope="row">maarif-ogretmen-temel</th><td>Programı okuma, takvim, ders planı, derse hazırlık, farklılaştırma ve anlama kontrolü. Her branş öğretmeninin başlangıç paketi.</td><td>7</td></tr><tr><th scope="row">maarif-olcme-degerlendirme</th><td>Süreç odaklı değerlendirme zinciri - anlama kontrolü, ortak yazılı, beceri temelli test, performans görevi, ikiz soru ve hata analizi.</td><td>9</td></tr><tr><th scope="row">maarif-tam</th><td>Kütüphanedeki bütün skill&#x27;ler.</td><td>17</td></tr></tbody></table></div>
+  <p class="not-satiri">Ayrıntılı kılavuz: <code>docs/kilavuz.md</code> · Katalog: <code>KATALOG.md</code> · Lisans: <code>LISANS.md</code></p></section>
+<section id="g-ipuclari" hidden><p class="ust-etiket">İpuçları</p><h1>Daha iyi sonuç için</h1><p class="alt-yazi">Kısa ve işe yarar alışkanlıklar.</p>
+  <ol class="ipuclari"><li>Önce çıktı kartını isteyin; aynı sohbette sonraki skill&#x27;ler onu kullanır, programı yeniden okumaz.</li><li>İstemde sınıfı ve konuyu söylemeniz yeter; gerisini skill varsayılanla doldurur ve teslimde yazar.</li><li>Ders kitabını ve kaynak kitabın içindekiler sayfasını ekleyin; ödev sayfaları yalnız oradan okunur, uydurulmaz.</li><li>Öğrenci adı vermeyin; skill&#x27;ler takma adla çalışır ve sıralama üretmez.</li><li>Bir şey beğenmezseniz yalnız o yeri söyleyin; skill bütün ürünü baştan yazmaz, o kısmı düzeltir.</li><li>Bir haftada yalnız özet istiyorsanız &quot;yalnız özet&quot; deyin; ısınma ve kavrama testi atlanır.</li></ol><h2 class="bolum">Sık sorulanlar</h2><details class="sss"><summary>Skill&#x27;ler başka derslerde çalışır mı?</summary><p>Bütün skill&#x27;ler Maarif omurgasıyla çalışır; ayrıntılı ders dosyası şu an matematik için hazır. Başka derslerde skill programı doğrudan tema sayfasından okur ve bunu ürünün sonunda belirtir.</p></details><details class="sss"><summary>TYMM sayfası açılmazsa ne olur?</summary><p>Skill, verdiğiniz çıktı metniyle çalışır ve ürüne &quot;program sayfasından doğrulanamadı&quot; notunu ekler. Kod ya da kaynak uydurmaz.</p></details><details class="sss"><summary>Çoktan seçmeli test yazılı yerine kullanılabilir mi?</summary><p>Hayır. MEB mevzuatına göre okul yazılıları açık uçludur ve cevabı öğrenci oluşturur. Çoktan seçmeli test LGS hazırlığı, tarama ya da notsuz kısa süreli sınav içindir.</p></details><details class="sss"><summary>Haftalık ödevi nasıl azaltırım?</summary><p>Konu bitince kavrama testi yapın. Bileşeni geçen öğrenciye o konudan ödev verilmez; takılan öğrenciye yalnız takıldığı bileşen için 2–3 hedefli soru verilir. Haftalık üst sınır 6 sorudur.</p></details><details class="sss"><summary>Öğrenci adlarını vermeli miyim?</summary><p>Gerek yok. Skill&#x27;ler öğrencileri takma adla işler; sınıflar ya da öğrenciler arası sıralama üretmez.</p></details><details class="sss"><summary>Ürünü doğrudan sınıfa götürebilir miyim?</summary><p>Ürünler denetlenmiş olarak gelir, ama son kontrol sizindir. Sorunu bulduğunuz yeri söylerseniz skill yalnız o kısmı düzeltir.</p></details></section>
+<section id="g-destek" hidden><p class="ust-etiket">Destek</p><h1>Geri bildirim ve katkı</h1><p class="alt-yazi">Bir skill'i sınıfta denediyseniz bu formu doldurup bize iletin; sorunlar ders dosyasına ya da teste dönüşür.</p>
+  <div class="form"><pre id="form">Skill:
+Sınıf ve ders:
+İstem (kısaca):
+Ürün işinizi gördü mü? (evet / kısmen / hayır)
+Program uyumu doğru muydu? (çıktı, bileşen, sınır)
+Düzeltmek zorunda kaldığınız yer:
+Öğrencilerde gözlediğiniz:</pre><button type="button" class="kopyala" data-hedef="form">Kopyala</button></div>
+  <p class="not-satiri">Katkı kuralları: <code>KATKI.md</code>. Ders planı, farklılaştırma, derse hazırlık ve anlama kontrolü skill'leri anthropics/k12-teacher-skills (Apache-2.0) çalışmasından uyarlanmıştır. Program metinleri Millî Eğitim Bakanlığına aittir.</p></section>
+</main></div>
 <script>(function () {
-  var kartlar = Array.prototype.slice.call(document.querySelectorAll(".kart"));
-  var dugmeler = Array.prototype.slice.call(document.querySelectorAll(".suzgec button"));
-  var ara = document.getElementById("ara");
-  var bos = document.getElementById("bos");
-  var grup = "hepsi";
-  function suz() {
-    var q = (ara.value || "").toLocaleLowerCase("tr").trim();
-    var gorunen = 0;
-    kartlar.forEach(function (k) {
-      var uygun = (grup === "hepsi" || k.dataset.grup === grup) && (!q || k.dataset.ara.indexOf(q) !== -1);
-      k.hidden = !uygun;
-      if (uygun) gorunen++;
+  var GORUNUMLER = ["basla", "yenilikler", "skiller", "istemler", "kurallar", "akislar", "dosyalar", "ipuclari", "destek"];
+  var bolumler = document.querySelectorAll(".gorunum > section");
+  var baglar = document.querySelectorAll(".menu a, a[data-git]");
+  function goster() {
+    var h = (location.hash || "").slice(1);
+    var hedef = h, satir = null;
+    if (GORUNUMLER.indexOf(h) === -1) {
+      var el = h ? document.getElementById(h) : null;
+      var ust = el ? el.closest(".gorunum > section") : null;
+      hedef = ust ? ust.id.replace("g-", "") : "basla"; satir = el;
+    }
+    bolumler.forEach(function (b) { b.hidden = b.id !== "g-" + hedef; });
+    document.querySelectorAll(".menu a").forEach(function (a) {
+      if (a.getAttribute("href") === "#" + hedef) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
-    bos.hidden = gorunen !== 0;
+    if (satir) { if (satir.tagName === "DETAILS") satir.open = true; var d = satir.querySelector && satir.querySelector("details"); if (d) d.open = true; satir.scrollIntoView({block: "center"}); }
+    else window.scrollTo(0, 0);
   }
-  dugmeler.forEach(function (d) {
-    d.addEventListener("click", function () {
-      grup = d.dataset.grup;
-      dugmeler.forEach(function (x) { x.classList.toggle("secili", x === d); x.setAttribute("aria-pressed", x === d ? "true" : "false"); });
-      suz();
+  window.addEventListener("hashchange", goster);
+  goster();
+  document.querySelectorAll(".sekmeler").forEach(function (grup) {
+    var hedef = document.getElementById(grup.dataset.hedef);
+    grup.querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        grup.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        hedef.querySelectorAll("[data-sekme]").forEach(function (k) { k.hidden = !(b.dataset.sekme === "hepsi" || k.dataset.sekme === b.dataset.sekme); });
+        try { localStorage.setItem("sekme-" + grup.dataset.hedef, b.dataset.sekme); } catch (e) {}
+      });
     });
+    var kayit = null; try { kayit = localStorage.getItem("sekme-" + grup.dataset.hedef); } catch (e) {}
+    var b0 = kayit && grup.querySelector('button[data-sekme="' + kayit + '"]'); if (b0) b0.click();
   });
-  ara.addEventListener("input", suz);
   document.querySelectorAll(".kopyala").forEach(function (b) {
     b.addEventListener("click", function () {
-      var hedef = document.getElementById(b.dataset.hedef);
-      var metin = hedef.textContent;
-      function tamam() { b.textContent = "Kopyalandı"; setTimeout(function () { b.textContent = "Kopyala"; }, 1600); }
-      function sec() { var r = document.createRange(); r.selectNodeContents(hedef); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Seçildi"; }
+      var kaynak = document.getElementById(b.dataset.hedef);
+      var metin = kaynak.textContent;
+      function tamam() { b.textContent = "Kopyalandı"; b.classList.add("oldu"); setTimeout(function () { b.textContent = "Kopyala"; b.classList.remove("oldu"); }, 1600); }
+      function sec() { var r = document.createRange(); r.selectNodeContents(kaynak); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Seçildi, kopyalayın"; }
       try { navigator.clipboard.writeText(metin).then(tamam, sec); } catch (e) { sec(); }
     });
   });
-  function hashKart() {
-    var h = location.hash.slice(1);
-    kartlar.forEach(function (k) { k.classList.toggle("vurgulu", k.id === h); });
-    var k = document.getElementById(h);
-    if (k && k.classList.contains("kart")) { k.hidden = false; var d = k.querySelector("details"); if (d) d.open = true; }
-  }
-  window.addEventListener("hashchange", hashKart);
-  hashKart();
 })();
 </script>
 </body>

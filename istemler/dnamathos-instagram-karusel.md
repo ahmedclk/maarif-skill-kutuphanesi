@@ -1,18 +1,13 @@
 # dnamathos-instagram-karusel — hazır istemler
 
-**Ne işe yarar:** DNAMATHOS Instagram ızgara satırı.
+> Bu dosya `docs/istemler.yaml` dosyasından üretilir; elle düzenlenmez.
 
 Köşeli parantezleri doldurup kopyala. Skill yüklü değilse istemin başına şunu ekle: "Maarif Modeli'ne uygun çalış; çıktıları TYMM sayfasından doğrula."
 
-## 1
+## Instagram ızgara satırı
+
+Konu karuseli, rehberlik ve gerçek hayat gönderisi; sınıfın paletiyle.
 
 ```
-[Sınıf]. sınıf [konu] için konu karuseli, rehberlik ve gerçek hayat gönderilerinden oluşan satırı hazırla.
+[sınıf]. sınıf [konu] için konu karuseli, rehberlik ve gerçek hayat gönderilerinden oluşan ızgara satırını hazırla.
 ```
-
-## 2
-
-```
-LGS [konu] karuseli; 8 slayt, kendini dene sorusu olsun.
-```
-

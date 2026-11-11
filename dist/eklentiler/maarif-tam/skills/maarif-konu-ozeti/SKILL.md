@@ -50,7 +50,7 @@ Amaç: Haftada bir saatlik derste ders kitabındaki konuyu kısa ve öz anlatmak
 
 ## Adım 6 — Ödev kartı
 
-`references/odev-karti.md`. Ödev yalnız kaynak kitabın içindekiler sayfasından okunur; sayfa ya da test numarası uydurulmaz, özgün ödev sorusu yazılmaz. Kaynak kitap yoksa yalnız onu sor.
+`references/odev-karti.md`. Öğretmen haftalık kavrama testi kullanıyorsa (maarif-kavrama-testi) ödev kartı "Bu haftanın ödevi kavrama testinin sonucuna göre verilecek" der ve kaynak kitaptan yalnız isteğe bağlı ek sayfa önerir; ödev miktarını test belirler. Ödev yalnız kaynak kitabın içindekiler sayfasından okunur; sayfa ya da test numarası uydurulmaz, özgün ödev sorusu yazılmaz. Kaynak kitap yoksa yalnız onu sor.
 
 ## Adım 7 — Öğretmen dosyası
 

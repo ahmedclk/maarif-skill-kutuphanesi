@@ -22,3 +22,5 @@ tetiklememeli:
   dogru_skill: maarif-ders-takvimi
 - istem: PowerPoint dosyası olarak sunum ver.
   dogru_skill: yok
+- istem: Ders başı hızlı tekrar turu.
+  dogru_skill: maarif-hizli-tekrar

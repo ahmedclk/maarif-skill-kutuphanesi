@@ -17,3 +17,7 @@ MEV5,P — Pedagoji,Geri bildirim,"Cevap anahtarında ya da raporda öğrenciye 
 MEV6,P — Pedagoji,Kısa süreli sınav notsuz,Anlama kontrolü ya da tarama testi not ya da puan vermiyor (MEV-40).,,kisa-sureli
 MEV7,P — Pedagoji,İlkokul sınırı,"1–4. sınıf için sınav, tarama testi ya da çoktan seçmeli araç üretilmedi; gözlem ve derecelendirme araçları kullanıldı (MEV-41).",,ilkokul
 MEV8,O — Çıktı,Karşılaştırma yok,"Raporda öğrenci adlı sıralı liste ya da şubeler, okullar arası sıralama yok (MEV-33).",,hata-analizi
+K1,R — Zihinsel zorluk,En az soruyla en çok bilgi,Kavrama testinde 4–5 soru; her bileşen kümesi bir soruda; küme soruları en zor durumu cevap ve gerekçeyle yokluyor; bir aktarım ve bir tekrar sorusu var.,,kavrama-testi
+K2,P — Pedagoji,Ödev sonuca bağlı,Hedefli ödev yalnız takılan bileşenlerde; haftalık en çok 6 soru; öncelik emin ama yanlış bileşenlerde.,kavrama_karari.py çıktısı.,kavrama-testi
+T1,P — Pedagoji,Aralıklı ve karışık tekrar,Turda geçen hafta ve önceki haftalardan sorular; aynı konudan art arda iki soru yok; her soru ≤ 20 saniye.,,hizli-tekrar
+T2,R — Zihinsel zorluk,Slogan denetimi,"Slogan programın sayı kümesinde doğru, sınırı belli, karşı örnekle sınanmış ve neden sorusuyla birlikte.",,hizli-tekrar

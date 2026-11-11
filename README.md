@@ -16,6 +16,8 @@ Türkiye Yüzyılı Maarif Modeli'ne (TYMM) dayanan, öğretmenlerin Claude ile 
 | Derse hazırlanmak | `maarif-derse-hazirlik` | Kilit görev üzerine birlikte düşünme ve 200–300 sözcüklük hazırlık notu |
 | Farklılaştırmak | `maarif-farklilastirma` | Destekleme, temel, zenginleştirme için üç kâğıt ve öğretmen planı |
 | Anlamayı yoklamak | `maarif-anlama-kontrolu` | 1–3 maddelik kontrol ve cevapları okuma kılavuzu |
+| Haftalık kavrama | `maarif-kavrama-testi` | 4–5 soruluk notsuz test, öğrenci başına karar, yalnız takılan bileşenlere hedefli ödev |
+| Ders başı tekrar | `maarif-hizli-tekrar` | 5 dakikalık karışık soru turu ve karşı örnekle sınanmış haftanın sloganı |
 | Konu özeti | `maarif-konu-ozeti` | Haftalık ders slaytları, yazılı tüyoları, ödev kartı, öğretmen dosyası |
 | Ortak yazılı | `maarif-ortak-yazili` | Senaryoya uyan kâğıt seti, cevap anahtarı, kapsama tablosu |
 | Beceri temelli test | `maarif-beceri-temelli-test` | LGS tarzı test ve çeldirici açıklamalı anahtar |

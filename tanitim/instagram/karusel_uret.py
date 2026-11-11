@@ -85,8 +85,8 @@ def slayt(i, n, hap, govde, koyu=False, rakam=None):
 def tanitim():
     n = 9
     sl = [
-        slayt(1, n, "Öğretmenlere", "<h1>Claude'a Maarif'i <em>öğrettik</em></h1>"
-              "<p class='alt'>15 skill, tek omurga: her soru bir öğrenme çıktısına bağlı.</p>", True, "15"),
+        slayt(1, n, "Öğretmenlere", f"<h1>Claude'a Maarif'i <em>öğrettik</em></h1>"
+              f"<p class='alt'>{len(S)} skill, tek omurga: her soru bir öğrenme çıktısına bağlı.</p>", True, str(len(S))),
         slayt(2, n, "Sorun", "<h2>Hızlı soru, <em>yanlış adres</em></h2><ul class='liste'>"
               "<li><i class='x'>✗</i><span>Hangi çıktıyı ölçtüğünü bilmez.</span></li>"
               "<li><i class='x'>✗</i><span>İçerik çerçevesi sınırını aşar.</span></li>"
@@ -107,8 +107,8 @@ def tanitim():
               "<li><i>✓</i><span>Bir ders saatine sığar.</span></li>"
               "<li><i>✓</i><span>Kısa süreli sınav notsuz.</span></li>"
               "<li><i>✓</i><span>İlkokulda sınav yok.</span></li></ul>"),
-        slayt(6, n, "Kütüphane", "<h2>15 skill, <em>üç grup</em></h2>"
-              + "".join(f"<div class='grup'><div class='etiket'>{E(g['ad'])}</div><p>{E(', '.join(S[s]['gorunen'] for s in g['skills']))}</p></div>" for g in K["gruplar"])),
+        slayt(6, n, "Kütüphane", f"<h2>{len(S)} skill, <em>üç grup</em></h2>"
+              + "".join(f"<div class='grup'><div class='etiket'>{E(g['ad'])} · {len(g['skills'])} skill</div><p>{E(', '.join(S[s]['gorunen'] for s in g['skills'][:3]))} …</p></div>" for g in K["gruplar"])),
         slayt(7, n, "Sık hata", "<h2>Test, yazılının <em>yerine geçmez</em></h2><div class='yan'>"
               "<div class='k yanlis'><h3>✗ YANLIŞ</h3><p>20 soruluk çoktan seçmeli testi okul yazılısı yapmak</p></div>"
               "<div class='k dogru'><h3>✓ DOĞRU</h3><p>Yazılıda açık uçlu sorular; test LGS hazırlığı ve taramada</p></div></div>"),
@@ -121,12 +121,12 @@ def tanitim():
               "<p class='alt'>Kılavuz, kurallar ve bütün skill'ler tanıtım sayfasında.</p>"
               "<p class='cagri'>Sonraki derse hazırlanırken açmak için kaydet.</p>", True),
     ]
-    alt = ["Kapak: Claude'a Maarif'i öğrettik; 15 skill, her soru bir öğrenme çıktısına bağlı.",
+    alt = [f"Kapak: Claude'a Maarif'i öğrettik; {len(S)} skill, her soru bir öğrenme çıktısına bağlı.",
            "Sorun: yapay zekâ hangi çıktıyı ölçtüğünü bilmez, sınırı aşar, yazılı için çoktan seçmeli önerir.",
            "Çözüm: skill, Claude'un bir işi baştan sona nasıl yapacağını anlatan dosyadır.",
            "Bir sorunun kimliği: öğrenme çıktısı MAT.6.1.1, bileşen 6.1.1-a, beceri basamağı KB2.10.SB1, MEB kuralı MEV-10, soru 1.a.",
            "MEB kuralları: yazılı açık uçlu, 100 puan, bir ders saati, kısa süreli sınav notsuz, ilkokulda sınav yok.",
-           "Kütüphane: planlama, ölçme ve değerlendirme, içerik üretimi gruplarında 15 skill.",
+           f"Kütüphane: planlama, ölçme ve değerlendirme, içerik üretimi gruplarında {len(S)} skill.",
            "Sık hata: çoktan seçmeli test okul yazılısının yerine geçmez.",
            "Başlarken: hazır istem, skill yükleme ya da paket kurma; son kontrol öğretmenin.",
            "Kapanış: zümrenle paylaş, kaydet."]
@@ -141,8 +141,8 @@ def kilavuz():
     n = len(sira) + 2
     grup_ad = {s: g["ad"] for g in K["gruplar"] for s in g["skills"]}
     sl = [slayt(1, n, "Kullanım kılavuzu", "<h1>Hangi iş için <em>hangi skill?</em></h1>"
-                "<p class='alt'>15 skill; her birinin ne yaptığı ve hazır bir istem.</p>", True, "15")]
-    alt = ["Kapak: Hangi iş için hangi skill? 15 skill ve hazır istemleri."]
+                f"<p class='alt'>{len(S)} skill; her birinin ne yaptığı ve hazır bir istem.</p>", True, str(len(S)))]
+    alt = [f"Kapak: Hangi iş için hangi skill? {len(S)} skill ve hazır istemleri."]
     for i, s in enumerate(sira, 2):
         d = S[s]
         mev = "".join(f"<span>{c}</span>" for c in d["mevzuat"][:4])
@@ -155,7 +155,7 @@ def kilavuz():
                     "<p class='cagri'>Bu istemleri bulmak için kaydet.</p>", True))
     alt.append("Kapanış: ayrıntılı kılavuz tanıtım sayfasında; kaydet.")
     acik = ("Ortak yazılı mı, çıkış kartı mı, hata analizi mi? Her iş için ayrı bir skill var.\n\n"
-            "Bu karuselde 15 skill'in her biri için ne yaptığını ve kopyalayıp kullanabileceğin bir istemi bulacaksın.\n\n"
+            f"Bu karuselde {len(S)} skill'in her biri için ne yaptığını ve kopyalayıp kullanabileceğin bir istemi bulacaksın.\n\n"
             "Bu istemleri bulmak için kaydet.\n\n#maarifmodeli #öğretmen #dersplanı #yazılısınav #dnamathos")
     return "kilavuz", sl, alt, acik
 

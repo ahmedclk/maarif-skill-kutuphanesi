@@ -22,3 +22,5 @@ tetiklememeli:
   dogru_skill: yok
 - istem: Ders planı hazırla.
   dogru_skill: maarif-ders-plani
+- istem: Haftalık 4 soruluk kavrama testi.
+  dogru_skill: maarif-kavrama-testi

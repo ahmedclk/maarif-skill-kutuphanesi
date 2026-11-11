@@ -15,8 +15,10 @@ Bu dosya `araclar/katalog.py` ile üretilir; elle düzenlenmez.
 | `maarif-ders-takvimi` | Sınava ya da dönem sonuna kalan haftalara göre Maarif Modeli çıktılarını derslere dağıtan haftalık ders takvimini hazırlar | maarif-ogretmen-temel, maarif-tam | karar bekliyor | 676 |
 | `maarif-derse-hazirlik` | Öğretmenin var olan bir dersi anlatmaya hazırlanmasına eşlik eder | maarif-ogretmen-temel, maarif-tam | Apache-2.0 (uyarlama) | 252 |
 | `maarif-farklilastirma` | Öğretmenin getirdiği ya da adını verdiği var olan bir dersi, aynı öğrenme çıktısı ve aynı görev üzerinde Maarif Modeli'nin destekleme ve zenginleştirme yaklaşımıyla üç gruba uyarlar | maarif-ogretmen-temel, maarif-tam | Apache-2.0 (uyarlama) | 616 |
-| `maarif-hata-analizi` | Bir öğrencinin ya da sınıfın yanlış yaptığı soruları, deneme veya yazılı sonucunu, ödevini ya da çözüm kâğıdı fotoğrafını inceleyip hataları türlerine ve Maarif çıktı ile süreç bileşenine göre sınıflandırır | maarif-olcme-degerlendirme, maarif-tam | Apache-2.0 (uyarlama) | 712 |
-| `maarif-konu-ozeti` | MEB ders kitabına ve TYMM programına dayanan, haftalık ders için kısa konu anlatımı özet slaytları hazırlar | dnamathos, maarif-icerik-uretimi, maarif-tam | karar bekliyor | 829 |
+| `maarif-hata-analizi` | Bir öğrencinin ya da sınıfın yanlış yaptığı soruları, deneme veya yazılı sonucunu, ödevini ya da çözüm kâğıdı fotoğrafını inceleyip hataları türlerine ve Maarif çıktı ile süreç bileşenine göre sınıflandırır | maarif-olcme-degerlendirme, maarif-tam | Apache-2.0 (uyarlama) | 713 |
+| `maarif-hizli-tekrar` | Ders başında 5 dakikalık hızlı soru-cevap turu ve haftanın akılda kalıcı sloganını hazırlar | dnamathos, maarif-ogretmen-temel, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 582 |
+| `maarif-kavrama-testi` | Haftalık konu bittikten sonra öğrencinin konuyu kavrayıp kavramadığını en az soruyla ölçen 4–5 soruluk, 10–15 dakikalık, notsuz kavrama testi hazırlar | dnamathos, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 744 |
+| `maarif-konu-ozeti` | MEB ders kitabına ve TYMM programına dayanan, haftalık ders için kısa konu anlatımı özet slaytları hazırlar | dnamathos, maarif-icerik-uretimi, maarif-tam | karar bekliyor | 859 |
 | `maarif-ortak-yazili` | MEB ortak yazılı (ortak sınav) senaryosuna birebir uyan, açık uçlu yazılı sınav kâğıtları ve cevap anahtarları hazırlar | dnamathos, maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 839 |
 | `maarif-performans-gorevi` | Maarif Modeli çıktılarına bağlı performans görevi ya da proje görevi hazırlar | maarif-olcme-degerlendirme, maarif-tam | karar bekliyor | 532 |
 
@@ -36,7 +38,7 @@ Yol: `markalar/dnamathos/dnamathos-pdf-tasarimi` · Sürüm: 1.0.0 · Önceki ad
 
 ### maarif-anlama-kontrolu
 
-Bir öğrenme çıktısının tek bir süreç bileşeni için 1–3 maddelik anlama kontrolü ya da çıkış kartı hazırlar; çeldiriciler belgelenmiş öğrenci yanılgılarından gelir ve öğretmen kılavuzu her olası cevabın neyi gösterdiğini ve sonraki öğretim adımını söyler. Netleştirici soru sormadan önce yükle. Şu an matematik içindir; başka derslerde skill'i anmadan normal yardım et. Tetikleyiciler - çıkış kartı hazırla, anlama kontrolü, konuya geçmeden kim anladı görmek istiyorum, ders sonu hızlı yoklama, ön değerlendirme sorusu, tanılayıcı soru. Puanlanan sınav, test ya da alıştırma seti değildir; numaralı test ya da yalın cevap anahtarı başka iştir (maarif-beceri-temelli-test, maarif-ortak-yazili, maarif-benzer-soru). Ders planı (maarif-ders-plani, kendi çıkış kartını taşır), farklılaştırma (maarif-farklilastirma) ya da derse hazırlık (maarif-derse-hazirlik) için değil.
+Bir öğrenme çıktısının tek bir süreç bileşeni için 1–3 maddelik anlama kontrolü ya da çıkış kartı hazırlar; çeldiriciler belgelenmiş öğrenci yanılgılarından gelir ve öğretmen kılavuzu her olası cevabın neyi gösterdiğini ve sonraki öğretim adımını söyler. Netleştirici soru sormadan önce yükle. Şu an matematik içindir; başka derslerde skill'i anmadan normal yardım et. Tetikleyiciler - çıkış kartı hazırla, anlama kontrolü, konuya geçmeden kim anladı görmek istiyorum, ders sonu hızlı yoklama, ön değerlendirme sorusu, tanılayıcı soru. Puanlanan sınav, test ya da alıştırma seti değildir; numaralı test ya da yalın cevap anahtarı başka iştir (maarif-beceri-temelli-test, maarif-ortak-yazili, maarif-benzer-soru). Haftalık kavrama testi (maarif-kavrama-testi) ya da ders başı hızlı tekrar (maarif-hizli-tekrar) için değil. Ders planı (maarif-ders-plani, kendi çıkış kartını taşır), farklılaştırma (maarif-farklilastirma) ya da derse hazırlık (maarif-derse-hazirlik) için değil.
 
 Yol: `skills/maarif-anlama-kontrolu` · Sürüm: 1.0.0
 
@@ -93,6 +95,18 @@ Yol: `skills/maarif-farklilastirma` · Sürüm: 1.0.0
 Bir öğrencinin ya da sınıfın yanlış yaptığı soruları, deneme veya yazılı sonucunu, ödevini ya da çözüm kâğıdı fotoğrafını inceleyip hataları türlerine ve Maarif çıktı ile süreç bileşenine göre sınıflandırır; tekrarlayan örüntüleri bulur, telafi anlatımı, kolaydan zora kontrol soruları, kendi cümleleriyle anlatma görevi, ustalık ölçütü ve aralıklı tekrar takvimi hazırlar; öğretmen ya da koç raporu ve isteğe bağlı veli özeti verir. Tetikleyiciler - bu öğrencinin hatalarını analiz et, deneme sonucuna göre telafi planı, nerede yanlış yapıyor, yanlış yaptığı sorular, sınıfın yazılı sonuçları, eksik kazanım analizi. Yeni test ya da yazılı için değil (maarif-beceri-temelli-test, maarif-ortak-yazili), yalnız ikiz soru isteniyorsa değil (maarif-benzer-soru), derste anlama kontrolü için değil (maarif-anlama-kontrolu).
 
 Yol: `skills/maarif-hata-analizi` · Sürüm: 2.0.0 · Önceki ad: ogrenci-hata-analizi 1.x
+
+### maarif-hizli-tekrar
+
+Ders başında 5 dakikalık hızlı soru-cevap turu ve haftanın akılda kalıcı sloganını hazırlar; soruları aralıklı tekrar kuralıyla geçen haftadan ve daha önceki haftalardan karışık seçer, doğru-yanlış, boşluk tamamla, hatayı bul ve hızlı hesap gibi kısa biçimler kullanır; her sloganı matematiksel doğruluk, sınır ve karşı örnek denetiminden geçirir ve ardına bir neden sorusu ekler. Tetikleyiciler - ders başı tekrar, hızlı soru cevap, ısınma soruları, haftanın sloganı, akılda kalıcı kural, flaş kart, aralıklı tekrar, geçen haftaları da tekrar ettir, sınıfla hızlı yarışma. Haftalık kavrama ölçümü ve ödev kararı için değil (maarif-kavrama-testi), ders sonu çıkış kartı için değil (maarif-anlama-kontrolu), konu özeti slaytı için değil (maarif-konu-ozeti), Instagram gönderisi için değil (dnamathos-instagram-karusel).
+
+Yol: `skills/maarif-hizli-tekrar` · Sürüm: 1.0.0
+
+### maarif-kavrama-testi
+
+Haftalık konu bittikten sonra öğrencinin konuyu kavrayıp kavramadığını en az soruyla ölçen 4–5 soruluk, 10–15 dakikalık, notsuz kavrama testi hazırlar; haftanın süreç bileşenlerini kümeleyip her kümede en zor durumu cevap ve gerekçe isteyen iki katmanlı sorularla yoklar, bir aktarım sorusu ve önceki haftalardan bir tekrar sorusu ekler; sonuçlardan öğrenci başına geçti, kısa telafi ya da yeniden ele al kararı ve yalnız takılan bileşenler için hedefli kısa ödev üretir. Netleştirici soru sormadan önce yükle. Tetikleyiciler - konuyu anladı mı test et, haftalık kontrol, hafta sonu testi, az soruyla kavrama ölçümü, konu bitti öğrenci hazır mı, ödevi azaltmak istiyorum, sonuçlara göre ödev ver. Ders sonu 1–3 maddelik çıkış kartı için değil (maarif-anlama-kontrolu), puanlanan okul yazılısı için değil (maarif-ortak-yazili), LGS tarama testi için değil (maarif-beceri-temelli-test), ders başı hızlı soru turu ve slogan için değil (maarif-hizli-tekrar).
+
+Yol: `skills/maarif-kavrama-testi` · Sürüm: 1.0.0
 
 ### maarif-konu-ozeti
 

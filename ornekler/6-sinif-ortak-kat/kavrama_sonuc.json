@@ -1,0 +1,9 @@
+{"hafta": 8, "sinif": 6, "cikti": ["MAT.6.1.4"],
+ "sorular": {"S1": {"tur": "kume", "bilesenler": ["6.1.4-a", "6.1.4-b"]},
+             "S2": {"tur": "kume", "bilesenler": ["6.1.4-a", "6.1.4-c"]},
+             "S3": {"tur": "aktarim", "bilesenler": ["6.1.4-a", "6.1.4-c"]},
+             "S4": {"tur": "tekrar", "bilesenler": ["6.1.2-ç"], "islendi": 4}},
+ "ogrenciler": {
+  "Öğrenci A": {"S1": {"cevap": 1, "gerekce": 1, "emin": 1}, "S2": {"cevap": 1, "gerekce": 1, "emin": 1}, "S3": {"cevap": 1, "gerekce": 0.5, "emin": 1}, "S4": {"cevap": 1, "gerekce": 1, "emin": 1}},
+  "Öğrenci B": {"S1": {"cevap": 1, "gerekce": 0, "emin": 0}, "S2": {"cevap": 1, "gerekce": 1, "emin": 1}, "S3": {"cevap": 0, "gerekce": 0, "emin": 1}, "S4": {"cevap": 1, "gerekce": 1, "emin": 0}},
+  "Öğrenci C": {"S1": {"cevap": 0, "gerekce": 0, "emin": 1}, "S2": {"cevap": 0, "gerekce": 0, "emin": 0}, "S3": {"cevap": 0, "gerekce": 0, "emin": 0}, "S4": {"cevap": 1, "gerekce": 0, "emin": 0}}}}

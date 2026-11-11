@@ -1,0 +1,24 @@
+skill: maarif-hizli-tekrar
+hedef_isabet: 0.9
+tetiklemeli:
+- Ders başı için hızlı tekrar soruları.
+- 5 dakikalık ısınma soru-cevap turu.
+- Haftanın sloganını yaz.
+- Akılda kalıcı bir kural cümlesi istiyorum.
+- Geçen haftaları da tekrar ettiren hızlı sorular.
+- Flaş kart gibi hızlı sorular hazırla.
+- Grup dersi için kısa yarışma soruları.
+- 'Aralıklı tekrar turu: son 4 haftanın konuları.'
+- 'Bu sloganı denetle: ''Çarpınca büyür''.'
+- Ders girişinde 8 hızlı soru ve cevapları.
+tetiklememeli:
+- istem: Haftalık kavrama testi ve ödev kararı.
+  dogru_skill: maarif-kavrama-testi
+- istem: Ders sonu çıkış kartı.
+  dogru_skill: maarif-anlama-kontrolu
+- istem: Konu özeti slaytları.
+  dogru_skill: maarif-konu-ozeti
+- istem: Instagram karuseli.
+  dogru_skill: dnamathos-instagram-karusel
+- istem: 'Reklam sloganı yaz: özel ders kursu.'
+  dogru_skill: yok

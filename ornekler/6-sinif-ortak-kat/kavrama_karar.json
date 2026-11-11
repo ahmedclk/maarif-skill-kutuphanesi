@@ -1,0 +1,125 @@
+{
+  "hafta": 8,
+  "ogrenciler": {
+    "Öğrenci A": {
+      "bilesenler": {
+        "6.1.4-a": {
+          "puan": 0.92,
+          "karar": "Geçti",
+          "isaret": [],
+          "kalici": false
+        },
+        "6.1.4-b": {
+          "puan": 1.0,
+          "karar": "Geçti",
+          "isaret": [],
+          "kalici": false
+        },
+        "6.1.4-c": {
+          "puan": 0.88,
+          "karar": "Geçti",
+          "isaret": [],
+          "kalici": false
+        },
+        "6.1.2-ç": {
+          "puan": 1.0,
+          "karar": "Geçti",
+          "isaret": [],
+          "kalici": false
+        }
+      },
+      "odev": {},
+      "odev_toplam": 0,
+      "ertelenen": [],
+      "konu_yeniden": false
+    },
+    "Öğrenci B": {
+      "bilesenler": {
+        "6.1.4-a": {
+          "puan": 0.5,
+          "karar": "Yeniden ele al",
+          "isaret": [
+            "emin-yanlis",
+            "gerekcesiz"
+          ],
+          "kalici": false
+        },
+        "6.1.4-b": {
+          "puan": 0.5,
+          "karar": "Kısa telafi",
+          "isaret": [
+            "gerekcesiz"
+          ],
+          "kalici": false
+        },
+        "6.1.4-c": {
+          "puan": 0.5,
+          "karar": "Yeniden ele al",
+          "isaret": [
+            "emin-yanlis"
+          ],
+          "kalici": false
+        },
+        "6.1.2-ç": {
+          "puan": 1.0,
+          "karar": "Geçti",
+          "isaret": [],
+          "kalici": false
+        }
+      },
+      "odev": {
+        "6.1.4-a": 3,
+        "6.1.4-c": 3
+      },
+      "odev_toplam": 6,
+      "ertelenen": [
+        "6.1.4-b"
+      ],
+      "konu_yeniden": false
+    },
+    "Öğrenci C": {
+      "bilesenler": {
+        "6.1.4-a": {
+          "puan": 0.0,
+          "karar": "Yeniden ele al",
+          "isaret": [
+            "emin-yanlis"
+          ],
+          "kalici": false
+        },
+        "6.1.4-b": {
+          "puan": 0.0,
+          "karar": "Yeniden ele al",
+          "isaret": [
+            "emin-yanlis"
+          ],
+          "kalici": false
+        },
+        "6.1.4-c": {
+          "puan": 0.0,
+          "karar": "Yeniden ele al",
+          "isaret": [],
+          "kalici": false
+        },
+        "6.1.2-ç": {
+          "puan": 0.5,
+          "karar": "Kısa telafi",
+          "isaret": [
+            "gerekcesiz"
+          ],
+          "kalici": false
+        }
+      },
+      "odev": {
+        "6.1.4-a": 3
+      },
+      "odev_toplam": 3,
+      "ertelenen": [
+        "6.1.4-b",
+        "6.1.4-c",
+        "6.1.2-ç"
+      ],
+      "konu_yeniden": true
+    }
+  }
+}

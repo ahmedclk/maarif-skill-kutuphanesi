@@ -1,0 +1,5 @@
+6.1.4-a    işlendi: 8. hafta (1 hafta önce) · son karar: Yeniden ele al · öncelik 3
+6.1.4-c    işlendi: 8. hafta (1 hafta önce) · son karar: Yeniden ele al · öncelik 3
+6.1.4-b    işlendi: 8. hafta (1 hafta önce) · son karar: Kısa telafi · öncelik 2
+Dağılım: geçen hafta 3, 2–4 hafta önce 0, daha eski 0
+Not: 5 soru boş; geçen haftanın bileşenlerinden tamamla.

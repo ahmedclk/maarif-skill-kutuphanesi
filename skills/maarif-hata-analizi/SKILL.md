@@ -41,7 +41,7 @@ Soruyu doğru çöz; sorunun çıktısını ve bileşenini eşle. Öğrencinin c
 | Uygulama | Kural biliniyor, yeni bağlama ya da problem kurgusuna aktarılamıyor | Kolaydan zora bağlamlı problemler |
 | Üstbilişsel | Süre yönetimi, soruyu tam okumama, kontrol etmeme, emin olmadan işaretleme (SDB1.2 Kendini Düzenleme ile ilişkili) | Soru okuma ve kontrol stratejisi; süreli kısa denemeler |
 
-Bir yanlışta birden fazla tür varsa asıl neden birincil türdür. Hata adı gözlenen davranışla yazılır ("ortak kat yerine çarpımı alıyor"), etiketle değil.
+Bir yanlışta birden fazla tür varsa asıl neden birincil türdür. Hata adı gözlenen davranışla yazılır ("ortak kat sorulduğunda ortak bölen yazıyor"), etiketle değil.
 
 ## Adım 4 — Örüntü
 

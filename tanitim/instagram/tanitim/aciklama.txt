@@ -7,12 +7,12 @@ Sonraki derse hazırlanırken açmak için kaydet; zümrenle paylaş.
 #maarifmodeli #öğretmen #ölçmedeğerlendirme #yapayzeka #dnamathos
 
 Alternatif metinler:
-1. Kapak: Claude'a Maarif'i öğrettik; 15 skill, her soru bir öğrenme çıktısına bağlı.
+1. Kapak: Claude'a Maarif'i öğrettik; 17 skill, her soru bir öğrenme çıktısına bağlı.
 2. Sorun: yapay zekâ hangi çıktıyı ölçtüğünü bilmez, sınırı aşar, yazılı için çoktan seçmeli önerir.
 3. Çözüm: skill, Claude'un bir işi baştan sona nasıl yapacağını anlatan dosyadır.
 4. Bir sorunun kimliği: öğrenme çıktısı MAT.6.1.1, bileşen 6.1.1-a, beceri basamağı KB2.10.SB1, MEB kuralı MEV-10, soru 1.a.
 5. MEB kuralları: yazılı açık uçlu, 100 puan, bir ders saati, kısa süreli sınav notsuz, ilkokulda sınav yok.
-6. Kütüphane: planlama, ölçme ve değerlendirme, içerik üretimi gruplarında 15 skill.
+6. Kütüphane: planlama, ölçme ve değerlendirme, içerik üretimi gruplarında 17 skill.
 7. Sık hata: çoktan seçmeli test okul yazılısının yerine geçmez.
 8. Başlarken: hazır istem, skill yükleme ya da paket kurma; son kontrol öğretmenin.
 9. Kapanış: zümrenle paylaş, kaydet.

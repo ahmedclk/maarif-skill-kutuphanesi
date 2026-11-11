@@ -12,6 +12,14 @@ Her tarif aynı sohbette sırayla çalıştırılır; bir skill'in ürünü sonr
 6. `maarif-hata-analizi` — prova sonuçlarına göre telafi planı
 7. `maarif-benzer-soru` — en sık iki hata örüntüsü için ikiz soru seti
 
+## Haftalık döngü (az ödev, kalıcı öğrenme)
+
+1. `maarif-hizli-tekrar` — dersin ilk 5 dakikası: geçen hafta ve öncesinden karışık 8 soru, haftanın sloganı
+2. `maarif-konu-ozeti` ya da `maarif-ders-plani` — haftanın konusu
+3. `maarif-kavrama-testi` — konu bitince 4–5 soruluk notsuz test
+4. `maarif-kavrama-testi` — sonuçlar girilince öğrenci başına karar ve en çok 6 soruluk hedefli ödev
+5. Sonraki hafta `maarif-hizli-tekrar` — takılan bileşenler turun başına gelir
+
 ## Yeni bir temaya başlarken
 
 1. `maarif-cikti-cozumleme` — tema kartı (temel kabuller, ön değerlendirme, köprü kurma)

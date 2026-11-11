@@ -1,0 +1,22 @@
+
+Öğrenci A
+  6.1.2-ç    1.00  Geçti           ödev 0
+  6.1.4-a    0.92  Geçti           ödev 0
+  6.1.4-b    1.00  Geçti           ödev 0
+  6.1.4-c    0.88  Geçti           ödev 0
+  Toplam ödev: 0 soru
+
+Öğrenci B
+  6.1.2-ç    1.00  Geçti           ödev 0
+  6.1.4-a    0.50  Yeniden ele al  ödev 3 · emin-yanlis, gerekcesiz
+  6.1.4-b    0.50  Kısa telafi     ödev 0 · gerekcesiz
+  6.1.4-c    0.50  Yeniden ele al  ödev 3 · emin-yanlis
+  Toplam ödev: 6 soru · sonraki haftaya: 6.1.4-b
+
+Öğrenci C
+  6.1.2-ç    0.50  Kısa telafi     ödev 0 · gerekcesiz
+  6.1.4-a    0.00  Yeniden ele al  ödev 3 · emin-yanlis
+  6.1.4-b    0.00  Yeniden ele al  ödev 0 · emin-yanlis
+  6.1.4-c    0.00  Yeniden ele al  ödev 0
+  Toplam ödev: 3 soru · sonraki haftaya: 6.1.4-b, 6.1.4-c, 6.1.2-ç
+  KONU YENİDEN: haftanın bileşenlerinin yarısında ya da fazlasında puan 0,5'in altında. Sonraki derste 10–15 dakika yeniden işleyin; ödev 3 soruyla sınırlı.

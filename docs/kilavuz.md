@@ -34,6 +34,8 @@ Claude ile ders planı, ortak yazılı, anlama kontrolü, performans görevi ve 
 | Skill | Ne yapar |
 | --- | --- |
 | [Anlama kontrolü](#maarif-anlama-kontrolu) · `maarif-anlama-kontrolu` | Tek bir bileşen için 1–3 maddelik notsuz kontrol ve cevapları okuma kılavuzu hazırlar. |
+| [Kavrama testi](#maarif-kavrama-testi) · `maarif-kavrama-testi` | Haftanın konusunu 4–5 soruyla ölçer; ödevi yalnız takılan bileşenlere verir. |
+| [Hızlı tekrar](#maarif-hizli-tekrar) · `maarif-hizli-tekrar` | Ders başı 5 dakikalık soru-cevap turu ve denetlenmiş haftanın sloganını hazırlar. |
 | [Ortak yazılı](#maarif-ortak-yazili) · `maarif-ortak-yazili` | Seçilen senaryoya uyan açık uçlu yazılı kâğıtlarını ve cevap anahtarlarını hazırlar. |
 | [Beceri temelli test](#maarif-beceri-temelli-test) · `maarif-beceri-temelli-test` | LGS ve TYT tarzı, bağlamlı ve görselli çoktan seçmeli test hazırlar. |
 | [Performans görevi](#maarif-performans-gorevi) · `maarif-performans-gorevi` | Yazılıda ölçülemeyen bileşenler için görev, dereceli puanlama anahtarı ve formlar hazırlar. |
@@ -267,6 +269,80 @@ Tek bir bileşen için 1–3 maddelik notsuz kontrol ve cevapları okuma kılavu
 - MEV-41: İlkokulda kısa süreli, hazırbulunuşluk, deneme ve tarama sınavı dâhil hiçbir adla sınav yapılmaz; süreç odaklı değerlendirme araçlarında çoktan seçmeli soru kullanılmaz. Gelişim değerlendirme formu, kontrol listesi ve dereceleme ölçeğiyle izlenir; araçlar öğrenci gelişim dosyasında tutulur.
 
 **Sonra:** [Hata analizi](#maarif-hata-analizi)
+
+### Kavrama testi
+<a id="maarif-kavrama-testi"></a>`maarif-kavrama-testi`
+
+Haftanın konusunu 4–5 soruyla ölçer; ödevi yalnız takılan bileşenlere verir.
+
+**Ne zaman kullanılır?**
+
+- Haftalık konu bittikten sonra
+- Ödevi azaltmak istediğinizde
+- Koçlukta haftalık izlemede
+
+**Siz verin:**
+
+- Haftanın konusu ya da çıktısı
+- Sonuç geldiğinde öğrencilerin cevapları
+
+**Siz alırsınız:**
+
+- Cevap ve gerekçe isteyen 4–5 soruluk kâğıt
+- Öğretmen anahtarı ve karar tablosu
+- Öğrenci başına geçti / kısa telafi / yeniden ele al kararı
+- En çok 6 soruluk hedefli ödev
+
+**Örnek istem:**
+
+```
+6. sınıfta bu hafta ortak kat ve ortak böleni bitirdik; en az soruyla kavrama testi hazırla.
+```
+
+**Kontrol edin:** Öğrenci sonuçlarını takma adla girin; karar ve ödev betikle hesaplanır.
+
+**Uyduğu MEB kuralları:**
+
+- MEV-40: Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için kısa süreli sınav yapılabilir: birkaç soru, kısa süre, anında geri bildirim. Not ya da puanla değerlendirilmez; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.
+- MEV-41: İlkokulda kısa süreli, hazırbulunuşluk, deneme ve tarama sınavı dâhil hiçbir adla sınav yapılmaz; süreç odaklı değerlendirme araçlarında çoktan seçmeli soru kullanılmaz. Gelişim değerlendirme formu, kontrol listesi ve dereceleme ölçeğiyle izlenir; araçlar öğrenci gelişim dosyasında tutulur.
+
+**Sonra:** [Hızlı tekrar](#maarif-hizli-tekrar)
+
+### Hızlı tekrar
+<a id="maarif-hizli-tekrar"></a>`maarif-hizli-tekrar`
+
+Ders başı 5 dakikalık soru-cevap turu ve denetlenmiş haftanın sloganını hazırlar.
+
+**Ne zaman kullanılır?**
+
+- Her dersin ilk 5 dakikasında
+- Önceki haftaları unutturmamak için
+- Grup dersinde kısa yarışma olarak
+
+**Siz verin:**
+
+- Bu hafta işlenen konu
+- İsterseniz kavrama testi geçmişi
+
+**Siz alırsınız:**
+
+- 8 soruluk karışık tur (geçen hafta ve öncesi)
+- Cevap ekranları ve öğretmen listesi
+- Karşı örnekle sınanmış slogan ve neden sorusu
+
+**Örnek istem:**
+
+```
+Geçen hafta ortak katı işledik; ders başı için hızlı tekrar turu ve haftanın sloganını hazırla.
+```
+
+**Kontrol edin:** Sloganın sınırını ve karşı örneğini okuyun; slogan kuralın yerine geçmez, onu hatırlatır.
+
+**Uyduğu MEB kuralları:**
+
+- MEV-40: Ortaokul ve lisede ünite, tema ya da konu sonunda veya kritik çıktılar için kısa süreli sınav yapılabilir: birkaç soru, kısa süre, anında geri bildirim. Not ya da puanla değerlendirilmez; farklı soru türleri kullanılabilir; değerlendirme değil, pekiştirme etkinliğidir.
+
+**Sonra:** [Kavrama testi](#maarif-kavrama-testi)
 
 ### Ortak yazılı
 <a id="maarif-ortak-yazili"></a>`maarif-ortak-yazili`
@@ -601,6 +677,14 @@ Konu karuseli, rehberlik ve gerçek hayat gönderisinden oluşan ızgara satır�
 6. `maarif-hata-analizi` — prova sonuçlarına göre telafi planı
 7. `maarif-benzer-soru` — en sık iki hata örüntüsü için ikiz soru seti
 
+### Haftalık döngü (az ödev, kalıcı öğrenme)
+
+1. `maarif-hizli-tekrar` — dersin ilk 5 dakikası: geçen hafta ve öncesinden karışık 8 soru, haftanın sloganı
+2. `maarif-konu-ozeti` ya da `maarif-ders-plani` — haftanın konusu
+3. `maarif-kavrama-testi` — konu bitince 4–5 soruluk notsuz test
+4. `maarif-kavrama-testi` — sonuçlar girilince öğrenci başına karar ve en çok 6 soruluk hedefli ödev
+5. Sonraki hafta `maarif-hizli-tekrar` — takılan bileşenler turun başına gelir
+
 ### Yeni bir temaya başlarken
 
 1. `maarif-cikti-cozumleme` — tema kartı (temel kabuller, ön değerlendirme, köprü kurma)
@@ -669,6 +753,10 @@ Skill, verdiğiniz çıktı metniyle çalışır ve ürüne "program sayfasında
 **Çoktan seçmeli test yazılı yerine kullanılabilir mi?**
 
 Hayır. MEB mevzuatına göre okul yazılıları açık uçludur ve cevabı öğrenci oluşturur. Çoktan seçmeli test LGS hazırlığı, tarama ya da notsuz kısa süreli sınav içindir.
+
+**Haftalık ödevi nasıl azaltırım?**
+
+Konu bitince kavrama testi yapın. Bileşeni geçen öğrenciye o konudan ödev verilmez; takılan öğrenciye yalnız takıldığı bileşen için 2–3 hedefli soru verilir. Haftalık üst sınır 6 sorudur.
 
 **Öğrenci adlarını vermeli miyim?**
 

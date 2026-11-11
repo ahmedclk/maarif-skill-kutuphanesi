@@ -1,0 +1,116 @@
+{
+  "Öğrenci A": {
+    "6.1.4-a": {
+      "islendi": 8,
+      "kayit": [
+        [
+          8,
+          "Geçti"
+        ]
+      ]
+    },
+    "6.1.4-b": {
+      "islendi": 8,
+      "kayit": [
+        [
+          8,
+          "Geçti"
+        ]
+      ]
+    },
+    "6.1.4-c": {
+      "islendi": 8,
+      "kayit": [
+        [
+          8,
+          "Geçti"
+        ]
+      ]
+    },
+    "6.1.2-ç": {
+      "islendi": 4,
+      "kayit": [
+        [
+          8,
+          "Geçti"
+        ]
+      ]
+    }
+  },
+  "Öğrenci B": {
+    "6.1.4-a": {
+      "islendi": 8,
+      "kayit": [
+        [
+          8,
+          "Yeniden ele al"
+        ]
+      ]
+    },
+    "6.1.4-b": {
+      "islendi": 8,
+      "kayit": [
+        [
+          8,
+          "Kısa telafi"
+        ]
+      ]
+    },
+    "6.1.4-c": {
+      "islendi": 8,
+      "kayit": [
+        [
+          8,
+          "Yeniden ele al"
+        ]
+      ]
+    },
+    "6.1.2-ç": {
+      "islendi": 4,
+      "kayit": [
+        [
+          8,
+          "Geçti"
+        ]
+      ]
+    }
+  },
+  "Öğrenci C": {
+    "6.1.4-a": {
+      "islendi": 8,
+      "kayit": [
+        [
+          8,
+          "Yeniden ele al"
+        ]
+      ]
+    },
+    "6.1.4-b": {
+      "islendi": 8,
+      "kayit": [
+        [
+          8,
+          "Yeniden ele al"
+        ]
+      ]
+    },
+    "6.1.4-c": {
+      "islendi": 8,
+      "kayit": [
+        [
+          8,
+          "Yeniden ele al"
+        ]
+      ]
+    },
+    "6.1.2-ç": {
+      "islendi": 4,
+      "kayit": [
+        [
+          8,
+          "Kısa telafi"
+        ]
+      ]
+    }
+  }
+}

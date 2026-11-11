@@ -17,7 +17,7 @@ MEB'in LGS ve beceri temelli örnek sorularındaki gibi: **bağlamlı, çoğunlu
 ## Seçenekler ve çeldiriciler
 
 - Ortaokul ve LGS 4 seçenek (A–D); TYT/AYT 5 seçenek (A–E).
-- Her yanlış seçenek belirli ve makul bir öğrenci hatasını temsil eder: işaret hatası, işlem önceliğini atlama, birim dönüştürmeyi unutma, kökü yarım okuma, kesirde payları ve paydaları ayrı toplama, ortak kat yerine çarpım alma. Çeldirici, bu kökün sayılarına hata uygulanınca varılan değerdir (doğrulama kapısı B).
+- Her yanlış seçenek belirli ve makul bir öğrenci hatasını temsil eder: işaret hatası, işlem önceliğini atlama, birim dönüştürmeyi unutma, kökü yarım okuma, kesirde payları ve paydaları ayrı toplama, ortak katı ortak bölenle karıştırma. Çeldirici, bu kökün sayılarına hata uygulanınca varılan değerdir (doğrulama kapısı B).
 - En az bir çeldirici ön koşul eksiğini, en az biri sınıf düzeyindeki karışıklığı yansıtır.
 - Seçenekler uzunluk, ayrıntı ve biçimde birbirine benzer; doğru seçenek daha uzun ya da daha ayrıntılı değildir. Sayısal seçenekler küçükten büyüğe sıralanır.
 - Eşdeğer biçimler (1/2 ve 0,5) aynı maddede iki seçenek olmaz.

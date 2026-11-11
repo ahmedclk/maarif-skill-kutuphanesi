@@ -1,0 +1,24 @@
+skill: maarif-kavrama-testi
+hedef_isabet: 0.9
+tetiklemeli:
+- Konuyu anladı mı test etmek istiyorum, en az soruyla.
+- 'Haftalık kontrol testi hazırla: ortak kat ve ortak bölen.'
+- Hafta sonu kısa kavrama testi.
+- Ödevi azaltmak istiyorum; önce konuyu kavradığını ölçelim.
+- Konu bitti, öğrenci bir sonraki konuya hazır mı?
+- Sonuçlara göre kime ne kadar ödev vereyim?
+- 4 soruluk notsuz izleme testi.
+- Bu haftanın bileşenlerini az soruyla yokla.
+- Koçluk öğrencim için haftalık kavrama ölçümü.
+- Test sonuçları ekte, karar ve hedefli ödev çıkar.
+tetiklememeli:
+- istem: Ders sonu 2 soruluk çıkış kartı.
+  dogru_skill: maarif-anlama-kontrolu
+- istem: Ders başı hızlı soru turu ve slogan.
+  dogru_skill: maarif-hizli-tekrar
+- istem: Okul 1. yazılısı hazırla.
+  dogru_skill: maarif-ortak-yazili
+- istem: 20 soruluk LGS tarama testi.
+  dogru_skill: maarif-beceri-temelli-test
+- istem: Deneme sonucunun ayrıntılı hata analizi ve veli özeti.
+  dogru_skill: maarif-hata-analizi

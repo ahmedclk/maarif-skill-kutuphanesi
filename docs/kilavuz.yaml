@@ -30,7 +30,7 @@ gruplar:
   - ad: Planlama
     skills: [maarif-cikti-cozumleme, maarif-ders-takvimi, maarif-ders-plani, maarif-derse-hazirlik, maarif-farklilastirma]
   - ad: Ölçme ve değerlendirme
-    skills: [maarif-anlama-kontrolu, maarif-ortak-yazili, maarif-beceri-temelli-test, maarif-performans-gorevi, maarif-benzer-soru, maarif-hata-analizi]
+    skills: [maarif-anlama-kontrolu, maarif-kavrama-testi, maarif-hizli-tekrar, maarif-ortak-yazili, maarif-beceri-temelli-test, maarif-performans-gorevi, maarif-benzer-soru, maarif-hata-analizi]
   - ad: İçerik üretimi
     skills: [maarif-konu-ozeti, maarif-anlatim-videosu, dnamathos-pdf-tasarimi, dnamathos-instagram-karusel]
 
@@ -95,6 +95,26 @@ skills:
     kontrol: Skill odak bileşeni önce size sorar; onayladığınız bileşenin doğru olduğundan emin olun.
     mevzuat: [MEV-40, MEV-41]
     sonraki: maarif-hata-analizi
+  maarif-kavrama-testi:
+    gorunen: Kavrama testi
+    ne_yapar: Haftanın konusunu 4–5 soruyla ölçer; ödevi yalnız takılan bileşenlere verir.
+    ne_zaman: [Haftalık konu bittikten sonra, Ödevi azaltmak istediğinizde, Koçlukta haftalık izlemede]
+    verin: [Haftanın konusu ya da çıktısı, Sonuç geldiğinde öğrencilerin cevapları]
+    alirsiniz: [Cevap ve gerekçe isteyen 4–5 soruluk kâğıt, Öğretmen anahtarı ve karar tablosu, Öğrenci başına geçti / kısa telafi / yeniden ele al kararı, En çok 6 soruluk hedefli ödev]
+    istem: 6. sınıfta bu hafta ortak kat ve ortak böleni bitirdik; en az soruyla kavrama testi hazırla.
+    kontrol: Öğrenci sonuçlarını takma adla girin; karar ve ödev betikle hesaplanır.
+    mevzuat: [MEV-40, MEV-41]
+    sonraki: maarif-hizli-tekrar
+  maarif-hizli-tekrar:
+    gorunen: Hızlı tekrar
+    ne_yapar: Ders başı 5 dakikalık soru-cevap turu ve denetlenmiş haftanın sloganını hazırlar.
+    ne_zaman: [Her dersin ilk 5 dakikasında, Önceki haftaları unutturmamak için, Grup dersinde kısa yarışma olarak]
+    verin: [Bu hafta işlenen konu, İsterseniz kavrama testi geçmişi]
+    alirsiniz: [8 soruluk karışık tur (geçen hafta ve öncesi), Cevap ekranları ve öğretmen listesi, Karşı örnekle sınanmış slogan ve neden sorusu]
+    istem: Geçen hafta ortak katı işledik; ders başı için hızlı tekrar turu ve haftanın sloganını hazırla.
+    kontrol: Sloganın sınırını ve karşı örneğini okuyun; slogan kuralın yerine geçmez, onu hatırlatır.
+    mevzuat: [MEV-40]
+    sonraki: maarif-kavrama-testi
   maarif-ortak-yazili:
     gorunen: Ortak yazılı
     ne_yapar: Seçilen senaryoya uyan açık uçlu yazılı kâğıtlarını ve cevap anahtarlarını hazırlar.
@@ -193,6 +213,8 @@ sss:
     cevap: Skill, verdiğiniz çıktı metniyle çalışır ve ürüne "program sayfasından doğrulanamadı" notunu ekler. Kod ya da kaynak uydurmaz.
   - soru: Çoktan seçmeli test yazılı yerine kullanılabilir mi?
     cevap: Hayır. MEB mevzuatına göre okul yazılıları açık uçludur ve cevabı öğrenci oluşturur. Çoktan seçmeli test LGS hazırlığı, tarama ya da notsuz kısa süreli sınav içindir.
+  - soru: Haftalık ödevi nasıl azaltırım?
+    cevap: Konu bitince kavrama testi yapın. Bileşeni geçen öğrenciye o konudan ödev verilmez; takılan öğrenciye yalnız takıldığı bileşen için 2–3 hedefli soru verilir. Haftalık üst sınır 6 sorudur.
   - soru: Öğrenci adlarını vermeli miyim?
     cevap: Gerek yok. Skill'ler öğrencileri takma adla işler; sınıflar ya da öğrenciler arası sıralama üretmez.
   - soru: Ürünü doğrudan sınıfa götürebilir miyim?

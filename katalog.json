@@ -30,7 +30,7 @@
   {
     "ad": "maarif-anlama-kontrolu",
     "yol": "skills/maarif-anlama-kontrolu",
-    "aciklama": "Bir öğrenme çıktısının tek bir süreç bileşeni için 1–3 maddelik anlama kontrolü ya da çıkış kartı hazırlar; çeldiriciler belgelenmiş öğrenci yanılgılarından gelir ve öğretmen kılavuzu her olası cevabın neyi gösterdiğini ve sonraki öğretim adımını söyler. Netleştirici soru sormadan önce yükle. Şu an matematik içindir; başka derslerde skill'i anmadan normal yardım et. Tetikleyiciler - çıkış kartı hazırla, anlama kontrolü, konuya geçmeden kim anladı görmek istiyorum, ders sonu hızlı yoklama, ön değerlendirme sorusu, tanılayıcı soru. Puanlanan sınav, test ya da alıştırma seti değildir; numaralı test ya da yalın cevap anahtarı başka iştir (maarif-beceri-temelli-test, maarif-ortak-yazili, maarif-benzer-soru). Ders planı (maarif-ders-plani, kendi çıkış kartını taşır), farklılaştırma (maarif-farklilastirma) ya da derse hazırlık (maarif-derse-hazirlik) için değil.",
+    "aciklama": "Bir öğrenme çıktısının tek bir süreç bileşeni için 1–3 maddelik anlama kontrolü ya da çıkış kartı hazırlar; çeldiriciler belgelenmiş öğrenci yanılgılarından gelir ve öğretmen kılavuzu her olası cevabın neyi gösterdiğini ve sonraki öğretim adımını söyler. Netleştirici soru sormadan önce yükle. Şu an matematik içindir; başka derslerde skill'i anmadan normal yardım et. Tetikleyiciler - çıkış kartı hazırla, anlama kontrolü, konuya geçmeden kim anladı görmek istiyorum, ders sonu hızlı yoklama, ön değerlendirme sorusu, tanılayıcı soru. Puanlanan sınav, test ya da alıştırma seti değildir; numaralı test ya da yalın cevap anahtarı başka iştir (maarif-beceri-temelli-test, maarif-ortak-yazili, maarif-benzer-soru). Haftalık kavrama testi (maarif-kavrama-testi) ya da ders başı hızlı tekrar (maarif-hizli-tekrar) için değil. Ders planı (maarif-ders-plani, kendi çıkış kartını taşır), farklılaştırma (maarif-farklilastirma) ya da derse hazırlık (maarif-derse-hazirlik) için değil.",
     "surum": "1.0.0",
     "dersler": "matematik",
     "onceki_ad": "",
@@ -171,7 +171,38 @@
       "maarif-olcme-degerlendirme",
       "maarif-tam"
     ],
-    "sozcuk": 712
+    "sozcuk": 713
+  },
+  {
+    "ad": "maarif-hizli-tekrar",
+    "yol": "skills/maarif-hizli-tekrar",
+    "aciklama": "Ders başında 5 dakikalık hızlı soru-cevap turu ve haftanın akılda kalıcı sloganını hazırlar; soruları aralıklı tekrar kuralıyla geçen haftadan ve daha önceki haftalardan karışık seçer, doğru-yanlış, boşluk tamamla, hatayı bul ve hızlı hesap gibi kısa biçimler kullanır; her sloganı matematiksel doğruluk, sınır ve karşı örnek denetiminden geçirir ve ardına bir neden sorusu ekler. Tetikleyiciler - ders başı tekrar, hızlı soru cevap, ısınma soruları, haftanın sloganı, akılda kalıcı kural, flaş kart, aralıklı tekrar, geçen haftaları da tekrar ettir, sınıfla hızlı yarışma. Haftalık kavrama ölçümü ve ödev kararı için değil (maarif-kavrama-testi), ders sonu çıkış kartı için değil (maarif-anlama-kontrolu), konu özeti slaytı için değil (maarif-konu-ozeti), Instagram gönderisi için değil (dnamathos-instagram-karusel).",
+    "surum": "1.0.0",
+    "dersler": "matematik (tam); diğerleri şablonla",
+    "onceki_ad": "",
+    "lisans": "karar bekliyor",
+    "paketler": [
+      "dnamathos",
+      "maarif-ogretmen-temel",
+      "maarif-olcme-degerlendirme",
+      "maarif-tam"
+    ],
+    "sozcuk": 582
+  },
+  {
+    "ad": "maarif-kavrama-testi",
+    "yol": "skills/maarif-kavrama-testi",
+    "aciklama": "Haftalık konu bittikten sonra öğrencinin konuyu kavrayıp kavramadığını en az soruyla ölçen 4–5 soruluk, 10–15 dakikalık, notsuz kavrama testi hazırlar; haftanın süreç bileşenlerini kümeleyip her kümede en zor durumu cevap ve gerekçe isteyen iki katmanlı sorularla yoklar, bir aktarım sorusu ve önceki haftalardan bir tekrar sorusu ekler; sonuçlardan öğrenci başına geçti, kısa telafi ya da yeniden ele al kararı ve yalnız takılan bileşenler için hedefli kısa ödev üretir. Netleştirici soru sormadan önce yükle. Tetikleyiciler - konuyu anladı mı test et, haftalık kontrol, hafta sonu testi, az soruyla kavrama ölçümü, konu bitti öğrenci hazır mı, ödevi azaltmak istiyorum, sonuçlara göre ödev ver. Ders sonu 1–3 maddelik çıkış kartı için değil (maarif-anlama-kontrolu), puanlanan okul yazılısı için değil (maarif-ortak-yazili), LGS tarama testi için değil (maarif-beceri-temelli-test), ders başı hızlı soru turu ve slogan için değil (maarif-hizli-tekrar).",
+    "surum": "1.0.0",
+    "dersler": "matematik (tam); diğerleri şablonla",
+    "onceki_ad": "",
+    "lisans": "karar bekliyor",
+    "paketler": [
+      "dnamathos",
+      "maarif-olcme-degerlendirme",
+      "maarif-tam"
+    ],
+    "sozcuk": 744
   },
   {
     "ad": "maarif-konu-ozeti",
@@ -186,7 +217,7 @@
       "maarif-icerik-uretimi",
       "maarif-tam"
     ],
-    "sozcuk": 829
+    "sozcuk": 859
   },
   {
     "ad": "maarif-ortak-yazili",

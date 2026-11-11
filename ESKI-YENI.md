@@ -10,6 +10,6 @@
 | `dnamathos-instagram-karusel` (3233 sözcük) | `dnamathos-instagram-karusel` (2.0) | Ad korundu. SKILL.md adımlara indirildi; bölümler `references/` altına; LGS tarzı madde tanımı ortak dosyaya bağlandı. |
 | `unbearable-senaryo` | — | Maarif kütüphanesinin konusu dışında; kütüphaneye alınmadı, kendi hesabınızda olduğu gibi kalabilir. |
 
-Yeni eklenenler: `maarif-cikti-cozumleme`, `maarif-ders-takvimi`, `maarif-ders-plani`, `maarif-derse-hazirlik`, `maarif-farklilastirma`, `maarif-anlama-kontrolu`, `maarif-performans-gorevi`.
+Yeni eklenenler: `maarif-cikti-cozumleme`, `maarif-ders-takvimi`, `maarif-ders-plani`, `maarif-derse-hazirlik`, `maarif-farklilastirma`, `maarif-anlama-kontrolu`, `maarif-performans-gorevi`, `maarif-kavrama-testi`, `maarif-hizli-tekrar`.
 
 **Geçiş önerisi:** Yeni skill'leri yüklemeden önce eski `maarif-matematik-icerik`, `benzer-soru-uretimi`, `ogrenci-hata-analizi` ve `matematik-anlatim-videosu` skill'lerini kapatın; aynı işi yapan iki skill açık kalırsa Claude hangisini seçeceğini şaşırabilir.

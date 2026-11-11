@@ -22,3 +22,5 @@ tetiklememeli:
   dogru_skill: maarif-hata-analizi
 - istem: LGS ne zaman yapılacak?
   dogru_skill: yok
+- istem: Konu bitti, az soruyla kavradı mı ölç.
+  dogru_skill: maarif-kavrama-testi

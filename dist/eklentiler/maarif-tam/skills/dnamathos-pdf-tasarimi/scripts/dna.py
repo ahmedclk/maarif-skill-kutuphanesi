@@ -102,7 +102,7 @@ def kavrama_kapak(kimlik, serit_html, turler, n=4):
 
 def kavrama(kimlik, serit_html, no, toplam, soru_html, b_etiket="Nasıl karar verdin?"):
     return _s("kavrama", kimlik, serit_html + f'<div class="ic"><span class="hap" style="color:var(--hardal)">Kavrama testi · Soru {no}/{toplam}</span><h2>{soru_html}</h2>'
-              f'<div class="satir">a) Cevap<div class="alan kisa"></div></div><div class="satir">b) {b_etiket} <small>BİR CÜMLEYLE</small><div class="alan"></div></div></div>'
+              f'<div class="satir">a) Cevap<div class="alan"><i></i></div></div><div class="satir">b) {b_etiket} <small>BİR CÜMLEYLE</small><div class="alan"><i></i><i></i><i></i></div></div></div>'
               '<div class="guven"><span>Eminim</span><span>Emin değilim</span></div>')
 
 

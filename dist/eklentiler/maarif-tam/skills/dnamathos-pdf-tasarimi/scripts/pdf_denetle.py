@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Üretilmiş PDF'i denetler: sayfa sayısı, iç bağlantı hedefleri, dosyalar arası bağlantılar, üst veri.
+"""Üretilmiş PDF'i denetler: sayfa sayısı, iç bağlantı hedefleri, dosyalar arası bağlantılar, gradyan desenleri, üst veri.
 
 Kullanım: python3 pdf_denetle.py dosya.pdf [--sayfa N] [--sira cikti_sira.json] [--baslik "..."]
 --sira: slayt_uret.py'nin yazdığı slayt kimliği listesi; her kimliğin doğru sayfada olduğu ve her slayta
@@ -48,6 +48,12 @@ for i, pg in enumerate(r.pages, 1):
                     ulasilan.add(sayfa_no.get(str(d).lstrip("/")))
 print(f"Sayfa: {n} · bağlantı: {toplam} · hatalı: {hatali}")
 ok = hatali == 0
+# Desen dolgusu (CSS gradient ya da yinelenen arka plan → PDF /Pattern, /Shading) bazı okuyucularda renkli kutu olarak görünür.
+desenli = [i for i, pg in enumerate(r.pages, 1) if any(k in (pg.get("/Resources") or {}) for k in ("/Pattern", "/Shading"))]
+if desenli:
+    ok = False; print(f"Desen dolgulu sayfa: {desenli} (CSS gradient ve yinelenen arka plan kullanma; bazı okuyucularda renkli kutu olur)")
+else:
+    print("Desen dolgusu: yok")
 if a.sira:
     import json
     sira = json.load(open(a.sira))

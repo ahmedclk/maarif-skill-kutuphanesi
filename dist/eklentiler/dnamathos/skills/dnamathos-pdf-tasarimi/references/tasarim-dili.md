@@ -71,7 +71,11 @@
 - Tablolar HTML (`tablo`): ince kenar, başlık satırı açık safran (#fff3d6) ve kalın.
 - Soru görseli ölçütü: `references/ortak/dersler/matematik/soru-gorseli.md`.
 
-## 8. Yazdırılabilir kâğıtlar (A4)
+## 8. PDF'te güvenli çizim
+
+CSS gradient (linear, radial, repeating) ve yinelenen arka plan resmi kullanılmaz. Chrome bunları PDF'e desen dolgusu olarak yazar; bazı görüntüleyiciler deseni çözemez ve alanı renkli (çoğunlukla pembe) kutu olarak gösterir. Cevap çizgileri kenarlıktır (`.alan i`), çözüm alanının noktalı zemini tek parça SVG'dir (`--noktalar`), fosforlu kalem vurgusu iç gölgedir (`box-shadow: inset`). `pdf_denetle.py` desen dolgulu sayfayı hata sayar.
+
+## 8a. Yazdırılabilir kâğıtlar (A4)
 
 Kavrama testi kâğıdı ve yazılı kâğıtları A4 dikeydir; aynı renk ve yazı tipi rolleri kullanılır: başlık Fraunces, gövde Atkinson (rakamlar Inter), etiketler IBM Plex Mono; zemin beyaz, vurgu safran. Örnek: `ornekler/6-sinif-ortak-kat`.
 

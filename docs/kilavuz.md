@@ -46,7 +46,7 @@ Claude ile ders planı, ortak yazılı, anlama kontrolü, performans görevi ve 
 
 | Skill | Ne yapar |
 | --- | --- |
-| [Konu özeti](#maarif-konu-ozeti) · `maarif-konu-ozeti` | Haftalık ders için konu özeti slaytları, yazılı tarzı sorular ve ödev kartı hazırlar. |
+| [Konu özeti](#maarif-konu-ozeti) · `maarif-konu-ozeti` | Haftalık ders paketini hazırlar - ısınma turu, konu özeti slaytları, slogan, kavrama testi ve sonuca bağlı ödev. |
 | [Anlatım videosu](#maarif-anlatim-videosu) · `maarif-anlatim-videosu` | Bir konu ya da soru için sahne planı, seslendirme metni ve Remotion kodu hazırlar. |
 | [DNAMATHOS PDF](#dnamathos-pdf-tasarimi) · `dnamathos-pdf-tasarimi` | İçeriği DNAMATHOS'un 16:9 PDF tasarımına dönüştürür ve dosyayı denetler. |
 | [Instagram karuseli](#dnamathos-instagram-karusel) · `dnamathos-instagram-karusel` | Konu karuseli, rehberlik ve gerçek hayat gönderisinden oluşan ızgara satırını hazırlar. |
@@ -541,7 +541,7 @@ Ekteki deneme sonucuna göre hata analizi yap; telafi planı ve kontrol sorular�
 ### Konu özeti
 <a id="maarif-konu-ozeti"></a>`maarif-konu-ozeti`
 
-Haftalık ders için konu özeti slaytları, yazılı tarzı sorular ve ödev kartı hazırlar.
+Haftalık ders paketini hazırlar - ısınma turu, konu özeti slaytları, slogan, kavrama testi ve sonuca bağlı ödev.
 
 **Ne zaman kullanılır?**
 
@@ -555,9 +555,11 @@ Haftalık ders için konu özeti slaytları, yazılı tarzı sorular ve ödev ka
 
 **Siz alırsınız:**
 
-- Ders slaytları (PDF)
-- Tüyolar ve yazılı provası
-- Ödev kartı
+- Ders başı ısınma turu (aralıklı tekrar)
+- Konu kartları ve yazılı tarzı sorular
+- Haftanın sloganı
+- 4 soruluk kavrama testi (slayt ve A4 kâğıt)
+- Kavrama testine bağlı ödev kartı
 - Öğretmen çözüm dosyası
 
 **Örnek istem:**
@@ -566,7 +568,7 @@ Haftalık ders için konu özeti slaytları, yazılı tarzı sorular ve ödev ka
 Ekteki ders kitabına ve haftalık plana göre 9. sınıf ders anlatım sunumunu hazırla.
 ```
 
-**Kontrol edin:** Öğrenci dosyasında cevap bulunmadığını bir soruyu açıp kontrol edin.
+**Kontrol edin:** Yalnız özet istediğiniz hafta "yalnız özet" deyin; ısınma ve kavrama testi atlanır.
 
 **Uyduğu MEB kuralları:**
 
@@ -679,11 +681,11 @@ Konu karuseli, rehberlik ve gerçek hayat gönderisinden oluşan ızgara satır�
 
 ### Haftalık döngü (az ödev, kalıcı öğrenme)
 
-1. `maarif-hizli-tekrar` — dersin ilk 5 dakikası: geçen hafta ve öncesinden karışık 8 soru, haftanın sloganı
+1. `maarif-hizli-tekrar` — dersin ilk 5 dakikası: geçen hafta ve öncesinden karışık 6–8 soru, haftanın sloganı
 2. `maarif-konu-ozeti` ya da `maarif-ders-plani` — haftanın konusu
-3. `maarif-kavrama-testi` — konu bitince 4–5 soruluk notsuz test
-4. `maarif-kavrama-testi` — sonuçlar girilince öğrenci başına karar ve en çok 6 soruluk hedefli ödev
-5. Sonraki hafta `maarif-hizli-tekrar` — takılan bileşenler turun başına gelir
+3. `maarif-kavrama-testi` — konu bitince 4 soruluk notsuz test
+4. Sonuçlar girilince (`kavrama_karari.py`) — öğrenci başına karar ve en çok 6 soruluk hedefli ödev
+5. Sonraki hafta — takılan bileşenler ısınma turunun başına gelir
 
 ### Yeni bir temaya başlarken
 

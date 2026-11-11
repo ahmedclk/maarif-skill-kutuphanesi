@@ -1,6 +1,6 @@
 ---
 name: maarif-hizli-tekrar
-description: Ders başında 5 dakikalık hızlı soru-cevap turu ve haftanın akılda kalıcı sloganını hazırlar; soruları aralıklı tekrar kuralıyla geçen haftadan ve daha önceki haftalardan karışık seçer, doğru-yanlış, boşluk tamamla, hatayı bul ve hızlı hesap gibi kısa biçimler kullanır; her sloganı matematiksel doğruluk, sınır ve karşı örnek denetiminden geçirir ve ardına bir neden sorusu ekler. Tetikleyiciler - ders başı tekrar, hızlı soru cevap, ısınma soruları, haftanın sloganı, akılda kalıcı kural, flaş kart, aralıklı tekrar, geçen haftaları da tekrar ettir, sınıfla hızlı yarışma. Haftalık kavrama ölçümü ve ödev kararı için değil (maarif-kavrama-testi), ders sonu çıkış kartı için değil (maarif-anlama-kontrolu), konu özeti slaytı için değil (maarif-konu-ozeti), Instagram gönderisi için değil (dnamathos-instagram-karusel).
+description: Ders başında 5 dakikalık hızlı soru-cevap turu ve haftanın akılda kalıcı sloganını hazırlar; soruları aralıklı tekrar kuralıyla geçen haftadan ve daha önceki haftalardan karışık seçer, doğru-yanlış, boşluk tamamla, hatayı bul ve hızlı hesap gibi kısa biçimler kullanır; her sloganı matematiksel doğruluk, sınır ve karşı örnek denetiminden geçirir ve ardına bir neden sorusu ekler. Tetikleyiciler - ders başı tekrar, hızlı soru cevap, ısınma soruları, haftanın sloganı, akılda kalıcı kural, flaş kart, aralıklı tekrar, geçen haftaları da tekrar ettir, sınıfla hızlı yarışma. Haftalık kavrama ölçümü ve ödev kararı için değil (maarif-kavrama-testi), ders sonu çıkış kartı için değil (maarif-anlama-kontrolu), konu özeti slaytı için değil (maarif-konu-ozeti), Instagram gönderisi için değil (dnamathos-instagram-karusel). Konu özeti istendiğinde ayrıca yüklenmez; maarif-konu-ozeti ısınma turunu ve sloganı varsayılan olarak kendisi üretir.
 license: Lisans kararı bekliyor; bkz. depo kökündeki LISANS.md
 compatibility: TYMM sayfaları için web erişimi; Python 3 (tekrar seçimi).
 metadata:
@@ -21,7 +21,7 @@ Dil: `references/ortak/uslup/turkce-yazim.md`; öğrenci sesi sıcak ve kısa, a
 
 1. `references/ortak/maarif/cerceve.md`, `references/ortak/maarif/tymm-erisim.md`, `references/ortak/maarif/meb-olcme-mevzuati.md`.
 2. Ders dosyası: matematik → `references/dersler/matematik.md` (şimdi oku). Yoksa `references/ortak/dersler/_sablon.md`.
-3. `references/tur-bicimleri.md` ve `references/slogan-olcutu.md` dosyalarını oku.
+3. `references/ortak/haftalik/hizli-tekrar-bicimleri.md` ve `references/ortak/haftalik/slogan-olcutu.md` dosyalarını oku.
 4. Aynı oturumda `kavrama_gecmisi.json` (maarif-kavrama-testi) ya da bir ders takvimi varsa onu kullan.
 
 ## Adım 1 — Netleştirme (en fazla bir soru)
@@ -40,7 +40,7 @@ Turdaki her soru bir bileşene bağlıdır; bileşen ve sınırlar tema sayfası
 
 ## Adım 4 — Soruları yaz
 
-`tur-bicimleri.md` dosyasındaki biçimlerle. Kurallar: her soru en çok 20 saniyede cevaplanır (zihinden ya da tek satır); en az iki farklı biçim; en az bir "hatayı bul" (kavram yanılgısını yüzeye çıkarır); cevaplar kodla doğrulanır; her sorunun tek cevabı vardır.
+`hizli-tekrar-bicimleri.md` dosyasındaki biçimlerle. Kurallar: her soru en çok 20 saniyede cevaplanır (zihinden ya da tek satır); en az iki farklı biçim; en az bir "hatayı bul" (kavram yanılgısını yüzeye çıkarır); cevaplar kodla doğrulanır; her sorunun tek cevabı vardır.
 
 ## Adım 5 — Haftanın sloganı
 
@@ -48,7 +48,7 @@ Turdaki her soru bir bileşene bağlıdır; bileşen ve sınırlar tema sayfası
 
 ## Adım 6 — Çıktı
 
-`references/cikti-bicimi.md`:
+`references/ortak/haftalik/hizli-tekrar-cikti-bicimi.md`:
 
 1. **Tur kartları:** her soru bir ekran (16:9), büyük yazı; sunumda tek tek açılır. Cevap bir sonraki ekranda. DNAMATHOS tasarımı istenirse ve `dnamathos-pdf-tasarimi` yüklüyse onun tasarımıyla.
 2. **Öğretmen listesi:** tek sayfa; soru · cevap · bileşen · yaygın yanlış cevap ve ona söylenecek tek cümle.

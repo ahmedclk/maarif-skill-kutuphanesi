@@ -9,7 +9,7 @@
 ## Öğretmen anahtarı
 1. Üst bilgi: hafta, sınıf, çıktılar (kod ve kısa ad), kümeler ve en zor durumları.
 2. Her soru: tür · yokladığı bileşenler · doğru cevap · kabul edilen gerekçeler (2–3 örnek) · kabul edilmeyen gerekçeler · sık hatalı cevaplar ve neyi gösterdikleri.
-3. Karar tablosu ve hedefli ödev kuralı (karar-kurali.md özetinin bir paragrafı).
+3. Karar tablosu ve hedefli ödev kuralı (kavrama-karar-kurali.md özetinin bir paragrafı).
 4. Hazır hedefli soru bankası: her bileşen için 3 soru (öğretmen sonuçtan sonra seçer).
 
 ## Sonuç şablonu

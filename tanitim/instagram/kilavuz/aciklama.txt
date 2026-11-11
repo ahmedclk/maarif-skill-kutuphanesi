@@ -21,7 +21,7 @@ Alternatif metinler:
 12. Performans görevi: Yazılıda ölçülemeyen bileşenler için görev, dereceli puanlama anahtarı ve formlar hazırlar. Örnek istem: 6. sınıf olasılık çıktısı için iki haftalık bir deney görevi ve dereceli puanlama anahtarı hazırla.
 13. İkiz soru: Verdiğiniz soruların aynı bileşeni ölçen özgün ikizlerini yazar. Örnek istem: Ekteki 5 sorunun her biri için aynı bileşeni ölçen birer ikiz soru ve çözüm yaz.
 14. Hata analizi: Yanlışları bileşene ve hata türüne göre ayırır, telafi planı ve tekrar takvimi hazırlar. Örnek istem: Ekteki deneme sonucuna göre hata analizi yap; telafi planı ve kontrol soruları hazırla.
-15. Konu özeti: Haftalık ders için konu özeti slaytları, yazılı tarzı sorular ve ödev kartı hazırlar. Örnek istem: Ekteki ders kitabına ve haftalık plana göre 9. sınıf ders anlatım sunumunu hazırla.
+15. Konu özeti: Haftalık ders paketini hazırlar - ısınma turu, konu özeti slaytları, slogan, kavrama testi ve sonuca bağlı ödev. Örnek istem: Ekteki ders kitabına ve haftalık plana göre 9. sınıf ders anlatım sunumunu hazırla.
 16. Anlatım videosu: Bir konu ya da soru için sahne planı, seslendirme metni ve Remotion kodu hazırlar. Örnek istem: Ortak kat için 45 saniyelik dikey anlatım videosu hazırla.
 17. DNAMATHOS PDF: İçeriği DNAMATHOS'un 16:9 PDF tasarımına dönüştürür ve dosyayı denetler. Örnek istem: Bu içeriği DNAMATHOS 16:9 düzeninde PDF'e çevir ve bağlantıları denetle.
 18. Instagram karuseli: Konu karuseli, rehberlik ve gerçek hayat gönderisinden oluşan ızgara satırını hazırlar. Örnek istem: 8. sınıf üslü ifadeler için konu karuseli, rehberlik ve gerçek hayat gönderilerinden oluşan satırı hazırla.

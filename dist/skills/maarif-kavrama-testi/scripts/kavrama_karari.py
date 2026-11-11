@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Kavrama testi sonuçlarından öğrenci ve bileşen başına karar ve hedefli ödev sayısı üretir.
 
-Kurallar: skills/maarif-kavrama-testi/references/karar-kurali.md
+Kurallar: ortak/haftalik/kavrama-karar-kurali.md (dağıtımda references/ortak/haftalik/)
 Kullanım: python3 kavrama_karari.py kavrama_sonuc.json [--gecmis kavrama_gecmisi.json] [--ust 6]
 Çıktı: karar tablosu (ekrana) ve kavrama_karar.json; --gecmis verilirse geçmiş dosyası güncellenir.
 """

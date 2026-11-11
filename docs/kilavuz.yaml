@@ -167,12 +167,12 @@ skills:
     sonraki: maarif-benzer-soru
   maarif-konu-ozeti:
     gorunen: Konu özeti
-    ne_yapar: Haftalık ders için konu özeti slaytları, yazılı tarzı sorular ve ödev kartı hazırlar.
+    ne_yapar: Haftalık ders paketini hazırlar - ısınma turu, konu özeti slaytları, slogan, kavrama testi ve sonuca bağlı ödev.
     ne_zaman: [Haftalık özel derste, Yazılıya kadar konu tekrarında]
     verin: [Ders kitabı, İsterseniz takvim ve kaynak kitabın içindekiler sayfası]
-    alirsiniz: [Ders slaytları (PDF), Tüyolar ve yazılı provası, Ödev kartı, Öğretmen çözüm dosyası]
+    alirsiniz: [Ders başı ısınma turu (aralıklı tekrar), Konu kartları ve yazılı tarzı sorular, Haftanın sloganı, 4 soruluk kavrama testi (slayt ve A4 kâğıt), Kavrama testine bağlı ödev kartı, Öğretmen çözüm dosyası]
     istem: Ekteki ders kitabına ve haftalık plana göre 9. sınıf ders anlatım sunumunu hazırla.
-    kontrol: Öğrenci dosyasında cevap bulunmadığını bir soruyu açıp kontrol edin.
+    kontrol: Yalnız özet istediğiniz hafta "yalnız özet" deyin; ısınma ve kavrama testi atlanır.
     mevzuat: [MEV-10, MEV-13]
     sonraki: maarif-anlama-kontrolu
   maarif-anlatim-videosu:

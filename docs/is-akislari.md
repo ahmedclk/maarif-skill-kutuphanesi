@@ -14,11 +14,13 @@ Her tarif aynı sohbette sırayla çalıştırılır; bir skill'in ürünü sonr
 
 ## Haftalık döngü (az ödev, kalıcı öğrenme)
 
-1. `maarif-hizli-tekrar` — dersin ilk 5 dakikası: geçen hafta ve öncesinden karışık 8 soru, haftanın sloganı
+Konu özeti isterseniz bu döngünün tamamı tek istekle gelir; `maarif-konu-ozeti` ısınma turunu, sloganı ve kavrama testini varsayılan olarak üretir. Ders planıyla çalışıyorsanız parçaları ayrı isteyin:
+
+1. `maarif-hizli-tekrar` — dersin ilk 5 dakikası: geçen hafta ve öncesinden karışık 6–8 soru, haftanın sloganı
 2. `maarif-konu-ozeti` ya da `maarif-ders-plani` — haftanın konusu
-3. `maarif-kavrama-testi` — konu bitince 4–5 soruluk notsuz test
-4. `maarif-kavrama-testi` — sonuçlar girilince öğrenci başına karar ve en çok 6 soruluk hedefli ödev
-5. Sonraki hafta `maarif-hizli-tekrar` — takılan bileşenler turun başına gelir
+3. `maarif-kavrama-testi` — konu bitince 4 soruluk notsuz test
+4. Sonuçlar girilince (`kavrama_karari.py`) — öğrenci başına karar ve en çok 6 soruluk hedefli ödev
+5. Sonraki hafta — takılan bileşenler ısınma turunun başına gelir
 
 ## Yeni bir temaya başlarken
 

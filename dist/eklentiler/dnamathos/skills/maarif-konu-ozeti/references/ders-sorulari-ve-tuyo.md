@@ -2,7 +2,7 @@
 
 Sorular `references/ortak/dersler/matematik/meb-soru-dili.md` (soru yazım ölçütü, kalıp kataloğu, kademe üslubu) ve `references/ortak/dersler/matematik/soru-gorseli.md` ölçütlerine uyar. Derse özgü kurallar:
 
-- **Sayı ve yer:** 4–5 soru. Her konu kartının ardında o kartın sorusu; son soru Kaydet kartından sonra gelen, çok maddeli ve yazılı sınavındaki gibi bütüncül bir yazılı provasıdır.
+- **Sayı ve yer:** Her konu kartının ardında o kartın sorusu (2–4 soru). Bütüncül, çok maddeli ve yazılı sınavındaki gibi soru, haftalık pakette kavrama testinin aktarım sorusudur (`haftalik-paket.md`); tekrar dersinde ve "yalnız özet" isteğinde Kaydet kartından sonra tüyosuz yazılı provası olarak gelir.
 - **Bileşen kapsaması:** Ders soruları bu derste işlenen bileşenlerin yazılıda ölçülebilen her birini en az bir kez çalıştırır; her soru 1–3 komşu bileşen taşır.
 - **Süreç dili çalışması:** Her derste en az bir varsayım sınama ya da kişi iddiası, bir boşluklu önerme ve bir "gerekçesiyle açıklayınız" maddesi bulunur (kademeye göre: ortaokulda "tahminde bulununuz", lisede "ispatlayınız / gösteriniz").
 - **Kitapla bağ:** En az bir soru kitaptaki bir etkinliğin ya da problemin sayı ve bağlamı değişmiş özgün benzeridir; soru slaytının altında "Benzeri kitapta: s. 113, Problem 1" yazar.

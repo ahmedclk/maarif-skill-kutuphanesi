@@ -22,3 +22,5 @@ tetiklememeli:
   dogru_skill: maarif-beceri-temelli-test
 - istem: Deneme sonucunun ayrıntılı hata analizi ve veli özeti.
   dogru_skill: maarif-hata-analizi
+- istem: 9. sınıf 3. dersin konu özetini hazırla.
+  dogru_skill: maarif-konu-ozeti

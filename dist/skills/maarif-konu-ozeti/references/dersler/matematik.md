@@ -9,6 +9,7 @@ Konu özetinin matematiğe özgü kuralları ortak ders dosyalarındadır; bu do
 | Görselli soru ölçütü (en az üçte bir görselli) | `references/ortak/dersler/matematik/soru-gorseli.md` |
 | Güçlük (Z · Y · C) ve lise sorularında puan | `references/ortak/dersler/matematik/guclugu-belirleme.md` |
 | Öğretmen dosyasında çözüm ve puanlama ölçütü | `references/ortak/dersler/matematik/cevap-anahtari.md` |
+| Isınma turu, slogan ve kavrama testi (en zor durumlar, gerekçe ölçütü, hatayı bul kaynakları) | `references/ortak/dersler/matematik/kavrama-ve-tekrar.md` |
 
 Matematiğe özgü notlar:
 

@@ -11,6 +11,7 @@ tetiklemeli:
 - 9. sınıf ders anlatım sunumu, haftalık plana göre.
 - Konu kartları, tüyolar ve ödev kartıyla ders slaytı.
 - Öğretmen çözüm PDF'i de olan konu özeti.
+- 'Haftalık ders paketini hazırla: ısınma, özet ve kavrama testi.'
 tetiklememeli:
 - istem: Tek dersin plan belgesini Word olarak ver.
   dogru_skill: maarif-ders-plani
@@ -22,5 +23,5 @@ tetiklememeli:
   dogru_skill: maarif-ders-takvimi
 - istem: PowerPoint dosyası olarak sunum ver.
   dogru_skill: yok
-- istem: Ders başı hızlı tekrar turu.
+- istem: Sadece ders başı için 8 hızlı tekrar sorusu, özet istemiyorum.
   dogru_skill: maarif-hizli-tekrar

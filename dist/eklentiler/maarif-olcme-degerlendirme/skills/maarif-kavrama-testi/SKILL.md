@@ -1,6 +1,6 @@
 ---
 name: maarif-kavrama-testi
-description: Haftalık konu bittikten sonra öğrencinin konuyu kavrayıp kavramadığını en az soruyla ölçen 4–5 soruluk, 10–15 dakikalık, notsuz kavrama testi hazırlar; haftanın süreç bileşenlerini kümeleyip her kümede en zor durumu cevap ve gerekçe isteyen iki katmanlı sorularla yoklar, bir aktarım sorusu ve önceki haftalardan bir tekrar sorusu ekler; sonuçlardan öğrenci başına geçti, kısa telafi ya da yeniden ele al kararı ve yalnız takılan bileşenler için hedefli kısa ödev üretir. Netleştirici soru sormadan önce yükle. Tetikleyiciler - konuyu anladı mı test et, haftalık kontrol, hafta sonu testi, az soruyla kavrama ölçümü, konu bitti öğrenci hazır mı, ödevi azaltmak istiyorum, sonuçlara göre ödev ver. Ders sonu 1–3 maddelik çıkış kartı için değil (maarif-anlama-kontrolu), puanlanan okul yazılısı için değil (maarif-ortak-yazili), LGS tarama testi için değil (maarif-beceri-temelli-test), ders başı hızlı soru turu ve slogan için değil (maarif-hizli-tekrar).
+description: Haftalık konu bittikten sonra öğrencinin konuyu kavrayıp kavramadığını en az soruyla ölçen 4–5 soruluk, 10–15 dakikalık, notsuz kavrama testi hazırlar; haftanın süreç bileşenlerini kümeleyip her kümede en zor durumu cevap ve gerekçe isteyen iki katmanlı sorularla yoklar, bir aktarım sorusu ve önceki haftalardan bir tekrar sorusu ekler; sonuçlardan öğrenci başına geçti, kısa telafi ya da yeniden ele al kararı ve yalnız takılan bileşenler için hedefli kısa ödev üretir. Netleştirici soru sormadan önce yükle. Tetikleyiciler - konuyu anladı mı test et, haftalık kontrol, az soruyla kavrama ölçümü, ödevi azaltmak istiyorum, sonuçlara göre ödev ver. Ders sonu 1–3 maddelik çıkış kartı için değil (maarif-anlama-kontrolu), puanlanan okul yazılısı için değil (maarif-ortak-yazili), LGS tarama testi için değil (maarif-beceri-temelli-test), ders başı hızlı soru turu ve slogan için değil (maarif-hizli-tekrar). Konu özeti istendiğinde yüklenmez; maarif-konu-ozeti bu testi kendisi üretir.
 license: Lisans kararı bekliyor; bkz. depo kökündeki LISANS.md
 compatibility: TYMM sayfaları için web erişimi; Python 3 (karar ve tekrar betikleri).
 metadata:
@@ -21,7 +21,7 @@ Amaç: Haftanın konusunu öğrencinin gerçekten kavrayıp kavramadığını **
 
 1. **Omurga:** `references/ortak/maarif/cerceve.md`, `references/ortak/maarif/tymm-erisim.md`, `references/ortak/maarif/meb-olcme-mevzuati.md`.
 2. **Ders:** `references/dersler/<ders>.md` dosyasını şimdi oku (matematik → `references/dersler/matematik.md`). Okumadan soru tasarlamak kritik hatadır. Ders dosyası yoksa `references/ortak/dersler/_sablon.md` ile çalış ve öğretmen kâğıdına not ekle.
-3. **Tasarım kuralları:** `references/test-tasarimi.md` ve `references/karar-kurali.md` dosyalarını oku.
+3. **Tasarım kuralları:** `references/ortak/haftalik/kavrama-testi-tasarimi.md` ve `references/ortak/haftalik/kavrama-karar-kurali.md` dosyalarını oku.
 4. Aynı oturumda bir takvim, `cikti.json` ya da önceki haftaların sonuç dosyası (`kavrama_gecmisi.json`) varsa onu kullan.
 
 ## Adım 1 — Netleştirme (en fazla bir soru)
@@ -34,11 +34,11 @@ Haftanın çıktıları için tema sayfasından birebir: bileşenler, İçerik �
 
 ## Adım 3 — Bileşen haritası ve kümeler
 
-`test-tasarimi.md` 1. bölümü: bileşenleri birbirine dayanma ilişkisine göre 2–4 kümeye ayır; her kümenin **en zor yapısal durumunu** yaz. Yazılıda ölçülemeyen bileşen (grup tartışması, veri toplama) teste alınmaz; öğretmen kâğıdında "gözlemle izlenir" diye görünür.
+`kavrama-testi-tasarimi.md` 1. bölümü: bileşenleri birbirine dayanma ilişkisine göre 2–4 kümeye ayır; her kümenin **en zor yapısal durumunu** yaz. Yazılıda ölçülemeyen bileşen (grup tartışması, veri toplama) teste alınmaz; öğretmen kâğıdında "gözlemle izlenir" diye görünür.
 
 ## Adım 4 — Soruları yaz
 
-`test-tasarimi.md` 2. bölümündeki dört soru türüyle:
+`kavrama-testi-tasarimi.md` 2. bölümündeki dört soru türüyle:
 
 1. **Küme soruları (2–3):** her biri bir kümenin en zor durumunu iki katmanlı biçimde yoklar: cevap + tek cümlelik gerekçe.
 2. **Aktarım sorusu (1):** aynı fikir, öğrencinin derste görmediği bir bağlamda.
@@ -49,17 +49,17 @@ Kurallar: sayılar ve cevaplar kodla hesaplanır; her sorunun cevabı tek ve sav
 
 ## Adım 5 — Çıktı
 
-`references/cikti-bicimi.md` dosyasını oku. Üç parça:
+`references/ortak/haftalik/kavrama-cikti-bicimi.md` dosyasını oku. Üç parça:
 
 1. **Öğrenci kâğıdı:** 4–5 soru, cevap ve gerekçe alanı, güven kutuları; başlık "Bu haftayı kontrol edelim". Puan, düzey ya da kod yazılmaz.
 2. **Öğretmen anahtarı:** her soru için doğru cevap, kabul edilen gerekçeler, sık hatalı cevaplar ve neyi gösterdikleri; soru → bileşen eşlemesi; karar tablosu.
-3. **Sonuç şablonu:** `kavrama_sonuc.json` (öğretmen her öğrenci için cevap ve gerekçe doğruluğunu ve güveni girer; biçim `karar-kurali.md` dosyasında).
+3. **Sonuç şablonu:** `kavrama_sonuc.json` (öğretmen her öğrenci için cevap ve gerekçe doğruluğunu ve güveni girer; biçim `kavrama-karar-kurali.md` dosyasında).
 
 DNAMATHOS tasarımı istenirse ve `dnamathos-pdf-tasarimi` yüklüyse onun tasarımıyla; değilse sade A4 HTML ya da PDF.
 
 ## Adım 6 — Sonuçtan karar ve hedefli ödev (öğretmen sonuçları verince)
 
-`python3 scripts/kavrama_karari.py kavrama_sonuc.json --gecmis kavrama_gecmisi.json` çalıştır. Betik her öğrenci ve bileşen için kararı verir, ödev sayısını hesaplar ve geçmiş dosyasını günceller (`karar-kurali.md`):
+`python3 scripts/kavrama_karari.py kavrama_sonuc.json --gecmis kavrama_gecmisi.json` çalıştır. Betik her öğrenci ve bileşen için kararı verir, ödev sayısını hesaplar ve geçmiş dosyasını günceller (`kavrama-karar-kurali.md`):
 
 - **Geçti:** o bileşenden ödev yok.
 - **Kısa telafi:** 2 hedefli soru; biri farklı biçimde.

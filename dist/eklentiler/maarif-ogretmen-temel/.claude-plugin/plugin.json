@@ -1,0 +1,8 @@
+{
+  "name": "maarif-ogretmen-temel",
+  "version": "1.0.0",
+  "description": "Programı okuma, takvim, ders planı, derse hazırlık, farklılaştırma ve anlama kontrolü. Her branş öğretmeninin başlangıç paketi.",
+  "author": {
+    "name": "DNAMATHOS"
+  }
+}

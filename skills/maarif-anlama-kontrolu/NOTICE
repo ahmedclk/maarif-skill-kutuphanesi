@@ -1,0 +1,11 @@
+Maarif anlama kontrolü (maarif-anlama-kontrolu)
+Bu skill, aşağıdaki çalışmadan uyarlanmıştır ve değiştirilmiştir:
+
+  Agent Skills for K-12 Teachers — k12-check-for-understanding
+  Copyright 2026 Anthropic, PBC
+  Copyright 2026 Learning Commons
+  Apache License 2.0 (bkz. LICENSE)
+
+Değişiklikler (2026, DNAMATHOS): Türkçeye çevrildi; ABD standartları yerine TYMM öğrenme
+çıktıları ve süreç bileşenleri esas alındı; "learning component" odağı süreç bileşenine,
+"coherence map" önceki ve sonraki sınıf çıktılarına bağlandı; doğrulama kapısına Maarif bağı eklendi.

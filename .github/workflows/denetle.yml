@@ -1,0 +1,24 @@
+name: Denetle
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  denetle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml pypdf
+      - name: Skill rehberi ve kütüphane kuralları
+        run: python3 araclar/denetle.py
+      - name: Paketle ve dağıtımı denetle
+        run: |
+          python3 araclar/paketle.py
+          python3 araclar/denetle.py --dagitim
+      - name: Betik sınamaları
+        run: |
+          python3 ortak/betikler/cevap_dagilimi.py ABCDBCAD
+          python3 ortak/betikler/tymm_kod_denetle.py README.md --veri veri

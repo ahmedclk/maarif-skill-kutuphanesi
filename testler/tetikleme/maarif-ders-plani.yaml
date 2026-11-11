@@ -1,0 +1,24 @@
+skill: maarif-ders-plani
+hedef_isabet: 0.9
+tetiklemeli:
+- Yarın 6. sınıfa OBEB anlatacağım, ders planı hazırla.
+- MAT.7.1.2 için 40 dakikalık ders planı.
+- Bu çıktıya göre günlük plan ve çalışma kâğıdı istiyorum.
+- Kesirlerle bölme dersi için etkinlik planı yap.
+- 9. sınıf doğrusal fonksiyonlara giriş dersi planla.
+- 'Mini ders: ondalık gösterimde basamak değeri, 20 dakika.'
+- Yeni bir ders planı ve farklı düzeylerde çalışma kâğıtları hazırla.
+- Olasılık deneyi dersi için plan, gözlem formu da olsun.
+- 'Maarif''e uygun bir ders akışı yaz: ön değerlendirme, köprü kurma, uygulama.'
+- Pazartesi 8. sınıflarla üslü ifadeler işleyeceğim, ders hazırla.
+tetiklememeli:
+- istem: Hazırladığım bu dersi üç düzeye uyarla.
+  dogru_skill: maarif-farklilastirma
+- istem: Yarınki derse hazırlanmama yardım et, planım ekte.
+  dogru_skill: maarif-derse-hazirlik
+- istem: Bu konunun özet slaytlarını yap.
+  dogru_skill: maarif-konu-ozeti
+- istem: Bu dersin kaç dakika olduğunu söyle.
+  dogru_skill: yok
+- istem: Ders sonu için 2 soruluk çıkış kartı hazırla.
+  dogru_skill: maarif-anlama-kontrolu

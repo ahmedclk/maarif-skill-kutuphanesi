@@ -1,0 +1,5 @@
+Maarif hata analizi (maarif-hata-analizi)
+Bu skill, DeepTutor (HKUDS) projesinin yönlendirmeli öğrenme ve ustalık (mastery) istemlerinden
+uyarlanmıştır. DeepTutor Apache License 2.0 ile lisanslanmıştır (bkz. LICENSE).
+Değişiklikler (2025-2026, DNAMATHOS): Türkçeye uyarlandı; hatalar TYMM çıktı ve süreç bileşenine
+bağlandı; önyargısız dil, KVKK ve öğretmen ile veli raporları eklendi.

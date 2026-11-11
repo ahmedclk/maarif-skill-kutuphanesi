@@ -1,0 +1,100 @@
+ders: Matematik
+sinif: 9
+kademe: ortaöğretim
+kaynak:
+  sinif_sayfasi: https://tymm.meb.gov.tr/ogretim-programlari/matematik-dersi/11
+  temalar:
+    Sayılar: https://tymm.meb.gov.tr/matematik-dersi/unite/21
+    Nicelikler ve Değişimler: https://tymm.meb.gov.tr/matematik-dersi/unite/23
+dogrulama:
+  tarih: '2026-11-11'
+  durum: özet
+  not: 'Çıktı metinleri ve bileşen adları kısaltılmış özettir (''metin_ozet: true''). Kod ve bileşen harfleri tema sayfalarıyla eşlendi; birebir metin her çalışmada sayfadan alınır.'
+ciktilar:
+  MAT.9.2.1:
+    metin: Doğrusal fonksiyonlar ve nitel özellikleri
+    metin_ozet: true
+    beceri: MAB1 Matematiksel Muhakeme
+    bilesenler:
+      a:
+        ad: Nitel özellikleri farklı temsillerle belirleme
+      b:
+        ad: Nitel özellik–temsil ilişkisini kurma
+      c:
+        ad: Dönüşümle yeni fonksiyona ulaşma
+      ç:
+        ad: Grafik ve cebirsel temsil bağını açıklama
+      d:
+        ad: Varsayım üretme
+      e:
+        ad: Örüntüyü genelleme
+      f:
+        ad: Genellemeyi kontrol etme
+      g:
+        ad: Önermeyi sözel ya da sembolik dille sunma
+      ğ:
+        ad: Gerçek yaşamda kullanışlılığı değerlendirme
+      h:
+        ad: Grafikle doğrulama ya da cebirsel ispat
+      ı:
+        ad: Doğrulama yönteminin uygunluğunu değerlendirme
+  MAT.9.2.2:
+    metin: Mutlak değer fonksiyonları ve nitel özellikleri
+    metin_ozet: true
+    beceri: KB2.16.3 Analojik Akıl Yürütme
+    bilesenler:
+      a:
+        ad: Doğrusal ve mutlak değer fonksiyonunu karşılaştırma
+      b:
+        ad: Nitel özellikleri tespit etme
+      c:
+        ad: Parçalı gösterime ilişkin çıkarım yapma
+  MAT.9.2.3:
+    metin: Doğrusal fonksiyonlarla ifade edilebilen denklem ve eşitsizlik içeren problemler
+    metin_ozet: true
+    beceri: MAB2 Matematiksel Problem Çözme
+    bilesenler:
+      a:
+        ad: Fonksiyon bileşenlerini belirleme
+      b:
+        ad: Bileşenler arasındaki ilişkiyi belirleme
+      c:
+        ad: Temsilleri dönüştürme
+      ç:
+        ad: Temsilin bağlamdaki anlamını açıklama
+      d:
+        ad: Çözüm stratejisi oluşturma
+      e:
+        ad: Stratejiyle çözme
+      f:
+        ad: Çözümü doğrulama
+      g:
+        ad: Stratejileri gözden geçirme
+      ğ:
+        ad: Stratejilere dayalı çıkarım yapma
+      h:
+        ad: Çıkarımın geçerliliğini değerlendirme
+  MAT.9.3.1:
+    metin: Üçgende açı ve kenarlarla ilgili özellikleri doğrulama veya ispatlama
+    metin_ozet: true
+    beceri: MAB1.1 Matematiksel Doğrulama veya İspat Yapma
+    bilesenler:
+      a:
+        ad: Farklı doğrulama ya da ispatları kullanma
+      b:
+        ad: İspatı yeni durumlara uyarlayarak değerlendirme
+  MAT.9.4.1:
+    metin: Geometrik dönüşümlerle ilgili çıkarım yapma
+    metin_ozet: true
+    beceri: KB2.10 Çıkarım Yapma
+    bilesenler:
+      a:
+        ad: Dönüşümler hakkında varsayımda bulunma
+      b:
+        ad: Örüntüyü genelleme
+      c:
+        ad: Varsayım ve genellemeleri karşılaştırma
+      ç:
+        ad: Dönüşümlerle ilgili önerme sunma
+      d:
+        ad: Önermeyi yeni çıkarımlarda kullanma

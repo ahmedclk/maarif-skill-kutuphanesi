@@ -1,0 +1,19 @@
+ID,Kova,Ölçüt,Geçmek için gereken,Not,Koşul
+S1,R — Zihinsel zorluk,Tek savunulabilir cevap,Her çoktan seçmeli maddede yalnız bir seçenek kök ve görselden savunulabiliyor; açık uçlu maddede anahtar bütün doğru yanıtları kabul ediyor.,Değerlendirici her seçenek için en güçlü 'doğru' gerekçesini yazar.,
+S2,R — Zihinsel zorluk,Çeldiriciye ulaşılabilir,"Her çeldirici, adı konan hatanın kökün sayılarına uygulanmasıyla elde ediliyor.",Değerlendirici hesaplar.,coktan-secmeli
+S3,R — Zihinsel zorluk,Matematiksel çekirdek,Her soruda bir kavrayış noktası var; tek başına rutin hesap sorusu yok.,,yazili
+S4,R — Zihinsel zorluk,Güçlük kuralı,"Her alt maddenin Z · Y · C değerleri yazılı ve karar tablosuyla tutarlı; kâğıt payları kolay %15–25, orta %45–55, zor %25–35.",guclugu_hesapla.py çıktısı eklenir.,yazili
+S5,P — Pedagoji,Kapsama,Yazılıda ölçülen her bileşen kâğıt setinin toplamında en az bir kez; her kâğıt senaryoya birebir uyuyor.,,yazili
+S6,P — Pedagoji,MEB süreç dili,"Yönergede bileşen adı yok; yalnız MEB'in süreç ifadeleri (tahminde bulununuz, sınayınız, önermedeki boşlukları tamamlayınız, gerekçelendiriniz, ispatlayınız).",,
+S7,O — Çıktı,"Görsel bilgi taşır, cevabı vermez",Görselli maddelerde en az bir veri yalnız görselde; istenen değer görselde yok; ölçek doğru ya da 'ölçekli değildir' notu var.,,
+S8,O — Çıktı,Sızıntı yok,"Öğrenci dosyasında cevap, çözüm, güçlük, hata adı ya da cevabı ele veren vurgu yok.",sizinti_ara.py çıktısı 0.,
+S9,O — Çıktı,Cevap dağılımı,Çoktan seçmeli anahtarda harfler dengeli; aynı harf art arda en çok 3.,cevap_dagilimi.py.,coktan-secmeli
+S10,P — Pedagoji,Robotiklik,Art arda aynı yapı yok; aynı kalıp en çok iki kez; kişi adları ve bağlamlar tekrar etmiyor.,,yazili
+MEV1,P — Pedagoji,Soru türü mevzuata uygun,"Okul yazılısında maddeler açık uçlu ya da kısa cevaplı; kâğıt yalnız kısa cevaplı değil; çoktan seçmeli, gerekçesiz doğru-yanlış ve gerekçesiz eşleştirme yok (MEV-10, MEV-11, MEV-12).",Çoktan seçmeli test okul yazılısı olarak sunulduysa kalır.,yazili
+MEV2,R — Zihinsel zorluk,Bilişsel düzey,Her madde etiketindeki bileşenin bilişsel düzeyinde; çözümleme ya da değerlendirme düzeyindeki bileşen yalnız hesapla ölçülmemiş (MEV-13).,meb-olcme-mevzuati.md 7. bölüm eşlemesi.,
+MEV3,O — Çıktı,Süre ve cevap alanı,"Kâğıt bir ders saatine sığıyor (tahmini süre ≤ 40 dk); her maddenin altında yeterli cevap alanı var (MEV-16, MEV-17).",,yazili
+MEV4,O — Çıktı,Puan,"Toplam 100; yanlış cevap doğruyu götürmüyor; iptal durumunda puanların yeniden dağıtılacağı anahtarda not edilmiş (MEV-19, MEV-20).",,yazili
+MEV5,P — Pedagoji,Geri bildirim,"Cevap anahtarında ya da raporda öğrenciye yazılacak eksik ve yanlış öğrenme notları var (MEV-30, MEV-31).",,"yazili, hata-analizi"
+MEV6,P — Pedagoji,Kısa süreli sınav notsuz,Anlama kontrolü ya da tarama testi not ya da puan vermiyor (MEV-40).,,kisa-sureli
+MEV7,P — Pedagoji,İlkokul sınırı,"1–4. sınıf için sınav, tarama testi ya da çoktan seçmeli araç üretilmedi; gözlem ve derecelendirme araçları kullanıldı (MEV-41).",,ilkokul
+MEV8,O — Çıktı,Karşılaştırma yok,"Raporda öğrenci adlı sıralı liste ya da şubeler, okullar arası sıralama yok (MEV-33).",,hata-analizi

@@ -1,0 +1,199 @@
+# Öğretmen kullanım kılavuzu — tek kaynak.
+# docs/kilavuz.md, tanıtım sayfası (docs/index.html) ve Instagram karuselleri bu dosyadan üretilir:
+#   python3 araclar/kilavuz_uret.py
+baslik: Maarif Skill Kütüphanesi
+alt_baslik: Maarif Modeli'ne bağlı, MEB ölçme kurallarına uygun öğretmen skill'leri
+tanitim: >-
+  Claude ile ders planı, ortak yazılı, anlama kontrolü, performans görevi ve hata analizi hazırlarken
+  her ürün bir öğrenme çıktısına ve süreç bileşenine bağlanır; çıktılar TYMM sayfasından doğrulanır,
+  sorular MEB ölçme ve değerlendirme mevzuatına uyar.
+
+ilkeler:
+  - baslik: Önce program
+    metin: Her skill çıktıyı, bileşenleri ve içerik çerçevesi sınırlarını TYMM sayfasından alır; bellekten yazmaz, kod uydurmaz.
+  - baslik: MEB kurallarına uyum
+    metin: Okul yazılısı açık uçludur, 100 puan üzerindendir, bir ders saatine sığar; kısa süreli sınav notsuzdur; ilkokulda sınav yapılmaz.
+  - baslik: Doğrulanmış ürün
+    metin: Sorular yazıldıktan sonra tek doğru cevap, çeldirici, kod, puan ve cevap sızıntısı betiklerle denetlenir.
+  - baslik: Son söz öğretmenin
+    metin: Skill hazırlar, öğretmen onaylar. Ürünün sınıfa uygunluğunu her zaman siz kontrol edersiniz.
+
+kurulum:
+  - baslik: Hazır istem
+    metin: istemler klasöründeki istemi kopyalayın, köşeli parantezleri doldurun ve Claude'a yapıştırın. Kurulum gerekmez.
+  - baslik: Skill yükleme
+    metin: dist/zip klasöründeki skill dosyasını Claude ayarlarındaki skill bölümünden yükleyin ve açın. Claude isteğinize uyan skill'i kendisi seçer.
+  - baslik: Paket
+    metin: Claude Code kullanıyorsanız depoyu eklenti pazar yeri olarak ekleyin ve bir paketi kurun (ör. maarif-ogretmen-temel).
+
+gruplar:
+  - ad: Planlama
+    skills: [maarif-cikti-cozumleme, maarif-ders-takvimi, maarif-ders-plani, maarif-derse-hazirlik, maarif-farklilastirma]
+  - ad: Ölçme ve değerlendirme
+    skills: [maarif-anlama-kontrolu, maarif-ortak-yazili, maarif-beceri-temelli-test, maarif-performans-gorevi, maarif-benzer-soru, maarif-hata-analizi]
+  - ad: İçerik üretimi
+    skills: [maarif-konu-ozeti, maarif-anlatim-videosu, dnamathos-pdf-tasarimi, dnamathos-instagram-karusel]
+
+skills:
+  maarif-cikti-cozumleme:
+    gorunen: Programı çözümle
+    ne_yapar: Bir temanın ya da çıktının programını tek bir çıktı kartında toplar.
+    ne_zaman: [Yeni bir temaya başlarken, Ders kitabındaki konunun hangi çıktıya denk geldiğini öğrenmek için, Öteki skill'lerden önce ilk adım olarak]
+    verin: [Sınıf ve ders, Tema adı ya da çıktı kodu, İsterseniz ders kitabı sayfaları]
+    alirsiniz: [Birebir çıktı metni ve süreç bileşenleri, Her bileşenin beceri basamağı ve yazılıda ölçülüp ölçülmediği, İçerik çerçevesi sınırları, Temadaki eğilim, SDB, değer ve okuryazarlık kodları]
+    istem: 6. sınıf matematik 1. temanın öğrenme çıktılarını çıkar; bileşenleri beceri basamaklarıyla eşle ve sınırları yaz.
+    kontrol: Kitap ile site arasında tema numarası farkı varsa kartın altındaki nota bakın.
+    mevzuat: [MEV-01]
+    sonraki: maarif-ders-takvimi
+  maarif-ders-takvimi:
+    gorunen: Ders takvimi
+    ne_yapar: Sınava kalan haftalara göre çıktıları derslere dağıtır.
+    ne_zaman: [Dönem başında ya da yazılıdan birkaç hafta önce, Özel ders ya da koçluk planında]
+    verin: [Kalan hafta ve haftalık ders sayısı, Okul zümresinin seçtiği senaryo tablosu, İsterseniz kaynak kitabın içindekiler sayfası]
+    alirsiniz: [Haftalık takvim tablosu, Her derste çıktı kodu ve bileşenler, Kitap sayfası ve ödev sayfaları, Kapsama özeti]
+    istem: 2. yazılıya 8 hafta var, haftada bir ders yapıyorum. Ekteki senaryoya göre konuları dağıt; son ders tekrar olsun.
+    kontrol: Ödev sayfalarının içindekiler sayfasıyla aynı olduğunu bir kez gözle kontrol edin.
+    mevzuat: [MEV-14, MEV-15]
+    sonraki: maarif-konu-ozeti
+  maarif-ders-plani:
+    gorunen: Ders planı
+    ne_yapar: Bir çıktı için ders planı, öğrenci çalışma kâğıdı ve gözlem formunu birlikte hazırlar.
+    ne_zaman: [Yeni bir dersi sıfırdan planlarken, Mini ders ya da etkinlik planı için]
+    verin: [Sınıf, Çıktı kodu ya da konu, İsterseniz süre ve sınıf mevcudu]
+    alirsiniz: ["Ön değerlendirme, köprü kurma, keşfet, tartış, genelle ve çıkış kartından oluşan akış", Bileşen kapsama tablosu, Çalışma kâğıdı ve gözlem formu]
+    istem: Yarın 6. sınıfa ortak katları anlatacağım; 40 dakikalık ders planı, çalışma kâğıdı ve gözlem formu hazırla.
+    kontrol: Çıkış kartının dersin en zor durumunu yokladığını ve üç grup ölçütünü okuyun.
+    mevzuat: [MEV-03]
+    sonraki: maarif-derse-hazirlik
+  maarif-derse-hazirlik:
+    gorunen: Derse hazırlık
+    ne_yapar: Var olan bir derse sizinle birlikte hazırlanır ve kısa bir hazırlık notu bırakır.
+    ne_zaman: [Dersten bir gün önce, İlk kez anlatacağınız bir etkinlikte]
+    verin: [Ders planı ya da kitap sayfası]
+    alirsiniz: [Kilit görev üzerine birlikte düşünme, Neredeyse doğru öğrenci cevapları, 200–300 sözcüklük hazırlık notu]
+    istem: Ekteki planla yarınki derse hazırlanmama yardım et; kilit görevi önce ben çözeyim.
+    kontrol: Hazırlık notunu dersin bölümlerine göre okuyun; değişmesi gereken yeri söyleyin.
+    mevzuat: []
+    sonraki: maarif-anlama-kontrolu
+  maarif-farklilastirma:
+    gorunen: Farklılaştırma
+    ne_yapar: Var olan bir dersi destekleme, temel ve zenginleştirme için üç gruba uyarlar.
+    ne_zaman: [Ön değerlendirmeden sonra, Sınıfta farklı hazırbulunuşluk varken, BEP hedefi olan öğrenci için]
+    verin: [Ders planı ya da çalışma kâğıdı, İsterseniz gözlediğiniz durum ya da BEP hedefi]
+    alirsiniz: [Öğretmen farklılaştırma planı, A B C çalışma kâğıtları, Her grupta aynı çıktı ve aynı zor durum]
+    istem: Ekteki dersi farklılaştır; kesirleri modelle göremeyen öğrenciler için destek ekle.
+    kontrol: Öğrenci kâğıtlarında düzey adı yazmadığını kontrol edin.
+    mevzuat: [MEV-04]
+    sonraki: maarif-anlama-kontrolu
+  maarif-anlama-kontrolu:
+    gorunen: Anlama kontrolü
+    ne_yapar: Tek bir bileşen için 1–3 maddelik notsuz kontrol ve cevapları okuma kılavuzu hazırlar.
+    ne_zaman: [Ders sonunda çıkış kartı olarak, Yeni konuya geçmeden ön değerlendirme olarak, Kısa süreli sınav yerine]
+    verin: [Sınıf, Konu ya da çıktı kodu]
+    alirsiniz: [Öğrenci kâğıdı, Her cevabın neyi gösterdiği, Sonraki öğretim adımı]
+    istem: 6. sınıf ondalık gösterim için ders sonu çıkış kartı hazırla; cevapları okuma kılavuzu da olsun.
+    kontrol: Skill odak bileşeni önce size sorar; onayladığınız bileşenin doğru olduğundan emin olun.
+    mevzuat: [MEV-40, MEV-41]
+    sonraki: maarif-hata-analizi
+  maarif-ortak-yazili:
+    gorunen: Ortak yazılı
+    ne_yapar: Seçilen senaryoya uyan açık uçlu yazılı kâğıtlarını ve cevap anahtarlarını hazırlar.
+    ne_zaman: [Okul geneli ortak yazılıdan önce, Yazılı provası için]
+    verin: [Okul zümresinin seçtiği senaryo tablosu, Sınıf ve dönem]
+    alirsiniz: [Kâğıt seti ve kapsama planı, Adım puanlı cevap anahtarı ve öğretmen notları, Kapsama tablosu]
+    istem: Ekteki senaryoya göre 9. sınıf 1. dönem 2. yazılı kâğıtlarını ve cevap anahtarlarını hazırla.
+    kontrol: Kâğıtların bir ders saatine sığdığını ve cevap alanlarının yeterli olduğunu kontrol edin.
+    mevzuat: [MEV-10, MEV-11, MEV-12, MEV-13, MEV-14, MEV-16, MEV-17, MEV-19, MEV-30]
+    sonraki: maarif-hata-analizi
+  maarif-beceri-temelli-test:
+    gorunen: Beceri temelli test
+    ne_yapar: LGS ve TYT tarzı, bağlamlı ve görselli çoktan seçmeli test hazırlar.
+    ne_zaman: [LGS ya da TYT hazırlığında, Tarama testi olarak]
+    verin: [Sınıf, Konu ya da çıktılar, Soru sayısı]
+    alirsiniz: [Test kâğıdı, Çeldirici açıklamalı cevap anahtarı, Güçlük dağılımı]
+    istem: 8. sınıf üslü ifadeler için 15 soruluk LGS tarzı tarama testi hazırla.
+    kontrol: Bu test okul yazılısı yerine kullanılmaz; okul yazılısı için ortak yazılı skill'ini kullanın.
+    mevzuat: [MEV-12, MEV-40, MEV-41]
+    sonraki: maarif-hata-analizi
+  maarif-performans-gorevi:
+    gorunen: Performans görevi
+    ne_yapar: Yazılıda ölçülemeyen bileşenler için görev, dereceli puanlama anahtarı ve formlar hazırlar.
+    ne_zaman: [Veri toplama ya da araştırma gerektiren çıktılarda, Proje ödevi için]
+    verin: [Sınıf, Çıktı ya da tema, İsterseniz süre ve bireysel ya da grup]
+    alirsiniz: [Öğrenci görev kâğıdı, Dereceli puanlama anahtarı, Puansız gözlem formu, Öz ve akran değerlendirme formu]
+    istem: 6. sınıf olasılık çıktısı için iki haftalık bir deney görevi ve dereceli puanlama anahtarı hazırla.
+    kontrol: Görevin ücret, internet ya da veli emeği gerektirmediğini kontrol edin.
+    mevzuat: [MEV-02, MEV-51]
+    sonraki: maarif-hata-analizi
+  maarif-benzer-soru:
+    gorunen: İkiz soru
+    ne_yapar: Verdiğiniz soruların aynı bileşeni ölçen özgün ikizlerini yazar.
+    ne_zaman: [Öğrencinin yanlış yaptığı sorular için, Paralel kâğıt ya da ek alıştırma için]
+    verin: [Kaynak sorular (PDF ya da fotoğraf), Kaç ikiz istediğiniz]
+    alirsiniz: [İkiz sorular, Cevap anahtarı, Adım adım çözümler]
+    istem: Ekteki 5 sorunun her biri için aynı bileşeni ölçen birer ikiz soru ve çözüm yaz.
+    kontrol: İkizler okul yazılısında kullanılacaksa bunu belirtin; çoktan seçmeliler açık uçluya çevrilir.
+    mevzuat: [MEV-12, MEV-60]
+    sonraki: maarif-hata-analizi
+  maarif-hata-analizi:
+    gorunen: Hata analizi
+    ne_yapar: Yanlışları bileşene ve hata türüne göre ayırır, telafi planı ve tekrar takvimi hazırlar.
+    ne_zaman: [Yazılı ya da deneme sonrasında, Koçluk görüşmesinden önce]
+    verin: [Yanlış yapılan sorular ve öğrenci cevapları, İsterseniz çözüm kâğıdı fotoğrafı ya da sonuç tablosu]
+    alirsiniz: [Öğretmen raporu, Öğrenci telafi çalışma sayfası, Tekrar takvimi, İsteğe bağlı veli özeti]
+    istem: Ekteki deneme sonucuna göre hata analizi yap; telafi planı ve kontrol soruları hazırla.
+    kontrol: Raporda gerçek ad kullanılmaz; öğrencileri takma adla tanırsınız.
+    mevzuat: [MEV-30, MEV-31, MEV-32, MEV-33]
+    sonraki: maarif-benzer-soru
+  maarif-konu-ozeti:
+    gorunen: Konu özeti
+    ne_yapar: Haftalık ders için konu özeti slaytları, yazılı tarzı sorular ve ödev kartı hazırlar.
+    ne_zaman: [Haftalık özel derste, Yazılıya kadar konu tekrarında]
+    verin: [Ders kitabı, İsterseniz takvim ve kaynak kitabın içindekiler sayfası]
+    alirsiniz: [Ders slaytları (PDF), Tüyolar ve yazılı provası, Ödev kartı, Öğretmen çözüm dosyası]
+    istem: Ekteki ders kitabına ve haftalık plana göre 9. sınıf ders anlatım sunumunu hazırla.
+    kontrol: Öğrenci dosyasında cevap bulunmadığını bir soruyu açıp kontrol edin.
+    mevzuat: [MEV-10, MEV-13]
+    sonraki: maarif-anlama-kontrolu
+  maarif-anlatim-videosu:
+    gorunen: Anlatım videosu
+    ne_yapar: Bir konu ya da soru için sahne planı, seslendirme metni ve Remotion kodu hazırlar.
+    ne_zaman: [Kısa ders videosu ya da soru çözümü için]
+    verin: [Konu ya da soru, Biçim (dikey ya da yatay)]
+    alirsiniz: [Sahne planı, Seslendirme metni, Remotion kodu ve son kare görüntüleri]
+    istem: Ortak kat için 45 saniyelik dikey anlatım videosu hazırla.
+    kontrol: Seslendirmedeki sayıların ekrandakiyle aynı olduğunu dinleyerek kontrol edin.
+    mevzuat: []
+    sonraki: dnamathos-instagram-karusel
+  dnamathos-pdf-tasarimi:
+    gorunen: DNAMATHOS PDF
+    ne_yapar: İçeriği DNAMATHOS'un 16:9 PDF tasarımına dönüştürür ve dosyayı denetler.
+    ne_zaman: [Konu özeti, yazılı ya da test DNAMATHOS görünümünde istendiğinde]
+    verin: [İçerik (öteki skill'lerin ürünü)]
+    alirsiniz: [PDF, Taşma ve bağlantı denetimi, Slayt görüntüleri]
+    istem: Bu içeriği DNAMATHOS 16:9 düzeninde PDF'e çevir ve bağlantıları denetle.
+    kontrol: Birbirine bağlanan PDF'leri aynı klasörde tutun.
+    mevzuat: []
+    sonraki: dnamathos-instagram-karusel
+  dnamathos-instagram-karusel:
+    gorunen: Instagram karuseli
+    ne_yapar: Konu karuseli, rehberlik ve gerçek hayat gönderisinden oluşan ızgara satırını hazırlar.
+    ne_zaman: [Haftalık sosyal medya içeriğinde]
+    verin: [Sınıf ve konu, İsterseniz çıktı kodu]
+    alirsiniz: [1080 × 1350 PNG slaytlar, Açıklama ve etiketler, Paylaşım sırası]
+    istem: 8. sınıf üslü ifadeler için konu karuseli, rehberlik ve gerçek hayat gönderilerinden oluşan satırı hazırla.
+    kontrol: Paylaşırken sırayı izleyin - önce karusel, sonra rehberlik, en son gerçek hayat.
+    mevzuat: []
+    sonraki: maarif-anlatim-videosu
+
+sss:
+  - soru: Skill'ler başka derslerde çalışır mı?
+    cevap: Bütün skill'ler Maarif omurgasıyla çalışır; ayrıntılı ders dosyası şu an matematik için hazır. Başka derslerde skill programı doğrudan tema sayfasından okur ve bunu ürünün sonunda belirtir.
+  - soru: TYMM sayfası açılmazsa ne olur?
+    cevap: Skill, verdiğiniz çıktı metniyle çalışır ve ürüne "program sayfasından doğrulanamadı" notunu ekler. Kod ya da kaynak uydurmaz.
+  - soru: Çoktan seçmeli test yazılı yerine kullanılabilir mi?
+    cevap: Hayır. MEB mevzuatına göre okul yazılıları açık uçludur ve cevabı öğrenci oluşturur. Çoktan seçmeli test LGS hazırlığı, tarama ya da notsuz kısa süreli sınav içindir.
+  - soru: Öğrenci adlarını vermeli miyim?
+    cevap: Gerek yok. Skill'ler öğrencileri takma adla işler; sınıflar ya da öğrenciler arası sıralama üretmez.
+  - soru: Ürünü doğrudan sınıfa götürebilir miyim?
+    cevap: Ürünler denetlenmiş olarak gelir, ama son kontrol sizindir. Sorunu bulduğunuz yeri söylerseniz skill yalnız o kısmı düzeltir.

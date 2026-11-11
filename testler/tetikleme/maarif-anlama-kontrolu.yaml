@@ -1,0 +1,24 @@
+skill: maarif-anlama-kontrolu
+hedef_isabet: 0.9
+tetiklemeli:
+- 'Çıkış kartı hazırla: ortak kat.'
+- Konuya geçmeden kim anladı görmek istiyorum.
+- Ders sonu hızlı yoklama için 2 soru.
+- Kesir karşılaştırma için anlama kontrolü.
+- 'Ön değerlendirme sorusu: ondalık gösterim.'
+- Tanılayıcı bir soru istiyorum, çeldiriciler yanılgılardan gelsin.
+- Mutlak değer fonksiyonu için 3 maddelik kontrol.
+- Öğrencilerin nerede olduğunu görmek için kısa kontrol.
+- Bugünkü dersin sonunda dağıtacağım tek soruluk kart.
+- Asal çarpanlara ayırmada anlama kontrolü ve cevapları okuma kılavuzu.
+tetiklememeli:
+- istem: 20 soruluk test.
+  dogru_skill: maarif-beceri-temelli-test
+- istem: Ortak yazılı hazırla.
+  dogru_skill: maarif-ortak-yazili
+- istem: Bu sorunun 5 benzerini yaz.
+  dogru_skill: maarif-benzer-soru
+- istem: Türkçe dersi için çıkış kartı hazırla.
+  dogru_skill: yok
+- istem: Ders planı hazırla.
+  dogru_skill: maarif-ders-plani

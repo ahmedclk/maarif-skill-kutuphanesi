@@ -1,0 +1,24 @@
+skill: maarif-farklilastirma
+hedef_isabet: 0.9
+tetiklemeli:
+- Bu dersi farklılaştır, öğrencilerim farklı düzeylerde.
+- Çalışma kâğıdını üç düzeyde hazırla.
+- Destekleme ve zenginleştirme etkinliği ekle.
+- Hızlı bitirenler için bu derse ek görev.
+- Kesirleri modelle göremeyen öğrencilerim için bu dersi uyarla.
+- Kaynaştırma öğrencim için bu etkinliği uyarlar mısın?
+- Bu planı A, B, C gruplarına böl.
+- Sınıfımın yarısı ön bilgide eksik, dersi buna göre düzenle.
+- Mevcut ders planımı zenginleştirme yönünde genişlet.
+- Aynı görevi farklı destek düzeyleriyle ver.
+tetiklememeli:
+- istem: Sıfırdan farklılaştırılmış ders planı hazırla.
+  dogru_skill: maarif-ders-plani
+- istem: Dereceli puanlama anahtarı yap.
+  dogru_skill: maarif-performans-gorevi
+- istem: Test yaz.
+  dogru_skill: maarif-beceri-temelli-test
+- istem: Öğrencinin hatalarını analiz et.
+  dogru_skill: maarif-hata-analizi
+- istem: Farklılaştırılmış öğretim nedir, kısaca anlat.
+  dogru_skill: yok

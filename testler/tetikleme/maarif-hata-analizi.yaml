@@ -1,0 +1,24 @@
+skill: maarif-hata-analizi
+hedef_isabet: 0.9
+tetiklemeli:
+- Bu öğrencinin hatalarını analiz et.
+- Deneme sonucuna göre telafi planı.
+- Nerede yanlış yapıyor, çözüm kâğıdı ekte.
+- Yanlış yaptığı sorular ekte, sebeplerini bul.
+- Sınıfın yazılı sonuçlarını analiz et.
+- Eksik kazanım analizi.
+- Bu tabloya göre hangi bileşenlerde destek gerekiyor?
+- Veli için kısa özet de olsun.
+- Hata türlerine göre sınıflandır ve tekrar takvimi çıkar.
+- 'Koçluk raporu: son iki deneme.'
+tetiklememeli:
+- istem: Yeni test.
+  dogru_skill: maarif-beceri-temelli-test
+- istem: İkiz soru.
+  dogru_skill: maarif-benzer-soru
+- istem: Ders içi kontrol.
+  dogru_skill: maarif-anlama-kontrolu
+- istem: Öğrencinin psikolojik durumunu değerlendir.
+  dogru_skill: yok
+- istem: Bu dersi destekleme grubuna uyarla.
+  dogru_skill: maarif-farklilastirma

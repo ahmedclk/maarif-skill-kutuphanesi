@@ -1,0 +1,15 @@
+ID,Kova,Ölçüt,Geçmek için gereken,Not,Koşul
+MA1,P — Pedagoji,Çıktı kodu ve metni doğru,Üründe anılan her çıktı kodu o sınıfın TYMM tema sayfasında var; çıktı metni birebir alıntılandığı yerde sayfadakiyle aynı. Kısaltma yalnız 'kısa ad' olarak geçer.,Omurga ölçütü; kalırsa ürün kalır.,
+MA2,P — Pedagoji,Bileşen bağı gerçek,"Her etkinlik, soru ya da ölçüt satırı etiketindeki süreç bileşenine gerçekten hizmet ediyor; değerlendirici bileşen metnini okuyup maddenin onu ölçtüğünü bir cümleyle gerekçelendirebiliyor.",,
+MA3,P — Pedagoji,İçerik Çerçevesi sınırı,"Hiçbir madde, görsel ya da gösterim temanın İçerik Çerçevesi ya da Öğrenme-Öğretme Uygulamalarındaki sınırlamayı aşmıyor.",,
+MA4,P — Pedagoji,Programlar arası bileşenler doğru kullanıldı,"E, SDB, D, OB kodları yalnız tema listesinden; puanlamaya girmiyor; kullanıldığı yerde bir davranışla eşlenmiş.",Ürün bunları hiç kullanmıyorsa geçer.,
+MA5,P — Pedagoji,Program terimleri,"'Kazanım', 'alt kazanım' yerine 'öğrenme çıktısı', 'süreç bileşeni'; İçerik Çerçevesindeki terim ve gösterimler aynen.",,
+D1,O — Çıktı,Türkçe yazım ve anlatım,TDK yazım ve noktalama hatası yok; anlatım bozukluğu yok; İngilizce terim kelimesi kelimesine çevrilmemiş.,Hata sayısı 0; bir hata kalır.,
+D2,O — Çıktı,Önyargısız dil,"Öğrenci 'zayıf, yavaş, geride, başarısız' gibi etiketlerle değil gözlenen davranışla anlatılıyor; öğrenci kâğıdında düzey adı yok.",,
+D3,O — Çıktı,Kişisel veri,"Gerçek öğrenci adı, numarası ya da özel durum bilgisi üründe yok.",,
+D4,O — Çıktı,Telif,"Ders kitabı, yayınevi ya da gerçek sınav sorusu birebir kopyalanmamış; kitap görseli yok.",,
+M1,M — Model davranışı,Skill'i soru sormadan önce yükledi,"Netleştirici soru, skill yüklendikten sonra soruldu.",Konuşma kaydından okunur.,
+M2,M — Model davranışı,En fazla bir netleştirici soru,"Ürün öncesi en çok bir soru; biçim, sayı ya da zorluk sorulmadı (skill izin vermedikçe).",maarif-konu-ozeti hiç soru sormaz (kitap yoksa yalnız onu ister).,
+M3,M — Model davranışı,Öğretmen dili,"İlerleme mesajlarında adım numarası, dosya adı, betik, JSON ya da denetim anlatımı yok.",,
+M4,M — Model davranışı,Somut kapanış,"Kapanışta en çok iki somut, bu ürüne özgü seçenek; 'değişiklik isterseniz söyleyin' yok.",,
+M5,M — Model davranışı,Bağlantı yoksa dürüstlük,TYMM sayfası açılamadıysa ürüne not eklendi; okunmamış sayfaya atıf ya da uydurma kod yok.,,tymm-erisilemez

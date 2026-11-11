@@ -1,0 +1,24 @@
+skill: maarif-performans-gorevi
+hedef_isabet: 0.9
+tetiklemeli:
+- 'Performans görevi hazırla: veri toplama.'
+- Proje ödevi ve dereceli puanlama anahtarı.
+- 'Rubrik hazırla: okul bahçesi planı.'
+- Öz ve akran değerlendirme formu.
+- Yazılıda ölçülemeyen bileşenler için görev.
+- İstatistik projesi, 2 hafta.
+- Ürün dosyası değerlendirme ölçütleri.
+- Gruplar için araştırma görevi ve gözlem formu.
+- Bu tema için Maarif'e uygun performans görevi.
+- Ölçekli çizim projesi ve puanlama anahtarı.
+tetiklememeli:
+- istem: Yazılı sınav.
+  dogru_skill: maarif-ortak-yazili
+- istem: Test.
+  dogru_skill: maarif-beceri-temelli-test
+- istem: Ders planı.
+  dogru_skill: maarif-ders-plani
+- istem: Çıkış kartı.
+  dogru_skill: maarif-anlama-kontrolu
+- istem: Performans notlarını e-Okul'a gir.
+  dogru_skill: yok

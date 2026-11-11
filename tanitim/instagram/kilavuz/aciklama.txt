@@ -1,0 +1,26 @@
+Ortak yazılı mı, çıkış kartı mı, hata analizi mi? Her iş için ayrı bir skill var.
+
+Bu karuselde 15 skill'in her biri için ne yaptığını ve kopyalayıp kullanabileceğin bir istemi bulacaksın.
+
+Bu istemleri bulmak için kaydet.
+
+#maarifmodeli #öğretmen #dersplanı #yazılısınav #dnamathos
+
+Alternatif metinler:
+1. Kapak: Hangi iş için hangi skill? 15 skill ve hazır istemleri.
+2. Programı çözümle: Bir temanın ya da çıktının programını tek bir çıktı kartında toplar. Örnek istem: 6. sınıf matematik 1. temanın öğrenme çıktılarını çıkar; bileşenleri beceri basamaklarıyla eşle ve sınırları yaz.
+3. Ders takvimi: Sınava kalan haftalara göre çıktıları derslere dağıtır. Örnek istem: 2. yazılıya 8 hafta var, haftada bir ders yapıyorum. Ekteki senaryoya göre konuları dağıt; son ders tekrar olsun.
+4. Ders planı: Bir çıktı için ders planı, öğrenci çalışma kâğıdı ve gözlem formunu birlikte hazırlar. Örnek istem: Yarın 6. sınıfa ortak katları anlatacağım; 40 dakikalık ders planı, çalışma kâğıdı ve gözlem formu hazırla.
+5. Derse hazırlık: Var olan bir derse sizinle birlikte hazırlanır ve kısa bir hazırlık notu bırakır. Örnek istem: Ekteki planla yarınki derse hazırlanmama yardım et; kilit görevi önce ben çözeyim.
+6. Farklılaştırma: Var olan bir dersi destekleme, temel ve zenginleştirme için üç gruba uyarlar. Örnek istem: Ekteki dersi farklılaştır; kesirleri modelle göremeyen öğrenciler için destek ekle.
+7. Anlama kontrolü: Tek bir bileşen için 1–3 maddelik notsuz kontrol ve cevapları okuma kılavuzu hazırlar. Örnek istem: 6. sınıf ondalık gösterim için ders sonu çıkış kartı hazırla; cevapları okuma kılavuzu da olsun.
+8. Ortak yazılı: Seçilen senaryoya uyan açık uçlu yazılı kâğıtlarını ve cevap anahtarlarını hazırlar. Örnek istem: Ekteki senaryoya göre 9. sınıf 1. dönem 2. yazılı kâğıtlarını ve cevap anahtarlarını hazırla.
+9. Beceri temelli test: LGS ve TYT tarzı, bağlamlı ve görselli çoktan seçmeli test hazırlar. Örnek istem: 8. sınıf üslü ifadeler için 15 soruluk LGS tarzı tarama testi hazırla.
+10. Performans görevi: Yazılıda ölçülemeyen bileşenler için görev, dereceli puanlama anahtarı ve formlar hazırlar. Örnek istem: 6. sınıf olasılık çıktısı için iki haftalık bir deney görevi ve dereceli puanlama anahtarı hazırla.
+11. İkiz soru: Verdiğiniz soruların aynı bileşeni ölçen özgün ikizlerini yazar. Örnek istem: Ekteki 5 sorunun her biri için aynı bileşeni ölçen birer ikiz soru ve çözüm yaz.
+12. Hata analizi: Yanlışları bileşene ve hata türüne göre ayırır, telafi planı ve tekrar takvimi hazırlar. Örnek istem: Ekteki deneme sonucuna göre hata analizi yap; telafi planı ve kontrol soruları hazırla.
+13. Konu özeti: Haftalık ders için konu özeti slaytları, yazılı tarzı sorular ve ödev kartı hazırlar. Örnek istem: Ekteki ders kitabına ve haftalık plana göre 9. sınıf ders anlatım sunumunu hazırla.
+14. Anlatım videosu: Bir konu ya da soru için sahne planı, seslendirme metni ve Remotion kodu hazırlar. Örnek istem: Ortak kat için 45 saniyelik dikey anlatım videosu hazırla.
+15. DNAMATHOS PDF: İçeriği DNAMATHOS'un 16:9 PDF tasarımına dönüştürür ve dosyayı denetler. Örnek istem: Bu içeriği DNAMATHOS 16:9 düzeninde PDF'e çevir ve bağlantıları denetle.
+16. Instagram karuseli: Konu karuseli, rehberlik ve gerçek hayat gönderisinden oluşan ızgara satırını hazırlar. Örnek istem: 8. sınıf üslü ifadeler için konu karuseli, rehberlik ve gerçek hayat gönderilerinden oluşan satırı hazırla.
+17. Kapanış: ayrıntılı kılavuz tanıtım sayfasında; kaydet.

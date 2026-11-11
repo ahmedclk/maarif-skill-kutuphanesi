@@ -1,0 +1,24 @@
+skill: maarif-derse-hazirlik
+hedef_isabet: 0.9
+tetiklemeli:
+- Yarınki derse hazırlanmama yardım et, plan ekte.
+- Bu etkinliği içselleştirmek istiyorum, birlikte bakalım.
+- Kitaptaki bu sayfayı nasıl anlatsam?
+- Az önce hazırladığın ders planını birlikte gözden geçirelim.
+- Öğrenciler bu görevde nerede takılır, birlikte düşünelim.
+- Bu dersin kilit sorusunu benimle çöz.
+- Ders öncesi kısa bir hazırlık notu çıkaralım.
+- Bu problemi anlatmadan önce neye dikkat etmeliyim?
+- Bu dersi daha önce hiç anlatmadım, hazırlanmama yardım eder misin?
+- Etkinlikteki neredeyse doğru cevaplar neler olabilir?
+tetiklememeli:
+- istem: Sıfırdan ders planı yaz.
+  dogru_skill: maarif-ders-plani
+- istem: Bu ders için test hazırla.
+  dogru_skill: maarif-beceri-temelli-test
+- istem: Bu çıktının kodu ne?
+  dogru_skill: yok
+- istem: Bu dersi destekleme grubuna uyarla.
+  dogru_skill: maarif-farklilastirma
+- istem: Çıkış kartı yaz.
+  dogru_skill: maarif-anlama-kontrolu

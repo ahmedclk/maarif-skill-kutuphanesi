@@ -1,0 +1,25 @@
+skill: maarif-cikti-cozumleme
+hedef_isabet: 0.9
+tetiklemeli:
+- 6. sınıf matematik 1. temanın öğrenme çıktılarını çıkar.
+- MAT.6.1.3'ün süreç bileşenleri neler?
+- 9. sınıf Nicelikler ve Değişimler temasındaki kazanımları listeler misin?
+- Ders kitabındaki 'Ondalık gösterimler' konusu programda hangi çıktıya denk geliyor?
+- Bu temanın içerik çerçevesinde hangi sınırlamalar var?
+- 10. sınıf geometrik şekiller temasının bileşenlerini beceri basamaklarıyla eşle.
+- Programda 7. sınıf oran orantı konusunda hangi eğilim ve değerler var?
+- 'Şu kazanımın güncel Maarif karşılığını bul: ''Asal sayıları belirler.'''
+- Bu tema sayfasını özetle, yazılıda hangi bileşenler ölçülür?
+- TYMM'den 8. sınıf üslü ifadeler çıktısının birebir metnini getir.
+- 5. sınıf matematik ilk temanın öğrenme kanıtları neler?
+tetiklememeli:
+- istem: Bu çıktı için 40 dakikalık ders planı hazırla.
+  dogru_skill: maarif-ders-plani
+- istem: Yazılıya 8 hafta var, konuları haftalara dağıt.
+  dogru_skill: maarif-ders-takvimi
+- istem: MAT.6.1.1 için 4 kâğıtlık ortak yazılı hazırla.
+  dogru_skill: maarif-ortak-yazili
+- istem: Maarif Modeli ne zaman uygulamaya girdi?
+  dogru_skill: yok
+- istem: Bu çıktı için 20 soruluk LGS tarzı test yaz.
+  dogru_skill: maarif-beceri-temelli-test

@@ -1,0 +1,5 @@
+Maarif benzer soru (maarif-benzer-soru)
+Bu skill, DeepTutor (HKUDS) projesinin soru üretim hattından ve "mimic" (taklit) kipinden
+uyarlanmıştır. DeepTutor Apache License 2.0 ile lisanslanmıştır (bkz. LICENSE).
+Değişiklikler (2025-2026, DNAMATHOS): Türkçeye ve MEB soru üslubuna uyarlandı; kaynak sorunun
+TYMM öğrenme çıktısı ve süreç bileşeniyle eşlenmesi, içerik çerçevesi sınırı ve doğrulama kapısı eklendi.

@@ -1,0 +1,10 @@
+Maarif derse hazırlık (maarif-derse-hazirlik)
+Bu skill, aşağıdaki çalışmadan uyarlanmıştır ve değiştirilmiştir:
+
+  Agent Skills for K-12 Teachers — k12-lesson-prep
+  Copyright 2026 Anthropic, PBC
+  Copyright 2026 Learning Commons
+  Apache License 2.0 (bkz. LICENSE)
+
+Değişiklikler (2026, DNAMATHOS): Türkçeye çevrildi; hazırlık, dersin süreç bileşenlerine ve
+TYMM programına bağlandı; hazırlık notunun yapısı Maarif ders evreleriyle eşlendi.

@@ -1,0 +1,220 @@
+[
+  {
+    "ad": "dnamathos-instagram-karusel",
+    "yol": "markalar/dnamathos/dnamathos-instagram-karusel",
+    "aciklama": "DNAMATHOS Instagram sayfası için Maarif Modeli çıktısına bağlı matematik içeriği üretir; konu karuseli, Maarif eğilim ve sosyal-duygusal becerilerine dayanan rehberlik gönderisi ve gerçek hayat örneğinden oluşan üçlü ızgara satırını sınıf renk paletiyle tasarlar; 1080 × 1350 PNG slaytları, temas tablosunu, açıklama, etiket ve alternatif metni teslim eder. Tetikleyiciler - Instagram karuseli hazırla, DNAMATHOS gönderisi, LGS karuseli, ızgara satırı, rehberlik gönderisi, gerçek hayat matematiği gönderisi, kaydırmalı post. Ders slaytı ya da PDF için değil (maarif-konu-ozeti, dnamathos-pdf-tasarimi), video için değil (maarif-anlatim-videosu), sınav sorusu için değil (maarif-beceri-temelli-test).",
+    "surum": "2.0.0",
+    "dersler": "",
+    "onceki_ad": "",
+    "lisans": "karar bekliyor",
+    "paketler": [
+      "dnamathos",
+      "maarif-tam"
+    ],
+    "sozcuk": 493
+  },
+  {
+    "ad": "dnamathos-pdf-tasarimi",
+    "yol": "markalar/dnamathos/dnamathos-pdf-tasarimi",
+    "aciklama": "DNAMATHOS markasının 16:9 ekran PDF tasarım dili ve üretim hattıdır; konu özeti slaytlarını, yazılı kâğıtlarını, cevap anahtarlarını ve çalışma PDF'lerini lacivert üst şerit, menü ve iki panelli slayt düzeniyle HTML, KaTeX ve Playwright üzerinden üretir; taşma, bağlantı ve sayfa denetimini betikle yapar. Bir Maarif skill'i (maarif-konu-ozeti, maarif-ortak-yazili, maarif-beceri-temelli-test, maarif-benzer-soru) DNAMATHOS çıktısı ürettiğinde ya da kullanıcı DNAMATHOS tasarımı, DNAMATHOS PDF'i, bu PDF'in düğmeleri, slayt düzeni veya taşma sorunu dediğinde kullan. İçeriğin pedagojisi için değil (o ilgili Maarif skill'indedir), Instagram görseli için değil (dnamathos-instagram-karusel), Word ya da PowerPoint dosyası için değil (docx, pptx).",
+    "surum": "1.0.0",
+    "dersler": "",
+    "onceki_ad": "maarif-matematik-icerik 7. bölüm ve maarif-konu-ozeti 8. bölüm",
+    "lisans": "karar bekliyor",
+    "paketler": [
+      "dnamathos",
+      "maarif-tam"
+    ],
+    "sozcuk": 341
+  },
+  {
+    "ad": "maarif-anlama-kontrolu",
+    "yol": "skills/maarif-anlama-kontrolu",
+    "aciklama": "Bir öğrenme çıktısının tek bir süreç bileşeni için 1–3 maddelik anlama kontrolü ya da çıkış kartı hazırlar; çeldiriciler belgelenmiş öğrenci yanılgılarından gelir ve öğretmen kılavuzu her olası cevabın neyi gösterdiğini ve sonraki öğretim adımını söyler. Netleştirici soru sormadan önce yükle. Şu an matematik içindir; başka derslerde skill'i anmadan normal yardım et. Tetikleyiciler - çıkış kartı hazırla, anlama kontrolü, konuya geçmeden kim anladı görmek istiyorum, ders sonu hızlı yoklama, ön değerlendirme sorusu, tanılayıcı soru. Puanlanan sınav, test ya da alıştırma seti değildir; numaralı test ya da yalın cevap anahtarı başka iştir (maarif-beceri-temelli-test, maarif-ortak-yazili, maarif-benzer-soru). Ders planı (maarif-ders-plani, kendi çıkış kartını taşır), farklılaştırma (maarif-farklilastirma) ya da derse hazırlık (maarif-derse-hazirlik) için değil.",
+    "surum": "1.0.0",
+    "dersler": "matematik",
+    "onceki_ad": "",
+    "lisans": "Apache-2.0 (uyarlama)",
+    "paketler": [
+      "maarif-ogretmen-temel",
+      "maarif-olcme-degerlendirme",
+      "maarif-tam"
+    ],
+    "sozcuk": 785
+  },
+  {
+    "ad": "maarif-anlatim-videosu",
+    "yol": "skills/maarif-anlatim-videosu",
+    "aciklama": "Bir öğrenme çıktısına bağlı konu ya da soru için Remotion ile kısa anlatım videosu hazırlar; sahne planı, ElevenLabs'e yapıştırılmaya hazır Türkçe seslendirme metni, kare numarasına bağlı ve çakışmasız yerleşimli Remotion kodu üretir, her sahnenin son karesini render edip denetler. Tetikleyiciler - bu konu için anlatım videosu, animasyonlu çözüm, Shorts ya da Reels ders videosu, soru çözüm videosu, Remotion ile video, seslendirme metni. Kısa video senaryosu ya da eğlence içeriği için değil; Instagram görsel karuseli için değil (dnamathos-instagram-karusel); slayt sunumu için değil (maarif-konu-ozeti).",
+    "surum": "2.0.0",
+    "dersler": "matematik",
+    "onceki_ad": "matematik-anlatim-videosu 1.x",
+    "lisans": "Apache-2.0 (uyarlama)",
+    "paketler": [
+      "maarif-icerik-uretimi",
+      "maarif-tam"
+    ],
+    "sozcuk": 321
+  },
+  {
+    "ad": "maarif-beceri-temelli-test",
+    "yol": "skills/maarif-beceri-temelli-test",
+    "aciklama": "Maarif Modeli çıktılarına bağlı, LGS ve beceri temelli sınav tarzında çoktan seçmeli test hazırlar; bağlamlı ve görselli maddeler, her biri belirli bir öğrenci hatasından doğan çeldiriciler, dengeli cevap dağılımı, güçlük etiketi ve çeldirici açıklamalı cevap anahtarı üretir; her maddenin tek savunulabilir cevabı olduğunu yazıldıktan sonra doğrular. Netleştirici soru sormadan önce yükle. MEB mevzuatına göre okul yazılısı yerine kullanılamaz; LGS ve TYT hazırlığı, tarama ya da notsuz kısa süreli sınav içindir. Tetikleyiciler - LGS tarzı test hazırla, 20 soruluk tarama testi, beceri temelli soru, yeni nesil soru, konu testi, çoktan seçmeli deneme, kazanım testi. Açık uçlu ortak yazılı için değil (maarif-ortak-yazili), verilen soruların ikizini üretmek için değil (maarif-benzer-soru), 1–3 maddelik puansız anlama kontrolü için değil (maarif-anlama-kontrolu).",
+    "surum": "1.0.0",
+    "dersler": "matematik (tam); diğerleri şablonla",
+    "onceki_ad": "",
+    "lisans": "karar bekliyor",
+    "paketler": [
+      "dnamathos",
+      "maarif-olcme-degerlendirme",
+      "maarif-tam"
+    ],
+    "sozcuk": 528
+  },
+  {
+    "ad": "maarif-benzer-soru",
+    "yol": "skills/maarif-benzer-soru",
+    "aciklama": "Öğretmenin verdiği sınavın, testin, yazılının ya da tek bir sorunun kurgusunu, ölçtüğü Maarif çıktısını ve süreç bileşenini, becerisini ve güçlüğünü koruyarak bağlamı ve sayıları değişmiş özgün ikiz sorular, cevap anahtarı ve öğrenciye hitap eden adım adım çözümler üretir. Netleştirici soru sormadan önce yükle. Tetikleyiciler - bu sorunun benzerini yaz, ikiz soru, aynı tarzda 5 soru daha, bu testin benzeri, bu yazılının paraleli, öğrencinin yanlış yaptığı soruların benzerleri, bu sayfadaki sorulardan yeni set. Senaryoya göre sıfırdan yazılı için değil (maarif-ortak-yazili), sıfırdan LGS tarzı test için değil (maarif-beceri-temelli-test), hata analizi ve telafi planı için değil (maarif-hata-analizi).",
+    "surum": "2.0.0",
+    "dersler": "matematik (tam); diğerleri şablonla",
+    "onceki_ad": "benzer-soru-uretimi 1.x",
+    "lisans": "Apache-2.0 (uyarlama)",
+    "paketler": [
+      "maarif-icerik-uretimi",
+      "maarif-olcme-degerlendirme",
+      "maarif-tam"
+    ],
+    "sozcuk": 574
+  },
+  {
+    "ad": "maarif-cikti-cozumleme",
+    "yol": "skills/maarif-cikti-cozumleme",
+    "aciklama": "Bir dersin, sınıfın, temanın ya da tek bir öğrenme çıktısının Maarif Modeli programını TYMM sayfasından okuyup çözümler; çıktı metnini, süreç bileşenlerini, beceri basamaklarını, içerik çerçevesi sınırlarını, temada geçen eğilim, SDB, değer ve okuryazarlık kodlarını tek bir çıktı kartında toplar. Netleştirici soru sormadan önce yükle. Tetikleyiciler - kazanımları çıkar, bu temanın öğrenme çıktıları neler, MAT.6.1.3 bileşenleri, programda bu konunun sınırı ne, ders kitabındaki konu hangi çıktıya denk geliyor. Diğer Maarif skill'lerinin ilk adımıdır ve onlara çıktı kartını verir. Ders planı için değil (maarif-ders-plani), haftalık takvim için değil (maarif-ders-takvimi), soru ya da sınav üretmek için değil (maarif-ortak-yazili, maarif-beceri-temelli-test).",
+    "surum": "1.0.0",
+    "dersler": "matematik (tam); diğer dersler references/dersler/_sablon.md ile eklenir",
+    "onceki_ad": "",
+    "lisans": "karar bekliyor",
+    "paketler": [
+      "dnamathos",
+      "maarif-icerik-uretimi",
+      "maarif-ogretmen-temel",
+      "maarif-olcme-degerlendirme",
+      "maarif-tam"
+    ],
+    "sozcuk": 621
+  },
+  {
+    "ad": "maarif-ders-plani",
+    "yol": "skills/maarif-ders-plani",
+    "aciklama": "Bir öğrenme çıktısı için sıfırdan Maarif Modeli'ne uygun ders planı hazırlar; ön değerlendirme ve köprü kurmadan öğrenme-öğretme uygulamalarına, tartışmaya ve çıkış kartına uzanan akışı, öğrenci çalışma kâğıdını ve öğretmen gözlem formunu tek pakette verir. Netleştirici soru sormadan önce yükle. Tetikleyiciler - ders planı hazırla, yarın 6. sınıfa OBEB anlatacağım, bu çıktı için 40 dakikalık ders, günlük plan, etkinlik planı, mini ders. Yeni bir ders farklılaştırılmış materyal de istiyorsa yine tek istektir ve bu skill üretir. Var olan bir dersi uyarlamak için değil (maarif-farklilastirma), derse hazırlanmak için değil (maarif-derse-hazirlik), haftalara dağıtım için değil (maarif-ders-takvimi), slayt özeti için değil (maarif-konu-ozeti), sınav ya da test için değil (maarif-ortak-yazili, maarif-beceri-temelli-test).",
+    "surum": "1.0.0",
+    "dersler": "matematik (tam); diğerleri şablonla",
+    "onceki_ad": "",
+    "lisans": "Apache-2.0 (uyarlama)",
+    "paketler": [
+      "maarif-ogretmen-temel",
+      "maarif-tam"
+    ],
+    "sozcuk": 894
+  },
+  {
+    "ad": "maarif-ders-takvimi",
+    "yol": "skills/maarif-ders-takvimi",
+    "aciklama": "Sınava ya da dönem sonuna kalan haftalara göre Maarif Modeli çıktılarını derslere dağıtan haftalık ders takvimini hazırlar; her dersin çıktısını, süreç bileşenlerini, ders kitabı sayfalarını, tekrar ve yazılı provası haftalarını ve kaynak kitaptan ödev sayfalarını gösterir. Netleştirici soru sormadan önce yükle. Tetikleyiciler - yazılıya 8 hafta var dersleri planla, bu konuları haftalara dağıt, ortak sınav senaryosuna göre takvim, yıllık ya da dönemlik plan, haftalık özel ders planı, hangi hafta hangi konu. Tek bir dersin ayrıntılı planı için değil (maarif-ders-plani), slayt ya da konu özeti için değil (maarif-konu-ozeti), program okuma tek başına isteniyorsa değil (maarif-cikti-cozumleme).",
+    "surum": "1.0.0",
+    "dersler": "matematik (tam); diğerleri şablonla",
+    "onceki_ad": "",
+    "lisans": "karar bekliyor",
+    "paketler": [
+      "maarif-ogretmen-temel",
+      "maarif-tam"
+    ],
+    "sozcuk": 676
+  },
+  {
+    "ad": "maarif-derse-hazirlik",
+    "yol": "skills/maarif-derse-hazirlik",
+    "aciklama": "Öğretmenin var olan bir dersi anlatmaya hazırlanmasına eşlik eder; dersin kilit öğrenci görevini birlikte çözer, neredeyse doğru öğrenci cevaplarının nerede saptığını konuşur ve dersin evrelerine göre düzenlenmiş kısa bir öğretmen hazırlık notu bırakır. Tetikleyiciler - yarınki derse hazırlanmama yardım et, bu dersi nasıl anlatsam, bu etkinliği içselleştirmek istiyorum, ders kitabındaki bu sayfayı anlamak istiyorum, az önce hazırlanan ders planını gözden geçirelim. Ders planı üretmek için değil (maarif-ders-plani), dersi uyarlamak için değil (maarif-farklilastirma), soru, test ya da öğrenci materyali üretmek için değil (maarif-anlama-kontrolu, maarif-ortak-yazili), tek cümlelik bilgi soruları için değil (bu çıktının kodu ne, ders kaç dakika).",
+    "surum": "1.0.0",
+    "dersler": "",
+    "onceki_ad": "",
+    "lisans": "Apache-2.0 (uyarlama)",
+    "paketler": [
+      "maarif-ogretmen-temel",
+      "maarif-tam"
+    ],
+    "sozcuk": 252
+  },
+  {
+    "ad": "maarif-farklilastirma",
+    "yol": "skills/maarif-farklilastirma",
+    "aciklama": "Öğretmenin getirdiği ya da adını verdiği var olan bir dersi, aynı öğrenme çıktısı ve aynı görev üzerinde Maarif Modeli'nin destekleme ve zenginleştirme yaklaşımıyla üç gruba uyarlar; bir öğretmen farklılaştırma planı ve üç öğrenci çalışma kâğıdı üretir, ortak içerik bir kez yazıldığı için gruplar birbirinden kopmaz. Netleştirici soru sormadan önce yükle. Tetikleyiciler - bu dersi farklılaştır, öğrencilerim farklı düzeylerde, destekleme ve zenginleştirme etkinliği, kaynaştırma öğrencisi için uyarla, hızlı bitirenler için ek görev, çalışma kâğıdını üç düzeyde hazırla. Sıfırdan yeni bir ders için değil, yeni ders farklılaştırılmış materyal istese bile (maarif-ders-plani); not verme, dereceli puanlama anahtarı ya da test için değil (maarif-performans-gorevi, maarif-beceri-temelli-test).",
+    "surum": "1.0.0",
+    "dersler": "matematik (tam); diğerleri şablonla",
+    "onceki_ad": "",
+    "lisans": "Apache-2.0 (uyarlama)",
+    "paketler": [
+      "maarif-ogretmen-temel",
+      "maarif-tam"
+    ],
+    "sozcuk": 616
+  },
+  {
+    "ad": "maarif-hata-analizi",
+    "yol": "skills/maarif-hata-analizi",
+    "aciklama": "Bir öğrencinin ya da sınıfın yanlış yaptığı soruları, deneme veya yazılı sonucunu, ödevini ya da çözüm kâğıdı fotoğrafını inceleyip hataları türlerine ve Maarif çıktı ile süreç bileşenine göre sınıflandırır; tekrarlayan örüntüleri bulur, telafi anlatımı, kolaydan zora kontrol soruları, kendi cümleleriyle anlatma görevi, ustalık ölçütü ve aralıklı tekrar takvimi hazırlar; öğretmen ya da koç raporu ve isteğe bağlı veli özeti verir. Tetikleyiciler - bu öğrencinin hatalarını analiz et, deneme sonucuna göre telafi planı, nerede yanlış yapıyor, yanlış yaptığı sorular, sınıfın yazılı sonuçları, eksik kazanım analizi. Yeni test ya da yazılı için değil (maarif-beceri-temelli-test, maarif-ortak-yazili), yalnız ikiz soru isteniyorsa değil (maarif-benzer-soru), derste anlama kontrolü için değil (maarif-anlama-kontrolu).",
+    "surum": "2.0.0",
+    "dersler": "matematik (tam); diğerleri şablonla",
+    "onceki_ad": "ogrenci-hata-analizi 1.x",
+    "lisans": "Apache-2.0 (uyarlama)",
+    "paketler": [
+      "maarif-olcme-degerlendirme",
+      "maarif-tam"
+    ],
+    "sozcuk": 712
+  },
+  {
+    "ad": "maarif-konu-ozeti",
+    "yol": "skills/maarif-konu-ozeti",
+    "aciklama": "MEB ders kitabına ve TYMM programına dayanan, haftalık ders için kısa konu anlatımı özet slaytları hazırlar; her konu kartının ardından yazılı tarzı bir soru, Sokratik öğretmen notu, yazılı tüyosu, Kaydet kartı, tüyosuz yazılı provası, kaynak kitaptan ödev kartı ve ayrı bir öğretmen çözüm dosyası üretir. Soru sormadan, kapsamı kitaptan ve programdan kendisi belirleyerek çalışır. Tetikleyiciler - bu temanın konu özetini hazırla, ders anlatım sunumu, yazılıya kadar haftalık ders slaytları, kitabın bu sayfaları için ders sunumu, özel ders slaytı, ders 1-16 sunumları. Tek ders planı belgesi için değil (maarif-ders-plani), yalnız takvim için değil (maarif-ders-takvimi), sınav kâğıdı için değil (maarif-ortak-yazili), Instagram içeriği için değil (dnamathos-instagram-karusel).",
+    "surum": "2.0.0",
+    "dersler": "matematik (tam); diğerleri şablonla",
+    "onceki_ad": "maarif-konu-ozeti 1.x (tasarım ve üretim dnamathos-pdf-tasarimi skill'ine taşındı)",
+    "lisans": "karar bekliyor",
+    "paketler": [
+      "dnamathos",
+      "maarif-icerik-uretimi",
+      "maarif-tam"
+    ],
+    "sozcuk": 829
+  },
+  {
+    "ad": "maarif-ortak-yazili",
+    "yol": "skills/maarif-ortak-yazili",
+    "aciklama": "MEB ortak yazılı (ortak sınav) senaryosuna birebir uyan, açık uçlu yazılı sınav kâğıtları ve cevap anahtarları hazırlar; çıktıları TYMM sayfasından doğrular, süreç bileşenlerini kâğıt setinin toplamında kapsar, MEB soru üslubunu ve görsel ölçütünü uygular, güçlüğü Z Y C kuralıyla belirler ve puanlama anahtarı ile kapsama tablosu verir. Netleştirici soru sormadan önce yükle. Tetikleyiciler - 1. dönem 2. yazılı hazırla, ortak sınav senaryosuna göre soru yaz, açık uçlu yazılı, yazılı provası, kâğıt seti ve cevap anahtarı, bu senaryoya göre 4 kâğıt. Çoktan seçmeli LGS tarzı test için değil (maarif-beceri-temelli-test), verilen bir sorunun ikizini üretmek için değil (maarif-benzer-soru), 1–3 maddelik anlama kontrolü için değil (maarif-anlama-kontrolu), performans görevi için değil (maarif-performans-gorevi).",
+    "surum": "2.0.0",
+    "dersler": "matematik (tam); diğerleri şablonla",
+    "onceki_ad": "maarif-matematik-icerik 1.x (yazılı kısmı; tasarım dnamathos-pdf-tasarimi skill'ine taşındı)",
+    "lisans": "karar bekliyor",
+    "paketler": [
+      "dnamathos",
+      "maarif-olcme-degerlendirme",
+      "maarif-tam"
+    ],
+    "sozcuk": 839
+  },
+  {
+    "ad": "maarif-performans-gorevi",
+    "yol": "skills/maarif-performans-gorevi",
+    "aciklama": "Maarif Modeli çıktılarına bağlı performans görevi ya da proje görevi hazırlar; yazılıda ölçülemeyen süreç bileşenlerini (veri toplama, araştırma planı, ürün oluşturma, sunum) gerçek bir bağlamda öğrenci görev kâğıdına, süreç takvimine ve bileşen satırlı dereceli puanlama anahtarına dönüştürür; eğilim, SDB ve değerleri puansız gözlem formunda izler. Tetikleyiciler - performans görevi hazırla, proje ödevi, dereceli puanlama anahtarı, rubrik, ürün dosyası değerlendirme ölçütü, veri toplama projesi, öz ve akran değerlendirme formu. Yazılı sınav için değil (maarif-ortak-yazili), çoktan seçmeli test için değil (maarif-beceri-temelli-test), 1–3 maddelik anlama kontrolü için değil (maarif-anlama-kontrolu), ders planı için değil (maarif-ders-plani).",
+    "surum": "1.0.0",
+    "dersler": "matematik (tam); diğerleri şablonla",
+    "onceki_ad": "",
+    "lisans": "karar bekliyor",
+    "paketler": [
+      "maarif-olcme-degerlendirme",
+      "maarif-tam"
+    ],
+    "sozcuk": 532
+  }
+]

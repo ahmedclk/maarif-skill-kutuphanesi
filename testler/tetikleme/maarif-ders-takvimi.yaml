@@ -1,0 +1,24 @@
+skill: maarif-ders-takvimi
+hedef_isabet: 0.9
+tetiklemeli:
+- 2. yazılıya 9 hafta var; senaryodaki konuları haftalara dağıt.
+- Haftada bir özel ders yapıyorum, dönem sonuna kadar plan çıkar.
+- Ortak sınav senaryosuna göre hangi hafta hangi konu?
+- 9. sınıf için 16 derslik takvim hazırla, son ders tekrar olsun.
+- Bu içindekiler sayfasına göre her derse ödev sayfası yaz.
+- 'Dönemlik planı çıkar: kitabın 3. ve 4. temaları.'
+- Sınava kadar kalan 6 haftada konuları yetiştirmem lazım, plan yap.
+- Yıllık plan gibi ama sadece bu dönem için haftalık dağılım istiyorum.
+- Hangi çıktıya kaç ders ayırmalıyım, senaryo tablosu ekte.
+- Önceki takvimden devam et, 7. dersten sonrasını planla.
+tetiklememeli:
+- istem: 1. dersin ayrıntılı planını hazırla.
+  dogru_skill: maarif-ders-plani
+- istem: Bu haftanın konu özeti slaytlarını yap.
+  dogru_skill: maarif-konu-ozeti
+- istem: MAT.9.2.1'in bileşenleri neler?
+  dogru_skill: maarif-cikti-cozumleme
+- istem: Okulun ders programı çizelgesini Excel'e aktar.
+  dogru_skill: yok
+- istem: Yazılı sonuçlarına göre telafi planı çıkar.
+  dogru_skill: maarif-hata-analizi

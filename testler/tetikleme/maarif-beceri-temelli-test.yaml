@@ -1,0 +1,24 @@
+skill: maarif-beceri-temelli-test
+hedef_isabet: 0.9
+tetiklemeli:
+- LGS tarzı 20 soruluk test hazırla.
+- 'Beceri temelli soru yaz: oran orantı.'
+- Yeni nesil soru, 8. sınıf üslü ifadeler.
+- 'Konu testi: kesirler, 15 soru.'
+- Çoktan seçmeli deneme hazırla.
+- Kazanım testi istiyorum, cevap anahtarıyla.
+- 'Tarama testi: 6. sınıf 1. tema.'
+- TYT tarzı 5 seçenekli fonksiyon testi.
+- Görselli, bağlamlı çoktan seçmeli sorular.
+- Her çeldiricisi bir hatadan gelen test.
+tetiklememeli:
+- istem: Açık uçlu ortak yazılı.
+  dogru_skill: maarif-ortak-yazili
+- istem: Bu testin benzerini yaz.
+  dogru_skill: maarif-benzer-soru
+- istem: Tek soruluk çıkış kartı.
+  dogru_skill: maarif-anlama-kontrolu
+- istem: Test sonuçlarını analiz et.
+  dogru_skill: maarif-hata-analizi
+- istem: LGS ne zaman yapılacak?
+  dogru_skill: yok

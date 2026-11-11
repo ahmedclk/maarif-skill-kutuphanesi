@@ -1,0 +1,51 @@
+{
+  "name": "maarif-skill-kutuphanesi",
+  "owner": {
+    "name": "DNAMATHOS"
+  },
+  "metadata": {
+    "description": "Türkiye Yüzyılı Maarif Modeli'ne dayalı öğretmen skill'leri."
+  },
+  "plugins": [
+    {
+      "name": "dnamathos",
+      "displayName": "DNAMATHOS",
+      "description": "DNAMATHOS markasının PDF tasarımı ve Instagram karuseli; konu özeti ve ortak yazılı ile birlikte.",
+      "version": "1.0.0",
+      "category": "education",
+      "source": "./dist/eklentiler/dnamathos"
+    },
+    {
+      "name": "maarif-icerik-uretimi",
+      "displayName": "Maarif İçerik Üretimi",
+      "description": "Konu özeti slaytları, anlatım videosu ve ikiz soru üretimi; program okuma ile birlikte.",
+      "version": "1.0.0",
+      "category": "education",
+      "source": "./dist/eklentiler/maarif-icerik-uretimi"
+    },
+    {
+      "name": "maarif-ogretmen-temel",
+      "displayName": "Maarif Öğretmen Temel",
+      "description": "Programı okuma, takvim, ders planı, derse hazırlık, farklılaştırma ve anlama kontrolü. Her branş öğretmeninin başlangıç paketi.",
+      "version": "1.0.0",
+      "category": "education",
+      "source": "./dist/eklentiler/maarif-ogretmen-temel"
+    },
+    {
+      "name": "maarif-olcme-degerlendirme",
+      "displayName": "Maarif Ölçme ve Değerlendirme",
+      "description": "Süreç odaklı değerlendirme zinciri - anlama kontrolü, ortak yazılı, beceri temelli test, performans görevi, ikiz soru ve hata analizi.",
+      "version": "1.0.0",
+      "category": "education",
+      "source": "./dist/eklentiler/maarif-olcme-degerlendirme"
+    },
+    {
+      "name": "maarif-tam",
+      "displayName": "Maarif Tam Kütüphane",
+      "description": "Kütüphanedeki bütün skill'ler.",
+      "version": "1.0.0",
+      "category": "education",
+      "source": "./dist/eklentiler/maarif-tam"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+skill: dnamathos-instagram-karusel
+hedef_isabet: 0.9
+tetiklemeli:
+- 'Instagram karuseli hazırla: bölünebilme.'
+- DNAMATHOS gönderisi.
+- 'LGS karuseli: üslü ifadeler.'
+- 'Izgara satırı: karusel, rehberlik, gerçek hayat.'
+- Rehberlik gönderisi.
+- Gerçek hayat matematiği gönderisi.
+- 'Kaydırmalı post: oran.'
+- 9. sınıf mavi paletle karusel.
+- Açıklama ve etiketleriyle karusel.
+- Profil için üçlü satır.
+tetiklememeli:
+- istem: Ders slaytı.
+  dogru_skill: maarif-konu-ozeti
+- istem: PDF.
+  dogru_skill: dnamathos-pdf-tasarimi
+- istem: Video.
+  dogru_skill: maarif-anlatim-videosu
+- istem: Sınav sorusu.
+  dogru_skill: maarif-beceri-temelli-test
+- istem: Instagram hesabımın şifresini değiştir.
+  dogru_skill: yok

@@ -1,0 +1,23 @@
+Maarif Skill Kütüphanesi
+Copyright 2025-2026 DNAMATHOS
+
+Bu depo üçüncü taraf çalışmalardan uyarlanmış bölümler içerir:
+
+1. Agent Skills for K-12 Teachers (anthropics/k12-teacher-skills)
+   Copyright 2026 Anthropic, PBC · Copyright 2026 Learning Commons
+   Apache License 2.0
+   Uyarlanan bölümler: skills/maarif-ders-plani, skills/maarif-farklilastirma,
+   skills/maarif-derse-hazirlik, skills/maarif-anlama-kontrolu,
+   ortak/guvence/dogrulama-kapisi.md, ortak/uslup/onyargisiz-dil.md,
+   ortak/uslup/ilerleme-ve-kapanis.md, testler/yargic-istemi.md (değerlendirme düzeni).
+   Her uyarlanan skill klasöründe LICENSE ve değişiklikleri anlatan NOTICE bulunur.
+
+2. DeepTutor (HKUDS)
+   Apache License 2.0
+   Uyarlanan bölümler: skills/maarif-benzer-soru, skills/maarif-hata-analizi,
+   skills/maarif-anlatim-videosu.
+
+3. Esin kaynağı (içerik kopyalanmadı): GarethManning/education-agent-skills (CC BY-SA 4.0).
+
+TYMM program metinleri ve kodları Millî Eğitim Bakanlığına aittir; bu depoda yalnız
+öğretim amaçlı alıntı ve atıf olarak yer alır (bkz. veri/KAYNAK.md).

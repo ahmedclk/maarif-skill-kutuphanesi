@@ -1,0 +1,24 @@
+skill: maarif-konu-ozeti
+hedef_isabet: 0.9
+tetiklemeli:
+- Bu temanın konu özetini hazırla, kitap ekte.
+- Ders anlatım sunumunu yeniden düzenle, plan ekte.
+- Yazılıya kadar haftalık ders slaytları.
+- Kitabın 88-104. sayfaları için ders sunumu.
+- Özel ders için 16 derslik konu özeti slaytları.
+- Ders 1-5 sunumlarını hazırla.
+- Her konunun ardından yazılı tarzı soru olan kısa özet slaytları.
+- 9. sınıf ders anlatım sunumu, haftalık plana göre.
+- Konu kartları, tüyolar ve ödev kartıyla ders slaytı.
+- Öğretmen çözüm PDF'i de olan konu özeti.
+tetiklememeli:
+- istem: Tek dersin plan belgesini Word olarak ver.
+  dogru_skill: maarif-ders-plani
+- istem: Instagram karuseli yap.
+  dogru_skill: dnamathos-instagram-karusel
+- istem: Ortak yazılı kâğıdı hazırla.
+  dogru_skill: maarif-ortak-yazili
+- istem: Sadece takvimi çıkar.
+  dogru_skill: maarif-ders-takvimi
+- istem: PowerPoint dosyası olarak sunum ver.
+  dogru_skill: yok

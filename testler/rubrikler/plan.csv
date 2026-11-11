@@ -1,0 +1,12 @@
+ID,Kova,Ölçüt,Geçmek için gereken,Not,Koşul
+L1,P — Pedagoji,Program yaşantıları izlendi,"Plan Ön değerlendirme → Köprü kurma → Keşfet → Tartış → Genelle → Çıkış kartı akışını, tema sayfasındaki ilgili bölümlere dayanarak izliyor.",,ders-plani
+L2,P — Pedagoji,Bileşen kapsama tablosu,Her bileşen numaralı bir öğrenci işinde ya da çıkış kartında; tablo planda.,Yalnız öğretmen notunda geçen bileşen sayılmaz.,ders-plani
+L3,R — Zihinsel zorluk,Yapısal durumlar,Çalışma kâğıdı temel durumdan en zor duruma uzanıyor; en zor durum isteğe bağlı değil.,,
+L4,R — Zihinsel zorluk,Çıkış kartı en zor durum,Birincil yanılgıyı taşıyan öğrenci çıkış kartını yanlış yapar; üç grup ölçütü açık.,,
+L5,P — Pedagoji,Tartışma,En az 10 dakika; öğrenciden öğrenciye bir konuşma biçimi adıyla ve somut tartışma soruları.,,ders-plani
+L6,P — Pedagoji,Yanılgılar işlem düzeyinde,Kavram yanılgılarının en az ikisi yanlış işlem biçimiyle yazılmış.,,
+F1,P — Pedagoji,"Aynı çıktı, aynı görev","Üç grup aynı çıktı, bağlam ve en zor durumla çalışıyor; fark destek ve zihinsel yükte.",Öğrenme stili (görsel/işitsel) farklılaştırması kalır.,farklilastirma
+F2,P — Pedagoji,Ön koşul ve ileri çıktı adıyla,"Destekleme ön koşul çıktısını, zenginleştirme ileri çıktıyı kod ya da tam adla anıyor.",,farklilastirma
+F3,R — Zihinsel zorluk,Destek cevap vermiyor,"Tek sözcüklü boşluk, gömülü cevap, karar gerektirmeyen adım listesi ya da anahtar sözcük kısa yolu yok; her kâğıtta desteğin çözmediği bir karar var.",,farklilastirma
+G1,P — Pedagoji,Görev yazılı dışı bileşenleri ölçüyor,"Performans görevi yazılıda ölçülemeyen bileşenleri çekirdeğe alıyor; gerçek bağlam ve kitle, en az iki ara teslim.",,performans
+G2,O — Çıktı,Dereceli anahtar,Satırlar bileşen harfli; dört düzey gözlenebilir davranışla ve nitelikle ayrılıyor; ağırlıklar toplamı 100.,,performans

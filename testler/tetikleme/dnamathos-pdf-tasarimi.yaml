@@ -1,0 +1,24 @@
+skill: dnamathos-pdf-tasarimi
+hedef_isabet: 0.9
+tetiklemeli:
+- DNAMATHOS tasarımıyla PDF üret.
+- Bu PDF'in düğmeleri çalışmıyor.
+- Slaytlarda taşma var, düzelt.
+- Cevap anahtarını DNAMATHOS düzeninde ver.
+- Konu özeti PDF'ini DNAMATHOS slayt düzeninde üret.
+- Üst şerit ve menü düğmelerini ekle.
+- PDF'ler arası bağlantıları kur.
+- DNAMATHOS renkleriyle çalışma PDF'i.
+- Sayfa sayısını ve bağlantıları denetle.
+- Bu HTML'yi 16:9 DNAMATHOS PDF'ine çevir.
+tetiklememeli:
+- istem: Instagram görseli.
+  dogru_skill: dnamathos-instagram-karusel
+- istem: Word dosyası.
+  dogru_skill: yok
+- istem: PowerPoint.
+  dogru_skill: yok
+- istem: Soruların pedagojisini düzelt.
+  dogru_skill: maarif-ortak-yazili
+- istem: Konu özeti içeriğini yaz.
+  dogru_skill: maarif-konu-ozeti
